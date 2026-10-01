@@ -1,28 +1,39 @@
 ---
 import siteData from '../data/site.json';
 ---
-
-<div class="section-dark" id="reviews">
-  <div style="max-width:1200px;margin:0 auto;padding:100px 4%">
-    <div class="s-header center reveal">
-      <div class="s-tag" style="color:var(--gold-light)">{siteData.reviews.sectionTag}</div>
-      <h2 class="s-title" style="color:var(--white)">{siteData.reviews.title} <span>{siteData.reviews.titleAccent}</span></h2>
-      <p class="s-sub" style="color:var(--grey3)">{siteData.reviews.subtitle}</p>
+<section class="py-24 md:py-32 bg-brand-charcoal text-white" id="reviews">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <div class="inline-block text-brand-goldLight text-xs font-bold tracking-[0.2em] uppercase mb-4">
+        {siteData.reviews.sectionTag}
+      </div>
+      <h2 class="font-display text-4xl md:text-5xl font-light mb-4">
+        {siteData.reviews.title} <span class="font-semibold italic text-brand-gold">{siteData.reviews.titleAccent}</span>
+      </h2>
+      <p class="text-white/60 leading-relaxed font-light">
+        {siteData.reviews.subtitle}
+      </p>
     </div>
-    <div class="testi-grid">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       {siteData.reviews.items.map(review => (
-        <div class="tc reveal">
-          <div class="tc-stars">{'★'.repeat(review.stars)}</div>
-          <p class="tc-text">"{review.text}"</p>
-          <div class="tc-user">
-            <img class="tc-av" src={review.avatar} alt={review.name} />
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:bg-white/10 motion-safe:hover:-translate-y-2 reveal flex flex-col">
+          <div class="text-brand-goldLight tracking-[0.2em] text-lg mb-6 leading-none">
+            {'★'.repeat(review.stars)}
+          </div>
+          <p class="text-white/80 font-light leading-relaxed mb-8 italic flex-grow">
+            "{review.text}"
+          </p>
+          <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+            <img class="w-12 h-12 rounded-full object-cover border-2 border-brand-charcoal shadow-sm" src={review.avatar} alt={review.name} />
             <div>
-              <div class="tc-name">{review.name}</div>
-              <div class="tc-date">{review.date}</div>
+              <div class="text-white font-medium text-sm tracking-wide">{review.name}</div>
+              <div class="text-brand-goldDark text-xs uppercase tracking-wider mt-1">{review.date}</div>
             </div>
           </div>
         </div>
       ))}
     </div>
   </div>
-</div>
+</section>
+

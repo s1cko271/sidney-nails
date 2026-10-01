@@ -1,28 +1,46 @@
 ---
 import siteData from '../data/site.json';
 ---
-
-<section class="hero">
-  <div class="hero-bg" style={`background-image: url('${siteData.salon.interiorImage}')`}></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <img class="hero-logo" src={siteData.salon.logoImage} alt={siteData.salon.name} />
-    <div class="hero-tag">{siteData.salon.tagline} &middot; {siteData.salon.city}, {siteData.salon.state}</div>
-    <h1>{siteData.hero.headlineLine1}<br/><em>{siteData.hero.headlineLine2}</em></h1>
-      <div class="gilded-divider" aria-hidden="true">
-        <span class="gilded-line"></span><span class="gilded-icon">✦</span><span class="gilded-line"></span>
-      </div>
-
-    <p class="hero-sub">{siteData.hero.description}</p>
-    <div class="hero-btns">
-      <a class="btn-gold" href="/#booking">{siteData.hero.ctaPrimary}</a>
-      <a class="btn-white-outline" href="/#services">{siteData.hero.ctaSecondary}</a>
+<section class="relative min-h-screen flex items-center justify-center bg-brand-charcoal overflow-hidden pt-24 md:pt-0">
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-[0.35] animate-slow-pan" style={`background-image: url('${siteData.salon.interiorImage}')`}></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-brand-charcoal/30 to-brand-charcoal/80"></div>
+  
+  <div class="relative text-center max-w-4xl px-6 z-10 w-full">
+    <img class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover mx-auto mb-6 border-[3px] border-brand-gold/40 shadow-glow animate-fade-in-up" src={siteData.salon.logoImage} alt={siteData.salon.name} />
+    
+    <div class="inline-block text-brand-goldLight text-[0.65rem] md:text-xs font-semibold tracking-[0.2em] uppercase mb-6 px-5 py-2 border border-brand-gold/30 rounded-full bg-brand-charcoal/20 backdrop-blur-sm animate-fade-in-up" style="animation-delay: 150ms;">
+      {siteData.salon.tagline} &middot; {siteData.salon.city}, {siteData.salon.state}
     </div>
-    <div class="hero-stats">
+    
+    <h1 class="font-display text-4xl md:text-5xl lg:text-7xl text-white leading-[1.1] font-light tracking-tight mb-4 animate-fade-in-up" style="animation-delay: 300ms;">
+      {siteData.hero.headlineLine1}<br/>
+      <em class="font-semibold italic text-brand-goldLight">{siteData.hero.headlineLine2}</em>
+    </h1>
+    
+    <div class="flex items-center justify-center gap-3 my-8 opacity-0 animate-fade-in-up" style="animation-delay: 450ms;" aria-hidden="true">
+      <span class="w-16 h-px bg-brand-gold"></span>
+      <span class="text-brand-gold text-xs animate-spin-slow">✦</span>
+      <span class="w-16 h-px bg-brand-gold"></span>
+    </div>
+
+    <p class="text-brand-cream/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10 font-light animate-fade-in-up" style="animation-delay: 600ms;">
+      {siteData.hero.description}
+    </p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in-up" style="animation-delay: 750ms;">
+      <a class="w-full sm:w-auto bg-brand-gold text-brand-charcoal px-8 py-3.5 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-brand-goldLight hover:-translate-y-1 hover:shadow-glow transition-all duration-300 btn-shine" href="/#booking">
+        {siteData.hero.ctaPrimary}
+      </a>
+      <a class="w-full sm:w-auto bg-transparent border border-brand-cream/30 text-brand-cream px-8 py-3.5 rounded-full font-medium text-sm uppercase tracking-wide hover:border-brand-gold hover:text-brand-gold transition-colors duration-300" href="/#services">
+        {siteData.hero.ctaSecondary}
+      </a>
+    </div>
+    
+    <div class="flex flex-wrap justify-center gap-6 md:gap-12 mt-16 pt-8 border-t border-brand-cream/10 opacity-0 animate-fade-in-up" style="animation-delay: 900ms;">
       {siteData.hero.stats.map(stat => (
-        <div>
-          <div class="hs-num">{stat.value}</div>
-          <div class="hs-label">{stat.label}</div>
+        <div class="text-center">
+          <div class="font-display text-3xl md:text-4xl text-brand-goldLight font-bold">{stat.value}</div>
+          <div class="text-brand-cream/50 text-[0.7rem] uppercase tracking-wider mt-1">{stat.label}</div>
         </div>
       ))}
     </div>
@@ -30,13 +48,17 @@ import siteData from '../data/site.json';
 </section>
 
 <!-- MARQUEE -->
-<div class="marquee">
-  <div class="marquee-track">
+<div class="py-4 bg-brand-charcoal overflow-hidden border-b border-white/5">
+  <div class="flex gap-12 animate-[scrollX_30s_linear_infinite] w-max hover:[animation-play-state:paused] transition-all cursor-default">
     {siteData.marquee.items.map(item => (
-      <span class="marquee-item">{item} <span class="marquee-dot"></span></span>
+      <span class="font-display text-xl text-brand-cream/80 whitespace-nowrap flex items-center gap-6 tracking-wide hover:text-brand-gold transition-colors">
+        {item} <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+      </span>
     ))}
     {siteData.marquee.items.map(item => (
-      <span class="marquee-item">{item} <span class="marquee-dot"></span></span>
+      <span class="font-display text-xl text-brand-cream/80 whitespace-nowrap flex items-center gap-6 tracking-wide hover:text-brand-gold transition-colors">
+        {item} <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+      </span>
     ))}
   </div>
 </div>

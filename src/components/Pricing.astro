@@ -1,36 +1,68 @@
 ---
 import siteData from '../data/site.json';
 ---
-
-<div class="section-alt" id="pricing">
-  <div style="max-width:1200px;margin:0 auto;padding:100px 4%">
-    <div class="s-header center reveal">
-      <div class="s-tag">{siteData.pricing.sectionTag}</div>
-      <h2 class="s-title">{siteData.pricing.title} <span>{siteData.pricing.titleAccent}</span></h2>
-      <p class="s-sub">{siteData.pricing.subtitle}</p>
-      <div class="gilded-divider" aria-hidden="true">
-        <span class="gilded-line"></span><span class="gilded-icon">✦</span><span class="gilded-line"></span>
+<section class="py-24 md:py-32 bg-brand-offwhite" id="pricing">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <div class="inline-block text-brand-goldDark text-xs font-bold tracking-[0.2em] uppercase mb-4">
+        {siteData.pricing.sectionTag}
       </div>
-
+      <h2 class="font-display text-4xl md:text-5xl font-light text-brand-charcoal mb-4">
+        {siteData.pricing.title} <span class="font-semibold italic text-brand-gold">{siteData.pricing.titleAccent}</span>
+      </h2>
+      <p class="text-brand-charcoal/60 leading-relaxed font-light">
+        {siteData.pricing.subtitle}
+      </p>
+      <div class="flex items-center justify-center gap-3 mt-8 opacity-70" aria-hidden="true">
+        <span class="w-12 h-px bg-brand-gold"></span>
+        <span class="text-brand-gold text-xs animate-spin-slow">✦</span>
+        <span class="w-12 h-px bg-brand-gold"></span>
+      </div>
     </div>
-    <div class="pricing-grid">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
       {siteData.pricing.packages.map(pkg => (
-        <div class={`pc reveal ${pkg.featured ? 'featured' : ''}`}>
+        <div class:list={["relative rounded-2xl p-10 lg:p-12 transition-all duration-500 reveal shadow-soft border", pkg.featured ? 'bg-brand-charcoal text-white border-brand-charcoal hover:shadow-2xl motion-safe:hover:-translate-y-1.5' : 'bg-white text-brand-charcoal border-brand-charcoal/10 hover:border-brand-gold/50 hover:shadow-xl motion-safe:hover:-translate-y-1.5']}>
+          
           {pkg.featured && pkg.featuredLabel && (
-            <div class="pc-pop">{pkg.featuredLabel}</div>
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold uppercase tracking-[0.2em] py-1.5 px-5 rounded-full shadow-md whitespace-nowrap">
+              {pkg.featuredLabel}
+            </div>
           )}
-          <div class="pc-name">{pkg.name}</div>
-          <div class="pc-price">{pkg.price}</div>
-          <div class="pc-unit">{pkg.unit}</div>
-          <p class="pc-desc">{pkg.description}</p>
-          <ul class="pc-list">
+          
+          <div class={`text-[0.75rem] font-bold tracking-[0.15em] uppercase mb-6 ${pkg.featured ? 'text-brand-goldLight' : 'text-brand-charcoal/50'}`}>
+            {pkg.name}
+          </div>
+          
+          <div class="mb-1">
+            <span class={`font-display text-5xl font-bold tracking-tight ${pkg.featured ? 'text-brand-goldLight' : 'text-brand-charcoal'}`}>{pkg.price}</span>
+          </div>
+          <div class={`text-sm mb-6 ${pkg.featured ? 'text-white/60' : 'text-brand-charcoal/50'}`}>
+            {pkg.unit}
+          </div>
+          
+          <p class={`text-sm leading-relaxed mb-8 font-light ${pkg.featured ? 'text-white/70' : 'text-brand-charcoal/70'}`}>
+            {pkg.description}
+          </p>
+          
+          <ul class="space-y-4 mb-10">
             {pkg.features.map(feature => (
-              <li><span class="pc-chk">✓</span> {feature}</li>
+              <li class={`flex items-start gap-4 text-sm font-light pb-4 border-b ${pkg.featured ? 'border-white/10 text-white/80' : 'border-brand-charcoal/10 text-brand-charcoal/80'}`}>
+                <span class="text-brand-gold font-bold text-base leading-none mt-0.5">✓</span> 
+                <span class="leading-relaxed">{feature}</span>
+              </li>
             ))}
           </ul>
-          <button class="pc-btn" onclick="document.getElementById('booking')?.scrollIntoView({behavior:'smooth'}) || (window.location.href='/#booking')">Book Now</button>
+          
+          <button 
+            class={`w-full py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-colors duration-300 ${pkg.featured ? 'bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight hover:shadow-glow btn-shine' : 'bg-transparent border-2 border-brand-charcoal/20 text-brand-charcoal hover:border-brand-gold hover:text-brand-gold'}`}
+            onclick="document.getElementById('booking')?.scrollIntoView({behavior:'smooth'}) || (window.location.href='/#booking')">
+            Book Now
+          </button>
         </div>
       ))}
     </div>
   </div>
-</div>
+</section>
+
+

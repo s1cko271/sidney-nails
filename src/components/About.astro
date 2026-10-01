@@ -1,30 +1,45 @@
 ---
 import siteData from '../data/site.json';
 ---
-
-<section class="section section-alt" id="about">
-  <div style="max-width:1200px;margin:0 auto;padding:100px 4%">
-    <div class="about-grid">
-      <div class="about-img-wrap reveal">
-        <img class="about-img" src={siteData.salon.interiorImage} alt={`${siteData.salon.name} Interior`} />
-        <div class="about-badge">
-          <div>
-            <div class="ab-label">{siteData.about.badgeLabel}</div>
-            <div class="ab-val">{siteData.about.badgeValue}</div>
-          </div>
+<section class="py-24 md:py-32 bg-brand-cream text-brand-charcoal overflow-hidden" id="about">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      
+      <!-- Image Group -->
+      <div class="relative w-full lg:w-1/2 flex justify-center lg:justify-start reveal">
+        <img class="w-[85%] aspect-[4/5] object-cover rounded-2xl shadow-soft" src={siteData.salon.interiorImage} alt={`${siteData.salon.name} Interior`} />
+        
+        <div class="absolute -bottom-8 -right-4 md:-right-8 bg-brand-charcoal text-brand-cream p-6 md:p-8 rounded-2xl shadow-2xl border-4 border-brand-cream flex flex-col items-center justify-center">
+          <div class="text-[0.7rem] font-bold tracking-[0.2em] uppercase text-brand-goldLight mb-1 text-center">{siteData.about.badgeLabel}</div>
+          <div class="font-display text-4xl md:text-5xl font-semibold text-white">{siteData.about.badgeValue}</div>
         </div>
       </div>
-      <div class="about-text reveal">
-        <div class="s-tag">{siteData.about.sectionTag}</div>
-        <h2 class="s-title">{siteData.about.title} <span>{siteData.about.titleAccent}</span></h2>
-        {siteData.about.paragraphs.map((para, index) => (
-          <p style={index === 0 ? "margin-top:1.2rem" : ""}>{para}</p>
-        ))}
-        <div class="about-highlights">
-          {siteData.about.highlights.map(highlight => (
-            <div class="ah-item"><span class="ah-check">✓</span> {highlight}</div>
+      
+      <!-- Text Group -->
+      <div class="w-full lg:w-1/2 mt-12 lg:mt-0 reveal">
+        <div class="inline-block text-brand-goldDark text-xs font-bold tracking-[0.2em] uppercase mb-4">
+          {siteData.about.sectionTag}
+        </div>
+        
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8 text-brand-charcoal">
+          {siteData.about.title} <br/>
+          <span class="font-semibold italic text-brand-gold">{siteData.about.titleAccent}</span>
+        </h2>
+        
+        <div class="space-y-6 text-brand-charcoal/75 leading-relaxed font-body font-light mb-10">
+          {siteData.about.paragraphs.map((para) => (
+            <p class="text-[0.95rem] md:text-base">{para}</p>
           ))}
         </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {siteData.about.highlights.map(highlight => (
+            <div class="flex items-center gap-3 text-sm font-medium text-brand-charcoal/90">
+              <span class="text-brand-gold text-lg animate-spin-slow">✦</span> {highlight}
+            </div>
+          ))}
+        </div>
+        
       </div>
     </div>
   </div>

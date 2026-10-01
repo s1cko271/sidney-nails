@@ -123,15 +123,7 @@ body {
 }
 
 /* ── SCROLL REVEAL ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(45px);
-  transition: all 0.85s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
+
 
 /* ── NAV ── */
 nav {
@@ -485,3 +477,5 @@ nav.scrolled .hamburger span { background: var(--charcoal); }
   .logo-text { font-size: 1.1rem; }
   .s-title { font-size: 1.5rem; }
 }
+
+

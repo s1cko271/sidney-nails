@@ -1,26 +1,41 @@
 ---
 import siteData from '../data/site.json';
 ---
-
-<section class="section" id="gallery">
-  <div class="s-header center reveal">
-    <div class="s-tag">{siteData.gallery.sectionTag}</div>
-    <h2 class="s-title">{siteData.gallery.title} <span>{siteData.gallery.titleAccent}</span></h2>
-  </div>
-  <div class="gallery-grid">
-    {siteData.gallery.items.map(item => (
-      <div class="gal reveal">
-        <img src={item.image} alt={item.caption} />
-        <div class="gal-ov"><span>{item.caption}</span></div>
+<section class="py-24 bg-brand-cream" id="gallery">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <div class="inline-block text-brand-goldDark text-xs font-bold tracking-[0.2em] uppercase mb-4">
+        {siteData.gallery.sectionTag}
       </div>
-    ))}
+      <h2 class="font-display text-4xl md:text-5xl font-light text-brand-charcoal mb-4">
+        {siteData.gallery.title} <span class="font-semibold italic text-brand-gold">{siteData.gallery.titleAccent}</span>
+      </h2>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-[200px] md:auto-rows-[280px]">
+      {siteData.gallery.items.map((item, index) => (
+        <div class={`group relative overflow-hidden rounded-xl cursor-pointer reveal ${index === 0 ? 'col-span-2 row-span-2' : ''}`}>
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" src={item.image} alt={item.caption} />
+          
+          <!-- Gradient ONLY at the bottom to preserve WCAG AA contrast for the text -->
+          <div class="absolute bottom-0 left-0 right-0 pt-20 pb-5 px-5 bg-gradient-to-t from-brand-charcoal/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+            <span class="text-white text-sm font-medium tracking-wide drop-shadow-md">{item.caption}</span>
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
 </section>
 
 {siteData.promo.enabled && (
-  <div class="promo">
-    <h2>{siteData.promo.headline}</h2>
-    <p>{siteData.promo.text}</p>
-    <a class="promo-btn" href="/#booking">{siteData.promo.buttonText}</a>
+  <div class="bg-gradient-to-br from-brand-gold to-brand-goldDark py-20 px-6 text-center relative overflow-hidden">
+    <div class="max-w-2xl mx-auto relative z-10">
+      <h2 class="font-display text-3xl md:text-4xl text-brand-charcoal font-semibold mb-4">{siteData.promo.headline}</h2>
+      <p class="text-brand-charcoal/80 font-medium mb-8 text-lg">{siteData.promo.text}</p>
+      <a class="inline-block bg-brand-charcoal text-brand-goldLight px-10 py-4 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-white hover:text-brand-charcoal hover:shadow-xl transition-all duration-300 motion-safe:hover:-translate-y-1" href="/#booking">
+        {siteData.promo.buttonText}
+      </a>
+    </div>
   </div>
 )}
+
