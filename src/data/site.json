@@ -39,7 +39,7 @@
       },
       {
         "value": "10% Off",
-        "label": "All Services"
+        "label": "Customer Appreciation"
       }
     ]
   },
@@ -70,7 +70,7 @@
       "Expert Technicians",
       "Walk-ins Welcome"
     ],
-    "badgeLabel": "Now Open",
+    "badgeLabel": "Customer Appreciation",
     "badgeValue": "10% Off All Services"
   },
   "services": {
@@ -208,8 +208,8 @@
   "promo": {
     "_comment": "The gold promotional banner — use for grand opening, seasonal deals, etc. Set 'enabled' to false to hide it.",
     "enabled": true,
-    "headline": "Grand Opening — 10% Off All Services!",
-    "text": "Visit us today and enjoy our opening special. Walk-ins welcome, appointments preferred.",
+    "headline": "Customer Appreciation - 10% Off!",
+    "text": "Cảm ơn bạn đã đồng hành cùng tiệm! Chúng tôi giảm giá 10% như một lời tri ân. (Thank you for your continued support! Enjoy 10% off your service).",
     "buttonText": "Book Your Visit"
   },
   "reviews": {
@@ -257,14 +257,15 @@
   "map": {
     "_comment": "Google Maps embed — the 'embedUrl' is the iframe embed link, 'directionsUrl' opens Google Maps directly",
     "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2756.0!2d-102.8!3d46.88!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zSiZKIE5haWwgU3Bh!5e0!3m2!1sen!2sus!4v1",
-    "directionsUrl": "https://maps.app.goo.gl/yJxeiAmpBwBP38pA9"
+    "directionsUrl": "https://share.google/KpM5zpRUV9GA4xR8V"
   },
   "social": {
     "_comment": "Social media links — shown in the footer. Leave blank or remove any you don't use.",
-    "facebook": "#",
-    "instagram": "#",
-    "tiktok": "#",
-    "googleMaps": "https://maps.app.goo.gl/yJxeiAmpBwBP38pA9"
+    "facebook": "https://www.facebook.com/jjnailspadickinson",
+    "instagram": "https://www.instagram.com/jjnailspadickinson/",
+    "tiktok": "",
+    "googleMaps": "https://share.google/KpM5zpRUV9GA4xR8V",
+    "yelp": "https://www.yelp.com/biz/j-and-j-nails-spa-dickinson"
   },
   "nav": {
     "_comment": "Navigation menu items — controls both desktop nav and mobile hamburger menu",
@@ -305,8 +306,8 @@
     "items": [
       {
         "icon": "✨",
-        "title": "First-Visit Offer",
-        "description": "New to our salon? Enjoy a special discount on your first service with us. Mention this offer when booking.",
+        "title": "Customer Appreciation",
+        "description": "Thank you for your continued support! Enjoy 10% off your service as a token of our appreciation.",
         "offer": "10% OFF"
       },
       {
@@ -328,6 +329,10 @@
     "title": "Salon Policies",
     "subtitle": "Please review our guidelines to ensure a relaxing experience for everyone.",
     "items": [
+      {
+        "title": "Service Guarantee",
+        "content": "We take pride in our work. If you experience any issues with your nails (like chipping or lifting) within a reasonable timeframe, please contact us for a complimentary fix."
+      },
       {
         "title": "Cancellation Policy",
         "content": "We require at least 24 hours notice for any cancellations or rescheduling. Late cancellations may be subject to a fee."
