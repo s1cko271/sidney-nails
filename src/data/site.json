@@ -256,7 +256,7 @@
   },
   "map": {
     "_comment": "Google Maps embed — the 'embedUrl' is the iframe embed link, 'directionsUrl' opens Google Maps directly",
-    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2756.0!2d-102.8!3d46.88!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zSiZKIE5haWwgU3Bh!5e0!3m2!1sen!2sus!4v1",
+    "embedUrl": "https://maps.google.com/maps?q=J%26J%20Nail%20Spa,%203275%20W%20Ridge%20Dr,%20Dickinson,%20ND%2058601&t=&z=16&ie=UTF8&iwloc=&output=embed",
     "directionsUrl": "https://share.google/KpM5zpRUV9GA4xR8V"
   },
   "social": {
