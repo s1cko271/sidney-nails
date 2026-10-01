@@ -60,30 +60,35 @@ import siteData from '../data/site.json';
       </div>
 
       <!-- Booking Form Column -->
-      <div class="bg-white rounded-3xl border border-brand-charcoal/5 shadow-2xl overflow-hidden flex flex-col reveal sticky top-32">
-        <div class="p-10 md:px-12 md:pt-12 md:pb-8 text-center bg-brand-charcoal text-white relative">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-goldDark via-brand-goldLight to-brand-goldDark"></div>
-          <h3 class="font-display text-3xl font-semibold mb-3">{siteData.booking.formTitle}</h3>
-          <p class="text-white/60 font-light text-sm">Book your appointment securely via Square.</p>
+      <div class="bg-brand-charcoal rounded-3xl border border-brand-gold/20 shadow-2xl overflow-hidden flex flex-col reveal sticky top-32 relative">
+        <!-- Accent lines -->
+        <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-brand-goldDark via-brand-goldLight to-brand-goldDark"></div>
+        <div class="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-brand-goldDark via-brand-goldLight to-brand-goldDark"></div>
+        
+        <div class="p-10 md:px-12 md:pt-12 md:pb-8 text-center relative z-10 border-b border-white/5">
+          <h3 class="font-display text-3xl font-light text-white mb-3">{siteData.booking.formTitle}</h3>
+          <p class="text-brand-goldLight/80 font-light text-sm tracking-wide">Book your appointment securely via Square.</p>
         </div>
         
-        <div class="flex-grow bg-white min-h-[500px]">
+        <div class="flex-grow min-h-[400px] relative z-10 bg-brand-charcoal">
           {siteData.booking.bookingUrl === "REPLACE_WITH_SQUARE_BOOKING_LINK" ? (
-            <div class="p-16 text-center text-brand-charcoal/40 h-full flex flex-col items-center justify-center">
-              <div class="text-brand-charcoal/20 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-16 h-16 mx-auto"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>
+            <div class="p-12 text-center h-full flex flex-col items-center justify-center">
+              <div class="w-20 h-20 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 shadow-[0_0_30px_rgba(212,175,55,0.1)] bg-brand-gold/5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>
               </div>
-              <p class="mb-6"><strong class="text-brand-charcoal/80">Booking Widget Placeholder</strong><br/>Your Square Appointments widget will appear here.</p>
-              <a href="#" class="inline-block bg-brand-charcoal text-brand-goldLight px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-brand-gold hover:text-brand-charcoal transition-all">
+              <p class="mb-8 text-brand-cream/80 font-light"><strong class="text-brand-gold font-normal tracking-wider block mb-2 text-lg">Booking System Ready</strong>Your Square Appointments widget will appear here once linked.</p>
+              <a href="#" class="inline-block bg-transparent border-2 border-brand-gold text-brand-gold px-8 py-3 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-gold hover:text-brand-charcoal transition-all shadow-[0_0_15px_rgba(212,175,55,0.2)]">
                 {siteData.booking.formButtonText}
               </a>
             </div>
           ) : (
-            <iframe 
-              src={siteData.booking.bookingUrl} 
-              style="width:100%; height: 500px; border:none; display:block;" 
-              title="Square Booking Widget">
-            </iframe>
+             <div class="p-2">
+                <iframe 
+                  src={siteData.booking.bookingUrl} 
+                  style="width:100%; height: 500px; border:none; display:block;" 
+                  title="Square Booking Widget">
+                </iframe>
+            </div>
           )}
         </div>
       </div>
