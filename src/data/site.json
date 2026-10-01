@@ -72,7 +72,7 @@
     ],
     "badgeLabel": "Customer Appreciation",
     "badgeValue": "10% Off All Services",
-    "image": "/images/real/1790896534403_2009224944731400000_2009224944731400000_d553a8944350bddf7d8287d956573c80.webp"
+    "image": "/images/real/1790896521232_2009224944731400000_2009224944731400000_2befdeee301db67c230aca06fed151ed.webp"
   },
   "services": {
     "_comment": "The 6 service cards — each shows an image, name, short description, and starting price",
@@ -85,37 +85,37 @@
         "name": "Gel Manicure",
         "description": "Long-lasting gel polish, chip-free for 3-4 weeks with a beautiful, glossy finish.",
         "price": "From $30",
-        "image": "/images/real/1790896980975_2009224944731400000_2009224944731400000_24bcf2ed7e1763c4264c3489d5b0cba0.webp"
+        "image": "/images/real/1790896534403_2009224944731400000_2009224944731400000_d553a8944350bddf7d8287d956573c80.webp"
       },
       {
         "name": "Pedicure & Spa",
         "description": "Relaxing foot soak, exfoliation, hot stone massage, and your choice of polish.",
         "price": "From $35",
-        "image": "/images/real/1790897027168_2009224944731400000_2009224944731400000_aaca2b39aac32c3c9b7a064c127ee915.webp"
+        "image": "/images/real/1790896559868_2009224944731400000_2009224944731400000_7d52d663d712703e8782213dd14b444e.webp"
       },
       {
         "name": "Nail Art & Design",
         "description": "Custom hand-painted designs, trendy styles from Korea & Japan, personalized for you.",
         "price": "From $5/nail",
-        "image": "/images/real/4.webp"
+        "image": "/images/real/1790896645917_2009224944731400000_2009224944731400000_c33c6c488c2b845b9820a6a188999031.webp"
       },
       {
         "name": "Acrylic & Dip Powder",
         "description": "Strong, durable nail extensions with natural-looking results and custom shaping.",
         "price": "From $45",
-        "image": "/images/real/1790896521232_2009224944731400000_2009224944731400000_2befdeee301db67c230aca06fed151ed.webp"
+        "image": "/images/real/1790896712871_2009224944731400000_2009224944731400000_02c8fd6c78794861ad8b8692e4bde856.webp"
       },
       {
         "name": "Waxing Services",
         "description": "Gentle, effective waxing for smooth skin — eyebrow, lip, arm, leg, and full body.",
         "price": "From $10",
-        "image": "/images/real/1790896534403_2009224944731400000_2009224944731400000_d553a8944350bddf7d8287d956573c80.webp"
+        "image": "/images/real/1790896777850_2009224944731400000_2009224944731400000_adae9a09fc8e7562ebcd91ae38ea46f7.webp"
       },
       {
         "name": "Eyelash Extensions",
         "description": "Natural or dramatic lash extensions, customized to your eye shape and style.",
         "price": "From $80",
-        "image": "/images/real/1790896559868_2009224944731400000_2009224944731400000_7d52d663d712703e8782213dd14b444e.webp"
+        "image": "/images/real/1790896844387_2009224944731400000_2009224944731400000_797b9c0d92fcf2ac12d5f52f09b0e16a.webp"
       }
     ]
   },
@@ -177,28 +177,40 @@
     "titleAccent": "Nail Designs",
     "items": [
       {
-        "image": "/images/real/1790896559868_2009224944731400000_2009224944731400000_7d52d663d712703e8782213dd14b444e.webp",
-        "caption": "Real Nail Design"
+        "image": "/images/real/1790896910030_2009224944731400000_2009224944731400000_a70ae91498876e18bfcd9004ec99457d.webp",
+        "caption": "Featured Design"
       },
       {
-        "image": "/images/real/1790896645917_2009224944731400000_2009224944731400000_c33c6c488c2b845b9820a6a188999031.webp",
-        "caption": "Classic Polish"
-      },
-      {
-        "image": "/images/real/1790896712871_2009224944731400000_2009224944731400000_02c8fd6c78794861ad8b8692e4bde856.webp",
-        "caption": "Salon Atmosphere"
-      },
-      {
-        "image": "/images/real/1790896777850_2009224944731400000_2009224944731400000_adae9a09fc8e7562ebcd91ae38ea46f7.webp",
-        "caption": "Storefront View"
-      },
-      {
-        "image": "/images/real/1790896844387_2009224944731400000_2009224944731400000_797b9c0d92fcf2ac12d5f52f09b0e16a.webp",
+        "image": "/images/real/1790896980975_2009224944731400000_2009224944731400000_24bcf2ed7e1763c4264c3489d5b0cba0.webp",
         "caption": "Nail Art"
       },
       {
-        "image": "/images/real/1790896910030_2009224944731400000_2009224944731400000_a70ae91498876e18bfcd9004ec99457d.webp",
-        "caption": "Premium Services"
+        "image": "/images/real/1790897027168_2009224944731400000_2009224944731400000_aaca2b39aac32c3c9b7a064c127ee915.webp",
+        "caption": "Manicure"
+      },
+      {
+        "image": "/images/real/1790897141928_2009224944731400000_2009224944731400000_33fcc4caa0c5601c616260b890917eac.webp",
+        "caption": "Pedicure"
+      },
+      {
+        "image": "/images/real/1790897245255_2009224944731400000_2009224944731400000_bb9cb9fe6169cee391dfc79836a7d314.webp",
+        "caption": "Gel Polish"
+      },
+      {
+        "image": "/images/real/1790897372254_2009224944731400000_2009224944731400000_4b40a8f8d61508de1b03f806e68b01fc.webp",
+        "caption": "Classic Look"
+      },
+      {
+        "image": "/images/real/4.webp",
+        "caption": "Acrylics"
+      },
+      {
+        "image": "/images/interior.jpg",
+        "caption": "Custom Art"
+      },
+      {
+        "image": "/images/exterior1.jpg",
+        "caption": "Salon Atmosphere"
       }
     ]
   },
