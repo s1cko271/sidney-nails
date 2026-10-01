@@ -213,20 +213,38 @@
     "buttonText": "Book Your Visit"
   },
   "reviews": {
-    "_comment": "Customer testimonials — shown on a dark background. Add real Google reviews here.",
-    "sectionTag": "Reviews",
-    "title": "What Our",
-    "titleAccent": "Clients Say",
-    "subtitle": "Real reviews from real clients — your satisfaction is our greatest reward.",
+    "sectionTag": "TESTIMONIALS",
+    "title": "CUSTOMER'S",
+    "titleAccent": "REVIEW",
+    "subtitle": "What our clients are saying about their experience.",
     "items": [
       {
-        "image": "/images/review-full-1.png"
+        "name": "Mari Kaplan",
+        "date": "3 months ago",
+        "stars": 5,
+        "text": "Great customer service! The staff were very friendly and apologetic for my wait time which wasn’t long during a very busy time. They even provided transportation to my hotel because it was raining, and I had walked to the salon. Very clean salon and I loved my manicure and pedicure.",
+        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23795548'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>M</text></svg>"
       },
       {
-        "image": "/images/review-full-2.png"
+        "name": "Susan Whittington",
+        "date": "2 months ago",
+        "stars": 5,
+        "text": "The service was wonderful. Clean and staff so friendly. My nail technician was so attentive to do a great job. I was impressed and would highly recommend their service.",
+        "avatar": "/images/susan-real.png"
       },
       {
-        "image": "/images/review-full-3.png"
+        "name": "Addison",
+        "date": "a month ago",
+        "stars": 5,
+        "text": "Haven’t had a pedicure in a couple years. Tried this place out for the first time and will definitely be coming back. The environment is very clean and the people are very friendly. I highly recommend!!",
+        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23607d8b'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>A</text></svg>"
+      },
+      {
+        "name": "Sarah Porter",
+        "date": "4 months ago",
+        "stars": 5,
+        "text": "Gorgeous space! Kind & welcoming staff. I got a basic set while my child got a much more detailed set & they were absolutely stunning. She is raving about how it was the best experience she has ever had and how we have found our new nail spot. Quick, quality service.",
+        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23d84315'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>S</text></svg>"
       }
     ]
   },
