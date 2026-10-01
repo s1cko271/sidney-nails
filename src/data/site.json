@@ -220,25 +220,13 @@
     "subtitle": "Real reviews from real clients — your satisfaction is our greatest reward.",
     "items": [
       {
-        "stars": 5,
-        "text": "I honestly didn't expect to be taken care of this well because the salon was pretty busy when I came in, but everyone was still so kind, patient, and attentive. I never felt like I was being rushed at all. They really took their time with my nails and made sure I was happy with the shape and design before finishing. I absolutely love how soft, clean, and elegant they turned out. I really appreciate how welcoming and helpful the team was even during a busy time. Thank you so much for the beautiful nails and such a great experience. I'll definitely be coming back!",
-        "name": "Karim Niylah",
-        "date": "Google Review • 1 month ago",
-        "avatar": "/images/karim-real.png"
+        "image": "/images/review-full-1.png"
       },
       {
-        "stars": 5,
-        "text": "The service was wonderful. Clean and staff so friendly. My nail technician was so attentive to do a great job. I was impressed and would highly recommend their service.",
-        "name": "Susan Whittington",
-        "date": "Google Review • 2 months ago",
-        "avatar": "/images/susan-real.png"
+        "image": "/images/review-full-2.png"
       },
       {
-        "stars": 5,
-        "text": "Such a great relaxing experience. This will be my new go to place for getting my nails done. Great Pedicure and Manicure",
-        "name": "Elaina Downs",
-        "date": "Google Review • 3 months ago",
-        "avatar": "/images/elaina-real.png"
+        "image": "/images/review-full-3.png"
       }
     ]
   },
