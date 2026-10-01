@@ -13,18 +13,18 @@ const googleIcon = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 
     <div class="relative max-w-[1150px] mx-auto">
       <!-- Navigation Arrows -->
-      <button id="prevReview" class="absolute -left-3 md:-left-12 top-[45%] -translate-y-1/2 z-20 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-white rounded-full shadow-lg border border-gray-100 text-gray-400 hover:text-brand-gold transition-colors hover:scale-110" aria-label="Previous">
+      <button id="prevReview" class="absolute -left-3 md:-left-12 top-[45%] -translate-y-1/2 z-20 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-white rounded-full shadow-grounded text-brand-charcoal/30 hover:text-brand-charcoal transition-colors" aria-label="Previous">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 md:w-7 md:h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
       </button>
       
-      <button id="nextReview" class="absolute -right-3 md:-right-12 top-[45%] -translate-y-1/2 z-20 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-white rounded-full shadow-lg border border-gray-100 text-gray-400 hover:text-brand-gold transition-colors hover:scale-110" aria-label="Next">
+      <button id="nextReview" class="absolute -right-3 md:-right-12 top-[45%] -translate-y-1/2 z-20 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-white rounded-full shadow-grounded text-brand-charcoal/30 hover:text-brand-charcoal transition-colors" aria-label="Next">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 md:w-7 md:h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
       </button>
 
       <!-- Carousel Container -->
       <div id="reviewsCarousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 pt-16 px-4 md:px-8 -mx-4 md:-mx-8 hide-scrollbar scroll-smooth">
         {siteData.reviews.items.map((review) => (
-          <div class="snap-center shrink-0 w-[300px] md:w-[350px] relative bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-gray-50 px-6 pb-8 pt-14">
+          <div class="snap-center shrink-0 w-[300px] md:w-[350px] relative bg-white rounded-xl shadow-grounded px-6 pb-8 pt-14">
             <!-- Avatar Overlap -->
             <div class="absolute -top-10 left-1/2 -translate-x-1/2">
               <img src={review.avatar} alt={review.name} class="w-20 h-20 rounded-full border-[5px] border-white shadow-sm object-cover bg-gray-100" />
