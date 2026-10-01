@@ -2,11 +2,12 @@
 import siteData from '../data/site.json';
 ---
 <section class="py-24 md:py-32 bg-brand-charcoal text-white relative overflow-hidden" id="reviews">
-  <!-- Subtle background glow for luxury feel -->
-  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[600px] bg-brand-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
+  <!-- Subtle background glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-brand-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
-    <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+  <!-- Expanded max width to 1400px so the 3 images have more room and are bigger/easier to read -->
+  <div class="max-w-[1400px] mx-auto px-6 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
       <div class="inline-block text-brand-goldLight text-xs font-bold tracking-[0.2em] uppercase mb-4">
         {siteData.reviews.sectionTag}
       </div>
@@ -18,11 +19,11 @@ import siteData from '../data/site.json';
       </p>
     </div>
 
-    <!-- Enlarged, Asymmetrical Vertical Feed Layout for maximum readability -->
-    <div class="flex flex-col gap-16 items-center max-w-3xl mx-auto">
-      {siteData.reviews.items.map((review, index) => (
-        <div class={`w-full rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 motion-safe:hover:scale-[1.03] reveal bg-[#202124] border border-white/10 ${index === 1 ? 'md:translate-x-8' : 'md:-translate-x-8'}`}>
-          <img src={review.image} alt="Google Maps Review" class="w-full h-auto block object-cover" />
+    <!-- 3 columns on one horizontal screen -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-start">
+      {siteData.reviews.items.map((review) => (
+        <div class="w-full rounded-2xl overflow-hidden shadow-lg transition-all duration-500 hover:scale-[1.05] hover:z-20 hover:shadow-2xl motion-safe:hover:-translate-y-2 reveal bg-[#202124] border border-white/10 relative">
+          <img src={review.image} alt="Google Maps Review" class="w-full h-auto block" />
         </div>
       ))}
     </div>
