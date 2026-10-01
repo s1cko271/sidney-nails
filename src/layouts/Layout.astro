@@ -1,4 +1,6 @@
 ---
+import ScrollSpy from "../components/ScrollSpy.astro";
+import siteData from "../data/site.json";
 import '../styles/global.css';
 import siteData from '../data/site.json';
 ---
@@ -47,7 +49,9 @@ import siteData from '../data/site.json';
   <slot />
 
   
-  <!-- STICKY SOCIAL SIDEBAR -->
+  <ScrollSpy />
+
+    <!-- STICKY SOCIAL SIDEBAR -->
   <div class="fixed left-0 top-1/2 -translate-y-1/2 z-[90] hidden md:flex flex-col bg-white shadow-[8px_8px_24px_rgba(0,0,0,0.1)] rounded-r-2xl border border-gray-100 overflow-hidden w-[60px] py-3 transition-transform duration-500 hover:translate-x-0 -translate-x-1">
     <!-- Facebook -->
     {siteData.social.facebook && (

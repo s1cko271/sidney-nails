@@ -1,0 +1,89 @@
+---
+import siteData from '../data/site.json';
+
+const navItems = [
+  { id: 'hero', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'services', label: 'Services' },
+  { id: 'pricing', label: 'Pricing' },
+  { id: 'gallery', label: 'Gallery' },
+  { id: 'reviews', label: 'Reviews' },
+  { id: 'booking', label: 'Contact' }
+];
+---
+
+<div class="fixed right-4 top-1/2 -translate-y-1/2 z-[90] hidden lg:flex flex-col gap-3 items-center justify-center p-3">
+  {navItems.map((item) => (
+    <a 
+      href={`/#${item.id}`} 
+      class="scrollspy-link group relative flex items-center justify-center w-6 h-6"
+      data-target={item.id}
+      aria-label={item.label}
+    >
+      <span class="absolute right-8 px-3 py-1 bg-brand-charcoal text-brand-goldLight text-xs font-semibold rounded opacity-0 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap shadow-md">
+        {item.label}
+      </span>
+      <span class="dot w-2 h-2 rounded-full bg-brand-charcoal/30 border-2 border-transparent transition-all duration-300 group-hover:scale-150 group-hover:bg-brand-gold"></span>
+    </a>
+  ))}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('.scrollspy-link');
+    
+    // Only run intersection logic if we are on the homepage
+    if(window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px', // Trigger when section is in the top/middle part of the viewport
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          if(!id) return;
+          
+          navLinks.forEach(link => {
+            const dot = link.querySelector('.dot');
+            if (link.getAttribute('data-target') === id) {
+              dot.classList.remove('bg-brand-charcoal/30', 'border-transparent');
+              dot.classList.add('bg-brand-gold', 'scale-[1.7]', 'border-brand-goldLight', 'shadow-[0_0_10px_rgba(212,175,55,0.7)]');
+            } else {
+              dot.classList.add('bg-brand-charcoal/30', 'border-transparent');
+              dot.classList.remove('bg-brand-gold', 'scale-[1.7]', 'border-brand-goldLight', 'shadow-[0_0_10px_rgba(212,175,55,0.7)]');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      if(section.hasAttribute('id')) {
+        observer.observe(section);
+      }
+    });
+    
+    // Add smooth scrolling for the clicks
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if(window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+        
+        e.preventDefault();
+        const targetId = this.getAttribute('data-target');
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
