@@ -24,7 +24,7 @@ const googleIcon = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <!-- Carousel Container -->
       <div id="reviewsCarousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-12 pt-16 px-4 md:px-8 -mx-4 md:-mx-8 hide-scrollbar scroll-smooth">
         {siteData.reviews.items.map((review) => (
-          <div class="snap-center shrink-0 w-[300px] md:w-[350px] relative bg-white rounded-xl shadow-grounded px-6 pb-8 pt-14">
+          <div class="snap-center shrink-0 w-[300px] md:w-[350px] relative bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] hover:shadow-xl transition-all duration-300 px-6 pb-8 pt-14">
             <!-- Avatar Overlap -->
             <div class="absolute -top-10 left-1/2 -translate-x-1/2">
               <img src={review.avatar} alt={review.name} class="w-20 h-20 rounded-full border-[5px] border-white shadow-sm object-cover bg-gray-100" />

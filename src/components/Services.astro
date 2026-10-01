@@ -24,7 +24,7 @@ import siteData from '../data/site.json';
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {siteData.services.items.map((svc, index) => (
-        <a href="/#booking" class="group bg-white rounded-2xl overflow-hidden shadow-grounded hover:shadow-grounded-hover transition-shadow duration-500 cursor-pointer flex flex-col reveal">
+        <a href="/#booking" class="group bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-1.5 cursor-pointer flex flex-col reveal">
           <div class="relative h-64 overflow-hidden">
             <img class="w-full h-full object-cover transition-transform duration-700 motion-safe:group-hover:scale-105" src={svc.image} alt={svc.name} />
             <div class="absolute top-4 left-4 w-10 h-10 rounded-full bg-white/95 flex items-center justify-center text-brand-charcoal text-xs font-bold font-body shadow-sm">

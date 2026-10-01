@@ -22,7 +22,7 @@ import siteData from '../data/site.json';
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
       {siteData.pricing.packages.map(pkg => (
-        <div class:list={["relative rounded-2xl p-10 lg:p-12 transition-shadow duration-500 reveal", pkg.featured ? 'bg-brand-charcoal text-white shadow-floating' : 'bg-white text-brand-charcoal shadow-grounded hover:shadow-grounded-hover']}>
+        <div class:list={["relative rounded-2xl p-10 lg:p-12 transition-all duration-500 reveal", pkg.featured ? 'bg-gradient-to-br from-brand-charcoal to-gray-900 text-white shadow-2xl hover:-translate-y-1.5' : 'bg-gradient-to-br from-white to-gray-50 text-brand-charcoal shadow-xl hover:shadow-2xl hover:-translate-y-1.5']}>
           
           {pkg.featured && pkg.featuredLabel && (
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold uppercase tracking-[0.2em] py-1.5 px-5 rounded-full shadow-md whitespace-nowrap">
