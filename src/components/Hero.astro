@@ -2,7 +2,7 @@
 import siteData from '../data/site.json';
 ---
 <section class="relative min-h-screen flex items-center justify-center bg-brand-charcoal overflow-hidden pt-24 md:pt-0">
-  <video class="absolute inset-0 w-full h-full object-cover brightness-[0.5]" autoplay muted loop playsinline><source src="/videos/2.mp4" type="video/mp4" /></video>
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-[0.5] animate-slow-pan" style={`background-image: url('${siteData.salon.interiorImage}')`}></div>
   <div class="absolute inset-0 bg-gradient-to-b from-brand-charcoal/20 to-brand-charcoal/70"></div>
   
   <div class="relative text-center max-w-4xl px-6 z-10 w-full mt-20 md:mt-28">

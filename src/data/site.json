@@ -13,7 +13,7 @@
     "phoneRaw": "7017610117",
     "email": "",
     "logoImage": "/images/logo-3d.jpg",
-    "interiorImage": "/images/real/1790896521232_2009224944731400000_2009224944731400000_2befdeee301db67c230aca06fed151ed.webp",
+    "interiorImage": "/images/interior.jpg",
     "exteriorImage": "/images/exterior2.jpg"
   },
   "hours": {
@@ -195,22 +195,6 @@
       {
         "image": "/images/real/1790897245255_2009224944731400000_2009224944731400000_bb9cb9fe6169cee391dfc79836a7d314.webp",
         "caption": "Gel Polish"
-      },
-      {
-        "image": "/images/real/1790897372254_2009224944731400000_2009224944731400000_4b40a8f8d61508de1b03f806e68b01fc.webp",
-        "caption": "Classic Look"
-      },
-      {
-        "image": "/images/real/4.webp",
-        "caption": "Acrylics"
-      },
-      {
-        "image": "/images/interior.jpg",
-        "caption": "Custom Art"
-      },
-      {
-        "image": "/images/exterior1.jpg",
-        "caption": "Salon Atmosphere"
       }
     ]
   },
