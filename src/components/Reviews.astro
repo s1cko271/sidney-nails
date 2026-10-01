@@ -1,54 +1,30 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section class="py-24 md:py-32 bg-brand-charcoal text-white overflow-hidden" id="reviews">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+<section class="py-24 md:py-32 bg-brand-charcoal text-white relative overflow-hidden" id="reviews">
+  <!-- Subtle background glow for luxury feel -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[600px] bg-brand-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-20 reveal">
       <div class="inline-block text-brand-goldLight text-xs font-bold tracking-[0.2em] uppercase mb-4">
         {siteData.reviews.sectionTag}
       </div>
-      <h2 class="font-display text-4xl md:text-5xl font-light mb-4">
+      <h2 class="font-display text-4xl md:text-5xl font-light mb-6">
         {siteData.reviews.title} <span class="font-semibold italic text-brand-gold">{siteData.reviews.titleAccent}</span>
       </h2>
-      <p class="text-white/60 leading-relaxed font-light">
+      <p class="text-white/60 leading-relaxed font-light text-lg">
         {siteData.reviews.subtitle}
       </p>
     </div>
-  </div>
 
-  <!-- Edge-to-Edge Carousel for large readable reviews -->
-  <div class="relative w-full px-4 md:px-12 reveal">
-    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-10 pb-8 pt-4 hide-scrollbar items-center">
-      <!-- Spacer for initial padding so the first card can be centered on mobile -->
-      <div class="shrink-0 w-2 md:w-[10vw]"></div>
-      
-      {siteData.reviews.items.map(review => (
-        <div class="snap-center shrink-0 w-[88vw] md:w-[70vw] lg:w-[850px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.08)] border border-white/10 bg-[#202124]">
-          <img src={review.image} alt="Authentic Google Review" class="w-full h-auto block" />
+    <!-- Enlarged, Asymmetrical Vertical Feed Layout for maximum readability -->
+    <div class="flex flex-col gap-16 items-center max-w-3xl mx-auto">
+      {siteData.reviews.items.map((review, index) => (
+        <div class={`w-full rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 motion-safe:hover:scale-[1.03] reveal bg-[#202124] border border-white/10 ${index === 1 ? 'md:translate-x-8' : 'md:-translate-x-8'}`}>
+          <img src={review.image} alt="Google Maps Review" class="w-full h-auto block object-cover" />
         </div>
       ))}
-      
-      <!-- Spacer for end padding -->
-      <div class="shrink-0 w-2 md:w-[10vw]"></div>
-    </div>
-    
-    <!-- Swipe Instructions -->
-    <div class="text-center text-white/30 text-sm font-light mt-4 flex items-center justify-center gap-3">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" /></svg>
-      <span class="tracking-widest uppercase text-[10px]">Swipe to read</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
     </div>
   </div>
 </section>
-
-<style>
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .hide-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-</style>
