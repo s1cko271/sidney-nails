@@ -1,0 +1,357 @@
+{
+  "_comment": "=== J&J NAIL SPA – SITE CONFIGURATION ===  Edit this file to update ALL text, images, and info shown on the website.  You do NOT need to touch any code files — just change values here and the site updates automatically.",
+  "salon": {
+    "_comment": "Basic info — shown in the browser tab title, header, footer, and hero section",
+    "name": "J&J Nail Spa",
+    "namePart1": "J&J",
+    "namePart2": "Nail Spa",
+    "tagline": "Premium Nail Salon & Spa",
+    "city": "Dickinson",
+    "state": "ND",
+    "fullAddress": "3275 W Ridge Dr, Dickinson, ND 58601",
+    "phone": "(701) 761-0117",
+    "phoneRaw": "7017610117",
+    "email": "",
+    "logoImage": "/images/logo.jpg",
+    "interiorImage": "/images/interior.jpg",
+    "exteriorImage": "/images/exterior2.jpg"
+  },
+  "hours": {
+    "_comment": "Business hours — shown in the booking/contact section and footer",
+    "line1": "Mon – Sat: 9:30 AM – 7:00 PM",
+    "line2": "Sunday: 11:00 AM – 5:00 PM"
+  },
+  "hero": {
+    "_comment": "The big intro section at the very top of the page",
+    "headlineLine1": "Where Beauty",
+    "headlineLine2": "Meets Elegance",
+    "description": "Experience luxury nail care with premium products, expert technicians, and a relaxing atmosphere designed for your comfort.",
+    "ctaPrimary": "Book Your Appointment",
+    "ctaSecondary": "View Our Services",
+    "stats": [
+      {
+        "value": "500+",
+        "label": "Happy Clients"
+      },
+      {
+        "value": "5.0 ★",
+        "label": "Google Rating"
+      },
+      {
+        "value": "10% Off",
+        "label": "All Services"
+      }
+    ]
+  },
+  "marquee": {
+    "_comment": "The scrolling text strip below the hero — lists your service keywords",
+    "items": [
+      "Gel Manicure",
+      "Pedicure & Spa",
+      "Nail Art",
+      "Acrylic Nails",
+      "Dipping Powder",
+      "Waxing",
+      "Eyelash Extensions"
+    ]
+  },
+  "about": {
+    "_comment": "The 'About Us' section — tells visitors what makes your salon special",
+    "sectionTag": "About Us",
+    "title": "Your Destination for",
+    "titleAccent": "Premium Nail Care",
+    "paragraphs": [
+      "Welcome to J&J Nail Spa — a brand new, state-of-the-art nail salon designed with your comfort and beauty in mind. Our spacious, modern interior features luxurious spa chairs, marble floors, and a warm, inviting atmosphere.",
+      "Our team of highly skilled technicians brings years of experience and a passion for nail artistry to every appointment. We use only top-quality, safe products to ensure beautiful, long-lasting results."
+    ],
+    "highlights": [
+      "Premium Products",
+      "Hygienic & Safe",
+      "Expert Technicians",
+      "Walk-ins Welcome"
+    ],
+    "badgeLabel": "Now Open",
+    "badgeValue": "10% Off All Services"
+  },
+  "services": {
+    "_comment": "The 6 service cards — each shows an image, name, short description, and starting price",
+    "sectionTag": "Our Services",
+    "title": "Complete Nail Care",
+    "titleAccent": "& Beauty Services",
+    "subtitle": "From classic manicures to creative nail art — we offer a full range of services using premium products for lasting results.",
+    "items": [
+      {
+        "name": "Gel Manicure",
+        "description": "Long-lasting gel polish, chip-free for 3-4 weeks with a beautiful, glossy finish.",
+        "price": "From $30",
+        "image": "/images/nail1.jpg"
+      },
+      {
+        "name": "Pedicure & Spa",
+        "description": "Relaxing foot soak, exfoliation, hot stone massage, and your choice of polish.",
+        "price": "From $35",
+        "image": "/images/nail2.jpg"
+      },
+      {
+        "name": "Nail Art & Design",
+        "description": "Custom hand-painted designs, trendy styles from Korea & Japan, personalized for you.",
+        "price": "From $5/nail",
+        "image": "/images/nail3.jpg"
+      },
+      {
+        "name": "Acrylic & Dip Powder",
+        "description": "Strong, durable nail extensions with natural-looking results and custom shaping.",
+        "price": "From $45",
+        "image": "/images/nail4.jpg"
+      },
+      {
+        "name": "Waxing Services",
+        "description": "Gentle, effective waxing for smooth skin — eyebrow, lip, arm, leg, and full body.",
+        "price": "From $10",
+        "image": "/images/nail5.jpg"
+      },
+      {
+        "name": "Eyelash Extensions",
+        "description": "Natural or dramatic lash extensions, customized to your eye shape and style.",
+        "price": "From $80",
+        "image": "/images/nail6.jpg"
+      }
+    ]
+  },
+  "pricing": {
+    "_comment": "The pricing cards section — set 'featured' to true on the most popular package (it gets a dark highlight)",
+    "sectionTag": "Pricing",
+    "title": "Transparent Pricing,",
+    "titleAccent": "No Hidden Fees",
+    "subtitle": "All prices include labor and materials. What you see is what you pay.",
+    "packages": [
+      {
+        "name": "Classic",
+        "price": "$25",
+        "unit": "Starting price",
+        "description": "Essential nail care for a quick, polished look.",
+        "featured": false,
+        "features": [
+          "Shape & file",
+          "Cuticle care",
+          "Regular polish",
+          "Basic moisturize"
+        ]
+      },
+      {
+        "name": "Gel Deluxe",
+        "price": "$45",
+        "unit": "Starting price",
+        "description": "Our best-selling package — gel polish that lasts 3-4 weeks.",
+        "featured": true,
+        "featuredLabel": "MOST POPULAR",
+        "features": [
+          "Shape & file",
+          "Hot towel & cuticle",
+          "Premium gel polish",
+          "Hand massage",
+          "Moisturize & seal"
+        ]
+      },
+      {
+        "name": "Full Spa Combo",
+        "price": "$75",
+        "unit": "Hands + Feet",
+        "description": "Complete pampering — gel manicure & spa pedicure combo.",
+        "featured": false,
+        "features": [
+          "Gel manicure",
+          "Spa pedicure",
+          "Hot stone massage",
+          "Paraffin treatment",
+          "Save $5 vs separate"
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "_comment": "The photo gallery — first image spans 2 rows and is taller. Add/remove items as needed.",
+    "sectionTag": "Our Work",
+    "title": "Featured",
+    "titleAccent": "Nail Designs",
+    "items": [
+      {
+        "image": "/images/nail1.jpg",
+        "caption": "Ombre Red – Gel"
+      },
+      {
+        "image": "/images/nail3.jpg",
+        "caption": "Nude Gold – Crystal"
+      },
+      {
+        "image": "/images/interior.jpg",
+        "caption": "Our Salon Interior"
+      },
+      {
+        "image": "/images/exterior2.jpg",
+        "caption": "J&J Nail Spa Storefront"
+      },
+      {
+        "image": "/images/nail2.jpg",
+        "caption": "French Classic"
+      },
+      {
+        "image": "/images/nail5.jpg",
+        "caption": "Crystal Luxury"
+      },
+      {
+        "image": "/images/nail6.jpg",
+        "caption": "Minimalist Art"
+      }
+    ]
+  },
+  "promo": {
+    "_comment": "The gold promotional banner — use for grand opening, seasonal deals, etc. Set 'enabled' to false to hide it.",
+    "enabled": true,
+    "headline": "Grand Opening — 10% Off All Services!",
+    "text": "Visit us today and enjoy our opening special. Walk-ins welcome, appointments preferred.",
+    "buttonText": "Book Your Visit"
+  },
+  "reviews": {
+    "_comment": "Customer testimonials — shown on a dark background. Add real Google reviews here.",
+    "sectionTag": "Reviews",
+    "title": "What Our",
+    "titleAccent": "Clients Say",
+    "subtitle": "Real reviews from real clients — your satisfaction is our greatest reward.",
+    "items": [
+      {
+        "stars": 5,
+        "text": "Absolutely love this place! The salon is beautiful and so clean. My gel manicure lasted over 3 weeks with zero chips. The staff is so friendly and talented. Highly recommend!",
+        "name": "Sarah M.",
+        "date": "Google Review · 1 week ago",
+        "avatar": "/images/av1.jpg"
+      },
+      {
+        "stars": 5,
+        "text": "Best nail salon in town! The interior is gorgeous — feels like a luxury spa. My pedicure was so relaxing and the nail art they did was exactly what I wanted. Will be back!",
+        "name": "Emily R.",
+        "date": "Google Review · 2 weeks ago",
+        "avatar": "/images/av2.jpg"
+      },
+      {
+        "stars": 5,
+        "text": "Brand new salon, everything is so fresh and modern. They really take their time with each client. Fair prices and amazing results. Found my new go-to nail spot!",
+        "name": "Jessica L.",
+        "date": "Google Review · 3 weeks ago",
+        "avatar": "/images/av3.jpg"
+      }
+    ]
+  },
+  "booking": {
+    "_comment": "The contact & appointment section at the bottom of the page",
+    "sectionTag": "Contact & Book",
+    "title": "Book Your",
+    "titleAccent": "Appointment",
+    "subtitle": "Walk-ins welcome! For guaranteed seating, book ahead — we'll confirm via text within 15 minutes.",
+    "formTitle": "Request an Appointment",
+    "formSubtitle": "Fill in your details and we'll get back to you shortly",
+    "formButtonText": "Request Appointment",
+    "formSuccessMessage": "Appointment requested! We will confirm via text within 15 minutes.",
+    "bookingUrl": "REPLACE_WITH_SQUARE_BOOKING_LINK"
+  },
+  "map": {
+    "_comment": "Google Maps embed — the 'embedUrl' is the iframe embed link, 'directionsUrl' opens Google Maps directly",
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2756.0!2d-102.8!3d46.88!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zSiZKIE5haWwgU3Bh!5e0!3m2!1sen!2sus!4v1",
+    "directionsUrl": "https://maps.app.goo.gl/yJxeiAmpBwBP38pA9"
+  },
+  "social": {
+    "_comment": "Social media links — shown in the footer. Leave blank or remove any you don't use.",
+    "facebook": "#",
+    "instagram": "#",
+    "tiktok": "#",
+    "googleMaps": "https://maps.app.goo.gl/yJxeiAmpBwBP38pA9"
+  },
+  "nav": {
+    "_comment": "Navigation menu items — controls both desktop nav and mobile hamburger menu",
+    "items": [
+      {
+        "label": "About",
+        "href": "/#about"
+      },
+      {
+        "label": "Services",
+        "href": "/#services"
+      },
+      {
+        "label": "Pricing",
+        "href": "/#pricing"
+      },
+      {
+        "label": "Gallery",
+        "href": "/#gallery"
+      },
+      {
+        "label": "Reviews",
+        "href": "/#reviews"
+      },
+      {
+        "label": "Contact",
+        "href": "/#booking"
+      }
+    ],
+    "ctaText": "Book Now"
+  },
+  "promotions": {
+    "_comment": "Gift cards and special offers section",
+    "sectionTag": "Specials",
+    "title": "Gift Cards &",
+    "titleAccent": "Promotions",
+    "subtitle": "Treat yourself or a loved one with our exclusive salon offers.",
+    "items": [
+      {
+        "icon": "✨",
+        "title": "First-Visit Offer",
+        "description": "New to our salon? Enjoy a special discount on your first service with us. Mention this offer when booking.",
+        "offer": "10% OFF"
+      },
+      {
+        "icon": "🎁",
+        "title": "Gift Cards",
+        "description": "The perfect gift for any occasion. Available in-store in any denomination.",
+        "offer": "Purchase In-Store"
+      },
+      {
+        "icon": "👯‍♀️",
+        "title": "Referral Program",
+        "description": "Bring a friend! When your referral completes their first service, you both get a reward.",
+        "offer": "$5 OFF Both"
+      }
+    ]
+  },
+  "policies": {
+    "_comment": "Salon policies and etiquette for the Policies page",
+    "title": "Salon Policies",
+    "subtitle": "Please review our guidelines to ensure a relaxing experience for everyone.",
+    "items": [
+      {
+        "title": "Cancellation Policy",
+        "content": "We require at least 24 hours notice for any cancellations or rescheduling. Late cancellations may be subject to a fee."
+      },
+      {
+        "title": "Late Arrival",
+        "content": "If you are more than 15 minutes late, we may need to reschedule your appointment or shorten your service time to accommodate other clients."
+      },
+      {
+        "title": "Walk-Ins",
+        "content": "Walk-ins are always welcome, but appointments are highly recommended to guarantee your preferred time and technician."
+      },
+      {
+        "title": "Payment & Gratuity",
+        "content": "We accept Cash, Visa, Mastercard, and Discover. Gratuities are greatly appreciated and can be left in cash or added to your card."
+      },
+      {
+        "title": "Kids & Guests",
+        "content": "For the safety of children and the relaxation of our guests, we ask that children only accompany you if they are receiving a service."
+      },
+      {
+        "title": "Accessibility",
+        "content": "Our salon is fully wheelchair accessible. Please let us know if you require any special accommodations when booking."
+      }
+    ]
+  }
+}

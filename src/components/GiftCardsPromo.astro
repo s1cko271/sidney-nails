@@ -1,0 +1,25 @@
+---
+import siteData from '../data/site.json';
+---
+
+<section class="section section-white" id="promotions">
+  <div class="s-header center reveal">
+    <div class="s-tag">{siteData.promotions.sectionTag}</div>
+    <h2 class="s-title">{siteData.promotions.title} <span>{siteData.promotions.titleAccent}</span></h2>
+    <p class="s-sub">{siteData.promotions.subtitle}</p>
+      <div class="gilded-divider" aria-hidden="true">
+        <span class="gilded-line"></span><span class="gilded-icon">✦</span><span class="gilded-line"></span>
+      </div>
+
+  </div>
+  <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+    {siteData.promotions.items.map(promo => (
+      <div class="svc reveal" style="padding: 2.5rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center;">
+         <div class="ic-icon" style="margin-bottom: 1.5rem; width: 64px; height: 64px; font-size: 1.8rem; border-radius: 50%;">{promo.icon}</div>
+         <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600; color: var(--charcoal);">{promo.title}</h3>
+         <p style="color: var(--grey4); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.8rem; flex-grow: 1;">{promo.description}</p>
+         <div style="color: var(--gold-dark); font-weight: 700; font-size: 1.15rem; background: var(--offwhite); padding: 0.6rem 1.5rem; border-radius: 40px; border: 1px solid var(--grey2);">{promo.offer}</div>
+      </div>
+    ))}
+  </div>
+</section>

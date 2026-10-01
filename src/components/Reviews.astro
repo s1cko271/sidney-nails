@@ -1,0 +1,28 @@
+---
+import siteData from '../data/site.json';
+---
+
+<div class="section-dark" id="reviews">
+  <div style="max-width:1200px;margin:0 auto;padding:100px 4%">
+    <div class="s-header center reveal">
+      <div class="s-tag" style="color:var(--gold-light)">{siteData.reviews.sectionTag}</div>
+      <h2 class="s-title" style="color:var(--white)">{siteData.reviews.title} <span>{siteData.reviews.titleAccent}</span></h2>
+      <p class="s-sub" style="color:var(--grey3)">{siteData.reviews.subtitle}</p>
+    </div>
+    <div class="testi-grid">
+      {siteData.reviews.items.map(review => (
+        <div class="tc reveal">
+          <div class="tc-stars">{'★'.repeat(review.stars)}</div>
+          <p class="tc-text">"{review.text}"</p>
+          <div class="tc-user">
+            <img class="tc-av" src={review.avatar} alt={review.name} />
+            <div>
+              <div class="tc-name">{review.name}</div>
+              <div class="tc-date">{review.date}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

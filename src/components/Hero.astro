@@ -1,0 +1,42 @@
+---
+import siteData from '../data/site.json';
+---
+
+<section class="hero">
+  <div class="hero-bg" style={`background-image: url('${siteData.salon.interiorImage}')`}></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img class="hero-logo" src={siteData.salon.logoImage} alt={siteData.salon.name} />
+    <div class="hero-tag">{siteData.salon.tagline} &middot; {siteData.salon.city}, {siteData.salon.state}</div>
+    <h1>{siteData.hero.headlineLine1}<br/><em>{siteData.hero.headlineLine2}</em></h1>
+      <div class="gilded-divider" aria-hidden="true">
+        <span class="gilded-line"></span><span class="gilded-icon">✦</span><span class="gilded-line"></span>
+      </div>
+
+    <p class="hero-sub">{siteData.hero.description}</p>
+    <div class="hero-btns">
+      <a class="btn-gold" href="/#booking">{siteData.hero.ctaPrimary}</a>
+      <a class="btn-white-outline" href="/#services">{siteData.hero.ctaSecondary}</a>
+    </div>
+    <div class="hero-stats">
+      {siteData.hero.stats.map(stat => (
+        <div>
+          <div class="hs-num">{stat.value}</div>
+          <div class="hs-label">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    {siteData.marquee.items.map(item => (
+      <span class="marquee-item">{item} <span class="marquee-dot"></span></span>
+    ))}
+    {siteData.marquee.items.map(item => (
+      <span class="marquee-item">{item} <span class="marquee-dot"></span></span>
+    ))}
+  </div>
+</div>

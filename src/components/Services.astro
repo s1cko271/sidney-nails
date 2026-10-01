@@ -1,0 +1,33 @@
+---
+import siteData from '../data/site.json';
+---
+
+<section class="section" id="services">
+  <div class="s-header center reveal">
+    <div class="s-tag">{siteData.services.sectionTag}</div>
+    <h2 class="s-title">{siteData.services.title} <span>{siteData.services.titleAccent}</span></h2>
+    <p class="s-sub">{siteData.services.subtitle}</p>
+      <div class="gilded-divider" aria-hidden="true">
+        <span class="gilded-line"></span><span class="gilded-icon">✦</span><span class="gilded-line"></span>
+      </div>
+
+  </div>
+  <div class="services-grid">
+    {siteData.services.items.map((svc, index) => (
+      <div class="svc reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src={svc.image} alt={svc.name} />
+          <div class="svc-num">{String(index + 1).padStart(2, '0')}</div>
+        </div>
+        <div class="svc-body">
+          <h3>{svc.name}</h3>
+          <p>{svc.description}</p>
+        </div>
+        <div class="svc-foot">
+          <span class="svc-price">{svc.price}</span>
+          <span class="svc-arrow">→</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

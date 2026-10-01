@@ -1,0 +1,70 @@
+---
+import siteData from '../data/site.json';
+---
+
+<div class="section-white" id="booking">
+  <div class="booking-grid">
+    <div class="bk-info reveal">
+      <div class="s-tag">{siteData.booking.sectionTag}</div>
+      <h2 class="s-title">{siteData.booking.title} <span>{siteData.booking.titleAccent}</span></h2>
+      <p class="s-sub">{siteData.booking.subtitle}</p>
+      <div class="gilded-divider" aria-hidden="true">
+        <span class="gilded-line"></span><span class="gilded-icon">✦</span><span class="gilded-line"></span>
+      </div>
+
+
+      <div class="info-card">
+        <div class="ic">
+          <div class="ic-icon">📍</div>
+          <div>
+            <div class="ic-label">Address</div>
+            <div class="ic-val">{siteData.salon.fullAddress}</div>
+          </div>
+        </div>
+        <div class="ic">
+          <div class="ic-icon">📞</div>
+          <div>
+            <div class="ic-label">Phone</div>
+            <div class="ic-val">
+              <a href={`tel:${siteData.salon.phoneRaw}`} style="color:var(--gold);text-decoration:none;font-weight:600">{siteData.salon.phone}</a>
+            </div>
+          </div>
+        </div>
+        <div class="ic">
+          <div class="ic-icon">🕐</div>
+          <div>
+            <div class="ic-label">Hours</div>
+            <div class="ic-val">{siteData.hours.line1}<br/>{siteData.hours.line2}</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-radius:var(--radius);overflow:hidden;margin-top:1.5rem;border:1px solid var(--grey2)">
+        <iframe src={siteData.map.embedUrl} width="100%" height="220" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <a href={siteData.map.directionsUrl} target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:.8rem;color:var(--gold);font-size:.85rem;font-weight:500;text-decoration:none">📍 Open in Google Maps →</a>
+    </div>
+
+    <div class="bk-form reveal" style="display:flex; flex-direction:column; padding:0; overflow:hidden;">
+      <div style="padding: 2.5rem 2.5rem 1rem;">
+        <h3>{siteData.booking.formTitle}</h3>
+        <p class="f-sub">Book your appointment securely via Square.</p>
+      </div>
+      <div style="flex-grow:1; background: #fff; border-top: 1px solid var(--grey2);">
+        {siteData.booking.bookingUrl === "REPLACE_WITH_SQUARE_BOOKING_LINK" ? (
+          <div style="padding: 4rem 2rem; text-align: center; color: var(--grey4);">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">📅</div>
+            <p style="margin-bottom: 1.5rem;"><strong>Booking Widget Placeholder</strong><br/>Your Square Appointments widget will appear here.</p>
+            <a href="#" class="f-btn" style="display:inline-block; width:auto; text-decoration:none; padding: 0.8rem 2rem;">{siteData.booking.formButtonText}</a>
+          </div>
+        ) : (
+          <iframe 
+            src={siteData.booking.bookingUrl} 
+            style="width:100%; height: 500px; border:none; display:block;" 
+            title="Square Booking Widget">
+          </iframe>
+        )}
+      </div>
+    </div>
+  </div>
+</div>

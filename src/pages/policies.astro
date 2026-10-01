@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteData from '../data/site.json';
+---
+
+<Layout>
+  <div class="section-alt" style="padding-top: 150px; min-height: 100vh;">
+    <div style="max-width:800px; margin:0 auto; padding: 0 4% 100px;">
+      <div class="s-header center reveal">
+        <h1 class="s-title">{siteData.policies.title}</h1>
+        <p class="s-sub">{siteData.policies.subtitle}</p>
+      </div>
+
+      <div class="reveal" style="background: var(--white); border: 1px solid var(--grey2); border-radius: var(--radius); padding: 3rem;">
+        {siteData.policies.items.map((policy, index) => (
+          <div style={index !== 0 ? "margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--grey1);" : ""}>
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--charcoal); margin-bottom: 1rem; font-weight: 600;">
+              {policy.title}
+            </h3>
+            <p style="color: var(--grey4); font-size: 1rem; line-height: 1.8; font-weight: 300;">
+              {policy.content}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

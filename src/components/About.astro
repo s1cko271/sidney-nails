@@ -1,0 +1,31 @@
+---
+import siteData from '../data/site.json';
+---
+
+<section class="section section-alt" id="about">
+  <div style="max-width:1200px;margin:0 auto;padding:100px 4%">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img class="about-img" src={siteData.salon.interiorImage} alt={`${siteData.salon.name} Interior`} />
+        <div class="about-badge">
+          <div>
+            <div class="ab-label">{siteData.about.badgeLabel}</div>
+            <div class="ab-val">{siteData.about.badgeValue}</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="s-tag">{siteData.about.sectionTag}</div>
+        <h2 class="s-title">{siteData.about.title} <span>{siteData.about.titleAccent}</span></h2>
+        {siteData.about.paragraphs.map((para, index) => (
+          <p style={index === 0 ? "margin-top:1.2rem" : ""}>{para}</p>
+        ))}
+        <div class="about-highlights">
+          {siteData.about.highlights.map(highlight => (
+            <div class="ah-item"><span class="ah-check">✓</span> {highlight}</div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

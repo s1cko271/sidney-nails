@@ -1,0 +1,26 @@
+---
+import siteData from '../data/site.json';
+---
+
+<section class="section" id="gallery">
+  <div class="s-header center reveal">
+    <div class="s-tag">{siteData.gallery.sectionTag}</div>
+    <h2 class="s-title">{siteData.gallery.title} <span>{siteData.gallery.titleAccent}</span></h2>
+  </div>
+  <div class="gallery-grid">
+    {siteData.gallery.items.map(item => (
+      <div class="gal reveal">
+        <img src={item.image} alt={item.caption} />
+        <div class="gal-ov"><span>{item.caption}</span></div>
+      </div>
+    ))}
+  </div>
+</section>
+
+{siteData.promo.enabled && (
+  <div class="promo">
+    <h2>{siteData.promo.headline}</h2>
+    <p>{siteData.promo.text}</p>
+    <a class="promo-btn" href="/#booking">{siteData.promo.buttonText}</a>
+  </div>
+)}
