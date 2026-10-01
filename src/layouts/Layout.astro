@@ -27,7 +27,7 @@ import siteData from '../data/site.json';
         ))}
       </ul>
       <a class="hidden md:inline-block bg-brand-gold text-brand-charcoal px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-brand-goldLight hover:shadow-glow transition-all duration-300 hover:-translate-y-0.5" href="/#booking">{siteData.nav.ctaText}</a>
-      <div class="lg:hidden flex flex-col justify-center gap-1.5 cursor-pointer z-[100] p-3 -mr-3" onclick="document.getElementById('mobileMenu').classList.add('translate-x-0')">
+      <div class="lg:hidden flex flex-col justify-center gap-1.5 cursor-pointer z-[100] p-3 -mr-3" onclick="document.getElementById('mobileMenu').classList.remove('translate-x-full'); document.getElementById('mobileMenu').classList.add('translate-x-0');">
         <span class="w-6 h-0.5 bg-brand-cream rounded-full"></span>
         <span class="w-6 h-0.5 bg-brand-cream rounded-full"></span>
         <span class="w-6 h-0.5 bg-brand-cream rounded-full"></span>
@@ -37,11 +37,11 @@ import siteData from '../data/site.json';
 
   <!-- MOBILE MENU -->
   <div class="fixed inset-0 bg-brand-charcoal/95 backdrop-blur-xl z-[100] translate-x-full transition-transform duration-500 flex flex-col justify-center items-center gap-8" id="mobileMenu">
-    <button class="absolute top-6 right-6 text-brand-cream text-4xl w-12 h-12 flex items-center justify-center" onclick="this.parentElement.classList.remove('translate-x-0')">&times;</button>
+    <button class="absolute top-6 right-6 text-brand-cream text-4xl w-12 h-12 flex items-center justify-center" onclick="this.parentElement.classList.remove('translate-x-0'); this.parentElement.classList.add('translate-x-full');">&times;</button>
     {siteData.nav.items.map(item => (
-      <a class="text-brand-cream text-2xl font-display tracking-widest hover:text-brand-gold transition-colors" href={item.href} onclick="this.parentElement.classList.remove('translate-x-0')">{item.label}</a>
+      <a class="text-brand-cream text-2xl font-display tracking-widest hover:text-brand-gold transition-colors" href={item.href} onclick="this.parentElement.classList.remove('translate-x-0'); this.parentElement.classList.add('translate-x-full');">{item.label}</a>
     ))}
-    <a class="mt-4 bg-brand-gold text-brand-charcoal px-8 py-3 rounded-full font-bold uppercase tracking-wider" href={`tel:${siteData.salon.phoneRaw}`} onclick="this.parentElement.classList.remove('translate-x-0')">Call {siteData.salon.phone}</a>
+    <a class="mt-4 bg-brand-gold text-brand-charcoal px-8 py-3 rounded-full font-bold uppercase tracking-wider" href={`tel:${siteData.salon.phoneRaw}`} onclick="this.parentElement.classList.remove('translate-x-0'); this.parentElement.classList.add('translate-x-full');">Call {siteData.salon.phone}</a>
   </div>
 
   <slot />
@@ -189,7 +189,7 @@ import siteData from '../data/site.json';
             e.preventDefault();
             t.scrollIntoView({ behavior: 'smooth', block: 'start' });
             const mobileMenu = document.getElementById('mobileMenu');
-            if(mobileMenu.classList.contains('translate-x-0')) mobileMenu.classList.remove('translate-x-0');
+            if(mobileMenu.classList.contains('translate-x-0')) { mobileMenu.classList.remove('translate-x-0'); mobileMenu.classList.add('translate-x-full'); }
           }
         }
       });
