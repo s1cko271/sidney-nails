@@ -317,10 +317,10 @@
         "offer": "Purchase In-Store"
       },
       {
-        "icon": "👯‍♀️",
-        "title": "Referral Program",
-        "description": "Bring a friend! When your referral completes their first service, you both get a reward.",
-        "offer": "$5 OFF Both"
+        "icon": "shield",
+        "title": "Quality Guarantee",
+        "description": "We stand behind our work. Your satisfaction is our top priority. Contact us for any fixes within our warranty period.",
+        "offer": "100% Guaranteed"
       }
     ]
   },
