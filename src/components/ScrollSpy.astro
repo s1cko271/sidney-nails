@@ -12,18 +12,18 @@ const navItems = [
 ];
 ---
 
-<div class="fixed right-4 top-1/2 -translate-y-1/2 z-[90] hidden lg:flex flex-col gap-3 items-center justify-center p-3">
+<div class="fixed right-1 md:right-4 top-1/2 -translate-y-1/2 z-[90] flex flex-col gap-2 md:gap-3 items-center justify-center p-1 md:p-3">
   {navItems.map((item) => (
     <a 
       href={`/#${item.id}`} 
-      class="scrollspy-link group relative flex items-center justify-center w-6 h-6"
+      class="scrollspy-link group relative flex items-center justify-center w-5 h-5 md:w-6 md:h-6"
       data-target={item.id}
       aria-label={item.label}
     >
-      <span class="absolute right-8 px-3 py-1 bg-brand-charcoal text-brand-goldLight text-xs font-semibold rounded opacity-0 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap shadow-md">
+      <span class="absolute right-6 md:right-8 hidden md:block px-3 py-1 bg-brand-charcoal text-brand-goldLight text-xs font-semibold rounded opacity-0 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap shadow-md">
         {item.label}
       </span>
-      <span class="dot w-2 h-2 rounded-full bg-brand-charcoal/30 border-2 border-transparent transition-all duration-300 group-hover:scale-150 group-hover:bg-brand-gold"></span>
+      <span class="dot w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-brand-charcoal/30 border-2 border-transparent transition-all duration-300 group-hover:scale-150 group-hover:bg-brand-gold"></span>
     </a>
   ))}
 </div>
