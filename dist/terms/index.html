@@ -48,15 +48,12 @@
     function closePromoPopup() {
       const popup = document.getElementById('promoPopup');
       popup.classList.remove('active');
-      sessionStorage.setItem('promoSeen', 'true');
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      if (!sessionStorage.getItem('promoSeen')) {
-        // Luxury timing: Wait for hero animations (1.5s) to finish before gently fading in the popup
-        setTimeout(() => {
-          document.getElementById('promoPopup').classList.add('active');
-        }, 1800);
-      }
+      // Show every time the page loads
+      setTimeout(() => {
+        document.getElementById('promoPopup').classList.add('active');
+      }, 1800);
     });
   </script> </body> </html>
