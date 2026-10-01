@@ -177,58 +177,28 @@
     "titleAccent": "Nail Designs",
     "items": [
       {
-        "image": "/images/nail1.jpg",
-        "caption": "Ombre Red – Gel"
+        "image": "/images/real/1790896559868_2009224944731400000_2009224944731400000_7d52d663d712703e8782213dd14b444e.webp",
+        "caption": "Real Nail Design"
       },
       {
-        "image": "/images/nail3.jpg",
-        "caption": "Nude Gold – Crystal"
+        "image": "/images/real/1790896645917_2009224944731400000_2009224944731400000_c33c6c488c2b845b9820a6a188999031.webp",
+        "caption": "Classic Polish"
       },
       {
-        "image": "/images/interior.jpg",
-        "caption": "Our Salon Interior"
+        "image": "/images/real/1790896712871_2009224944731400000_2009224944731400000_02c8fd6c78794861ad8b8692e4bde856.webp",
+        "caption": "Salon Atmosphere"
       },
       {
-        "image": "/images/exterior2.jpg",
-        "caption": "J&J Nail Spa Storefront"
+        "image": "/images/real/1790896777850_2009224944731400000_2009224944731400000_adae9a09fc8e7562ebcd91ae38ea46f7.webp",
+        "caption": "Storefront View"
       },
       {
-        "image": "/images/nail2.jpg",
-        "caption": "French Classic"
+        "image": "/images/real/1790896844387_2009224944731400000_2009224944731400000_797b9c0d92fcf2ac12d5f52f09b0e16a.webp",
+        "caption": "Nail Art"
       },
       {
-        "image": "/images/nail5.jpg",
-        "caption": "Crystal Luxury"
-      },
-      {
-        "image": "/images/nail6.jpg",
-        "caption": "Minimalist Art"
-      }
-    ],
-    "images": [
-      {
-        "url": "/images/real/1790896559868_2009224944731400000_2009224944731400000_7d52d663d712703e8782213dd14b444e.webp",
-        "alt": "Real nail salon service photo"
-      },
-      {
-        "url": "/images/real/1790896645917_2009224944731400000_2009224944731400000_c33c6c488c2b845b9820a6a188999031.webp",
-        "alt": "Real nail salon service photo"
-      },
-      {
-        "url": "/images/real/1790896712871_2009224944731400000_2009224944731400000_02c8fd6c78794861ad8b8692e4bde856.webp",
-        "alt": "Real nail salon service photo"
-      },
-      {
-        "url": "/images/real/1790896777850_2009224944731400000_2009224944731400000_adae9a09fc8e7562ebcd91ae38ea46f7.webp",
-        "alt": "Real nail salon service photo"
-      },
-      {
-        "url": "/images/real/1790896844387_2009224944731400000_2009224944731400000_797b9c0d92fcf2ac12d5f52f09b0e16a.webp",
-        "alt": "Real nail salon service photo"
-      },
-      {
-        "url": "/images/real/1790896910030_2009224944731400000_2009224944731400000_a70ae91498876e18bfcd9004ec99457d.webp",
-        "alt": "Real nail salon service photo"
+        "image": "/images/real/1790896910030_2009224944731400000_2009224944731400000_a70ae91498876e18bfcd9004ec99457d.webp",
+        "caption": "Premium Services"
       }
     ]
   },
