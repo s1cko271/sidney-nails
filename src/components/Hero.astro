@@ -19,7 +19,7 @@ import siteData from '../data/site.json';
     
     <div class="flex items-center justify-center gap-3 my-8 opacity-0 animate-fade-in-up" style="animation-delay: 450ms;" aria-hidden="true">
       <span class="w-16 h-px bg-brand-gold"></span>
-      <span class="text-brand-gold text-xs animate-spin-slow">✦</span>
+      <span class="text-brand-gold text-xs animate-spin-slow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg></span>
       <span class="w-16 h-px bg-brand-gold"></span>
     </div>
 
@@ -36,7 +36,7 @@ import siteData from '../data/site.json';
       </a>
     </div>
     
-    <div class="flex flex-wrap justify-center gap-6 md:gap-12 mt-16 pt-8 border-t border-brand-cream/10 opacity-0 animate-fade-in-up" style="animation-delay: 900ms;">
+    <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4 md:gap-12 mt-16 pt-8 border-t border-brand-cream/10 opacity-0 animate-fade-in-up" style="animation-delay: 900ms;">
       {siteData.hero.stats.map(stat => (
         <div class="text-center">
           <div class="font-display text-3xl md:text-4xl text-brand-goldLight font-bold">{stat.value}</div>
