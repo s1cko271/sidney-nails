@@ -37,9 +37,14 @@ const googleIcon = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <div class="flex justify-center gap-1 text-[#ffb400] mb-5">
                 {'★★★★★'.split('').map(star => <span class="text-xl md:text-2xl leading-none">{star}</span>)}
               </div>
-              <p class="text-gray-700 text-sm leading-relaxed font-light line-clamp-6">
-                {review.text}
-              </p>
+              <div class="review-body flex flex-col items-center">
+                <p class="review-text text-gray-700 text-sm leading-relaxed font-light line-clamp-4 transition-all duration-300">
+                  {review.text}
+                </p>
+                {review.text.length > 160 && (
+                  <button class="read-more-btn mt-2 text-gray-400 text-[0.8rem] hover:text-brand-charcoal transition-colors">Read more</button>
+                )}
+              </div>
             </div>
           </div>
         ))}
@@ -63,6 +68,20 @@ const googleIcon = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     const carousel = document.getElementById('reviewsCarousel');
     const prevBtn = document.getElementById('prevReview');
     const nextBtn = document.getElementById('nextReview');
+
+    
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const textEl = this.previousElementSibling;
+        if (textEl.classList.contains('line-clamp-4')) {
+          textEl.classList.remove('line-clamp-4');
+          this.innerText = 'Show less';
+        } else {
+          textEl.classList.add('line-clamp-4');
+          this.innerText = 'Read more';
+        }
+      });
+    });
 
     if(carousel && prevBtn && nextBtn) {
       prevBtn.addEventListener('click', () => {
