@@ -24,7 +24,7 @@ import siteData from '../data/site.json';
       </a>
       <ul class="hidden lg:flex items-center gap-8">
         {siteData.nav.items.map(item => (
-          <li><a class="text-brand-cream/80 hover:text-brand-gold transition-colors font-body text-sm font-medium tracking-wider uppercase" href={item.href}>{item.label}</a></li>
+          <li><a class="nav-link text-brand-cream/80 hover:text-brand-gold transition-colors font-body text-sm font-medium tracking-wider uppercase" data-target={item.href.replace('/#', '')} href={item.href}>{item.label}</a></li>
         ))}
       </ul>
       <a class="hidden md:inline-block bg-brand-gold text-brand-charcoal px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-brand-goldLight hover:shadow-glow transition-all duration-300 hover:-translate-y-0.5" href="/#booking">{siteData.nav.ctaText}</a>
@@ -40,7 +40,7 @@ import siteData from '../data/site.json';
   <div class="fixed inset-0 bg-brand-charcoal/95 backdrop-blur-xl z-[100] translate-x-full transition-transform duration-500 flex flex-col justify-center items-center gap-8" id="mobileMenu">
     <button class="absolute top-6 right-6 text-brand-cream text-4xl w-12 h-12 flex items-center justify-center" onclick="this.parentElement.classList.remove('translate-x-0'); this.parentElement.classList.add('translate-x-full');">&times;</button>
     {siteData.nav.items.map(item => (
-      <a class="text-brand-cream text-2xl font-display tracking-widest hover:text-brand-gold transition-colors" href={item.href} onclick="this.parentElement.classList.remove('translate-x-0'); this.parentElement.classList.add('translate-x-full');">{item.label}</a>
+      <a class="nav-link text-brand-cream text-2xl font-display tracking-widest hover:text-brand-gold transition-colors" data-target={item.href.replace('/#', '')} href={item.href} onclick="this.parentElement.classList.remove('translate-x-0'); this.parentElement.classList.add('translate-x-full');">{item.label}</a>
     ))}
     <a class="mt-4 bg-brand-gold text-brand-charcoal px-8 py-3 rounded-full font-bold uppercase tracking-wider" href={`tel:${siteData.salon.phoneRaw}`} onclick="this.parentElement.classList.remove('translate-x-0'); this.parentElement.classList.add('translate-x-full');">Call {siteData.salon.phone}</a>
   </div>
@@ -240,7 +240,52 @@ import siteData from '../data/site.json';
       }
     });
     
-    // Advanced staggered reveal matching Luxury UI specs
+    
+      // Navbar Scrollspy logic
+      document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section, header');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        if(window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
+
+        const observerOptions = {
+          root: null,
+          rootMargin: '-20% 0px -70% 0px',
+          threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              if(!id) return;
+              
+              navLinks.forEach(link => {
+                if (link.getAttribute('data-target') === id) {
+                  link.classList.add('text-brand-gold');
+                  link.classList.remove('text-brand-cream/80', 'text-brand-cream');
+                } else {
+                  link.classList.remove('text-brand-gold');
+                  // Restore original colors based on desktop vs mobile
+                  if(link.classList.contains('text-2xl')) {
+                    link.classList.add('text-brand-cream');
+                  } else {
+                    link.classList.add('text-brand-cream/80');
+                  }
+                }
+              });
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach(section => {
+          if(section.hasAttribute('id')) {
+            observer.observe(section);
+          }
+        });
+      });
+
+      // Advanced staggered reveal matching Luxury UI specs
     const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver(entries => {
       const intersecting = entries.filter(e => e.isIntersecting);
