@@ -1,8 +1,9 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section class="py-24 md:py-32 bg-white" id="services">
-  <div class="max-w-[1200px] mx-auto px-6">
+<section class="py-24 md:py-32 relative bg-fixed bg-center bg-cover" style="background-image: url('/images/marble-bg.webp');" id="services">
+  <div class="absolute inset-0 bg-white/75"></div>
+  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
       <div class="inline-block text-brand-goldDark text-xs font-bold tracking-[0.2em] uppercase mb-4">
         {siteData.services.sectionTag}
@@ -46,3 +47,4 @@ import siteData from '../data/site.json';
           </div>
         </a>
       ))}
+
