@@ -241,6 +241,42 @@ import siteData from '../data/site.json';
     });
     
     
+      
+      // 3D Mouse Parallax Effect for Backgrounds
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.parallax-section').forEach(section => {
+          section.addEventListener('mousemove', (e) => {
+            const bg = section.querySelector('.3d-bg');
+            if(!bg) return;
+            
+            // Calculate mouse position relative to the section
+            const rect = section.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Calculate center
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Max movement in pixels
+            const intensity = 20; 
+            
+            // Move background in opposite direction for depth
+            const moveX = ((x - centerX) / centerX) * -intensity;
+            const moveY = ((y - centerY) / centerY) * -intensity;
+            
+            // Apply transform smoothly
+            bg.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+          });
+          
+          section.addEventListener('mouseleave', () => {
+            const bg = section.querySelector('.3d-bg');
+            // Reset to center on leave
+            if(bg) bg.style.transform = 'translate(0px, 0px) scale(1.05)';
+          });
+        });
+      });
+
       // Navbar Scrollspy logic
       document.addEventListener('DOMContentLoaded', () => {
         const sections = document.querySelectorAll('section, header');
