@@ -14,7 +14,8 @@ import siteData from '../data/site.json';
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script is:inline>document.documentElement.classList.add("js-enabled");</script>
 </head>
-<body class="bg-brand-cream text-brand-charcoal font-body antialiased overflow-x-hidden">
+<body class="text-brand-charcoal font-body antialiased overflow-x-hidden">
+  <div id="global-3d-bg" class="fixed -inset-[50px] z-[-1] bg-cover bg-center transition-transform duration-[50ms] ease-linear will-change-transform" style="background-image: url('/images/marble-bg.webp'); transform: scale(1.05);"></div>
   <!-- NAV -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 md:px-8">
     <div class="max-w-[1200px] mx-auto flex justify-between items-center bg-gradient-to-r from-gray-700/60 via-gray-800/70 to-gray-900/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-2.5 shadow-lg">
@@ -244,39 +245,24 @@ import siteData from '../data/site.json';
       
       // 3D Mouse Parallax Effect for Backgrounds
       document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.parallax-section').forEach(section => {
-          section.addEventListener('mousemove', (e) => {
-            const bg = section.querySelector('.3d-bg');
-            if(!bg) return;
-            
-            // Calculate mouse position relative to the section
-            const rect = section.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            // Calculate center
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            // Max movement in pixels
-            const intensity = 20; 
-            
-            // Move background in opposite direction for depth
-            const moveX = ((x - centerX) / centerX) * -intensity;
-            const moveY = ((y - centerY) / centerY) * -intensity;
-            
-            // Apply transform smoothly
-            bg.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
-          });
+        const bg = document.getElementById('global-3d-bg');
+        if(!bg) return;
+        
+        document.addEventListener('mousemove', (e) => {
+          const x = e.clientX;
+          const y = e.clientY;
           
-          section.addEventListener('mouseleave', () => {
-            const bg = section.querySelector('.3d-bg');
-            // Reset to center on leave
-            if(bg) bg.style.transform = 'translate(0px, 0px) scale(1.05)';
-          });
+          const centerX = window.innerWidth / 2;
+          const centerY = window.innerHeight / 2;
+          
+          const intensity = 20; 
+          
+          const moveX = ((x - centerX) / centerX) * -intensity;
+          const moveY = ((y - centerY) / centerY) * -intensity;
+          
+          bg.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
         });
       });
-
       // Navbar Scrollspy logic
       document.addEventListener('DOMContentLoaded', () => {
         const sections = document.querySelectorAll('section, header');
