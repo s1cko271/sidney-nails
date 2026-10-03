@@ -14,7 +14,7 @@ import siteData from '../data/site.json';
     
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[250px] md:auto-rows-[280px]">
       {siteData.gallery.items.map((item, index) => (
-        <div class={`group relative overflow-hidden rounded-xl cursor-pointer reveal shadow-[0_0_25px_rgba(235,183,52,0.18),0_8px_24px_rgba(0,0,0,0.1)] border border-brand-gold/25 hover:shadow-[0_0_40px_rgba(235,183,52,0.35),0_12px_36px_rgba(0,0,0,0.15)] hover:border-brand-gold/50 transition-shadow duration-500 ${index === 0 ? 'sm:col-span-2 sm:row-span-2' : ''}`}>
+        <div class={`group relative overflow-hidden rounded-xl cursor-pointer reveal shadow-[0_0_35px_rgba(235,183,52,0.3),0_15px_45px_rgba(0,0,0,0.25),0_5px_18px_rgba(0,0,0,0.15)] border border-brand-gold/25 hover:shadow-[0_0_55px_rgba(235,183,52,0.5),0_20px_55px_rgba(0,0,0,0.3),0_8px_22px_rgba(0,0,0,0.2)] hover:border-brand-gold/50 transition-shadow duration-500 ${index === 0 ? 'sm:col-span-2 sm:row-span-2' : ''}`}>
           <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" src={item.image} alt={item.caption} />
           
           <!-- Gradient ONLY at the bottom to preserve WCAG AA contrast for the text -->
