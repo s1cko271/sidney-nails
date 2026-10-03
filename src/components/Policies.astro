@@ -6,7 +6,7 @@ import site from '../data/site.json';
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
       <p class="text-gold tracking-widest text-sm uppercase font-semibold mb-2">Important Information</p>
-      <h2 class="text-3xl md:text-4xl font-display text-charcoal mb-4">Salon Policies</h2>
+      <h2 class="text-3xl md:text-4xl font-display lining-nums text-charcoal mb-4">Salon Policies</h2>
       <div class="w-16 h-px bg-gold mx-auto"></div>
     </div>
     
@@ -14,7 +14,7 @@ import site from '../data/site.json';
       <div class="divide-y divide-beige">
         {Object.entries(site.policies).map(([key, policy]) => (
           <details class="group py-4 first:pt-0 last:pb-0">
-            <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-charcoal font-display text-xl hover:text-gold transition-colors">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-charcoal font-display lining-nums text-xl hover:text-gold transition-colors">
               <span>{policy.title}</span>
               <span class="transition group-open:rotate-180">
                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>

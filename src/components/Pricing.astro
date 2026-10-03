@@ -7,7 +7,7 @@ import siteData from '../data/site.json';
       <div class="inline-block text-brand-goldDark text-xs font-bold tracking-[0.2em] uppercase mb-4">
         {siteData.pricing.sectionTag}
       </div>
-      <h2 class="font-display text-4xl md:text-5xl font-light text-brand-charcoal mb-4">
+      <h2 class="font-display lining-nums text-4xl md:text-5xl font-light text-brand-charcoal mb-4">
         {siteData.pricing.title} <span class="font-semibold italic text-brand-gold">{siteData.pricing.titleAccent}</span>
       </h2>
       <p class="text-brand-charcoal/60 leading-relaxed font-light">
@@ -35,7 +35,7 @@ import siteData from '../data/site.json';
           </div>
           
           <div class="mb-1">
-            <span class={`font-display text-5xl font-bold tracking-tight ${pkg.featured ? 'text-brand-goldLight' : 'text-brand-charcoal'}`}>{pkg.price}</span>
+            <span class={`font-display lining-nums text-5xl font-bold tracking-tight ${pkg.featured ? 'text-brand-goldLight' : 'text-brand-charcoal'}`}>{pkg.price}</span>
           </div>
           <div class={`text-sm mb-6 ${pkg.featured ? 'text-white/60' : 'text-brand-charcoal/50'}`}>
             {pkg.unit}

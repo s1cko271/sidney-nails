@@ -19,7 +19,7 @@ function getSvgIcon(icon) {
       <div class="inline-block text-brand-goldDark text-xs font-bold tracking-[0.2em] uppercase mb-4">
         {siteData.promotions.sectionTag}
       </div>
-      <h2 class="font-display text-4xl md:text-5xl font-light text-brand-charcoal mb-4">
+      <h2 class="font-display lining-nums text-4xl md:text-5xl font-light text-brand-charcoal mb-4">
         {siteData.promotions.title} <span class="font-semibold italic text-brand-gold">{siteData.promotions.titleAccent}</span>
       </h2>
       <p class="text-brand-charcoal/60 leading-relaxed font-light">
@@ -37,7 +37,7 @@ function getSvgIcon(icon) {
         <div class="bg-white rounded-2xl border border-brand-charcoal/5 p-10 text-center flex flex-col items-center shadow-soft hover:shadow-2xl motion-safe:hover:-translate-y-1.5 hover:border-brand-gold/30 transition-all duration-500 reveal">
            <div class="w-16 h-16 bg-brand-charcoal/5 rounded-full flex items-center justify-center text-3xl mb-6 shadow-inner border border-brand-charcoal/5" set:html={getSvgIcon(promo.icon)}>
            </div>
-           <h3 class="font-display text-2xl font-semibold text-brand-charcoal mb-4">{promo.title}</h3>
+           <h3 class="font-display lining-nums text-2xl font-semibold text-brand-charcoal mb-4">{promo.title}</h3>
            <p class="text-brand-charcoal/60 text-sm leading-relaxed font-light mb-8 flex-grow">{promo.description}</p>
            <div class="text-brand-goldDark font-bold text-lg bg-brand-cream px-6 py-2.5 rounded-full border border-brand-gold/20 tracking-wide">
              {promo.offer}

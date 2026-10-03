@@ -12,7 +12,7 @@ import siteData from '../data/site.json';
       {siteData.salon.tagline} &middot; {siteData.salon.city}, {siteData.salon.state}
     </div>
     
-    <h1 class="font-display text-4xl md:text-5xl lg:text-7xl text-white leading-[1.1] font-light tracking-tight mb-4 animate-fade-in-up glow-white" style="animation-delay: 300ms;">
+    <h1 class="font-display lining-nums text-4xl md:text-5xl lg:text-7xl text-white leading-[1.1] font-light tracking-tight mb-4 animate-fade-in-up glow-white" style="animation-delay: 300ms;">
       {siteData.hero.headlineLine1}<br/>
       <em class="font-semibold italic text-brand-goldLight glow-gold">{siteData.hero.headlineLine2}</em>
     </h1>
@@ -39,7 +39,7 @@ import siteData from '../data/site.json';
     <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4 md:gap-12 mt-16 pt-8 border-t border-brand-cream/10 opacity-0 animate-fade-in-up" style="animation-delay: 900ms;">
       {siteData.hero.stats.map(stat => (
         <div class="text-center">
-          <div class="font-display text-3xl md:text-4xl text-brand-goldLight font-bold">{stat.value}</div>
+          <div class="font-display lining-nums text-3xl md:text-4xl text-brand-goldLight font-bold">{stat.value}</div>
           <div class="text-brand-cream/50 text-[0.7rem] uppercase tracking-wider mt-1">{stat.label}</div>
         </div>
       ))}
@@ -51,12 +51,12 @@ import siteData from '../data/site.json';
 <div class="py-4 bg-brand-charcoal overflow-hidden border-b border-white/5">
   <div class="flex gap-12 animate-[scrollX_30s_linear_infinite] w-max hover:[animation-play-state:paused] transition-all cursor-default">
     {siteData.marquee.items.map(item => (
-      <span class="font-display text-xl text-brand-cream/80 whitespace-nowrap flex items-center gap-6 tracking-wide hover:text-brand-gold transition-colors">
+      <span class="font-display lining-nums text-xl text-brand-cream/80 whitespace-nowrap flex items-center gap-6 tracking-wide hover:text-brand-gold transition-colors">
         {item} <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
       </span>
     ))}
     {siteData.marquee.items.map(item => (
-      <span class="font-display text-xl text-brand-cream/80 whitespace-nowrap flex items-center gap-6 tracking-wide hover:text-brand-gold transition-colors">
+      <span class="font-display lining-nums text-xl text-brand-cream/80 whitespace-nowrap flex items-center gap-6 tracking-wide hover:text-brand-gold transition-colors">
         {item} <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
       </span>
     ))}

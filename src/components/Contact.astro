@@ -5,24 +5,24 @@ import site from '../data/site.json';
 <section id="contact" class="bg-charcoal text-white py-20 border-t border-gray-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-display text-white mb-4">Visit Us Today</h2>
+      <h2 class="text-4xl md:text-5xl font-display lining-nums text-white mb-4">Visit Us Today</h2>
       <div class="w-24 h-px bg-gold mx-auto"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
       <!-- Address & Parking -->
       <div>
-        <h3 class="text-2xl font-display text-gold mb-6 uppercase tracking-widest text-sm">Location</h3>
+        <h3 class="text-2xl font-display lining-nums text-gold mb-6 uppercase tracking-widest text-sm">Location</h3>
         <p class="text-gray-300 text-lg mb-2">{site.contact.address.street}</p>
         <p class="text-gray-300 text-lg mb-6">{site.contact.address.city}, {site.contact.address.state} {site.contact.address.zip}</p>
         
-        <h3 class="text-lg font-display text-gold mb-2 mt-8">Parking</h3>
+        <h3 class="text-lg font-display lining-nums text-gold mb-2 mt-8">Parking</h3>
         <p class="text-gray-400">{site.contact.parking}</p>
       </div>
 
       <!-- Hours -->
       <div>
-        <h3 class="text-2xl font-display text-gold mb-6 uppercase tracking-widest text-sm">Hours</h3>
+        <h3 class="text-2xl font-display lining-nums text-gold mb-6 uppercase tracking-widest text-sm">Hours</h3>
         <ul class="space-y-3 text-gray-300">
           {Object.entries(site.hours).map(([day, time]) => (
             <li class="flex justify-between border-b border-gray-800 pb-2">
@@ -35,7 +35,7 @@ import site from '../data/site.json';
 
       <!-- Connect -->
       <div>
-        <h3 class="text-2xl font-display text-gold mb-6 uppercase tracking-widest text-sm">Connect</h3>
+        <h3 class="text-2xl font-display lining-nums text-gold mb-6 uppercase tracking-widest text-sm">Connect</h3>
         <div class="space-y-4 mb-8">
           <p>
             <a href={`tel:${site.contact.phone}`} class="text-xl hover:text-gold transition-colors flex items-center">
