@@ -34,7 +34,7 @@ function getSvgIcon(icon) {
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {siteData.promotions.items.map(promo => (
-        <div class="bg-white rounded-2xl border border-brand-charcoal/5 p-10 text-center flex flex-col items-center shadow-soft hover:shadow-2xl motion-safe:hover:-translate-y-1.5 hover:border-brand-gold/30 transition-all duration-500 reveal">
+        <div class="bg-white rounded-2xl border border-brand-charcoal/5 p-10 text-center flex flex-col items-center shadow-card-glow hover:-translate-y-1.5 border border-brand-gold/10 hover:border-brand-gold/30 transition-all duration-500 reveal">
            <div class="w-16 h-16 bg-brand-charcoal/5 rounded-full flex items-center justify-center text-3xl mb-6 shadow-inner border border-brand-charcoal/5" set:html={getSvgIcon(promo.icon)}>
            </div>
            <h3 class="font-display lining-nums text-2xl font-semibold text-brand-charcoal mb-4">{promo.title}</h3>
