@@ -26,19 +26,21 @@ const menu = siteData.pricing.menu;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-24">
       {siteData.pricing.packages.map(pkg => (
         <div class:list={[
-          "relative rounded-2xl p-8 lg:p-10 transition-all duration-500 reveal flex flex-col justify-between",
+          "relative rounded-2xl p-8 lg:p-10 transition-all duration-500 reveal flex flex-col",
           pkg.featured 
-            ? 'bg-gradient-to-br from-brand-charcoal to-gray-900 text-white shadow-[0_0_50px_rgba(235,183,52,0.4),0_20px_60px_rgba(0,0,0,0.35),0_8px_25px_rgba(0,0,0,0.2)] border-2 border-brand-gold/40 hover:shadow-[0_0_75px_rgba(235,183,52,0.55),0_25px_70px_rgba(0,0,0,0.4),0_10px_30px_rgba(0,0,0,0.25)] hover:border-brand-gold/70 hover:-translate-y-1.5' 
-            : 'bg-gradient-to-br from-white to-gray-50 text-brand-charcoal shadow-[0_0_40px_rgba(235,183,52,0.25),0_15px_50px_rgba(0,0,0,0.25),0_5px_20px_rgba(0,0,0,0.15)] border border-brand-gold/25 hover:shadow-[0_0_60px_rgba(235,183,52,0.45),0_20px_60px_rgba(0,0,0,0.3),0_8px_25px_rgba(0,0,0,0.2)] hover:border-brand-gold/50 hover:-translate-y-1.5'
+            ? 'bg-brand-charcoal text-white shadow-2xl border-2 border-brand-gold/50 hover:border-brand-gold hover:-translate-y-1.5' 
+            : 'bg-white text-brand-charcoal shadow-xl border border-gray-100 hover:border-brand-gold/30 hover:-translate-y-1.5'
         ]}>
           
-          {pkg.featured && pkg.featuredLabel && (
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold uppercase tracking-[0.2em] py-1.5 px-5 rounded-full shadow-md whitespace-nowrap">
-              {pkg.featuredLabel}
-            </div>
-          )}
-          
-          <div>
+          <div class="flex-grow">
+            {pkg.featured && pkg.featuredLabel && (
+              <div class="mb-4">
+                <span class="inline-block bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold uppercase tracking-[0.2em] py-1.5 px-3 rounded-sm">
+                  {pkg.featuredLabel}
+                </span>
+              </div>
+            )}
+            
             <div class={`text-[0.75rem] font-bold tracking-[0.15em] uppercase mb-4 ${pkg.featured ? 'text-brand-goldLight' : 'text-brand-charcoal/50'}`}>
               {pkg.name}
             </div>
@@ -50,14 +52,16 @@ const menu = siteData.pricing.menu;
               {pkg.unit}
             </div>
             
-            <p class={`text-sm leading-relaxed mb-6 font-light ${pkg.featured ? 'text-white/70' : 'text-brand-charcoal/70'}`}>
+            <p class={`text-sm leading-relaxed mb-8 font-light ${pkg.featured ? 'text-white/70' : 'text-brand-charcoal/70'}`}>
               {pkg.description}
             </p>
             
             <ul class="space-y-3 mb-8">
               {pkg.features.map(feature => (
-                <li class={`flex items-start gap-3 text-sm font-light pb-3 border-b ${pkg.featured ? 'border-white/10 text-white/85' : 'border-brand-creamDark text-brand-charcoal/85'}`}>
-                  <span class="text-brand-gold font-bold text-base leading-none mt-0.5">✓</span> 
+                <li class={`flex items-start gap-3 text-sm font-light pb-3 border-b ${pkg.featured ? 'border-white/10 text-white/85' : 'border-gray-100 text-brand-charcoal/85'}`}>
+                  <span class={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${pkg.featured ? 'bg-brand-gold/20 text-brand-gold' : 'bg-brand-gold/15 text-brand-goldDark'}`}>
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span> 
                   <span class="leading-relaxed">{feature}</span>
                 </li>
               ))}
@@ -65,7 +69,7 @@ const menu = siteData.pricing.menu;
           </div>
           
           <button 
-            class={`w-full py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 ${pkg.featured ? 'bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight btn-shine shadow-[0_0_20px_rgba(235,183,52,0.4)]' : 'bg-transparent border-2 border-brand-charcoal/20 text-brand-charcoal hover:border-brand-gold hover:text-brand-gold'}`}
+            class={`mt-auto w-full py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 ${pkg.featured ? 'bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(235,183,52,0.4)]' : 'bg-transparent border-2 border-brand-charcoal/20 text-brand-charcoal hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5'}`}
             onclick="document.getElementById('booking')?.scrollIntoView({behavior:'smooth'}) || (window.location.href='/#booking')">
             Book Now
           </button>
@@ -88,21 +92,21 @@ const menu = siteData.pricing.menu;
       </div>
 
       <!-- Category Filter Tabs -->
-      <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-12" id="menu-tab-buttons">
+      <div class="flex overflow-x-auto lg:flex-wrap justify-start lg:justify-center gap-2 md:gap-3 mb-12 pb-4 lg:pb-0 w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] snap-x snap-mandatory" id="menu-tab-buttons">
         {menu.categories.map((cat, idx) => (
           <button 
             type="button"
             data-tab-target={`tab-${cat.id}`}
-            class={`menu-tab-btn px-4 md:px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300 flex items-center gap-2 border shadow-sm ${
+            class={`menu-tab-btn shrink-0 snap-start px-5 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 flex items-center gap-2 border ${
               idx === 0 
-                ? 'bg-brand-charcoal text-white border-brand-gold/50 shadow-[0_0_20px_rgba(235,183,52,0.3)] active-tab' 
-                : 'bg-white/80 text-brand-charcoal border-gray-200 hover:border-brand-gold hover:text-brand-gold'
+                ? 'bg-brand-charcoal text-white border-brand-gold/50 shadow-md active-tab' 
+                : 'bg-white text-brand-charcoal border-gray-200 hover:border-brand-gold hover:text-brand-gold'
             }`}
           >
             <span>{cat.icon}</span>
             <span>{cat.name}</span>
             {cat.badge && (
-              <span class="bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold px-1.5 py-0.5 rounded-full">
+              <span class={`text-[0.65rem] font-bold px-1.5 py-0.5 rounded-full ${idx === 0 ? 'bg-brand-gold text-brand-charcoal' : 'bg-brand-offwhite text-brand-charcoal'}`}>
                 {cat.badge}
               </span>
             )}
@@ -115,236 +119,234 @@ const menu = siteData.pricing.menu;
         
         <!-- 1. MANICURE PANEL -->
         <div id="tab-manicure" class="menu-panel block transition-opacity duration-300">
-          <div class="bg-white/60 rounded-2xl p-6 md:p-8 border border-brand-gold/25 shadow-[0_0_30px_rgba(235,183,52,0.15)] mb-8">
-            <div class="max-w-2xl mb-6">
-              <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Manicure Treatments</h4>
-              <p class="text-brand-charcoal/70 text-sm font-light mt-1">Complete hand & nail care with shaping, cuticle treatment, and relaxing hand massage.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {menu.categories[0].items.map(item => (
-                <div class="bg-gradient-to-br from-white to-gray-50/80 rounded-2xl p-6 border border-brand-gold/30 shadow-[0_0_30px_rgba(235,183,52,0.18),0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_0_45px_rgba(235,183,52,0.35)] transition-all duration-300 flex flex-col justify-between">
-                  <div>
-                    <div class="flex justify-between items-start gap-4 mb-4 pb-4 border-b border-brand-creamDark">
-                      <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal leading-snug">{item.name}</h5>
-                      <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark whitespace-nowrap">{item.price}</span>
-                    </div>
-                    <div class="text-xs font-bold uppercase tracking-wider text-brand-goldDark mb-3">Included Steps:</div>
-                    <ul class="space-y-2 mb-6">
-                      {item.steps.map((st, i) => (
-                        <li class="flex items-center gap-2.5 text-xs md:text-sm text-brand-charcoal/80">
-                          <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-goldDark flex items-center justify-center font-bold text-xs shrink-0">{i+1}</span>
-                          <span>{st}</span>
-                        </li>
-                      ))}
-                    </ul>
+          <div class="mb-6 text-center max-w-2xl mx-auto">
+            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Manicure Treatments</h4>
+            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[0].description}</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            {menu.categories[0].items.map(item => (
+              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div class="flex-grow">
+                  <div class="flex justify-between items-start gap-4 mb-5 pb-5 border-b border-gray-100">
+                    <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal leading-snug">{item.name}</h5>
+                    <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark whitespace-nowrap">{item.price}</span>
                   </div>
-                  <a href="/#booking" class="w-full text-center py-2.5 rounded-full border border-brand-gold text-brand-charcoal hover:bg-brand-gold hover:text-white font-semibold text-xs uppercase tracking-wider transition-all duration-300">
-                    Book This Service
-                  </a>
+                  <div class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-brand-goldDark mb-4">Included Treatments</div>
+                  <ul class="space-y-3 mb-6">
+                    {item.steps.map(st => (
+                      <li class="flex items-start gap-3 text-sm text-brand-charcoal/80 font-light">
+                        <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-goldDark flex items-center justify-center shrink-0 mt-0.5">
+                          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span class="leading-relaxed">{st}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-            </div>
+                <a href="/#booking" class="mt-auto w-full text-center py-3 rounded-lg border border-gray-200 text-brand-charcoal font-semibold text-xs uppercase tracking-wider hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 transition-colors">
+                  Book This Service
+                </a>
+              </div>
+            ))}
           </div>
         </div>
 
         <!-- 2. PEDICURE PANEL -->
         <div id="tab-pedicure" class="menu-panel hidden transition-opacity duration-300">
-          <div class="bg-white/60 rounded-2xl p-6 md:p-8 border border-brand-gold/25 shadow-[0_0_30px_rgba(235,183,52,0.15)] mb-8">
-            <div class="max-w-2xl mb-6">
-              <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Pedicure Spa Treatments (4 Levels)</h4>
-              <p class="text-brand-charcoal/70 text-sm font-light mt-1">From our refreshing Basic Spa to the ultimate 10-step Super Royal Deluxe with hot stones.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {menu.categories[1].items.map(item => (
-                <div class="bg-gradient-to-br from-white to-gray-50/80 rounded-2xl p-6 border border-brand-gold/30 shadow-[0_0_30px_rgba(235,183,52,0.18),0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_0_45px_rgba(235,183,52,0.35)] transition-all duration-300 flex flex-col justify-between">
-                  <div>
-                    <div class="flex justify-between items-start gap-4 mb-4 pb-4 border-b border-brand-creamDark">
-                      <div>
-                        {item.badge && (
-                          <span class="inline-block bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-1">
-                            {item.badge}
-                          </span>
-                        )}
-                        <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal leading-snug">{item.name}</h5>
-                      </div>
-                      <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark whitespace-nowrap">{item.price}</span>
+          <div class="mb-6 text-center max-w-2xl mx-auto">
+            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Pedicure Spa Treatments</h4>
+            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[1].description}</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            {menu.categories[1].items.map(item => (
+              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div class="flex-grow">
+                  <div class="flex justify-between items-start gap-4 mb-5 pb-5 border-b border-gray-100">
+                    <div>
+                      {item.badge && (
+                        <span class="inline-block bg-brand-charcoal text-white text-[0.6rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm mb-2">
+                          {item.badge}
+                        </span>
+                      )}
+                      <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal leading-snug">{item.name}</h5>
                     </div>
-                    <div class="text-xs font-bold uppercase tracking-wider text-brand-goldDark mb-3">Service Treatment Steps:</div>
-                    <ul class="space-y-2 mb-6">
-                      {item.steps.map((st, i) => (
-                        <li class="flex items-center gap-2.5 text-xs md:text-sm text-brand-charcoal/80">
-                          <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-goldDark flex items-center justify-center font-bold text-xs shrink-0">{i+1}</span>
-                          <span>{st}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark whitespace-nowrap">{item.price}</span>
                   </div>
-                  <a href="/#booking" class="w-full text-center py-2.5 rounded-full border border-brand-gold text-brand-charcoal hover:bg-brand-gold hover:text-white font-semibold text-xs uppercase tracking-wider transition-all duration-300">
-                    Book This Pedicure
-                  </a>
+                  <div class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-brand-goldDark mb-4">Service Treatment Steps</div>
+                  <ul class="space-y-3 mb-6">
+                    {item.steps.map(st => (
+                      <li class="flex items-start gap-3 text-sm text-brand-charcoal/80 font-light">
+                        <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-goldDark flex items-center justify-center shrink-0 mt-0.5">
+                          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span class="leading-relaxed">{st}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-            </div>
+                <a href="/#booking" class="mt-auto w-full text-center py-3 rounded-lg border border-gray-200 text-brand-charcoal font-semibold text-xs uppercase tracking-wider hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 transition-colors">
+                  Book This Pedicure
+                </a>
+              </div>
+            ))}
           </div>
         </div>
 
         <!-- 3. DIPPING POWDER PANEL -->
         <div id="tab-dipping" class="menu-panel hidden transition-opacity duration-300">
-          <div class="bg-white/60 rounded-2xl p-6 md:p-8 border border-brand-gold/25 shadow-[0_0_30px_rgba(235,183,52,0.15)] mb-8">
-            <div class="max-w-2xl mb-6">
-              <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Dipping Powder (SNS / Dip)</h4>
-              <p class="text-brand-charcoal/70 text-sm font-light mt-1">Lightweight, odor-free, fortified with calcium and vitamins for strong, natural feeling nails.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {menu.categories[2].items.map(item => (
-                <div class="bg-gradient-to-br from-white to-gray-50/80 rounded-2xl p-6 border border-brand-gold/30 shadow-[0_0_30px_rgba(235,183,52,0.18),0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_0_45px_rgba(235,183,52,0.35)] transition-all duration-300 flex flex-col justify-between">
-                  <div>
-                    <div class="flex justify-between items-start gap-3 mb-4 pb-4 border-b border-brand-creamDark">
-                      <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal">{item.name}</h5>
-                      <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark whitespace-nowrap">{item.price}</span>
-                    </div>
-                    <div class="text-xs font-bold uppercase tracking-wider text-brand-goldDark mb-3">Included:</div>
-                    <ul class="space-y-2 mb-6">
-                      {item.steps.map((st, i) => (
-                        <li class="flex items-center gap-2 text-xs md:text-sm text-brand-charcoal/80">
-                          <span class="text-brand-gold font-bold">✓</span>
-                          <span>{st}</span>
-                        </li>
-                      ))}
-                    </ul>
+          <div class="mb-6 text-center max-w-2xl mx-auto">
+            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Dipping Powder (SNS)</h4>
+            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[2].description}</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            {menu.categories[2].items.map(item => (
+              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div class="flex-grow">
+                  <div class="flex justify-between items-start gap-3 mb-5 pb-5 border-b border-gray-100">
+                    <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal leading-snug">{item.name}</h5>
+                    <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark whitespace-nowrap">{item.price}</span>
                   </div>
-                  <a href="/#booking" class="w-full text-center py-2.5 rounded-full border border-brand-gold text-brand-charcoal hover:bg-brand-gold hover:text-white font-semibold text-xs uppercase tracking-wider transition-all duration-300">
-                    Book Dipping
-                  </a>
+                  <div class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-brand-goldDark mb-4">Included</div>
+                  <ul class="space-y-3 mb-6">
+                    {item.steps.map(st => (
+                      <li class="flex items-start gap-3 text-sm text-brand-charcoal/80 font-light">
+                        <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-goldDark flex items-center justify-center shrink-0 mt-0.5">
+                          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span class="leading-relaxed">{st}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-            </div>
+                <a href="/#booking" class="mt-auto w-full text-center py-3 rounded-lg border border-gray-200 text-brand-charcoal font-semibold text-xs uppercase tracking-wider hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 transition-colors">
+                  Book Dipping
+                </a>
+              </div>
+            ))}
           </div>
         </div>
 
         <!-- 4. ENHANCEMENT PANEL -->
         <div id="tab-enhancement" class="menu-panel hidden transition-opacity duration-300">
-          <div class="bg-white/60 rounded-2xl p-6 md:p-8 border border-brand-gold/25 shadow-[0_0_30px_rgba(235,183,52,0.15)] mb-8">
-            <div class="max-w-2xl mb-6">
-              <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Nail Enhancement (Full Sets & Fills)</h4>
-              <p class="text-brand-charcoal/70 text-sm font-light mt-1">Professional acrylic extensions, builder tap gel, and custom shapes for long-lasting glamour.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {menu.categories[3].items.map(item => (
-                <div class="bg-gradient-to-br from-white to-gray-50 rounded-xl p-5 border border-brand-gold/25 shadow-[0_0_20px_rgba(235,183,52,0.12)] hover:border-brand-gold/60 hover:shadow-[0_0_30px_rgba(235,183,52,0.25)] transition-all duration-300 flex flex-col justify-between">
-                  <h5 class="font-body font-semibold text-sm text-brand-charcoal mb-3 leading-snug">{item.name}</h5>
-                  <div class="flex items-baseline justify-between pt-3 border-t border-brand-creamDark">
-                    <span class="text-xs text-brand-charcoal/50 uppercase tracking-wider">Price</span>
-                    <span class="font-display lining-nums text-2xl font-bold text-brand-goldDark">{item.price}</span>
-                  </div>
+          <div class="mb-6 text-center max-w-2xl mx-auto">
+            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Nail Enhancement</h4>
+            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[3].description}</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+            {menu.categories[3].items.map(item => (
+              <div class="h-full bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                <h5 class="font-body font-semibold text-sm text-brand-charcoal mb-4 leading-snug">{item.name}</h5>
+                <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
+                  <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
+                  <span class="font-display lining-nums text-2xl font-bold text-brand-goldDark">{item.price}</span>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
         <!-- 5. ORGANIC SPA PANEL -->
         <div id="tab-organic-spa" class="menu-panel hidden transition-opacity duration-300">
-          <div class="bg-white/60 rounded-2xl p-6 md:p-8 border border-brand-gold/25 shadow-[0_0_30px_rgba(235,183,52,0.15)] mb-8">
+          <div class="mb-8">
             <!-- Special Milk & Honey Banner -->
-            <div class="bg-gradient-to-r from-brand-charcoal via-gray-900 to-brand-charcoal text-white rounded-2xl p-6 md:p-8 mb-8 border-2 border-brand-gold/50 shadow-[0_0_35px_rgba(235,183,52,0.3)] text-center relative overflow-hidden">
-              <div class="inline-block bg-brand-gold text-brand-charcoal text-[0.7rem] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-3">
+            <div class="bg-brand-charcoal text-white rounded-2xl p-8 md:p-10 border-2 border-brand-gold/30 text-center relative overflow-hidden shadow-lg">
+              <div class="inline-block bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-sm mb-4">
                 Signature Organic Experience
               </div>
-              <h4 class="font-display lining-nums text-3xl md:text-4xl font-bold text-white mb-2">
-                All Organic Spa Include: <span class="italic text-brand-goldLight">Milk & Honey</span>
+              <h4 class="font-display lining-nums text-3xl md:text-4xl font-bold text-white mb-3">
+                All Organic Spa Include <span class="italic text-brand-goldLight">Milk & Honey</span>
               </h4>
-              <p class="text-brand-cream/80 text-sm md:text-base font-light max-w-xl mx-auto mb-4">
-                Infuse your manicure or pedicure with natural organic extracts for deep healing, nourishment, and ultimate luxury.
+              <p class="text-brand-cream/70 text-sm md:text-base font-light max-w-xl mx-auto mb-6">
+                {menu.categories[4].description}
               </p>
-              <div class="inline-flex items-center gap-2 bg-brand-gold/20 text-brand-goldLight border border-brand-gold/40 px-6 py-2 rounded-full font-bold text-base md:text-lg">
-                <span>Any Flavor Of Your Choice:</span>
-                <span class="font-display lining-nums text-2xl text-white">+ $10</span>
+              <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-6 py-2.5 rounded-full font-bold text-sm md:text-base tracking-wide">
+                <span class="text-white/90">Any Flavor Of Your Choice:</span>
+                <span class="text-brand-goldLight">+ $10</span>
               </div>
             </div>
+          </div>
 
-            <!-- 10 Flavors Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {menu.categories[4].flavors.map(fl => (
-                <div class="bg-gradient-to-br from-white to-gray-50 rounded-xl p-5 border border-brand-gold/25 shadow-[0_0_20px_rgba(235,183,52,0.12)] hover:border-brand-gold/60 hover:shadow-[0_0_35px_rgba(235,183,52,0.25)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-                  <div>
-                    <div class="flex items-center justify-between mb-3">
-                      <span class="w-7 h-7 rounded-full bg-brand-gold/15 text-brand-goldDark font-bold text-xs flex items-center justify-center font-body">{fl.id}</span>
-                      <span class="text-xs font-bold text-brand-goldDark uppercase tracking-wider">+$10</span>
-                    </div>
-                    <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal mb-1">{fl.name}</h5>
-                    <div class="text-[0.75rem] font-medium text-brand-goldDark mb-2 leading-tight">{fl.benefit}</div>
-                    <p class="text-brand-charcoal/65 text-xs font-light leading-relaxed">{fl.description}</p>
-                  </div>
+          <!-- 10 Flavors Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
+            {menu.categories[4].flavors.map(fl => (
+              <div class="h-full bg-white rounded-xl p-5 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300 flex flex-col">
+                <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+                  <span class="w-6 h-6 rounded-full bg-brand-gold/15 text-brand-goldDark font-bold text-[0.65rem] flex items-center justify-center font-body">{fl.id}</span>
+                  <span class="text-[0.65rem] font-bold text-brand-goldDark uppercase tracking-wider">+$10</span>
                 </div>
-              ))}
-            </div>
+                <h5 class="font-display lining-nums text-lg font-bold text-brand-charcoal mb-1">{fl.name}</h5>
+                <div class="text-[0.7rem] font-semibold text-brand-goldDark mb-3 leading-tight">{fl.benefit}</div>
+                <p class="text-brand-charcoal/60 text-xs font-light leading-relaxed">{fl.description}</p>
+              </div>
+            ))}
           </div>
         </div>
 
         <!-- 6. ADD-ONS & POLISH CHANGE PANEL -->
         <div id="tab-addons-polish" class="menu-panel hidden transition-opacity duration-300">
-          <div class="bg-white/60 rounded-2xl p-6 md:p-8 border border-brand-gold/25 shadow-[0_0_30px_rgba(235,183,52,0.15)] mb-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              
-              <!-- Polish Change Card -->
-              <div class="bg-gradient-to-br from-white to-gray-50/80 rounded-2xl p-6 md:p-8 border border-brand-gold/30 shadow-[0_0_30px_rgba(235,183,52,0.18)]">
-                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-brand-creamDark">
-                  <span class="text-2xl">💅</span>
-                  <div>
-                    <h5 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Polish Change</h5>
-                    <p class="text-xs text-brand-charcoal/60">Quick color refresh for hands and toes</p>
-                  </div>
-                </div>
-                <div class="space-y-3">
-                  {menu.categories[5].polishChanges.map(pc => (
-                    <div class="flex items-center justify-between p-3.5 rounded-xl bg-white border border-gray-100 hover:border-brand-gold/40 transition-colors">
-                      <span class="font-medium text-sm text-brand-charcoal">{pc.name}</span>
-                      <span class="font-display lining-nums text-2xl font-bold text-brand-goldDark">{pc.price}</span>
-                    </div>
-                  ))}
+          <div class="mb-6 text-center max-w-2xl mx-auto">
+            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Polish Change & Add-Ons</h4>
+            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[5].description}</p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            
+            <!-- Polish Change Card -->
+            <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300">
+              <div class="flex items-center gap-4 mb-6 pb-5 border-b border-gray-100">
+                <span class="w-10 h-10 rounded-full bg-brand-gold/15 flex items-center justify-center text-xl">💅</span>
+                <div>
+                  <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal">Polish Change</h5>
+                  <p class="text-xs text-brand-charcoal/50 font-light mt-1">Quick color refresh for hands and toes</p>
                 </div>
               </div>
-
-              <!-- Add-Ons Card -->
-              <div class="bg-gradient-to-br from-white to-gray-50/80 rounded-2xl p-6 md:p-8 border border-brand-gold/30 shadow-[0_0_30px_rgba(235,183,52,0.18)]">
-                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-brand-creamDark">
-                  <span class="text-2xl">✨</span>
-                  <div>
-                    <h5 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Add-On Enhancements</h5>
-                    <p class="text-xs text-brand-charcoal/60">Customize and upgrade any salon service</p>
+              <div class="space-y-2">
+                {menu.categories[5].polishChanges.map(pc => (
+                  <div class="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-brand-offwhite transition-colors">
+                    <span class="font-medium text-sm text-brand-charcoal">{pc.name}</span>
+                    <span class="font-display lining-nums text-xl font-bold text-brand-goldDark">{pc.price}</span>
                   </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {menu.categories[5].addOns.map(ao => (
-                    <div class="flex items-center justify-between p-3.5 rounded-xl bg-white border border-gray-100 hover:border-brand-gold/40 transition-colors">
-                      <span class="font-medium text-xs md:text-sm text-brand-charcoal">{ao.name}</span>
-                      <span class="font-display lining-nums text-xl font-bold text-brand-goldDark">{ao.price}</span>
-                    </div>
-                  ))}
-                </div>
+                ))}
               </div>
-
             </div>
+
+            <!-- Add-Ons Card -->
+            <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300">
+              <div class="flex items-center gap-4 mb-6 pb-5 border-b border-gray-100">
+                <span class="w-10 h-10 rounded-full bg-brand-gold/15 flex items-center justify-center text-xl">✨</span>
+                <div>
+                  <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal">Add-On Enhancements</h5>
+                  <p class="text-xs text-brand-charcoal/50 font-light mt-1">Customize and upgrade any salon service</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {menu.categories[5].addOns.map(ao => (
+                  <div class="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-brand-offwhite transition-colors">
+                    <span class="font-medium text-xs md:text-sm text-brand-charcoal">{ao.name}</span>
+                    <span class="font-display lining-nums text-lg font-bold text-brand-goldDark">{ao.price}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
 
       </div>
 
-      <!-- Footer Action & Original Menu Image Modal Launcher -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+      <!-- Footer Actions -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 pt-10 border-t border-brand-gold/20">
         <button 
           type="button"
           onclick="document.getElementById('menu-modal').classList.remove('hidden')"
-          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-brand-gold text-brand-charcoal bg-white/90 hover:bg-brand-gold hover:text-white font-bold text-sm uppercase tracking-wider shadow-md hover:shadow-[0_0_30px_rgba(235,183,52,0.4)] transition-all duration-300"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-brand-charcoal/20 text-brand-charcoal bg-transparent hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 font-bold text-sm uppercase tracking-wider transition-all duration-300"
         >
-          <span>👁️</span> View Original Printed Menu
+          <span>👁️</span> View Printed Menu
         </button>
         <a 
           href="/#booking"
-          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight font-bold text-sm uppercase tracking-wider shadow-[0_0_30px_rgba(235,183,52,0.4)] transition-all duration-300"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight hover:-translate-y-0.5 shadow-lg shadow-brand-gold/30 font-bold text-sm uppercase tracking-wider transition-all duration-300"
         >
-          <span>📅</span> Book Your Appointment
+          <span>📅</span> Book Appointment
         </a>
       </div>
 
@@ -403,11 +405,24 @@ const menu = siteData.pricing.menu;
         
         // Update button styles
         tabButtons.forEach(b => {
-          b.classList.remove('bg-brand-charcoal', 'text-white', 'border-brand-gold/50', 'shadow-[0_0_20px_rgba(235,183,52,0.3)]', 'active-tab');
-          b.classList.add('bg-white/80', 'text-brand-charcoal', 'border-gray-200');
+          b.classList.remove('bg-brand-charcoal', 'text-white', 'border-brand-gold/50', 'shadow-md', 'active-tab');
+          b.classList.add('bg-white', 'text-brand-charcoal', 'border-gray-200');
+          // Fix badge color if it exists
+          const badge = b.querySelector('.rounded-full.text-\\[0\\.65rem\\]');
+          if (badge) {
+            badge.classList.remove('bg-brand-gold');
+            badge.classList.add('bg-brand-offwhite');
+          }
         });
-        btn.classList.add('bg-brand-charcoal', 'text-white', 'border-brand-gold/50', 'shadow-[0_0_20px_rgba(235,183,52,0.3)]', 'active-tab');
-        btn.classList.remove('bg-white/80', 'text-brand-charcoal', 'border-gray-200');
+        
+        btn.classList.add('bg-brand-charcoal', 'text-white', 'border-brand-gold/50', 'shadow-md', 'active-tab');
+        btn.classList.remove('bg-white', 'text-brand-charcoal', 'border-gray-200');
+        
+        const activeBadge = btn.querySelector('.rounded-full.text-\\[0\\.65rem\\]');
+        if (activeBadge) {
+          activeBadge.classList.add('bg-brand-gold');
+          activeBadge.classList.remove('bg-brand-offwhite');
+        }
 
         // Hide all panels, show target
         panels.forEach(p => {
