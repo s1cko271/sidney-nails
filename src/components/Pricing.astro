@@ -337,16 +337,9 @@ const menu = siteData.pricing.menu;
 
       <!-- Footer Actions -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-10 border-t border-brand-gold/20">
-        <button 
-          type="button"
-          onclick="document.getElementById('menu-modal').classList.remove('hidden')"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-brand-charcoal/20 text-brand-charcoal bg-transparent hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 font-bold text-sm uppercase tracking-wider transition-all duration-300"
-        >
-          View Printed Menu
-        </button>
         <a 
           href="/#booking"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight hover:-translate-y-0.5 shadow-lg shadow-brand-gold/30 font-bold text-sm uppercase tracking-wider transition-all duration-300"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight hover:-translate-y-0.5 shadow-lg shadow-brand-gold/30 font-bold text-sm uppercase tracking-wider transition-all duration-300"
         >
           Book Appointment
         </a>
@@ -354,43 +347,6 @@ const menu = siteData.pricing.menu;
 
     </div>
 
-  </div>
-
-  <!-- POPUP MODAL FOR ORIGINAL MENU IMAGES -->
-  <div id="menu-modal" class="fixed inset-0 z-[120] bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="relative bg-white rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl border-2 border-brand-gold">
-      <button 
-        type="button"
-        onclick="document.getElementById('menu-modal').classList.add('hidden')"
-        class="absolute top-4 right-4 text-3xl font-bold text-brand-charcoal hover:text-brand-gold w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-        aria-label="Close"
-      >
-        &times;
-      </button>
-      <div class="text-center mb-6">
-        <h4 class="font-display lining-nums text-3xl font-bold text-brand-charcoal">Official Salon Menus</h4>
-        <p class="text-sm text-brand-charcoal/60 mt-1">J&J Nail Spa official printed pricing cards</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="rounded-xl overflow-hidden border border-gray-200 shadow-lg">
-          <div class="p-3 bg-gray-50 font-bold text-xs uppercase text-brand-charcoal text-center border-b">1. Nail Services Menu</div>
-          <img src="/images/menu/services-menu.png" alt="J&J Nail Spa Services Menu" class="w-full h-auto object-contain cursor-zoom-in" onclick="window.open(this.src, '_blank')" />
-        </div>
-        <div class="rounded-xl overflow-hidden border border-gray-200 shadow-lg">
-          <div class="p-3 bg-gray-50 font-bold text-xs uppercase text-brand-charcoal text-center border-b">2. Organic Spa Menu</div>
-          <img src="/images/menu/organic-spa-menu.png" alt="J&J Nail Spa Organic Spa Menu" class="w-full h-auto object-contain cursor-zoom-in" onclick="window.open(this.src, '_blank')" />
-        </div>
-      </div>
-      <div class="text-center mt-6">
-        <button 
-          type="button" 
-          onclick="document.getElementById('menu-modal').classList.add('hidden')"
-          class="px-8 py-2.5 rounded-full bg-brand-charcoal text-white hover:bg-brand-gold hover:text-brand-charcoal font-bold text-xs uppercase tracking-wider transition-colors"
-        >
-          Close Window
-        </button>
-      </div>
-    </div>
   </div>
 
 </section>
