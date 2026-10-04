@@ -183,6 +183,11 @@ const menu = siteData.pricing.menu;
                       </li>
                     ))}
                   </ul>
+                  {item.note && (
+                    <div class="text-xs text-brand-charcoal/60 font-light italic bg-brand-offwhite rounded-lg px-4 py-2.5 mb-6 border border-gray-100">
+                      📌 {item.note}
+                    </div>
+                  )}
                 </div>
                 <a href="/#booking" class="mt-auto w-full text-center py-3 rounded-lg border border-gray-200 text-brand-charcoal font-semibold text-xs uppercase tracking-wider hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 transition-colors">
                   Book This Pedicure
@@ -195,32 +200,17 @@ const menu = siteData.pricing.menu;
         <!-- 3. DIPPING POWDER PANEL -->
         <div id="tab-dipping" class="menu-panel hidden transition-opacity duration-300">
           <div class="mb-6 text-center max-w-2xl mx-auto">
-            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Dipping Powder (SNS)</h4>
+            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Dipping Powder</h4>
             <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[2].description}</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg mx-auto items-stretch">
             {menu.categories[2].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-xl transition-all duration-300 flex flex-col">
-                <div class="flex-grow">
-                  <div class="flex justify-between items-start gap-3 mb-5 pb-5 border-b border-gray-100">
-                    <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal leading-snug">{item.name}</h5>
-                    <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark whitespace-nowrap">{item.price}</span>
-                  </div>
-                  <div class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-brand-goldDark mb-4">Included</div>
-                  <ul class="space-y-3 mb-6">
-                    {item.steps.map(st => (
-                      <li class="flex items-start gap-3 text-sm text-brand-charcoal/80 font-light">
-                        <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-goldDark flex items-center justify-center shrink-0 mt-0.5">
-                          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        </span>
-                        <span class="leading-relaxed">{st}</span>
-                      </li>
-                    ))}
-                  </ul>
+              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal mb-4 leading-snug">{item.name}</h5>
+                <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
+                  <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
+                  <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark">{item.price}</span>
                 </div>
-                <a href="/#booking" class="mt-auto w-full text-center py-3 rounded-lg border border-gray-200 text-brand-charcoal font-semibold text-xs uppercase tracking-wider hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 transition-colors">
-                  Book Dipping
-                </a>
               </div>
             ))}
           </div>
@@ -333,8 +323,17 @@ const menu = siteData.pricing.menu;
 
       </div>
 
+      <!-- Kids Note -->
+      {menu.kidsNote && (
+        <div class="text-center mt-10 mb-4">
+          <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/20 rounded-full px-6 py-2.5 text-sm font-medium text-brand-charcoal">
+            <span>🎨</span> {menu.kidsNote}
+          </div>
+        </div>
+      )}
+
       <!-- Footer Actions -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 pt-10 border-t border-brand-gold/20">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-10 border-t border-brand-gold/20">
         <button 
           type="button"
           onclick="document.getElementById('menu-modal').classList.remove('hidden')"
