@@ -2,7 +2,7 @@
 import siteData from '../data/site.json';
 const menu = siteData.pricing.menu;
 ---
-<section class="py-24 md:py-32 bg-brand-offwhite relative overflow-hidden" id="pricing">
+<section class="py-24 md:py-32 bg-[#f4f4f5] relative overflow-hidden" id="pricing">
   <div class="max-w-[1240px] mx-auto px-6 relative z-10">
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
@@ -122,7 +122,7 @@ const menu = siteData.pricing.menu;
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {menu.categories[0].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-brand-gold/40 hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
                 <div class="flex-grow">
                   <div class="flex justify-between items-start gap-4 mb-5 pb-5 border-b border-gray-100">
                     <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal leading-snug">{item.name}</h5>
@@ -156,7 +156,7 @@ const menu = siteData.pricing.menu;
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {menu.categories[2].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-brand-gold/40 hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
                 <div class="flex-grow">
                   <div class="flex justify-between items-start gap-4 mb-5 pb-5 border-b border-gray-100">
                     <div>
@@ -202,7 +202,7 @@ const menu = siteData.pricing.menu;
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg mx-auto items-stretch">
             {menu.categories[1].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-brand-gold/40 hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                 <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal mb-4 leading-snug">{item.name}</h5>
                 <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
                   <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
@@ -221,7 +221,7 @@ const menu = siteData.pricing.menu;
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
             {menu.categories[3].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+              <div class="h-full bg-white rounded-xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-brand-gold/40 hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                 <h5 class="font-body font-semibold text-sm text-brand-charcoal mb-4 leading-snug">{item.name}</h5>
                 <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
                   <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
@@ -240,7 +240,7 @@ const menu = siteData.pricing.menu;
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
             {menu.categories[4].addOns.map(ao => (
-              <div class="h-full bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+              <div class="h-full bg-white rounded-xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-brand-gold/40 hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                 <h5 class="font-body font-semibold text-sm text-brand-charcoal mb-4 leading-snug">{ao.name}</h5>
                 <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
                   <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
