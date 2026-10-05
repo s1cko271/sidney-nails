@@ -31,7 +31,7 @@ import siteData from '../data/site.json';
       <a class="w-full sm:w-auto bg-brand-gold text-brand-charcoal px-10 py-4 rounded-full font-bold text-[0.9rem] uppercase tracking-widest shadow-lg hover:shadow-glow hover:-translate-y-1 transition-all duration-300 btn-shine" href={siteData.messengerUrl} target="_blank" rel="noopener noreferrer">
         {siteData.hero.ctaPrimary}
       </a>
-      <a class="w-full sm:w-auto bg-transparent border border-brand-cream/30 text-brand-cream px-8 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-brand-cream/10 transition-colors duration-300" href="/#services">
+      <a class="w-full sm:w-auto bg-transparent border border-brand-cream/30 text-brand-cream px-8 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-brand-cream/10 transition-colors duration-300" href={`tel:${siteData.salon.bookingPhoneRaw}`}>
         {siteData.hero.ctaSecondary}
       </a>
     </div>
