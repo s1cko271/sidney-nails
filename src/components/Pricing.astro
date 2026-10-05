@@ -3,10 +3,6 @@ import siteData from '../data/site.json';
 const menu = siteData.pricing.menu;
 ---
 <section class="py-24 md:py-32 bg-brand-offwhite relative overflow-hidden" id="pricing">
-  <!-- Decorative background orbs for glassmorphism refraction -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-gold/10 rounded-full blur-[100px] opacity-70 pointer-events-none"></div>
-  <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-charcoal/5 rounded-full blur-[80px] opacity-50 pointer-events-none"></div>
-
   <div class="max-w-[1240px] mx-auto px-6 relative z-10">
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
@@ -21,7 +17,7 @@ const menu = siteData.pricing.menu;
       </p>
       <div class="flex items-center justify-center gap-3 mt-8 opacity-70" aria-hidden="true">
         <span class="w-12 h-px bg-brand-gold"></span>
-        <span class="text-brand-gold text-xs animate-spin-slow">✦</span>
+        <span class="text-brand-gold text-xs animate-spin-slow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg></span>
         <span class="w-12 h-px bg-brand-gold"></span>
       </div>
     </div>
@@ -32,7 +28,7 @@ const menu = siteData.pricing.menu;
         <div class:list={[
           "relative rounded-3xl p-8 lg:p-10 transition-all duration-500 reveal flex flex-col",
           pkg.featured 
-            ? 'bg-[#1a1a1a]/70 backdrop-blur-xl text-white shadow-[0_20px_40px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_0_20px_rgba(255,255,255,0.02)] border border-white/10 hover:border-brand-gold/60 hover:-translate-y-2' 
+            ? 'bg-[#1a1a1a]/85 text-white shadow-[0_20px_40px_rgba(0,0,0,0.15)] border border-brand-gold/40 hover:border-brand-gold/80 hover:-translate-y-2' 
             : 'bg-white text-brand-charcoal shadow-xl border border-gray-100 hover:border-brand-gold/30 hover:-translate-y-2 rounded-2xl'
         ]}>
           
