@@ -86,31 +86,31 @@
         "name": "Manicure",
         "description": "Nail shaping, cuticle care, hot lotion, hand massage & hot towel. Upgrade to include warm paraffin wax and extended massage.",
         "price": "From ",
-        "image": "/images/placeholder.svg"
+        "image": "/images/services/manicure.jpg"
       },
       {
         "name": "Pedicure & Spa",
         "description": "Seasalt foot soak, cuticle care, sugar scrub, hot lotion & steamer spa. From Basic to Super Royal Deluxe.",
         "price": "From ",
-        "image": "/images/placeholder.svg"
+        "image": "/images/services/pedicure.jpg"
       },
       {
         "name": "Dipping Powder",
         "description": "Lightweight, odor-free dipping powder fortified with calcium and vitamins for strong, natural-feeling nails.",
         "price": "From ",
-        "image": "/images/placeholder.svg"
+        "image": "/images/services/dipping.webp"
       },
       {
         "name": "Nail Enhancement",
         "description": "Full set acrylic gel, ombre, pink & white, color acrylic, and builder/tap gel for flawless strength and custom shapes.",
         "price": "From +",
-        "image": "/images/placeholder.svg"
+        "image": "/images/services/enhancement.jpg"
       },
       {
         "name": "Polish Change & Add-Ons",
         "description": "French tip, cat eye, chrome, paraffin wax, sugar scrub, callus removal, and quick polish changes for hands & toes.",
         "price": "From ",
-        "image": "/images/placeholder.svg"
+        "image": "/images/services/addons.jpg"
       }
     ]
   },
@@ -577,6 +577,20 @@
         "title": "Accessibility",
         "content": "Our salon is fully wheelchair accessible. Please let us know if you require any special accommodations when booking."
       }
+    ]
+  },
+  "videos": {
+    "sectionTag": "Watch Us Work",
+    "title": "Our Salon",
+    "titleAccent": "In Motion",
+    "subtitle": "Experience the relaxing atmosphere and precision craftsmanship at J&J Nail Spa.",
+    "items": [
+      "/videos/1 (1).mp4",
+      "/videos/1.8 JJ.mp4",
+      "/videos/17.mp4",
+      "/videos/2.mp4",
+      "/videos/4.mp4",
+      "/videos/8.7 JJ.mp4"
     ]
   }
 }
