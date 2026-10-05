@@ -28,7 +28,7 @@
     "headlineLine1": "Where Beauty",
     "headlineLine2": "Meets Elegance",
     "description": "Experience luxury nail care with premium products, expert technicians, and a relaxing atmosphere designed for your comfort.",
-    "ctaPrimary": "Message Us to Book",
+    "ctaPrimary": "Book Now",
     "ctaSecondary": "Text / Call to Book",
     "stats": [
       {
@@ -429,7 +429,7 @@
     "enabled": false,
     "headline": "Special Offer",
     "text": "New promotions coming soon.",
-    "buttonText": "Message Us to Book",
+    "buttonText": "Book Now",
     "image": "/images/Banner_thankyou.jpg"
   },
   "reviews": {
@@ -543,7 +543,7 @@
         "href": "/#booking"
       }
     ],
-    "ctaText": "Message to Book"
+    "ctaText": "Book Now"
   },
   "promotions": {
     "_comment": "Gift cards and special offers section",
