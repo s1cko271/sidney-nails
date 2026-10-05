@@ -1,5 +1,11 @@
 ---
 import siteData from '../data/site.json';
+
+const videos = [
+  { id: 'v1', src: '/videos/video1.mp4' },
+  { id: 'v2', src: '/videos/video2.mp4' },
+  { id: 'v3', src: '/videos/video3.mp4' },
+];
 ---
 <section class="py-24 bg-brand-charcoal relative overflow-hidden" id="videos">
   <!-- Subtle background accent -->
@@ -19,44 +25,81 @@ import siteData from '../data/site.json';
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Video 1 -->
-      <div class="relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(235,183,52,0.1)] border border-brand-gold/20 aspect-[9/16] bg-black group reveal">
-        <video 
-          class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" 
-          src="/videos/video1.mp4" 
-          muted 
-          loop 
-          playsinline 
-          controls
-          preload="metadata"
-        ></video>
-      </div>
-
-      <!-- Video 2 -->
-      <div class="relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(235,183,52,0.1)] border border-brand-gold/20 aspect-[9/16] bg-black group reveal" style="transition-delay: 100ms;">
-        <video 
-          class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" 
-          src="/videos/video2.mp4" 
-          muted 
-          loop 
-          playsinline 
-          controls
-          preload="metadata"
-        ></video>
-      </div>
-
-      <!-- Video 3 -->
-      <div class="relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(235,183,52,0.1)] border border-brand-gold/20 aspect-[9/16] bg-black group reveal" style="transition-delay: 200ms;">
-        <video 
-          class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" 
-          src="/videos/video3.mp4" 
-          muted 
-          loop 
-          playsinline 
-          controls
-          preload="metadata"
-        ></video>
-      </div>
+      {videos.map((vid, index) => (
+        <div 
+          class="group relative rounded-2xl overflow-hidden shadow-2xl shadow-black/60 border border-brand-gold/10 aspect-[9/16] bg-brand-charcoal cursor-pointer reveal transform-gpu transition-all duration-700 motion-safe:hover:scale-[1.03] motion-safe:hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] motion-safe:hover:border-brand-gold/30" 
+          style={`transition-delay: ${index * 100}ms;`} 
+          data-video-wrapper
+        >
+          <video 
+            class="w-full h-full object-cover transition-opacity duration-500" 
+            src={vid.src} 
+            playsinline 
+            preload="metadata"
+            data-video-element
+          ></video>
+          
+          <!-- Custom Play Button & Scrim Overlay -->
+          <div class="absolute inset-0 flex flex-col justify-center items-center bg-brand-charcoal/10 group-hover:bg-brand-charcoal/0 transition-colors duration-500" data-video-overlay>
+            
+            <div class="w-16 h-16 rounded-full border border-brand-gold/50 bg-brand-charcoal/40 backdrop-blur-sm flex items-center justify-center text-brand-gold group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-brand-charcoal transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,0.3)] motion-safe:group-hover:scale-110 z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 ml-1">
+                <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            
+            <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-charcoal/90 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrappers = document.querySelectorAll('[data-video-wrapper]');
+    
+    wrappers.forEach(wrapper => {
+      const video = wrapper.querySelector('[data-video-element]') as HTMLVideoElement;
+      const overlay = wrapper.querySelector('[data-video-overlay]') as HTMLElement;
+      
+      if (!video || !overlay) return;
+
+      wrapper.addEventListener('click', () => {
+        if (video.paused) {
+          // Pause all other videos
+          document.querySelectorAll('[data-video-element]').forEach(v => {
+            const otherVideo = v as HTMLVideoElement;
+            if (otherVideo !== video && !otherVideo.paused) {
+              otherVideo.pause();
+              otherVideo.removeAttribute('controls');
+              const otherOverlay = otherVideo.parentElement?.querySelector('[data-video-overlay]') as HTMLElement;
+              if (otherOverlay) {
+                otherOverlay.style.opacity = '1';
+                otherOverlay.style.pointerEvents = 'auto';
+              }
+            }
+          });
+
+          video.play();
+          video.setAttribute('controls', 'true');
+          overlay.style.opacity = '0';
+          overlay.style.pointerEvents = 'none';
+        }
+      });
+
+      video.addEventListener('pause', () => {
+        video.removeAttribute('controls');
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+      });
+
+      video.addEventListener('ended', () => {
+        video.removeAttribute('controls');
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+      });
+    });
+  });
+</script>
