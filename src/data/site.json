@@ -85,37 +85,31 @@
       {
         "name": "Manicure",
         "description": "Nail shaping, cuticle care, hot lotion, hand massage & hot towel. Upgrade to include warm paraffin wax and extended massage.",
-        "price": "From $45",
+        "price": "From ",
         "image": "/images/placeholder.svg"
       },
       {
         "name": "Pedicure & Spa",
-        "description": "Seasalt foot soak, cuticle care, sugar scrub, hot lotion & steamer spa. From Basic to Super Royal Deluxe with hot stones.",
-        "price": "From $55",
+        "description": "Seasalt foot soak, cuticle care, sugar scrub, hot lotion & steamer spa. From Basic to Super Royal Deluxe.",
+        "price": "From ",
         "image": "/images/placeholder.svg"
       },
       {
         "name": "Dipping Powder",
         "description": "Lightweight, odor-free dipping powder fortified with calcium and vitamins for strong, natural-feeling nails.",
-        "price": "From $60",
+        "price": "From ",
         "image": "/images/placeholder.svg"
       },
       {
         "name": "Nail Enhancement",
         "description": "Full set acrylic gel, ombre, pink & white, color acrylic, and builder/tap gel for flawless strength and custom shapes.",
-        "price": "From $50+",
-        "image": "/images/placeholder.svg"
-      },
-      {
-        "name": "Organic Spa Menu",
-        "description": "All organic treatments include Milk & Honey plus your choice of 10 aromatherapy scents — Lavender, Jasmine, Rose & more.",
-        "price": "+$10 Add-on",
+        "price": "From +",
         "image": "/images/placeholder.svg"
       },
       {
         "name": "Polish Change & Add-Ons",
         "description": "French tip, cat eye, chrome, paraffin wax, sugar scrub, callus removal, and quick polish changes for hands & toes.",
-        "price": "From $10",
+        "price": "From ",
         "image": "/images/placeholder.svg"
       }
     ]
@@ -187,12 +181,11 @@
         {
           "id": "manicure",
           "name": "Manicure",
-          "icon": "💅",
           "description": "Complete hand & nail care with shaping, cuticle treatment, and relaxing hand massage.",
           "items": [
             {
               "name": "Basic Mani Polish Reg - Gel",
-              "price": "$45",
+              "price": "",
               "steps": [
                 "Nail Shaping / Buffing",
                 "Cuticle Care",
@@ -203,7 +196,7 @@
             },
             {
               "name": "Mani Polish Reg - Gel",
-              "price": "$60",
+              "price": "",
               "steps": [
                 "Nail Shaping / Buffing",
                 "Cuticle Care",
@@ -216,14 +209,28 @@
           ]
         },
         {
+          "id": "dipping",
+          "name": "Dipping Powder",
+          "description": "Lightweight, odor-free dipping powder fortified with calcium and vitamins for strong, natural-feeling nails.",
+          "items": [
+            {
+              "name": "Basic Dip",
+              "price": ""
+            },
+            {
+              "name": "Basic Builder Gel",
+              "price": ""
+            }
+          ]
+        },
+        {
           "id": "pedicure",
           "name": "Pedicure",
-          "icon": "🦶",
           "description": "Relaxing foot soak and revitalizing spa treatments in our luxury massage chairs.",
           "items": [
             {
               "name": "1. Basic Spa Polish Regular - Gel",
-              "price": "$55",
+              "price": "",
               "steps": [
                 "Seasalt Treatment",
                 "Nail Trimming & Cuticle Care",
@@ -234,7 +241,7 @@
             },
             {
               "name": "2. Deluxe Spa Polish Regular - Gel",
-              "price": "$65",
+              "price": "",
               "steps": [
                 "Seasalt Treatment",
                 "Nail Trimming & Cuticle Care",
@@ -247,7 +254,7 @@
             },
             {
               "name": "3. Royal Spa Polish Regular - Gel",
-              "price": "$80",
+              "price": "",
               "badge": "Popular",
               "steps": [
                 "Seasalt Treatment",
@@ -263,7 +270,7 @@
             },
             {
               "name": "4. Super Royal Deluxe Spa Polish Regular - Gel",
-              "price": "$90",
+              "price": "",
               "badge": "VIP Luxury",
               "steps": [
                 "Seasalt Treatment",
@@ -278,190 +285,85 @@
                 "Hot Towel",
                 "Steamer Spa"
               ],
-              "note": "Extra Massage 10 min: $15 · Paraffin: $10"
-            }
-          ]
-        },
-        {
-          "id": "dipping",
-          "name": "Dipping Powder",
-          "icon": "✨",
-          "description": "Lightweight, odor-free dipping powder fortified with calcium and vitamins for strong, natural-feeling nails.",
-          "items": [
-            {
-              "name": "Basic Dip",
-              "price": "$60"
-            },
-            {
-              "name": "Basic Builder Gel",
-              "price": "$65"
+              "note": "Extra Massage 10 min:  · Paraffin: "
             }
           ]
         },
         {
           "id": "enhancement",
           "name": "Nail Enhancement",
-          "icon": "💎",
           "description": "Professional acrylic extensions, builder/tap gel, and custom shapes for long-lasting glamour.",
           "items": [
             {
               "name": "Full Set Acrylic Gel",
-              "price": "$60+"
+              "price": "+"
             },
             {
               "name": "Full Set Ombre",
-              "price": "$70+"
+              "price": "+"
             },
             {
               "name": "Full Set Pink & White",
-              "price": "$70+"
+              "price": "+"
             },
             {
               "name": "Full Set Color Acrylic",
-              "price": "$65+"
+              "price": "+"
             },
             {
               "name": "Fill Acrylic Gel",
-              "price": "$50+"
+              "price": "+"
             },
             {
               "name": "Fill Ombre / Color",
-              "price": "$60+"
+              "price": "+"
             },
             {
               "name": "Builder / Tap Gel",
-              "price": "$65+"
+              "price": "+"
             },
             {
               "name": "Fill Builder / Tap Gel",
-              "price": "$60+"
-            }
-          ]
-        },
-        {
-          "id": "organic-spa",
-          "name": "Organic Spa (10 Flavors)",
-          "icon": "🌿",
-          "badge": "+$10",
-          "description": "All Organic Spa include Milk & Honey. Upgrade any service with your choice of 10 organic aromatherapy flavors.",
-          "flavors": [
-            {
-              "id": "01",
-              "name": "Lavender",
-              "benefit": "Stress relief, deep relaxation & better sleep",
-              "description": "Calms the mind and soothes the skin with the timeless scent of French lavender."
-            },
-            {
-              "id": "02",
-              "name": "Jasmine",
-              "benefit": "Uplifting mood & skin rejuvenation",
-              "description": "A delicate floral aroma that leaves your skin feeling silky and your spirit bright."
-            },
-            {
-              "id": "03",
-              "name": "Rose",
-              "benefit": "Deep hydration & romantic glow",
-              "description": "Infused with rose extracts that soften skin and provide a youthful, rosy radiance."
-            },
-            {
-              "id": "04",
-              "name": "Pomegranate",
-              "benefit": "Anti-aging & rich in antioxidants",
-              "description": "Sweet cherry extracts protect your skin and leave a fresh, fruity scent."
-            },
-            {
-              "id": "05",
-              "name": "Cucumber",
-              "benefit": "Natural detox & muscle relief",
-              "description": "A crisp, clean scent that purifies the skin and re-energizes your tired feet."
-            },
-            {
-              "id": "06",
-              "name": "Olive",
-              "benefit": "Ultra moisturizing & sweet relaxation",
-              "description": "A tropical escape that deeply nourishes dry skin with a warm, creamy aroma."
-            },
-            {
-              "id": "07",
-              "name": "Pearl",
-              "benefit": "Hydration & swelling reduction",
-              "description": "Refreshing and light; perfect for reducing puffiness and hydrating tired legs."
-            },
-            {
-              "id": "08",
-              "name": "Mango",
-              "benefit": "Vitamin C boost & skin firming",
-              "description": "Revitalizes the senses while improving skin elasticity and texture."
-            },
-            {
-              "id": "09",
-              "name": "Orange",
-              "benefit": "Vitamin C boost & skin firming",
-              "description": "Revitalizes the senses while improving skin elasticity and texture."
-            },
-            {
-              "id": "10",
-              "name": "Peppermint",
-              "benefit": "Cooling sensation & odor control",
-              "description": "Instantly cools sore muscles and provides an icy-fresh feeling for your feet."
+              "price": "+"
             }
           ]
         },
         {
           "id": "addons-polish",
-          "name": "Polish Change & Add-Ons",
-          "icon": "➕",
-          "description": "Quick touch-ups, color changes, and luxurious add-on enhancements.",
-          "polishChanges": [
-            {
-              "name": "Hands (Regular Polish)",
-              "price": "$15"
-            },
-            {
-              "name": "Hands (Gel Polish)",
-              "price": "$25"
-            },
-            {
-              "name": "Toes (Regular Polish)",
-              "price": "$20"
-            },
-            {
-              "name": "Toes (Gel Polish)",
-              "price": "$30"
-            }
-          ],
+          "name": "Add-Ons",
+          "description": "Customize and upgrade any salon service.",
           "addOns": [
             {
               "name": "French Tip",
-              "price": "$10"
+              "price": ""
             },
             {
               "name": "Cat Eye",
-              "price": "$10"
+              "price": ""
             },
             {
               "name": "Chrome",
-              "price": "$10"
+              "price": ""
             },
             {
               "name": "Paraffin Wax",
-              "price": "$10"
+              "price": ""
             },
             {
               "name": "Sugar Scrub",
-              "price": "$10"
+              "price": ""
             },
             {
               "name": "Callus Removal",
-              "price": "$10"
-            },
-            {
-              "name": "Cuticle Care",
-              "price": "$10"
+              "price": ""
             },
             {
               "name": "Extra Massage (10 min)",
-              "price": "$15"
+              "price": ""
+            },
+            {
+              "name": "Cuticle Care",
+              "price": ""
             }
           ]
         }

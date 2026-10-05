@@ -154,10 +154,10 @@ const menu = siteData.pricing.menu;
         <div id="tab-pedicure" class="menu-panel hidden transition-opacity duration-300">
           <div class="mb-6 text-center max-w-2xl mx-auto">
             <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Pedicure Spa Treatments</h4>
-            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[1].description}</p>
+            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[2].description}</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-            {menu.categories[1].items.map(item => (
+            {menu.categories[2].items.map(item => (
               <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-xl transition-all duration-300 flex flex-col">
                 <div class="flex-grow">
                   <div class="flex justify-between items-start gap-4 mb-5 pb-5 border-b border-gray-100">
@@ -200,10 +200,10 @@ const menu = siteData.pricing.menu;
         <div id="tab-dipping" class="menu-panel hidden transition-opacity duration-300">
           <div class="mb-6 text-center max-w-2xl mx-auto">
             <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Dipping Powder</h4>
-            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[2].description}</p>
+            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[1].description}</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg mx-auto items-stretch">
-            {menu.categories[2].items.map(item => (
+            {menu.categories[1].items.map(item => (
               <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
                 <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal mb-4 leading-snug">{item.name}</h5>
                 <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
@@ -234,93 +234,22 @@ const menu = siteData.pricing.menu;
           </div>
         </div>
 
-        <!-- 5. ORGANIC SPA PANEL -->
-        <div id="tab-organic-spa" class="menu-panel hidden transition-opacity duration-300">
-          <div class="mb-8">
-            <!-- Special Milk & Honey Banner -->
-            <div class="bg-brand-charcoal text-white rounded-2xl p-8 md:p-10 border-2 border-brand-gold/30 text-center relative overflow-hidden shadow-lg">
-              <div class="inline-block bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-sm mb-4">
-                Signature Organic Experience
-              </div>
-              <h4 class="font-display lining-nums text-3xl md:text-4xl font-bold text-white mb-3">
-                All Organic Spa Include <span class="italic text-brand-goldLight">Milk & Honey</span>
-              </h4>
-              <p class="text-brand-cream/70 text-sm md:text-base font-light max-w-xl mx-auto mb-6">
-                {menu.categories[4].description}
-              </p>
-              <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-6 py-2.5 rounded-full font-bold text-sm md:text-base tracking-wide">
-                <span class="text-white/90">Any Flavor Of Your Choice:</span>
-                <span class="text-brand-goldLight">+ $10</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 10 Flavors Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
-            {menu.categories[4].flavors.map(fl => (
-              <div class="h-full bg-white rounded-xl p-5 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300 flex flex-col">
-                <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
-                  <span class="w-6 h-6 rounded-full bg-brand-gold/15 text-brand-goldDark font-bold text-[0.65rem] flex items-center justify-center font-body">{fl.id}</span>
-                  <span class="text-[0.65rem] font-bold text-brand-goldDark uppercase tracking-wider">+$10</span>
-                </div>
-                <h5 class="font-display lining-nums text-lg font-bold text-brand-charcoal mb-1">{fl.name}</h5>
-                <div class="text-[0.7rem] font-semibold text-brand-goldDark mb-3 leading-tight">{fl.benefit}</div>
-                <p class="text-brand-charcoal/60 text-xs font-light leading-relaxed">{fl.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- 6. ADD-ONS & POLISH CHANGE PANEL -->
+        <!-- 5. ADD-ON PANEL -->
         <div id="tab-addons-polish" class="menu-panel hidden transition-opacity duration-300">
           <div class="mb-6 text-center max-w-2xl mx-auto">
-            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Polish Change & Add-Ons</h4>
-            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[5].description}</p>
+            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Add-On Enhancements</h4>
+            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[4].description}</p>
           </div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-            
-            <!-- Polish Change Card -->
-            <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300">
-              <div class="flex items-center gap-4 mb-6 pb-5 border-b border-gray-100">
-                <span class="w-10 h-10 rounded-full bg-brand-gold/15 flex items-center justify-center text-brand-goldDark">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2.25c-1.5 0-4.5 4.5-4.5 8.25a4.5 4.5 0 109 0c0-3.75-3-8.25-4.5-8.25z" /></svg>
-                </span>
-                <div>
-                  <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal">Polish Change</h5>
-                  <p class="text-xs text-brand-charcoal/50 font-light mt-1">Quick color refresh for hands and toes</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+            {menu.categories[4].addOns.map(ao => (
+              <div class="h-full bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                <h5 class="font-body font-semibold text-sm text-brand-charcoal mb-4 leading-snug">{ao.name}</h5>
+                <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
+                  <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
+                  <span class="font-display lining-nums text-2xl font-bold text-brand-goldDark">{ao.price}</span>
                 </div>
               </div>
-              <div class="space-y-2">
-                {menu.categories[5].polishChanges.map(pc => (
-                  <div class="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-brand-offwhite transition-colors">
-                    <span class="font-medium text-sm text-brand-charcoal">{pc.name}</span>
-                    <span class="font-display lining-nums text-xl font-bold text-brand-goldDark">{pc.price}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <!-- Add-Ons Card -->
-            <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-200 hover:border-brand-gold/40 hover:shadow-lg transition-all duration-300">
-              <div class="flex items-center gap-4 mb-6 pb-5 border-b border-gray-100">
-                <span class="w-10 h-10 rounded-full bg-brand-gold/15 flex items-center justify-center text-brand-goldDark">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.455L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" /></svg>
-                </span>
-                <div>
-                  <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal">Add-On Enhancements</h5>
-                  <p class="text-xs text-brand-charcoal/50 font-light mt-1">Customize and upgrade any salon service</p>
-                </div>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {menu.categories[5].addOns.map(ao => (
-                  <div class="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-brand-offwhite transition-colors">
-                    <span class="font-medium text-xs md:text-sm text-brand-charcoal">{ao.name}</span>
-                    <span class="font-display lining-nums text-lg font-bold text-brand-goldDark">{ao.price}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
 
