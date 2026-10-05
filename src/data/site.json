@@ -181,7 +181,7 @@
           "items": [
             {
               "name": "Basic Mani Polish Reg - Gel",
-              "price": "",
+              "price": "$45",
               "steps": [
                 "Nail Shaping / Buffing",
                 "Cuticle Care",
@@ -192,7 +192,7 @@
             },
             {
               "name": "Mani Polish Reg - Gel",
-              "price": "",
+              "price": "$60",
               "steps": [
                 "Nail Shaping / Buffing",
                 "Cuticle Care",
@@ -211,11 +211,11 @@
           "items": [
             {
               "name": "Basic Dip",
-              "price": ""
+              "price": "$60"
             },
             {
               "name": "Basic Builder Gel",
-              "price": ""
+              "price": "$65"
             }
           ]
         },
@@ -226,7 +226,7 @@
           "items": [
             {
               "name": "1. Basic Spa Polish Regular - Gel",
-              "price": "",
+              "price": "$55",
               "steps": [
                 "Seasalt Treatment",
                 "Nail Trimming & Cuticle Care",
@@ -237,7 +237,7 @@
             },
             {
               "name": "2. Deluxe Spa Polish Regular - Gel",
-              "price": "",
+              "price": "$65",
               "steps": [
                 "Seasalt Treatment",
                 "Nail Trimming & Cuticle Care",
@@ -250,7 +250,7 @@
             },
             {
               "name": "3. Royal Spa Polish Regular - Gel",
-              "price": "",
+              "price": "$80",
               "badge": "Popular",
               "steps": [
                 "Seasalt Treatment",
@@ -266,7 +266,7 @@
             },
             {
               "name": "4. Super Royal Deluxe Spa Polish Regular - Gel",
-              "price": "",
+              "price": "$90",
               "badge": "VIP Luxury",
               "steps": [
                 "Seasalt Treatment",
@@ -281,7 +281,7 @@
                 "Hot Towel",
                 "Steamer Spa"
               ],
-              "note": "Extra Massage 10 min:  · Paraffin: "
+              "note": "Extra Massage 10 min: $15 · Paraffin: $10"
             }
           ]
         },
@@ -292,35 +292,35 @@
           "items": [
             {
               "name": "Full Set Acrylic Gel",
-              "price": "+"
+              "price": "$60+"
             },
             {
               "name": "Full Set Ombre",
-              "price": "+"
+              "price": "$70+"
             },
             {
               "name": "Full Set Pink & White",
-              "price": "+"
+              "price": "$70+"
             },
             {
               "name": "Full Set Color Acrylic",
-              "price": "+"
+              "price": "$65+"
             },
             {
               "name": "Fill Acrylic Gel",
-              "price": "+"
+              "price": "$50+"
             },
             {
               "name": "Fill Ombre / Color",
-              "price": "+"
+              "price": "$60+"
             },
             {
               "name": "Builder / Tap Gel",
-              "price": "+"
+              "price": "$65+"
             },
             {
               "name": "Fill Builder / Tap Gel",
-              "price": "+"
+              "price": "$60+"
             }
           ]
         },
@@ -331,35 +331,35 @@
           "addOns": [
             {
               "name": "French Tip",
-              "price": ""
+              "price": "$10"
             },
             {
               "name": "Cat Eye",
-              "price": ""
+              "price": "$10"
             },
             {
               "name": "Chrome",
-              "price": ""
+              "price": "$10"
             },
             {
               "name": "Paraffin Wax",
-              "price": ""
+              "price": "$10"
             },
             {
               "name": "Sugar Scrub",
-              "price": ""
+              "price": "$10"
             },
             {
               "name": "Callus Removal",
-              "price": ""
+              "price": "$10"
             },
             {
               "name": "Extra Massage (10 min)",
-              "price": ""
+              "price": "$15"
             },
             {
               "name": "Cuticle Care",
-              "price": ""
+              "price": "$10"
             }
           ]
         }
