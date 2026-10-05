@@ -424,7 +424,7 @@
   },
   "promo": {
     "_comment": "The gold promotional banner — use for grand opening, seasonal deals, etc. Set 'enabled' to false to hide it.",
-    "enabled": true,
+    "enabled": false,
     "headline": "Special Offer",
     "text": "New promotions coming soon.",
     "buttonText": "Book Your Visit",
