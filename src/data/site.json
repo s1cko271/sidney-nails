@@ -36,10 +36,6 @@
       {
         "value": "5.0 ★",
         "label": "Google Rating"
-      },
-      {
-        "value": "Walk-Ins",
-        "label": "Welcome"
       }
     ]
   },
@@ -69,10 +65,10 @@
       "Premium Products",
       "Hygienic & Safe",
       "Expert Technicians",
-      "Walk-ins Welcome"
+      "Relaxing Vibe"
     ],
-    "badgeLabel": "Walk-Ins",
-    "badgeValue": "Always Welcome",
+    "badgeLabel": "Est.",
+    "badgeValue": "2024",
     "image": "/images/placeholder.svg"
   },
   "services": {
