@@ -36,7 +36,7 @@ import siteData from '../data/site.json';
     
     <div class="max-w-4xl mx-auto relative z-10">
       {siteData.promo.image ? (
-        <a href="/#booking" class="block group relative rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.6)] border border-brand-gold/30 hover:border-brand-gold/60 transition-colors duration-300">
+        <a href={siteData.messengerUrl} target="_blank" rel="noopener noreferrer" class="block group relative rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.6)] border border-brand-gold/30 hover:border-brand-gold/60 transition-colors duration-300">
           <img src={siteData.promo.image} alt="Special Offer" class="w-full h-auto object-contain transform-gpu transition-transform duration-700 group-hover:scale-[1.02]" />
           <div class="absolute inset-0 bg-brand-charcoal/0 group-hover:bg-brand-charcoal/10 transition-colors duration-300 pointer-events-none"></div>
         </a>
@@ -45,7 +45,7 @@ import siteData from '../data/site.json';
           <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-4">Special Offer</div>
           <h2 class="font-display lining-nums text-4xl md:text-5xl text-white font-light mb-6">{siteData.promo.headline}</h2>
           <p class="text-brand-cream/80 font-light tracking-wide mb-10 text-lg leading-relaxed">{siteData.promo.text}</p>
-          <a class="inline-block bg-brand-gold text-brand-charcoal px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-brand-charcoal hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all duration-300 motion-safe:hover:-translate-y-1" href="/#booking">
+          <a class="inline-block bg-brand-gold text-brand-charcoal px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-brand-charcoal hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all duration-300 motion-safe:hover:-translate-y-1" href={siteData.messengerUrl} target="_blank" rel="noopener noreferrer">
             {siteData.promo.buttonText}
           </a>
         </>

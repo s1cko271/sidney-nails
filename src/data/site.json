@@ -26,7 +26,7 @@
     "headlineLine1": "Where Beauty",
     "headlineLine2": "Meets Elegance",
     "description": "Experience luxury nail care with premium products, expert technicians, and a relaxing atmosphere designed for your comfort.",
-    "ctaPrimary": "Book Your Appointment",
+    "ctaPrimary": "Message Us to Book",
     "ctaSecondary": "View Our Services",
     "stats": [
       {
@@ -427,7 +427,7 @@
     "enabled": false,
     "headline": "Special Offer",
     "text": "New promotions coming soon.",
-    "buttonText": "Book Your Visit",
+    "buttonText": "Message Us to Book",
     "image": "/images/Banner_thankyou.jpg"
   },
   "reviews": {
@@ -490,14 +490,14 @@
   "booking": {
     "_comment": "The contact & appointment section at the bottom of the page",
     "sectionTag": "Contact & Book",
-    "title": "Book Your",
-    "titleAccent": "Appointment",
-    "subtitle": "Walk-ins welcome! For guaranteed seating, book ahead — we'll confirm via text within 15 minutes.",
-    "formTitle": "Request an Appointment",
-    "formSubtitle": "Fill in your details and we'll get back to you shortly",
-    "formButtonText": "Request Appointment",
+    "title": "Ready for",
+    "titleAccent": "Your Visit?",
+    "subtitle": "We manage all appointments directly through Facebook Messenger to give you the fastest response and personal care.",
+    "formTitle": "Book via Messenger",
+    "formSubtitle": "Click below to chat with our team and secure your time instantly.",
+    "formButtonText": "Message Us on Facebook",
     "formSuccessMessage": "Appointment requested! We will confirm via text within 15 minutes.",
-    "bookingUrl": "REPLACE_WITH_SQUARE_BOOKING_LINK"
+    "messengerUrl": "https://m.me/126641639576171"
   },
   "map": {
     "_comment": "Google Maps embed — the 'embedUrl' is the iframe embed link, 'directionsUrl' opens Google Maps directly",
@@ -540,7 +540,7 @@
         "href": "/#booking"
       }
     ],
-    "ctaText": "Book Now"
+    "ctaText": "Message to Book"
   },
   "promotions": {
     "_comment": "Gift cards and special offers section",
@@ -617,5 +617,6 @@
       "/videos/4.mp4",
       "/videos/8.7 JJ.mp4"
     ]
-  }
+  },
+  "messengerUrl": "https://m.me/jjnailspadickinson"
 }

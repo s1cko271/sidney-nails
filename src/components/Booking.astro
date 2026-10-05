@@ -65,31 +65,18 @@ import siteData from '../data/site.json';
         <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-brand-goldDark via-brand-goldLight to-brand-goldDark"></div>
         <div class="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-brand-goldDark via-brand-goldLight to-brand-goldDark"></div>
         
-        <div class="p-10 md:px-12 md:pt-12 md:pb-8 text-center relative z-10 border-b border-white/5">
+        <div class="p-10 md:px-12 md:pt-16 md:pb-16 text-center relative z-10 flex flex-col items-center justify-center min-h-[400px]">
+          <div class="w-20 h-20 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 shadow-[0_0_30px_rgba(212,175,55,0.1)] bg-brand-gold/5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+            </svg>
+          </div>
           <h3 class="font-display lining-nums text-3xl font-light text-white mb-3">{siteData.booking.formTitle}</h3>
-          <p class="text-brand-goldLight/80 font-light text-sm tracking-wide">Book your appointment securely via Square.</p>
-        </div>
-        
-        <div class="flex-grow min-h-[400px] relative z-10 bg-brand-charcoal">
-          {siteData.booking.bookingUrl === "REPLACE_WITH_SQUARE_BOOKING_LINK" ? (
-            <div class="p-12 text-center h-full flex flex-col items-center justify-center">
-              <div class="w-20 h-20 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 shadow-[0_0_30px_rgba(212,175,55,0.1)] bg-brand-gold/5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>
-              </div>
-              <p class="mb-8 text-brand-cream/80 font-light"><strong class="text-brand-gold font-normal tracking-wider block mb-2 text-lg">Booking System Ready</strong>Your Square Appointments widget will appear here once linked.</p>
-              <a href="#" class="inline-block bg-transparent border-2 border-brand-gold text-brand-gold px-8 py-3 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-gold hover:text-brand-charcoal transition-all shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-                {siteData.booking.formButtonText}
-              </a>
-            </div>
-          ) : (
-             <div class="p-2">
-                <iframe 
-                  src={siteData.booking.bookingUrl} 
-                  style="width:100%; height: 500px; border:none; display:block;" 
-                  title="Square Booking Widget">
-                </iframe>
-            </div>
-          )}
+          <p class="text-brand-goldLight/80 font-light text-sm tracking-wide mb-10 max-w-[280px] mx-auto">{siteData.booking.formSubtitle}</p>
+          
+          <a href={siteData.messengerUrl} target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-gold border border-brand-gold text-brand-charcoal px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white hover:border-white transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+            {siteData.booking.formButtonText}
+          </a>
         </div>
       </div>
 
