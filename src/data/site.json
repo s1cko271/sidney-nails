@@ -85,31 +85,31 @@
       {
         "name": "Manicure",
         "description": "Nail shaping, cuticle care, hot lotion, hand massage & hot towel. Upgrade to include warm paraffin wax and extended massage.",
-        "price": "From ",
+        "price": "From $45",
         "image": "/images/services/manicure.jpg"
       },
       {
         "name": "Pedicure & Spa",
         "description": "Seasalt foot soak, cuticle care, sugar scrub, hot lotion & steamer spa. From Basic to Super Royal Deluxe.",
-        "price": "From ",
+        "price": "From $55",
         "image": "/images/services/pedicure.jpg"
       },
       {
         "name": "Dipping Powder",
         "description": "Lightweight, odor-free dipping powder fortified with calcium and vitamins for strong, natural-feeling nails.",
-        "price": "From ",
+        "price": "From $60",
         "image": "/images/services/dipping.webp"
       },
       {
         "name": "Nail Enhancement",
         "description": "Full set acrylic gel, ombre, pink & white, color acrylic, and builder/tap gel for flawless strength and custom shapes.",
-        "price": "From +",
+        "price": "From $50+",
         "image": "/images/services/enhancement.jpg"
       },
       {
         "name": "Polish Change & Add-Ons",
         "description": "French tip, cat eye, chrome, paraffin wax, sugar scrub, callus removal, and quick polish changes for hands & toes.",
-        "price": "From ",
+        "price": "From $10",
         "image": "/images/services/addons.jpg"
       }
     ]
