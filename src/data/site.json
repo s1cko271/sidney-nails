@@ -9,14 +9,14 @@
     "city": "Dickinson",
     "state": "ND",
     "fullAddress": "3275 W Ridge Dr, Dickinson, ND 58601",
-    "phone": "(701) 651-3366",
-    "phoneRaw": "7016513366",
+    "phone": "+1 (701) 761-0117",
+    "phoneRaw": "+17017610117",
     "email": "",
     "logoImage": "/images/logo-3d.jpg",
     "interiorImage": "/images/interior.jpg",
     "exteriorImage": "/images/exterior2.jpg",
-    "bookingPhone": "701-651-3366",
-    "bookingPhoneRaw": "7016513366"
+    "bookingPhone": "+1 701-761-0117",
+    "bookingPhoneRaw": "+17017610117"
   },
   "hours": {
     "_comment": "Business hours — shown in the booking/contact section and footer",
