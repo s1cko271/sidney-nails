@@ -2,7 +2,10 @@
 import siteData from '../data/site.json';
 const menu = siteData.pricing.menu;
 ---
-<section class="py-24 md:py-32 bg-[#f4f4f5] relative overflow-hidden" id="pricing">
+<section class="py-24 md:py-32 relative overflow-hidden" id="pricing">
+  <div class="absolute inset-0 z-0 bg-brand-cream"></div>
+  <div class="absolute inset-0 z-0 opacity-40 bg-[url('/images/marble-bg.webp')] bg-cover bg-center bg-fixed"></div>
+  <div class="absolute inset-0 z-0 bg-white/40"></div>
   <div class="max-w-[1240px] mx-auto px-6 relative z-10">
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
