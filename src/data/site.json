@@ -38,8 +38,8 @@
         "label": "Google Rating"
       },
       {
-        "value": "10% Off",
-        "label": "Customer Appreciation"
+        "value": "Walk-Ins",
+        "label": "Welcome"
       }
     ]
   },
@@ -71,8 +71,8 @@
       "Expert Technicians",
       "Walk-ins Welcome"
     ],
-    "badgeLabel": "Customer Appreciation",
-    "badgeValue": "10% Off All Services",
+    "badgeLabel": "Walk-Ins",
+    "badgeValue": "Always Welcome",
     "image": "/images/placeholder.svg"
   },
   "services": {
@@ -428,9 +428,9 @@
   },
   "promo": {
     "_comment": "The gold promotional banner — use for grand opening, seasonal deals, etc. Set 'enabled' to false to hide it.",
-    "enabled": true,
-    "headline": "Customer Appreciation - 10% Off!",
-    "text": "Thank you for your continued support! Enjoy 10% off your service as a token of our appreciation.",
+    "enabled": false,
+    "headline": "Special Offer",
+    "text": "New promotions coming soon.",
     "buttonText": "Book Your Visit"
   },
   "reviews": {
@@ -554,9 +554,9 @@
     "items": [
       {
         "icon": "✨",
-        "title": "Customer Appreciation",
-        "description": "Thank you for your continued support! Enjoy 10% off your service as a token of our appreciation.",
-        "offer": "10% OFF"
+        "title": "Premium Quality",
+        "description": "We use only industry-leading, safe, and high-quality products to ensure beautiful and long-lasting results.",
+        "offer": "Top Products"
       },
       {
         "icon": "🎁",
