@@ -13,7 +13,7 @@
     "phoneRaw": "7017610117",
     "email": "",
     "logoImage": "/images/logo-3d.jpg",
-    "interiorImage": "/images/exterior-new.jpg",
+    "interiorImage": "/images/interior.jpg",
     "exteriorImage": "/images/exterior2.jpg"
   },
   "hours": {
@@ -69,7 +69,7 @@
     ],
     "badgeLabel": "Est.",
     "badgeValue": "2026",
-    "image": "/images/placeholder.svg"
+    "image": "/images/exterior-new.jpg"
   },
   "services": {
     "_comment": "The 6 service cards — each shows an image, name, short description, and starting price",
