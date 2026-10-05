@@ -73,7 +73,7 @@
     ],
     "badgeLabel": "Customer Appreciation",
     "badgeValue": "10% Off All Services",
-    "image": "/images/real/1790896521232_2009224944731400000_2009224944731400000_2befdeee301db67c230aca06fed151ed.webp"
+    "image": "/images/placeholder.webp"
   },
   "services": {
     "_comment": "The 6 service cards — each shows an image, name, short description, and starting price",
@@ -86,37 +86,37 @@
         "name": "Manicure",
         "description": "Nail shaping, cuticle care, hot lotion, hand massage & hot towel. Upgrade to include warm paraffin wax and extended massage.",
         "price": "From $45",
-        "image": "/images/real/1790896534403_2009224944731400000_2009224944731400000_d553a8944350bddf7d8287d956573c80.webp"
+        "image": "/images/placeholder.webp"
       },
       {
         "name": "Pedicure & Spa",
         "description": "Seasalt foot soak, cuticle care, sugar scrub, hot lotion & steamer spa. From Basic to Super Royal Deluxe with hot stones.",
         "price": "From $55",
-        "image": "/images/real/1790896559868_2009224944731400000_2009224944731400000_7d52d663d712703e8782213dd14b444e.webp"
+        "image": "/images/placeholder.webp"
       },
       {
         "name": "Dipping Powder",
         "description": "Lightweight, odor-free dipping powder fortified with calcium and vitamins for strong, natural-feeling nails.",
         "price": "From $60",
-        "image": "/images/real/1790896645917_2009224944731400000_2009224944731400000_c33c6c488c2b845b9820a6a188999031.webp"
+        "image": "/images/placeholder.webp"
       },
       {
         "name": "Nail Enhancement",
         "description": "Full set acrylic gel, ombre, pink & white, color acrylic, and builder/tap gel for flawless strength and custom shapes.",
         "price": "From $50+",
-        "image": "/images/real/1790896712871_2009224944731400000_2009224944731400000_02c8fd6c78794861ad8b8692e4bde856.webp"
+        "image": "/images/placeholder.webp"
       },
       {
         "name": "Organic Spa Menu",
         "description": "All organic treatments include Milk & Honey plus your choice of 10 aromatherapy scents — Lavender, Jasmine, Rose & more.",
         "price": "+$10 Add-on",
-        "image": "/images/real/1790896777850_2009224944731400000_2009224944731400000_adae9a09fc8e7562ebcd91ae38ea46f7.webp"
+        "image": "/images/placeholder.webp"
       },
       {
         "name": "Polish Change & Add-Ons",
         "description": "French tip, cat eye, chrome, paraffin wax, sugar scrub, callus removal, and quick polish changes for hands & toes.",
         "price": "From $10",
-        "image": "/images/real/1790896844387_2009224944731400000_2009224944731400000_797b9c0d92fcf2ac12d5f52f09b0e16a.webp"
+        "image": "/images/placeholder.webp"
       }
     ]
   },
@@ -475,23 +475,23 @@
     "titleAccent": "Nail Designs",
     "items": [
       {
-        "image": "/images/real/signature.webp",
+        "image": "/images/placeholder.webp",
         "caption": "Signature Floral Encapsulation"
       },
       {
-        "image": "/images/real/lv-red-dots.webp",
+        "image": "/images/placeholder.webp",
         "caption": "Nail Art"
       },
       {
-        "image": "/images/real/3d-flower-leopard.webp",
+        "image": "/images/placeholder.webp",
         "caption": "Manicure"
       },
       {
-        "image": "/images/real/1790897141928_2009224944731400000_2009224944731400000_33fcc4caa0c5601c616260b890917eac.webp",
+        "image": "/images/placeholder.webp",
         "caption": "Pedicure"
       },
       {
-        "image": "/images/real/1790897245255_2009224944731400000_2009224944731400000_bb9cb9fe6169cee391dfc79836a7d314.webp",
+        "image": "/images/placeholder.webp",
         "caption": "Gel Polish"
       }
     ]
