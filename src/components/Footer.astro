@@ -7,11 +7,11 @@ import site from '../data/site.json';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
       <!-- Brand Info -->
       <div>
-        <h3 class="font-display lining-nums text-2xl text-white mb-6">{site.name}</h3>
-        <p class="font-light mb-4">{site.description}</p>
+        <h3 class="font-display lining-nums text-2xl text-white mb-6">{site.salon?.name}</h3>
+        <p class="font-light mb-4">{site.salon?.tagline}</p>
         <div class="flex flex-col gap-2 text-sm font-light">
-          <p>{site.contact?.address?.street}, {site.contact?.address?.city}, {site.contact?.address?.state} {site.contact?.address?.zip}</p>
-          <p><a href={`mailto:${site.contact?.email}`} class="hover:text-gold transition-colors">{site.contact?.email}</a></p>
+          <p>{site.salon?.fullAddress}</p>
+          {site.salon?.email && <p><a href={`mailto:${site.salon.email}`} class="hover:text-gold transition-colors">{site.salon.email}</a></p>}
         </div>
       </div>
 
@@ -22,7 +22,7 @@ import site from '../data/site.json';
           <li><a href="#services" class="hover:text-gold transition-colors">Manicures</a></li>
           <li><a href="#services" class="hover:text-gold transition-colors">Pedicures</a></li>
           <li><a href="#services" class="hover:text-gold transition-colors">Dipping Powder</a></li>
-          <li><a href="#services" class="hover:text-gold transition-colors">Nail Enhancements</a></li>
+          <li><a href="#services" class="hover:text-gold transition-colors">Lashes & PMU</a></li>
           <li><a href="#services" class="hover:text-gold transition-colors">Organic Spa Menu</a></li>
         </ul>
       </div>
@@ -35,7 +35,7 @@ import site from '../data/site.json';
           <li><a href="#gallery" class="hover:text-gold transition-colors">Gallery</a></li>
           <li><a href="#pricing" class="hover:text-gold transition-colors">Pricing</a></li>
           <li><a href="#reviews" class="hover:text-gold transition-colors">Reviews</a></li>
-          <li><a href={site.bookingUrl || "#book"} class="hover:text-gold transition-colors">Book Online</a></li>
+          <li><a href={site.booking?.messengerUrl || "#book"} class="hover:text-gold transition-colors">Book Online</a></li>
         </ul>
       </div>
 
@@ -47,21 +47,13 @@ import site from '../data/site.json';
           <input type="email" placeholder="Email Address" class="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder:text-white/50 focus:outline-none focus:border-gold" required />
           <button type="submit" class="bg-gold hover:bg-gold-light text-white px-4 py-2 rounded-lg uppercase tracking-widest text-sm font-medium transition-colors">Subscribe</button>
         </form>
-        
-        <div class="flex space-x-4">
-          {site.social?.map((s: any) => (
-            <a href={s.url} target="_blank" rel="noopener noreferrer" class="text-white hover:text-gold transition-colors" aria-label={s.platform}>
-              <span class="uppercase text-xs tracking-wider border border-white/20 px-2 py-1 rounded">{s.platform}</span>
-            </a>
-          ))}
-        </div>
       </div>
     </div>
 
     <!-- Bottom Bar -->
     <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light">
-      <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-      <p class="font-medium tracking-widest text-gold">{site.contact?.phone}</p>
+      <p>&copy; {new Date().getFullYear()} {site.salon?.name}. All rights reserved.</p>
+      <p class="font-medium tracking-widest text-gold">{site.salon?.phone}</p>
     </div>
   </div>
 </footer>

@@ -15,35 +15,38 @@ import siteData from '../data/site.json';
       </p>
       <div class="flex items-center justify-center gap-3 mt-8 opacity-70" aria-hidden="true">
         <span class="w-12 h-px bg-brand-gold"></span>
-        <span class="text-brand-gold animate-spin-slow flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
+        <span class="text-brand-gold opacity-80 transition-transform duration-700 hover:scale-110 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg>
         </span>
         <span class="w-12 h-px bg-brand-gold"></span>
       </div>
     </div>
 
-    <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
+    <div class="space-y-24 lg:space-y-32 mt-10">
       {siteData.services.items.map((svc, index) => (
-        <a href="/#booking" class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md lg:max-w-none group bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden border border-transparent shadow-[0_0_40px_rgba(235,183,52,0.3),0_15px_50px_rgba(0,0,0,0.25),0_5px_20px_rgba(0,0,0,0.15)] border-brand-gold/30 hover:shadow-[0_0_60px_rgba(235,183,52,0.5),0_20px_60px_rgba(0,0,0,0.3),0_8px_25px_rgba(0,0,0,0.2)] hover:border-brand-gold/60 hover:scale-[1.03] hover:-translate-y-2 transition-all duration-500 cursor-pointer flex flex-col reveal">
-          <div class="relative aspect-[4/5] overflow-hidden bg-brand-cream/20">
-            <img class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" src={svc.image} alt={svc.name} />
-            <div class="absolute top-4 left-4 w-10 h-10 rounded-full bg-white/95 flex items-center justify-center text-brand-charcoal text-xs font-bold font-body shadow-sm">
-              {String(index + 1).padStart(2, '0')}
+        <div class={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-10 lg:gap-20 reveal`}>
+          <div class="w-full lg:w-1/2 relative">
+            <div class="relative overflow-hidden rounded-[3rem] aspect-[4/3] md:aspect-[3/2] shadow-glow border-2 border-brand-luxury/50 group">
+              <img class="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110" src={svc.image} alt={svc.name} loading="lazy" />
+              <div class="absolute inset-0 bg-brand-charcoal/10 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-700"></div>
+              <div class="absolute top-6 left-6 w-12 h-12 rounded-full bg-white/95 flex items-center justify-center text-brand-charcoal text-sm font-bold font-body shadow-lg">
+                {String(index + 1).padStart(2, '0')}
+              </div>
             </div>
           </div>
-          <div class="p-8 flex flex-col flex-grow">
-            <h3 class="font-display lining-nums text-2xl font-semibold text-brand-charcoal mb-3">{svc.name}</h3>
-            <p class="text-brand-charcoal/60 text-sm leading-relaxed mb-8 font-light flex-grow">{svc.description}</p>
-            
-            <div class="flex justify-between items-center pt-6 border-t border-brand-creamDark">
-              <span class="font-semibold text-brand-goldDark text-lg tracking-wide">{svc.price}</span>
-              <span class="w-10 h-10 rounded-full border border-brand-charcoal/20 flex items-center justify-center text-brand-charcoal/40 group-hover:bg-brand-gold group-hover:border-brand-gold group-hover:text-white transition-all duration-300">
-                <span class="motion-safe:group-hover:translate-x-1 transition-transform duration-300 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
-              </span>
-              </span>
+          <div class="w-full lg:w-1/2 flex flex-col justify-center">
+            <h3 class="font-display lining-nums text-3xl md:text-4xl text-white font-semibold mb-6 tracking-wide">{svc.name}</h3>
+            <p class="text-white/70 text-base md:text-lg leading-relaxed mb-8 font-light max-w-lg">{svc.description}</p>
+            <div class="flex items-center gap-8">
+              <div class="font-display lining-nums font-semibold text-brand-gold text-2xl tracking-wide -translate-y-0.5">{svc.price}</div>
+              <div class="w-px h-8 bg-white/20"></div>
+              <a href="/#booking" class="text-xs font-bold uppercase tracking-widest text-brand-gold hover:text-white transition-colors flex items-center gap-2 group">
+                Book Session
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 group-hover:translate-x-1 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+              </a>
             </div>
           </div>
-        </a>
+        </div>
       ))}
+    </div>
 

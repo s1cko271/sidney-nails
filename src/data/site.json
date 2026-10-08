@@ -2,21 +2,26 @@
   "_comment": "=== J&J NAIL SPA – SITE CONFIGURATION ===  Edit this file to update ALL text, images, and info shown on the website.  You do NOT need to touch any code files — just change values here and the site updates automatically.",
   "salon": {
     "_comment": "Basic info — shown in the browser tab title, header, footer, and hero section",
-    "name": "J&J Nail Spa",
-    "namePart1": "J&J",
-    "namePart2": "Nail Spa",
-    "tagline": "Premium Nail Salon & Spa",
+    "name": "Opal Nails & Spa",
+    "namePart1": "Opal",
+    "namePart2": "Nails & Spa",
+    "tagline": "NAILS • LASHES • FACIAL • WAXING • PMU",
     "city": "Dickinson",
     "state": "ND",
-    "fullAddress": "3275 W Ridge Dr, Dickinson, ND 58601",
-    "phone": "+1 (701) 761-0117",
-    "phoneRaw": "+17017610117",
+    "fullAddress": "373 15th St W, Dickinson, ND 58601",
+    "phone": "+1 (701) 483-7070",
+    "phoneRaw": "+17014837070",
     "email": "",
-    "logoImage": "/images/logo-3d.jpg",
-    "interiorImage": "/images/interior.jpg",
-    "exteriorImage": "/images/exterior2.jpg",
-    "bookingPhone": "+1 701-761-0117",
-    "bookingPhoneRaw": "+17017610117"
+    "logoImage": "/images/logo.png",
+    "interiorImage": "/images/background.jpg",
+    "exteriorImage": "/images/gallery/14084dd7074aea93a3f1d37339d367ca.jpg",
+    "bookingPhone": "+1 (701) 483-7070",
+    "bookingPhoneRaw": "+17014837070",
+    "logoSquare": "/images/opal-logo-monogram.png",
+    "logoFull": "/images/logo.png",
+    "ogImage": "/images/og-image.jpg",
+    "favicon": "/images/opal-logo-monogram.png",
+    "bookingPhoneFormatted": "+1 (701) 483-7070"
   },
   "hours": {
     "_comment": "Business hours — shown in the booking/contact section and footer",
@@ -25,11 +30,11 @@
   },
   "hero": {
     "_comment": "The big intro section at the very top of the page",
-    "headlineLine1": "Where Beauty",
-    "headlineLine2": "Meets Elegance",
-    "description": "Experience luxury nail care with premium products, expert technicians, and a relaxing atmosphere designed for your comfort.",
-    "ctaPrimary": "Book Now",
-    "ctaSecondary": "Text / Call to Book",
+    "headlineLine1": "Unearth Your",
+    "headlineLine2": "Radiance",
+    "description": "A multi-faceted sanctuary for nails, lashes, and esthetics. Experience precision artistry and refined tranquility in every detail.",
+    "ctaPrimary": "Reserve Your Time",
+    "ctaSecondary": "Inquire & Book",
     "stats": [
       {
         "value": "500+",
@@ -57,11 +62,11 @@
   "about": {
     "_comment": "The 'About Us' section — tells visitors what makes your salon special",
     "sectionTag": "About Us",
-    "title": "Your Destination for",
-    "titleAccent": "Premium Nail Care",
+    "title": "The Art of",
+    "titleAccent": "Polished Perfection",
     "paragraphs": [
-      "Welcome to J&J Nail Spa — a brand new, state-of-the-art nail salon designed with your comfort and beauty in mind. Our spacious, modern interior features luxurious spa chairs, marble floors, and a warm, inviting atmosphere.",
-      "Our team of highly skilled technicians brings years of experience and a passion for nail artistry to every appointment. We use only top-quality, safe products to ensure beautiful, long-lasting results."
+      "Opal Nails & Spa is designed as a sanctuary of refined beauty, where every treatment is a meticulous craft. From flawless acrylics and serene pedicures to delicate esthetics like lashes and waxing, our multi-faceted menu caters to your complete radiance.",
+      "Our environment is intentionally crafted to emulate the calming, luminous qualities of our namesake gemstone. With impeccable hygiene standards, premium products, and a team of passionate artisans, we ensure your time with us is both restorative and beautifully transformative."
     ],
     "highlights": [
       "Premium Products",
@@ -69,9 +74,15 @@
       "Expert Technicians",
       "Relaxing Vibe"
     ],
-    "badgeLabel": "Est.",
-    "badgeValue": "2026",
-    "image": "/images/exterior-new.jpg"
+    "badgeLabel": "PURE",
+    "badgeValue": "ARTISTRY",
+    "image": "/images/gallery/ba5f93e6fcbc0368531391460c206ada.jpg",
+    "features": [
+      "Precision Artistry",
+      "Luminous Environment",
+      "Impeccable Hygiene",
+      "Comprehensive Care"
+    ]
   },
   "services": {
     "_comment": "The 6 service cards — each shows an image, name, short description, and starting price",
@@ -82,32 +93,32 @@
     "items": [
       {
         "name": "Manicure",
-        "description": "Nail shaping, cuticle care, hot lotion, hand massage & hot towel. Upgrade to include warm paraffin wax and extended massage.",
-        "price": "From $45",
+        "description": "Regular manicure, Deluxe Manicure, Deluxe Royal Manicure.",
+        "price": "From ",
         "image": "/images/services/manicure.jpg"
       },
       {
-        "name": "Pedicure & Spa",
-        "description": "Seasalt foot soak, cuticle care, sugar scrub, hot lotion & steamer spa. From Basic to Super Royal Deluxe.",
-        "price": "From $55",
+        "name": "Pedicure Spa",
+        "description": "Basic pedicure, Deluxe pedicure, Deluxe super royal pedicure. Ten dollars any flavor your choice for bubble spa scents.",
+        "price": "From ",
         "image": "/images/services/pedicure.jpg"
       },
       {
-        "name": "Dipping Powder",
-        "description": "Lightweight, odor-free dipping powder fortified with calcium and vitamins for strong, natural-feeling nails.",
-        "price": "From $60",
+        "name": "Acrylic & Dipping",
+        "description": "Fullset pink & white, Regular, White Tip, Ombre, Builder gel, Fills, Dipping color Powder, Dipping Ombre.",
+        "price": "From ",
         "image": "/images/services/dipping.webp"
       },
       {
-        "name": "Nail Enhancement",
-        "description": "Full set acrylic gel, ombre, pink & white, color acrylic, and builder/tap gel for flawless strength and custom shapes.",
-        "price": "From $50+",
+        "name": "Waxing & Beauty",
+        "description": "Facial Treatment, Eyelash Extensions, and full face/body waxing services.",
+        "price": "From ",
         "image": "/images/services/enhancement.jpg"
       },
       {
-        "name": "Polish Change & Add-Ons",
-        "description": "French tip, cat eye, chrome, paraffin wax, sugar scrub, callus removal, and quick polish changes for hands & toes.",
-        "price": "From $10",
+        "name": "Additional Services",
+        "description": "Polish changes, nail designs, fixes, removals, and custom shapes.",
+        "price": "From ",
         "image": "/images/services/addons.jpg"
       }
     ]
@@ -115,51 +126,51 @@
   "pricing": {
     "_comment": "The pricing cards section — set 'featured' to true on the most popular package (it gets a dark highlight)",
     "sectionTag": "Pricing",
-    "title": "Transparent Pricing,",
-    "titleAccent": "No Hidden Fees",
-    "subtitle": "All prices include labor and materials. What you see is what you pay.",
+    "title": "Curated",
+    "titleAccent": "Treatments",
+    "subtitle": "From flawless acrylics to revitalizing spa pedicures and delicate esthetics, discover our spectrum of services.",
     "packages": [
       {
-        "name": "Basic Mani Polish",
-        "price": "$45",
-        "unit": "Regular · Gel",
-        "description": "Essential manicure with nail shaping, cuticle care, moisturizing lotion, and relaxing hand massage.",
+        "name": "Basic Pedicure",
+        "price": "",
+        "unit": "Spa Pedicure",
+        "description": "A refreshing spa pedicure to groom your nails and relax your feet.",
         "featured": false,
         "features": [
-          "Nail Shaping & Buffing",
-          "Cuticle Care",
-          "Hot Lotion",
-          "Hand Massage",
-          "Hot Towel"
+          "Groom your cuticles",
+          "Sea salt treatment",
+          "Lotion + hot towel",
+          "5 minute massage",
+          "Gel polish"
         ]
       },
       {
-        "name": "Royal Spa Pedicure",
-        "price": "$80",
-        "unit": "Regular · Gel",
-        "description": "Our signature luxury pedicure with callus removal, paraffin wax, steamer spa, and 10-minute massage.",
+        "name": "Deluxe Pedicure",
+        "price": "",
+        "unit": "Spa Pedicure",
+        "description": "Elevate your relaxation with an extended massage and exfoliating sea salt scrub.",
         "featured": true,
         "featuredLabel": "MOST POPULAR",
         "features": [
-          "Seasalt & Cuticle Care",
-          "Callus Removal & Sugar Scrub",
-          "Warm Paraffin Wax",
-          "Relaxing Massage (10 min)",
-          "Hot Towel & Steamer Spa"
+          "Groom your cuticles",
+          "Scrub sea salt & treatment",
+          "Lotion + hot towel",
+          "10 minute massage",
+          "Gel polish"
         ]
       },
       {
-        "name": "Super Royal Deluxe Spa",
-        "price": "$90",
-        "unit": "Ultimate Luxury Pedicure",
-        "description": "The complete VIP pampering with marine mask, hot stones, paraffin wax, steamer spa, and 14-minute massage.",
+        "name": "Deluxe Super Royal",
+        "price": "",
+        "unit": "Ultimate Pedicure",
+        "description": "The ultimate pampering experience featuring hot wax paraffin and callus removal.",
         "featured": false,
         "features": [
-          "All Royal Spa Treatments Included",
-          "Marine Mask with Hot Towels",
-          "Soothing Hot Stone Therapy",
-          "Extended Massage (14 min)",
-          "Steamer Spa & Shinybuff Finish"
+          "Callus remover & cuticles",
+          "Hot wax paraffin",
+          "Sea salt treatment",
+          "Lotion + hot towel",
+          "13 min massage & Gel polish"
         ]
       }
     ],
@@ -174,194 +185,209 @@
           "src": "/images/menu/organic-spa-menu.png"
         }
       ],
-      "kidsNote": "Kids age under 6 — all services include free designs",
+      "kidsNote": "Bubble Spa Scents:  for any flavor of your choice (Radiant Rose, Honey Flower, Calming Lavender, Soothing Peppermint, Zesty Lemon, Mango Delight, Juicy Orange, Dainty Jasmine).",
       "categories": [
         {
           "id": "manicure",
           "name": "Manicure",
-          "description": "Complete hand & nail care with shaping, cuticle treatment, and relaxing hand massage.",
+          "badge": "",
+          "description": "Luxurious hand and nail care.",
           "items": [
             {
-              "name": "Basic Mani Polish Reg - Gel",
+              "name": "Regular manicure",
               "price": "$45",
               "steps": [
-                "Nail Shaping / Buffing",
-                "Cuticle Care",
-                "Hot Lotion",
-                "Hand Massage",
-                "Hot Towel"
+                "Groom your cuticles",
+                "Gel polish",
+                "Massage"
               ]
             },
             {
-              "name": "Mani Polish Reg - Gel",
-              "price": "$60",
+              "name": "Deluxe Manicure",
+              "price": "$55",
               "steps": [
-                "Nail Shaping / Buffing",
-                "Cuticle Care",
-                "Paraffin Wax",
-                "Hot Lotion",
-                "Hand Massage (4 min)",
-                "Hot Towel"
+                "Groom your Cuticles",
+                "Gel polish",
+                "Hot wax paraffin",
+                "Massage"
               ]
-            }
-          ]
-        },
-        {
-          "id": "dipping",
-          "name": "Dipping Powder",
-          "description": "Lightweight, odor-free dipping powder fortified with calcium and vitamins for strong, natural-feeling nails.",
-          "items": [
-            {
-              "name": "Basic Dip",
-              "price": "$60"
             },
             {
-              "name": "Basic Builder Gel",
-              "price": "$65"
+              "name": "Deluxe Royal Manicure",
+              "price": "$70",
+              "steps": [
+                "Groom your Cuticles",
+                "Gel polish",
+                "Hot wax paraffin",
+                "Ten minute massage"
+              ]
             }
           ]
         },
         {
           "id": "pedicure",
           "name": "Pedicure",
-          "description": "Relaxing foot soak and revitalizing spa treatments in our luxury massage chairs.",
+          "badge": "Popular",
+          "description": "Rejuvenating spa pedicure treatments.",
           "items": [
             {
-              "name": "1. Basic Spa Polish Regular - Gel",
-              "price": "$55",
+              "name": "Basic pedicure",
+              "price": "$60",
               "steps": [
-                "Seasalt Treatment",
-                "Nail Trimming & Cuticle Care",
-                "Foot Sugar with Pumice Bar (2 min)",
-                "Hot Lotion",
-                "Hot Towel"
+                "Groom your cuticles",
+                "sea salt treatment",
+                "Lotion + hot towel",
+                "5 minute massage",
+                "Gel polish"
               ]
             },
             {
-              "name": "2. Deluxe Spa Polish Regular - Gel",
-              "price": "$65",
+              "name": "Deluxe pedicure",
+              "price": "$70",
               "steps": [
-                "Seasalt Treatment",
-                "Nail Trimming & Cuticle Care",
-                "Callus Removal",
-                "Sugar Scrub (2 min)",
-                "Hot Lotion",
-                "Massage (6 min)",
-                "Hot Towel"
+                "Groom your cuticles",
+                "scrub sea salt",
+                "sea salt treatment",
+                "lotion + hot towel",
+                "10 minute massage",
+                "Gel polish"
               ]
             },
             {
-              "name": "3. Royal Spa Polish Regular - Gel",
+              "name": "Deluxe super royal pedicure",
               "price": "$80",
-              "badge": "Popular",
               "steps": [
-                "Seasalt Treatment",
-                "Nail Trimming & Cuticle Care",
-                "Callus Removal",
-                "Sugar Scrub (2 min)",
-                "Paraffin Wax",
-                "Hot Lotion",
-                "Massage (10 min)",
-                "Hot Towel",
-                "Steamer Spa"
+                "Groom your cuticles",
+                "Callus remover",
+                "hot wax paraffin",
+                "sea salt treatment",
+                "lotion + hot towel",
+                "Gel polish",
+                "13 minute massage",
+                "any extra services would be an extra cost"
               ]
-            },
-            {
-              "name": "4. Super Royal Deluxe Spa Polish Regular - Gel",
-              "price": "$90",
-              "badge": "VIP Luxury",
-              "steps": [
-                "Seasalt Treatment",
-                "Nail Trimming & Cuticle Care",
-                "Callus Removal",
-                "Sugar Scrub (2 min)",
-                "Marine Mask with Hot Towels",
-                "Paraffin Wax",
-                "Hot Lotion",
-                "Massage (14 min)",
-                "Hot Stone",
-                "Hot Towel",
-                "Steamer Spa"
-              ],
-              "note": "Extra Massage 10 min: $15 · Paraffin: $10"
             }
-          ]
+          ],
+          "note": "Bubble Spa Scents: $10 for any flavor of your choice (Radiant Rose, Honey Flower, Calming Lavender, Soothing Peppermint, Zesty Lemon, Mango Delight, Juicy Orange, Dainty Jasmine)."
         },
         {
-          "id": "enhancement",
-          "name": "Nail Enhancement",
-          "description": "Professional acrylic extensions, builder/tap gel, and custom shapes for long-lasting glamour.",
+          "id": "acrylic",
+          "name": "Acrylic & Dipping",
+          "description": "Full sets, fills, and dipping powders.",
           "items": [
             {
-              "name": "Full Set Acrylic Gel",
-              "price": "$60+"
+              "name": "Fullset pink & white",
+              "price": "$70"
             },
             {
-              "name": "Full Set Ombre",
-              "price": "$70+"
+              "name": "Regular",
+              "price": "$65"
             },
             {
-              "name": "Full Set Pink & White",
-              "price": "$70+"
+              "name": "White Tip",
+              "price": "$65"
             },
             {
-              "name": "Full Set Color Acrylic",
-              "price": "$65+"
+              "name": "Ombre pink & white",
+              "price": "$70"
             },
             {
-              "name": "Fill Acrylic Gel",
-              "price": "$50+"
+              "name": "Dipping color Powder",
+              "price": "$60"
             },
             {
-              "name": "Fill Ombre / Color",
-              "price": "$60+"
+              "name": "Dipping Ombre",
+              "price": "$70"
             },
             {
-              "name": "Builder / Tap Gel",
-              "price": "$65+"
+              "name": "Builder gel",
+              "price": "$65"
             },
             {
-              "name": "Fill Builder / Tap Gel",
-              "price": "$60+"
+              "name": "Regular Fill",
+              "price": "$50 up"
+            },
+            {
+              "name": "Pink & white Fill",
+              "price": "$65"
+            },
+            {
+              "name": "Pink Fill",
+              "price": "$50"
+            },
+            {
+              "name": "Ombre Fill",
+              "price": "$65"
             }
           ]
         },
         {
-          "id": "addons-polish",
-          "name": "Add-Ons",
-          "description": "Customize and upgrade any salon service.",
-          "addOns": [
+          "id": "waxing",
+          "name": "Waxing & Beauty",
+          "description": "Facials, Lashes, and Waxing services.",
+          "items": [
             {
-              "name": "French Tip",
-              "price": "$10"
+              "name": "Facial Treatment",
+              "price": "$120"
             },
             {
-              "name": "Cat Eye",
-              "price": "$10"
+              "name": "Eyelash Extensions",
+              "price": "$150"
             },
             {
-              "name": "Chrome",
-              "price": "$10"
+              "name": "Face Wax",
+              "price": "$70"
             },
             {
-              "name": "Paraffin Wax",
-              "price": "$10"
+              "name": "Bikin wax",
+              "price": "$80"
             },
             {
-              "name": "Sugar Scrub",
-              "price": "$10"
+              "name": "Leg wax",
+              "price": "$80"
             },
             {
-              "name": "Callus Removal",
-              "price": "$10"
+              "name": "under Arm Wax",
+              "price": "$40"
             },
             {
-              "name": "Extra Massage (10 min)",
+              "name": "Eyebrow Wax",
               "price": "$15"
             },
             {
-              "name": "Cuticle Care",
+              "name": "Upper Lip wax",
               "price": "$10"
+            }
+          ]
+        },
+        {
+          "id": "addons",
+          "name": "Additional Services",
+          "description": "Extras and add-ons for your nails.",
+          "addOns": [
+            {
+              "name": "Regular polish change",
+              "price": "$20"
+            },
+            {
+              "name": "Gel polish change",
+              "price": "$30"
+            },
+            {
+              "name": "Nails design",
+              "price": "$10 up"
+            },
+            {
+              "name": "Nail fix",
+              "price": "$5 - 10"
+            },
+            {
+              "name": "Remov (Acrylic & Dip)",
+              "price": "$20"
+            },
+            {
+              "name": "Cofin / Almond / Stiletto",
+              "price": "$5"
             }
           ]
         }
@@ -371,8 +397,8 @@
   "gallery": {
     "_comment": "The photo gallery — first image spans 2 rows and is taller. Add/remove items as needed.",
     "sectionTag": "Our Work",
-    "title": "Featured",
-    "titleAccent": "Nail Designs",
+    "title": "Our Signature",
+    "titleAccent": "Luster",
     "items": [
       {
         "image": "/images/gallery/03ce2e612ebfcd96dbc5c98e962d5409.jpg",
@@ -422,7 +448,8 @@
         "image": "/images/gallery/f67b1855e4a64114d54b855845ef49f6.jpg",
         "caption": "Acrylic Set"
       }
-    ]
+    ],
+    "subtitle": "A glimpse into our meticulous craftsmanship and bespoke designs."
   },
   "promo": {
     "_comment": "The gold promotional banner — use for grand opening, seasonal deals, etc. Set 'enabled' to false to hide it.",
@@ -433,87 +460,76 @@
     "image": "/images/Banner_thankyou.jpg"
   },
   "reviews": {
-    "sectionTag": "TESTIMONIALS",
-    "title": "CUSTOMER'S",
-    "titleAccent": "REVIEW",
-    "subtitle": "What our clients are saying about their experience.",
+    "sectionTag": "Customer Reviews",
+    "title": "Customer",
+    "titleAccent": "Reviews",
+    "subtitle": "Hear from those who have experienced the Opal standard of care.",
     "items": [
       {
-        "name": "Karim Niylah",
-        "date": "a month ago",
-        "stars": 5,
-        "text": "I honestly didn't expect to be taken care of this well because the salon was pretty busy when I came in, but everyone was still so kind, patient, and attentive. I never felt like I was being rushed at all.\\n\\nThey really took their time with my nails and made sure I was happy with the shape and design before finishing. I absolutely love how soft, clean, and elegant they turned out. 💖\\n\\nI really appreciate how welcoming and helpful the team was even during a busy time. Thank you so much for the beautiful nails and such a great experience. I’ll definitely be coming back! 💅✨",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%237e57c2'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>K</text></svg>"
-      },
-      {
-        "name": "Elaina Downs",
-        "date": "3 months ago",
-        "stars": 5,
-        "text": "Such a great relaxing experience. This will be my new go to place for getting my nails done. Great Pedicure and Manicure",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23f57c00'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>E</text></svg>"
-      },
-      {
-        "name": "Miranda Webster",
-        "date": "2 months ago",
-        "stars": 5,
-        "text": "Had such an amazing experience for it being the first time. Took their time and made sure I liked the design I was getting. Pedicure experience was amazing as well will definitely be back when in town.",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23388e3c'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>M</text></svg>"
-      },
-      {
-        "name": "Mari Kaplan",
-        "date": "3 months ago",
-        "stars": 5,
-        "text": "Great customer service! The staff were very friendly and apologetic for my wait time which wasn’t long during a very busy time. They even provided transportation to my hotel because it was raining, and I had walked to the salon. Very clean salon and I loved my manicure and pedicure.",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23795548'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>M</text></svg>"
-      },
-      {
-        "name": "Susan Whittington",
-        "date": "2 months ago",
-        "stars": 5,
-        "text": "The service was wonderful. Clean and staff so friendly. My nail technician was so attentive to do a great job. I was impressed and would highly recommend their service.",
-        "avatar": "/images/susan-new-safe.png"
-      },
-      {
-        "name": "Addison",
-        "date": "a month ago",
-        "stars": 5,
-        "text": "Haven’t had a pedicure in a couple years. Tried this place out for the first time and will definitely be coming back. The environment is very clean and the people are very friendly. I highly recommend!!",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23607d8b'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>A</text></svg>"
-      },
-      {
-        "name": "Sarah Porter",
+        "name": "Mary Scherf",
         "date": "4 months ago",
         "stars": 5,
-        "text": "Gorgeous space! Kind & welcoming staff. I got a basic set while my child got a much more detailed set & they were absolutely stunning. She is raving about how it was the best experience she has ever had and how we have found our new nail spot. Quick, quality service.",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23d84315'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>S</text></svg>"
+        "text": "I have Gel X Nails - they did an excellent job, I look forward to my next appointment.\n\nAlso had Pedicure and eyebrows waxed.",
+        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%231976d2'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>M</text></svg>"
+      },
+      {
+        "name": "Jaida Wicklund",
+        "date": "2 years ago",
+        "stars": 5,
+        "text": "Cindy is my regular and she always does an amazing job! She never double books, and her nail art is PHENOMENAL!! 🤍 Truly my best nail tech in 8 years of having acrylics!",
+        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23d81b60'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>J</text></svg>"
+      },
+      {
+        "name": "Amber Lee Fawson",
+        "date": "2 years ago",
+        "stars": 5,
+        "text": "My 11-year-old and I were walk-ins for pedicures, and everyone was so kind and professional. We had a great experience, and our pedicures were beautifully done. My daughter was delighted by the youth chair/station too. Thank you for taking great care of us! You put sunshine in our day.",
+        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23f57c00'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>A</text></svg>"
+      },
+      {
+        "name": "Samantha Schostek",
+        "date": "2 years ago",
+        "stars": 5,
+        "text": "All of the nail artists here are SO thoughtful and kind and do amazing work! It’s by far the best ran nail salon in Dickinson and I wouldn’t go anywhere else!",
+        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%237e57c2'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>S</text></svg>"
+      },
+      {
+        "name": "Melissa Sitton",
+        "date": "2 years ago",
+        "stars": 5,
+        "text": "We were going to the nails studio previously and we were having some issues with over there. We happened to spot TCL Nails and went to go try it out and we were very pleased! Very friendly staff and reasonable pricing. We will definitely be coming here regularly.",
+        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23388e3c'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>M</text></svg>"
       }
     ]
   },
   "booking": {
     "_comment": "The contact & appointment section at the bottom of the page",
     "sectionTag": "Contact & Book",
-    "title": "Ready for",
-    "titleAccent": "Your Visit?",
-    "subtitle": "We manage all appointments directly through Facebook Messenger to give you the fastest response and personal care.",
+    "title": "Step Into",
+    "titleAccent": "The Light",
+    "subtitle": "Your moment of tranquility awaits. Secure your appointment for a personalized beauty experience.",
     "formTitle": "Book Your Visit",
     "formSubtitle": "Choose your preferred way to contact us",
-    "formButtonText": "Message on Messenger",
+    "formButtonText": "Connect via Messenger",
     "formSuccessMessage": "Appointment requested! We will confirm via text within 15 minutes.",
-    "messengerUrl": "https://m.me/126641639576171",
-    "formButtonSecondaryText": "Text / Call Us Direct"
+    "messengerUrl": "#",
+    "formButtonSecondaryText": "Text / Call Us Direct",
+    "text": "For the most attentive service and to reserve your preferred time slot, please reach out to our concierge directly via Messenger.",
+    "buttonText": "Connect via Messenger"
   },
   "map": {
     "_comment": "Google Maps embed — the 'embedUrl' is the iframe embed link, 'directionsUrl' opens Google Maps directly",
-    "embedUrl": "https://maps.google.com/maps?q=J%26J%20Nail%20Spa,%203275%20W%20Ridge%20Dr,%20Dickinson,%20ND%2058601&t=&z=16&ie=UTF8&iwloc=&output=embed",
-    "directionsUrl": "https://share.google/KpM5zpRUV9GA4xR8V"
+    "embedUrl": "https://maps.google.com/maps?q=TLC%20Nails%20%26%20Spa,%20373%2015th%20St%20W,%20Dickinson,%20ND%2058601&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    "directionsUrl": "https://maps.app.goo.gl/uasGCZ6ckmcHzu4y5"
   },
   "social": {
     "_comment": "Social media links — shown in the footer. Leave blank or remove any you don't use.",
-    "facebook": "https://www.facebook.com/jjnailspadickinson",
-    "instagram": "https://www.instagram.com/jjnailspadickinson/",
-    "tiktok": "",
-    "googleMaps": "https://share.google/KpM5zpRUV9GA4xR8V",
-    "yelp": "https://www.yelp.com/biz/j-and-j-nails-spa-dickinson"
+    "facebook": "https://www.facebook.com/opalnailsdickinson",
+    "instagram": "https://www.instagram.com/opalnailsdickinson",
+    "tiktok": "https://www.tiktok.com/@opalnailsdickinson",
+    "googleMaps": "https://maps.app.goo.gl/msv2gSVzw9h1nhDV6",
+    "yelp": "",
+    "googleReviews": "https://g.page/r/.../review"
   },
   "nav": {
     "_comment": "Navigation menu items — controls both desktop nav and mobile hamburger menu",
@@ -621,5 +637,8 @@
       "/videos/8.7 JJ.mp4"
     ]
   },
-  "messengerUrl": "https://m.me/jjnailspadickinson"
+  "messengerUrl": "#",
+  "connect": {
+    "greeting": "Welcome to Opal Nails & Spa! We hope you leave with a little extra shimmer today."
+  }
 }

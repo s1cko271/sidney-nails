@@ -12,15 +12,10 @@ import siteData from '../data/site.json';
       </h2>
     </div>
     
-    <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6 space-y-4 md:space-y-6">
+    <div class="columns-2 md:columns-3 gap-2 md:gap-3 space-y-2 md:space-y-3">
       {siteData.gallery.items.map((item, index) => (
-        <div class="group relative overflow-hidden rounded-xl cursor-pointer reveal shadow-[0_0_35px_rgba(235,183,52,0.3),0_15px_45px_rgba(0,0,0,0.25),0_5px_18px_rgba(0,0,0,0.15)] border border-brand-gold/25 hover:shadow-[0_0_55px_rgba(235,183,52,0.5),0_20px_55px_rgba(0,0,0,0.3),0_8px_22px_rgba(0,0,0,0.2)] hover:border-brand-gold/50 transition-shadow duration-500 break-inside-avoid transform-gpu">
-          <img class="w-full h-auto block transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" src={item.image} alt={item.caption} loading="lazy" />
-          
-          <!-- Gradient ONLY at the bottom to preserve WCAG AA contrast for the text -->
-          <div class="absolute bottom-0 left-0 right-0 pt-20 pb-5 px-5 bg-gradient-to-t from-brand-charcoal/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-            <span class="text-white text-sm font-medium tracking-wide drop-shadow-md">{item.caption}</span>
-          </div>
+        <div class="group relative overflow-hidden rounded-md cursor-pointer reveal border border-brand-gold/80 hover:border-brand-goldDark transition-colors duration-300 break-inside-avoid transform-gpu shadow-sm">
+          <img class="w-full h-auto block transition-transform duration-700 group-hover:scale-105" src={item.image} alt={item.caption || "Nail art design"} loading="lazy" />
         </div>
       ))}
     </div>
@@ -45,7 +40,7 @@ import siteData from '../data/site.json';
           <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-4">Special Offer</div>
           <h2 class="font-display lining-nums text-4xl md:text-5xl text-white font-light mb-6">{siteData.promo.headline}</h2>
           <p class="text-brand-cream/80 font-light tracking-wide mb-10 text-lg leading-relaxed">{siteData.promo.text}</p>
-          <a class="inline-block bg-brand-gold text-brand-charcoal px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-brand-charcoal hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all duration-300 motion-safe:hover:-translate-y-1" href="/#booking">
+          <a class="inline-block bg-brand-gold text-brand-charcoal px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-brand-charcoal hover:shadow-[0_0_25px_rgba(159,184,212,0.4)] transition-all duration-300 motion-safe:hover:-translate-y-1" href="/#booking">
             {siteData.promo.buttonText}
           </a>
         </>

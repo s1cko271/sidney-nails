@@ -39,22 +39,22 @@ const videos = [
       </p>
     </div>
 
-    <!-- Vertical scrolling layout with storytelling captions -->
-    <div class="flex flex-col items-center gap-24 md:gap-32">
+    <!-- Horizontal scrolling layout with storytelling captions -->
+    <div class="flex overflow-x-auto gap-8 md:gap-16 pb-12 snap-x snap-mandatory custom-scrollbar items-stretch">
       {videos.map((vid, index) => (
-        <div class="flex flex-col items-center w-full max-w-xl">
+        <div class="flex flex-col items-center min-w-[85vw] sm:min-w-[400px] max-w-md shrink-0 snap-center justify-between">
           
           <!-- Storytelling Text BEFORE the video -->
-          <div class="text-center mb-10 reveal">
+          <div class="text-center mb-10 reveal flex flex-col justify-end flex-grow">
             <h3 class="font-display lining-nums text-2xl md:text-3xl font-light text-brand-goldLight mb-4">{vid.title}</h3>
-            <p class="text-brand-cream/80 font-light leading-relaxed text-sm md:text-base">
+            <p class="text-brand-cream/80 font-light leading-relaxed text-sm md:text-base px-4">
               {vid.description}
             </p>
           </div>
 
           <!-- The Video Player -->
           <div 
-            class="relative w-full max-w-[340px] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-brand-gold/10 aspect-[9/16] bg-black reveal transform-gpu transition-all duration-700 hover:shadow-[0_20px_60px_rgba(212,175,55,0.15)] hover:border-brand-gold/30" 
+            class="relative w-full max-w-[320px] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-[3px] border-brand-luxury aspect-[9/16] bg-black reveal transform-gpu transition-all duration-700 hover:shadow-glow mx-auto" 
             data-video-wrapper
           >
             <video 
@@ -98,3 +98,19 @@ const videos = [
     videos.forEach(v => observer.observe(v));
   });
 </script>
+<style>
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(159, 184, 212, 0.3);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(159, 184, 212, 0.6);
+  }
+</style>

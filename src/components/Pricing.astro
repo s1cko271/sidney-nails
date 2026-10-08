@@ -2,10 +2,7 @@
 import siteData from '../data/site.json';
 const menu = siteData.pricing.menu;
 ---
-<section class="py-24 md:py-32 relative overflow-hidden" id="pricing">
-  <div class="absolute inset-0 z-0 bg-brand-cream"></div>
-  <div class="absolute inset-0 z-0 opacity-40 bg-[url('/images/marble-bg.webp')] bg-cover bg-center bg-fixed"></div>
-  <div class="absolute inset-0 z-0 bg-white/40"></div>
+<section class="py-24 md:py-32 relative overflow-hidden bg-brand-cream" id="pricing">
   <div class="max-w-[1240px] mx-auto px-6 relative z-10">
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
@@ -20,50 +17,51 @@ const menu = siteData.pricing.menu;
       </p>
       <div class="flex items-center justify-center gap-3 mt-8 opacity-70" aria-hidden="true">
         <span class="w-12 h-px bg-brand-gold"></span>
-        <span class="text-brand-gold text-xs animate-spin-slow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg></span>
+        <span class="text-brand-gold text-xs opacity-80 transition-transform duration-700 hover:scale-110"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg></span>
         <span class="w-12 h-px bg-brand-gold"></span>
       </div>
     </div>
 
-    <!-- 3 Featured Highlight Packages -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-24">
-      {siteData.pricing.packages.map(pkg => (
-        <div class:list={[
-          "relative rounded-3xl p-8 lg:p-10 transition-all duration-500 reveal flex flex-col",
-          pkg.featured 
-            ? 'bg-black/95 text-white shadow-[0_20px_40px_rgba(0,0,0,0.25)] border border-brand-gold/30 hover:border-brand-gold/60 hover:-translate-y-2' 
-            : 'bg-white text-brand-charcoal shadow-xl border border-gray-100 hover:border-brand-gold/30 hover:-translate-y-2 rounded-2xl'
-        ]}>
+    <div class="mb-24">
+      {/* Featured Package (Full Width) */}
+      {siteData.pricing.packages.filter(p => p.featured).map(pkg => (
+        <div class="relative rounded-[2.5rem] p-8 lg:p-12 mb-8 bg-gradient-to-br from-brand-charcoal to-[#0e1d2e] text-white shadow-[inset_0_0_20px_rgba(91,155,213,0.1)] border-2 border-brand-luxury transition-all duration-500 reveal flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           
-          <div class="flex-grow">
-            {pkg.featured && pkg.featuredLabel && (
-              <div class="mb-4">
-                <span class="inline-block bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold uppercase tracking-[0.2em] py-1.5 px-3 rounded-sm">
+          <div class="w-full lg:w-5/12">
+            {pkg.featuredLabel && (
+              <div class="mb-5">
+                <span class="inline-block bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold uppercase tracking-[0.2em] py-1.5 px-3 rounded-sm shadow-sm">
                   {pkg.featuredLabel}
                 </span>
               </div>
             )}
             
-            <div class={`text-[0.75rem] font-bold tracking-[0.15em] uppercase mb-4 ${pkg.featured ? 'text-brand-goldLight' : 'text-brand-charcoal/50'}`}>
+            <div class="text-[0.75rem] font-bold tracking-[0.15em] uppercase mb-4 text-brand-goldLight">
               {pkg.name}
             </div>
             
-            <div class="mb-1 flex items-baseline gap-2">
-              <span class={`font-display lining-nums text-5xl font-bold tracking-tight ${pkg.featured ? 'text-brand-goldLight' : 'text-brand-charcoal'}`}>{pkg.price}</span>
+            <div class="mb-2 flex items-baseline gap-2">
+              <span class="font-display lining-nums text-6xl md:text-7xl font-bold tracking-tight text-white">{pkg.price}</span>
             </div>
-            <div class={`text-xs mb-6 font-medium ${pkg.featured ? 'text-white/60' : 'text-brand-charcoal/50'}`}>
+            <div class="text-sm mb-6 font-medium text-white/70">
               {pkg.unit}
             </div>
             
-            <p class={`text-sm leading-relaxed mb-8 font-light ${pkg.featured ? 'text-white/70' : 'text-brand-charcoal/70'}`}>
+            <p class="text-base leading-relaxed mb-8 font-light text-white/80 max-w-sm">
               {pkg.description}
             </p>
             
-            <ul class="space-y-3 mb-8">
+            <button 
+              class="w-full sm:w-auto px-10 py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight hover:-translate-y-0.5 shadow-glow"
+              onclick="window.location.href='/#booking'">Book Now</button>
+          </div>
+
+          <div class="w-full lg:w-7/12">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
               {pkg.features.map(feature => (
-                <li class={`flex items-start gap-3 text-sm font-light pb-3 border-b ${pkg.featured ? 'border-white/10 text-white/85' : 'border-gray-100 text-brand-charcoal/85'}`}>
-                  <span class={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${pkg.featured ? 'bg-brand-gold/20 text-brand-gold' : 'bg-brand-gold/15 text-brand-goldDark'}`}>
-                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <li class="flex items-start gap-4 text-base font-light py-4 border-b border-white/10 text-white">
+                  <span class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-brand-gold/20 text-brand-goldLight">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                   </span> 
                   <span class="leading-relaxed">{feature}</span>
                 </li>
@@ -71,11 +69,48 @@ const menu = siteData.pricing.menu;
             </ul>
           </div>
           
-          <button 
-            class={`mt-auto w-full py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 ${pkg.featured ? 'bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(235,183,52,0.4)]' : 'bg-transparent border-2 border-brand-charcoal/20 text-brand-charcoal hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5'}`}
-            onclick="window.location.href='/#booking'">Book Now</button>
         </div>
       ))}
+
+      {/* Non-Featured Packages (Side by side) */}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        {siteData.pricing.packages.filter(p => !p.featured).map(pkg => (
+          <div class="relative rounded-[2.5rem] p-8 lg:p-10 bg-gradient-to-br from-white to-gray-50 text-brand-charcoal shadow-xl border-2 border-brand-luxury/50 hover:border-brand-luxury transition-all duration-500 hover:-translate-y-2 hover:shadow-glow reveal flex flex-col">
+            
+            <div class="flex-grow">
+              <div class="text-[0.75rem] font-bold tracking-[0.15em] uppercase mb-4 text-brand-charcoal/50">
+                {pkg.name}
+              </div>
+              
+              <div class="mb-1 flex items-baseline gap-2">
+                <span class="font-display lining-nums text-4xl md:text-5xl font-bold tracking-tight text-brand-charcoal">{pkg.price}</span>
+              </div>
+              <div class="text-xs mb-6 font-medium text-brand-charcoal/50">
+                {pkg.unit}
+              </div>
+              
+              <p class="text-sm leading-relaxed mb-8 font-light text-brand-charcoal/70">
+                {pkg.description}
+              </p>
+              
+              <ul class="space-y-3 mb-8">
+                {pkg.features.map(feature => (
+                  <li class="flex items-start gap-3 text-sm font-light pb-3 border-b border-gray-100 text-brand-charcoal/85">
+                    <span class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-brand-gold/15 text-brand-goldDark">
+                      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    </span> 
+                    <span class="leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <button 
+              class="mt-auto w-full py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 bg-transparent border-2 border-brand-charcoal/20 text-brand-charcoal hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5"
+              onclick="window.location.href='/#booking'">Book Now</button>
+          </div>
+        ))}
+      </div>
     </div>
 
     <!-- FULL INTERACTIVE MENU SECTION -->
@@ -125,7 +160,7 @@ const menu = siteData.pricing.menu;
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {menu.categories[0].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-brand-gold/40 hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
+              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-brand-luxury/70 shadow-sm hover:border-brand-luxury hover:shadow-glow hover:-translate-y-1 transition-all duration-300 flex flex-col">
                 <div class="flex-grow">
                   <div class="flex justify-between items-start gap-4 mb-5 pb-5 border-b border-gray-100">
                     <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal leading-snug">{item.name}</h5>
@@ -155,11 +190,11 @@ const menu = siteData.pricing.menu;
         <div id="tab-pedicure" class="menu-panel hidden transition-opacity duration-300">
           <div class="mb-6 text-center max-w-2xl mx-auto">
             <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Pedicure Spa Treatments</h4>
-            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[2].description}</p>
+            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[1].description}</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-            {menu.categories[2].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-brand-gold/40 hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
+            {menu.categories[1].items.map(item => (
+              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-brand-luxury/70 shadow-sm hover:border-brand-luxury hover:shadow-glow hover:-translate-y-1 transition-all duration-300 flex flex-col">
                 <div class="flex-grow">
                   <div class="flex justify-between items-start gap-4 mb-5 pb-5 border-b border-gray-100">
                     <div>
@@ -197,15 +232,15 @@ const menu = siteData.pricing.menu;
           </div>
         </div>
 
-        <!-- 3. DIPPING POWDER PANEL -->
-        <div id="tab-dipping" class="menu-panel hidden transition-opacity duration-300">
+        <!-- 3. ACRYLIC & DIPPING PANEL -->
+        <div id="tab-acrylic" class="menu-panel hidden transition-opacity duration-300">
           <div class="mb-6 text-center max-w-2xl mx-auto">
-            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Dipping Powder</h4>
-            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[1].description}</p>
+            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Acrylic & Dipping</h4>
+            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[2].description}</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg mx-auto items-stretch">
-            {menu.categories[1].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-brand-gold/40 hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            {menu.categories[2].items.map(item => (
+              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-brand-luxury/70 shadow-sm hover:border-brand-luxury hover:shadow-glow hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                 <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal mb-4 leading-snug">{item.name}</h5>
                 <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
                   <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
@@ -216,15 +251,15 @@ const menu = siteData.pricing.menu;
           </div>
         </div>
 
-        <!-- 4. ENHANCEMENT PANEL -->
-        <div id="tab-enhancement" class="menu-panel hidden transition-opacity duration-300">
+        <!-- 4. WAXING PANEL -->
+        <div id="tab-waxing" class="menu-panel hidden transition-opacity duration-300">
           <div class="mb-6 text-center max-w-2xl mx-auto">
-            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Nail Enhancement</h4>
+            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Waxing & Beauty</h4>
             <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[3].description}</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
             {menu.categories[3].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-brand-gold/40 hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+              <div class="h-full bg-white rounded-xl p-6 border border-brand-luxury/70 shadow-sm hover:border-brand-luxury hover:shadow-glow hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                 <h5 class="font-body font-semibold text-sm text-brand-charcoal mb-4 leading-snug">{item.name}</h5>
                 <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
                   <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
@@ -236,14 +271,14 @@ const menu = siteData.pricing.menu;
         </div>
 
         <!-- 5. ADD-ON PANEL -->
-        <div id="tab-addons-polish" class="menu-panel hidden transition-opacity duration-300">
+        <div id="tab-addons" class="menu-panel hidden transition-opacity duration-300">
           <div class="mb-6 text-center max-w-2xl mx-auto">
-            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Add-On Enhancements</h4>
+            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Additional Services</h4>
             <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[4].description}</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
             {menu.categories[4].addOns.map(ao => (
-              <div class="h-full bg-white rounded-xl p-6 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-brand-gold/40 hover:shadow-[0_10px_40px_rgba(212,175,55,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+              <div class="h-full bg-white rounded-xl p-6 border border-brand-luxury/70 shadow-sm hover:border-brand-luxury hover:shadow-glow hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                 <h5 class="font-body font-semibold text-sm text-brand-charcoal mb-4 leading-snug">{ao.name}</h5>
                 <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
                   <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>

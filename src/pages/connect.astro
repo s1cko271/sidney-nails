@@ -1,0 +1,124 @@
+---
+import siteData from '../data/site.json';
+import '../styles/global.css';
+
+const title = `${siteData.salon.name} - Connect With Us`;
+---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="Connect with Opal Nails and Spa on social media." />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 8s linear infinite;
+    }
+
+    .glass-card-dark {
+      background: rgba(26, 35, 51, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="font-body antialiased min-h-screen bg-brand-charcoal text-white flex flex-col items-center justify-center relative overflow-x-hidden selection:bg-brand-goldLight selection:text-brand-charcoal">
+  
+  <!-- Ambient Background (Matching Hero) -->
+  <div class="fixed inset-0 bg-cover bg-center bg-no-repeat brightness-[0.5] pointer-events-none" style={`background-image: url('${siteData.salon.interiorImage}')`}></div>
+  <div class="fixed inset-0 bg-gradient-to-b from-brand-charcoal/20 to-brand-charcoal/80 pointer-events-none"></div>
+
+  <!-- Main Container -->
+  <main class="w-full max-w-md px-6 py-16 relative z-10 flex flex-col items-center flex-grow justify-center min-h-screen">
+    
+    <!-- Header/Logo Section -->
+    <div class="flex flex-col items-center animate-fade-in-up" style="animation-delay: 100ms; opacity: 0;">
+      <img class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-[3px] border-brand-gold shadow-[0_0_15px_rgba(159,184,212,0.4),0_0_30px_rgba(235,165,205,0.3)] bg-white p-1.5 mb-8" src={siteData.salon.logoImage} alt={siteData.salon.name} />
+
+      <h1 class="font-display lining-nums text-4xl md:text-5xl font-medium text-center text-white mb-6 leading-[1.15] tracking-tight glow-white">
+        {siteData.connect.greeting}
+      </h1>
+      
+      <!-- Decorative element -->
+      <div class="flex items-center justify-center gap-3 mb-12 opacity-70">
+        <span class="w-12 h-px bg-brand-gold"></span>
+        <span class="text-brand-gold flex items-center justify-center animate-spin-slow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
+        </span>
+        <span class="w-12 h-px bg-brand-gold"></span>
+      </div>
+    </div>
+
+    <!-- Links Section -->
+    <div class="w-full flex flex-col gap-4 mb-16 animate-fade-in-up" style="animation-delay: 300ms; opacity: 0;">
+      {siteData.social.googleReviews && (
+        <a href={siteData.social.googleReviews} target="_blank" rel="noopener noreferrer" class="group relative w-full glass-card-dark rounded-full px-6 py-4 flex items-center gap-5 shadow-lg border border-brand-luxury/30 hover:border-brand-luxury hover:bg-brand-charcoal/60 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+          <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20 group-hover:bg-white/20 transition-colors">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          </div>
+          <span class="font-body font-bold text-white text-sm uppercase tracking-widest flex-grow text-left">Leave a Review</span>
+          <svg class="w-5 h-5 text-brand-gold/50 ml-auto group-hover:text-brand-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+      )}
+      {siteData.social.facebook && (
+        <a href={siteData.social.facebook} target="_blank" rel="noopener noreferrer" class="group relative w-full glass-card-dark rounded-full px-6 py-4 flex items-center gap-5 shadow-lg border border-brand-luxury/30 hover:border-brand-luxury hover:bg-brand-charcoal/60 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+          <div class="w-12 h-12 rounded-full bg-[#1877F2]/10 flex items-center justify-center shrink-0 border border-[#1877F2]/30 group-hover:bg-[#1877F2]/20 transition-colors">
+            <svg class="w-6 h-6 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </div>
+          <span class="font-body font-bold text-white text-sm uppercase tracking-widest flex-grow text-left">Facebook</span>
+          <svg class="w-5 h-5 text-brand-gold/50 ml-auto group-hover:text-brand-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+      )}
+      
+      {siteData.social.instagram && (
+        <a href={siteData.social.instagram} target="_blank" rel="noopener noreferrer" class="group relative w-full glass-card-dark rounded-full px-6 py-4 flex items-center gap-5 shadow-lg border border-brand-luxury/30 hover:border-brand-luxury hover:bg-brand-charcoal/60 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+          <div class="w-12 h-12 rounded-full bg-[#E1306C]/10 flex items-center justify-center shrink-0 border border-[#E1306C]/30 group-hover:bg-[#E1306C]/20 transition-colors">
+            <svg class="w-6 h-6 text-[#E1306C]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <span class="font-body font-bold text-white text-sm uppercase tracking-widest flex-grow text-left">Instagram</span>
+          <svg class="w-5 h-5 text-brand-gold/50 ml-auto group-hover:text-brand-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+      )}
+
+      {siteData.social.tiktok && (
+        <a href={siteData.social.tiktok} target="_blank" rel="noopener noreferrer" class="group relative w-full glass-card-dark rounded-full px-6 py-4 flex items-center gap-5 shadow-lg border border-brand-luxury/30 hover:border-brand-luxury hover:bg-brand-charcoal/60 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+          <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20 group-hover:bg-white/20 transition-colors">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+          </div>
+          <span class="font-body font-bold text-white text-sm uppercase tracking-widest flex-grow text-left">TikTok</span>
+          <svg class="w-5 h-5 text-brand-gold/50 ml-auto group-hover:text-brand-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+      )}
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-auto text-center w-full animate-fade-in-up" style="animation-delay: 500ms; opacity: 0;">
+      <p class="font-display font-bold text-brand-goldLight mb-2 tracking-[0.2em] uppercase text-sm">{siteData.salon.name}</p>
+      <div class="flex items-center justify-center gap-2 text-xs font-medium text-brand-cream/70 mb-2">
+        <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        <span>{siteData.salon.fullAddress}</span>
+      </div>
+      <div class="flex items-center justify-center gap-2 text-xs font-medium text-brand-cream/70">
+        <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+        <a href={`tel:${siteData.salon.phoneRaw}`} class="hover:text-brand-goldLight transition-colors">{siteData.salon.phone}</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -7,11 +7,11 @@ import siteData from '../data/site.json';
       
       <!-- Image Group -->
       <div class="relative w-full lg:w-1/2 flex justify-center lg:justify-start reveal">
-        <img class="w-full sm:w-[85%] mx-auto aspect-[4/5] object-cover rounded-2xl border border-brand-gold/50 shadow-[0_0_45px_rgba(235,183,52,0.3),0_15px_50px_rgba(0,0,0,0.25),0_5px_20px_rgba(0,0,0,0.15)]" src={siteData.about.image} alt={`${siteData.salon.name} Storefront`} />
+        <img class="w-full sm:w-[85%] mx-auto aspect-[4/5] object-cover rounded-[3rem] md:rounded-[4rem] border-[3px] border-brand-luxury shadow-glow" src={siteData.about.image} alt={`${siteData.salon.name} Storefront`} />
         
-        <div class="absolute -bottom-4 -right-2 sm:-bottom-8 sm:-right-8 bg-brand-charcoal text-brand-cream p-6 md:p-8 rounded-2xl border-2 border-brand-gold/80 shadow-[0_0_50px_rgba(235,183,52,0.45),0_15px_45px_rgba(0,0,0,0.3),0_5px_18px_rgba(0,0,0,0.18)] flex flex-col items-center justify-center">
+        <div class="absolute -bottom-2 -right-2 sm:-bottom-6 sm:-right-4 bg-brand-charcoal text-brand-cream p-7 md:p-9 rounded-[2rem] border-[3px] border-brand-luxury shadow-glow flex flex-col items-center justify-center transform hover:scale-105 transition-transform duration-500">
           <div class="text-[0.7rem] font-bold tracking-[0.2em] uppercase text-brand-goldLight mb-1 text-center">{siteData.about.badgeLabel}</div>
-          <div class="font-display lining-nums text-4xl md:text-5xl font-semibold text-white">{siteData.about.badgeValue}</div>
+          <div class="font-display lining-nums text-3xl md:text-4xl font-semibold text-white tracking-wide">{siteData.about.badgeValue}</div>
         </div>
       </div>
       
@@ -35,7 +35,7 @@ import siteData from '../data/site.json';
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {siteData.about.highlights.map(highlight => (
             <div class="flex items-center gap-3 text-sm font-medium text-brand-charcoal/90">
-              <span class="text-brand-gold text-lg animate-spin-slow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg></span> {highlight}
+              <span class="text-brand-gold text-lg opacity-80 transition-transform duration-700 hover:scale-110"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg></span> {highlight}
             </div>
           ))}
         </div>

@@ -2,42 +2,38 @@
 import site from '../data/site.json';
 ---
 
-<header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
-      <!-- Logo -->
+<header id="navbar" class="fixed left-0 right-0 top-4 z-50 transition-all duration-300 pointer-events-none">
+  <div class="max-w-[1000px] mx-auto px-4 sm:px-6 pointer-events-auto">
+    <div class="flex justify-between items-center h-16 bg-white text-brand-charcoal shadow-lg border border-brand-luxury/30 rounded-full px-6 md:px-8 transition-all duration-300">
+      
+      <!-- Logo (Square variant for tight spaces) -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="flex items-center gap-2">
-          {site.logo ? (
-            <img class="h-10 w-auto" src={site.logo} alt={site.name} />
-          ) : (
-            <span class="font-display lining-nums text-2xl font-semibold tracking-wider">{site.name}</span>
-          )}
+        <a href="/" class="flex items-center gap-3 group">
+          <img src={site.salon?.logoSquare} alt={site.salon?.name} class="h-10 w-10 object-contain" />
+          <span class="font-display text-xl md:text-2xl font-bold tracking-wide text-brand-charcoal group-hover:text-brand-gold transition-colors">{site.salon?.name}</span>
         </a>
       </div>
       
       <!-- Desktop Menu -->
-      <nav class="hidden md:flex space-x-8">
-        <a href="#about" class="text-sm font-medium uppercase tracking-widest hover:text-gold transition-colors">About</a>
-        <a href="#services" class="text-sm font-medium uppercase tracking-widest hover:text-gold transition-colors">Services</a>
-        <a href="#pricing" class="text-sm font-medium uppercase tracking-widest hover:text-gold transition-colors">Pricing</a>
-        <a href="#gallery" class="text-sm font-medium uppercase tracking-widest hover:text-gold transition-colors">Gallery</a>
-        <a href="#reviews" class="text-sm font-medium uppercase tracking-widest hover:text-gold transition-colors">Reviews</a>
-        <a href="#contact" class="text-sm font-medium uppercase tracking-widest hover:text-gold transition-colors">Contact</a>
+      <nav class="hidden md:flex space-x-6 lg:space-x-8">
+        <a href="#services" class="text-[0.65rem] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">Services</a>
+        <a href="#pricing" class="text-[0.65rem] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">Pricing</a>
+        <a href="#gallery" class="text-[0.65rem] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">Gallery</a>
+        <a href="#reviews" class="text-[0.65rem] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">Reviews</a>
+        <a href="#about" class="text-[0.65rem] font-bold uppercase tracking-widest hover:text-brand-gold transition-colors">About</a>
       </nav>
 
       <!-- CTA Button Desktop -->
       <div class="hidden md:flex items-center">
-        <a href={site.bookingUrl || "#book"} class="bg-gold hover:bg-gold-light text-white px-6 py-2 rounded-xl text-sm font-medium uppercase tracking-widest transition-colors shadow-sm">
-          Book Now
+        <a href="/#booking" class="bg-brand-gold hover:bg-brand-goldLight text-brand-charcoal px-6 py-2 rounded-full text-[0.65rem] font-bold uppercase tracking-widest transition-all shadow-sm hover:shadow-glow hover:-translate-y-0.5">
+          Book
         </a>
       </div>
 
       <!-- Mobile menu button -->
       <div class="flex items-center md:hidden">
-        <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md hover:text-gold focus:outline-none" aria-expanded="false">
+        <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md hover:text-brand-gold focus:outline-none" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
-          <!-- Hamburger -->
           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -47,44 +43,32 @@ import site from '../data/site.json';
   </div>
 
   <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white/95 backdrop-blur flex-col justify-center items-center h-screen w-full">
-    <button id="mobile-close-btn" class="absolute top-6 right-6 p-2 text-charcoal hover:text-gold">
-      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-brand-charcoal/95 backdrop-blur flex-col justify-center items-center h-screen w-full pointer-events-auto">
+    <button id="mobile-close-btn" class="absolute top-6 right-6 p-2 text-white hover:text-brand-gold">
+      <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    <nav class="flex flex-col space-y-6 text-center">
-      <a href="#about" class="mobile-link text-charcoal text-xl font-medium uppercase tracking-widest hover:text-gold transition-colors">About</a>
-      <a href="#services" class="mobile-link text-charcoal text-xl font-medium uppercase tracking-widest hover:text-gold transition-colors">Services</a>
-      <a href="#pricing" class="mobile-link text-charcoal text-xl font-medium uppercase tracking-widest hover:text-gold transition-colors">Pricing</a>
-      <a href="#gallery" class="mobile-link text-charcoal text-xl font-medium uppercase tracking-widest hover:text-gold transition-colors">Gallery</a>
-      <a href="#reviews" class="mobile-link text-charcoal text-xl font-medium uppercase tracking-widest hover:text-gold transition-colors">Reviews</a>
-      <a href="#contact" class="mobile-link text-charcoal text-xl font-medium uppercase tracking-widest hover:text-gold transition-colors">Contact</a>
-      <a href={site.bookingUrl || "#book"} class="mobile-link mt-4 bg-gold text-white px-8 py-3 rounded-xl text-lg font-medium uppercase tracking-widest hover:bg-gold-light transition-colors">
-        Book Now
+    <nav class="flex flex-col space-y-8 text-center">
+      <a href="#services" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Services</a>
+      <a href="#pricing" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Pricing</a>
+      <a href="#gallery" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Gallery</a>
+      <a href="#reviews" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Reviews</a>
+      <a href="#about" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">About</a>
+      
+      <a href="/#booking" class="mobile-link mt-8 bg-brand-gold text-brand-charcoal px-8 py-3 rounded-full text-lg font-bold uppercase tracking-widest hover:bg-brand-goldLight transition-colors">
+        Book Appointment
       </a>
-      <p class="mt-8 text-charcoal font-medium">{site.contact?.phone}</p>
+      <p class="mt-8 text-brand-gold/50 font-medium tracking-widest text-sm">{site.salon?.bookingPhoneFormatted || '(406) 433-5555'}</p>
     </nav>
   </div>
 </header>
 
 <script>
-  const navbar = document.getElementById('navbar');
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const closeBtn = document.getElementById('mobile-close-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileLinks = document.querySelectorAll('.mobile-link');
-
-  // Scroll effect
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar?.classList.remove('bg-transparent', 'text-white');
-      navbar?.classList.add('bg-white/90', 'backdrop-blur-md', 'text-charcoal', 'shadow-sm');
-    } else {
-      navbar?.classList.add('bg-transparent', 'text-white');
-      navbar?.classList.remove('bg-white/90', 'backdrop-blur-md', 'text-charcoal', 'shadow-sm');
-    }
-  });
 
   // Mobile menu toggle
   const toggleMenu = () => {

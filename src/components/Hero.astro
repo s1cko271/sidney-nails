@@ -1,48 +1,51 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section id="hero" class="relative min-h-screen flex items-center justify-center bg-brand-charcoal overflow-hidden pt-24 md:pt-0">
-  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-[0.5] animate-slow-pan" style={`background-image: url('${siteData.salon.interiorImage}')`}></div>
-  <div class="absolute inset-0 bg-gradient-to-b from-brand-charcoal/20 to-brand-charcoal/70"></div>
-  
-  <div class="relative text-center max-w-4xl px-6 z-10 w-full mt-20 md:mt-28">
-    <img class="w-24 h-24 md:w-36 md:h-36 rounded-full object-cover mx-auto mb-8 border-4 border-brand-gold shadow-[0_0_30px_rgba(235,183,52,0.6)] animate-fade-in-up bg-white p-1" src={siteData.salon.logoImage} alt={siteData.salon.name} />
-    
-    <div class="inline-block text-brand-goldLight text-[0.65rem] md:text-xs font-semibold tracking-[0.2em] uppercase mb-6 px-5 py-2 border border-brand-gold/30 rounded-full bg-brand-charcoal/20 backdrop-blur-sm animate-fade-in-up" style="animation-delay: 150ms;">
-      {siteData.salon.tagline} &middot; {siteData.salon.city}, {siteData.salon.state}
+<section id="hero" class="relative min-h-[100dvh] flex flex-col lg:flex-row bg-brand-cream overflow-hidden">
+  <!-- Left Side: Content -->
+  <div class="w-full lg:w-7/12 flex items-center justify-center p-6 pt-32 pb-16 lg:pt-0 lg:pb-0 z-10">
+    <div class="w-full max-w-2xl relative">
+      <img class="w-64 md:w-80 h-auto mb-8 animate-fade-in-up object-contain" src={siteData.salon.logoFull} alt={siteData.salon.name} />
+      
+      <div class="inline-block text-brand-goldDark text-[0.65rem] font-semibold tracking-[0.2em] uppercase mb-6 px-4 py-1.5 border border-brand-goldDark/20 rounded-full bg-brand-goldLight/10 animate-fade-in-up" style="animation-delay: 150ms;">
+        {siteData.salon.tagline} &middot; {siteData.salon.city}, {siteData.salon.state}
+      </div>
+      
+      <h1 class="font-display lining-nums text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-brand-charcoal leading-[1.05] font-normal tracking-tight mb-6 animate-fade-in-up" style="animation-delay: 300ms;">
+        {siteData.hero.headlineLine1}<br/>
+        <em class="font-semibold italic text-brand-gold">{siteData.hero.headlineLine2}</em>
+      </h1>
+      
+      <p class="text-brand-charcoal/75 text-base md:text-lg lg:text-xl max-w-lg leading-relaxed mb-10 font-light animate-fade-in-up" style="animation-delay: 450ms;">
+        {siteData.hero.description}
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center opacity-0 animate-fade-in-up" style="animation-delay: 600ms;">
+        <a class="w-full sm:w-auto bg-brand-charcoal text-brand-cream px-10 py-4 rounded-full font-bold text-[0.85rem] uppercase tracking-widest shadow-lg hover:bg-brand-gold hover:text-brand-charcoal hover:-translate-y-1 transition-all duration-300 text-center" href="/#booking">
+          {siteData.hero.ctaPrimary}
+        </a>
+        <a class="w-full sm:w-auto bg-transparent border border-brand-charcoal/20 text-brand-charcoal px-8 py-4 rounded-full font-medium text-[0.85rem] uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-colors duration-300 text-center" href={`tel:${siteData.salon.bookingPhoneRaw}`}>
+          {siteData.hero.ctaSecondary}
+        </a>
+      </div>
+      
+      <!-- TODO: Uncomment and populate with real stats when available
+      <div class="flex gap-10 mt-16 pt-8 border-t border-brand-charcoal/10 opacity-0 animate-fade-in-up" style="animation-delay: 750ms;">
+        {siteData.hero.stats.map(stat => (
+          <div>
+            <div class="font-display lining-nums text-4xl text-brand-charcoal font-bold mb-1">{stat.value}</div>
+            <div class="text-brand-charcoal/50 text-[0.65rem] uppercase tracking-widest">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+      -->
     </div>
-    
-    <h1 class="font-display lining-nums text-4xl md:text-5xl lg:text-7xl text-white leading-[1.1] font-light tracking-tight mb-4 animate-fade-in-up glow-white" style="animation-delay: 300ms;">
-      {siteData.hero.headlineLine1}<br/>
-      <em class="font-semibold italic text-brand-goldLight glow-gold">{siteData.hero.headlineLine2}</em>
-    </h1>
-    
-    <div class="flex items-center justify-center gap-3 my-8 opacity-0 animate-fade-in-up" style="animation-delay: 450ms;" aria-hidden="true">
-      <span class="w-16 h-px bg-brand-gold"></span>
-      <span class="text-brand-gold text-xs animate-spin-slow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg></span>
-      <span class="w-16 h-px bg-brand-gold"></span>
-    </div>
+  </div>
 
-    <p class="text-brand-cream/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10 font-light animate-fade-in-up" style="animation-delay: 600ms;">
-      {siteData.hero.description}
-    </p>
-    
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in-up" style="animation-delay: 750ms;">
-      <a class="w-full sm:w-auto bg-brand-gold text-brand-charcoal px-10 py-4 rounded-full font-bold text-[0.9rem] uppercase tracking-widest shadow-lg hover:shadow-glow hover:-translate-y-1 transition-all duration-300 btn-shine" href="/#booking">
-        {siteData.hero.ctaPrimary}
-      </a>
-      <a class="w-full sm:w-auto bg-transparent border border-brand-cream/30 text-brand-cream px-8 py-4 rounded-full font-medium text-sm uppercase tracking-widest hover:bg-brand-cream/10 transition-colors duration-300" href={`tel:${siteData.salon.bookingPhoneRaw}`}>
-        {siteData.hero.ctaSecondary}
-      </a>
-    </div>
-    
-    <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4 md:gap-12 mt-16 pt-8 border-t border-brand-cream/10 opacity-0 animate-fade-in-up" style="animation-delay: 900ms;">
-      {siteData.hero.stats.map(stat => (
-        <div class="text-center">
-          <div class="font-display lining-nums text-3xl md:text-4xl text-brand-goldLight font-bold">{stat.value}</div>
-          <div class="text-brand-cream/50 text-[0.7rem] uppercase tracking-wider mt-1">{stat.label}</div>
-        </div>
-      ))}
+  <!-- Right Side: Image -->
+  <div class="w-full lg:w-5/12 min-h-[50vh] lg:min-h-screen relative lg:absolute lg:top-0 lg:right-0">
+    <div class="absolute inset-0 bg-cover bg-center animate-slow-pan lg:rounded-l-[3rem] overflow-hidden" style={`background-image: url('${siteData.salon.interiorImage}')`}>
+      <div class="absolute inset-0 bg-brand-charcoal/10"></div>
     </div>
   </div>
 </section>
@@ -68,6 +71,6 @@ import siteData from '../data/site.json';
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2);
   }
   .glow-gold {
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 40px rgba(212, 175, 55, 0.4);
+    text-shadow: 0 0 15px rgba(159, 184, 212, 0.4), 0 0 30px rgba(235, 165, 205, 0.3);
   }
 </style>
