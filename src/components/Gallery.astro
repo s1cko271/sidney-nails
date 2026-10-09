@@ -1,14 +1,14 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section class="py-24 relative bg-brand-cream/70 backdrop-blur-md" id="gallery">
+<section class="py-24 relative bg-[#0D1E32]/92 text-white backdrop-blur-md border-t border-sky-400/20" id="gallery">
   <div class="max-w-[1200px] mx-auto px-6 relative z-10">
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <div class="inline-block text-brand-goldDark text-xs font-bold tracking-[0.2em] uppercase mb-4">
+      <div class="inline-block text-[#9EC5EA] text-xs font-bold tracking-[0.2em] uppercase mb-4">
         {siteData.gallery.sectionTag}
       </div>
-      <h2 class="font-display lining-nums text-4xl md:text-5xl font-light text-brand-charcoal mb-4">
-        {siteData.gallery.title} <span class="font-semibold italic text-brand-gold">{siteData.gallery.titleAccent}</span>
+      <h2 class="font-display lining-nums text-4xl md:text-5xl font-light text-white mb-4">
+        {siteData.gallery.title} <span class="font-semibold italic text-[#9EC5EA]">{siteData.gallery.titleAccent}</span>
       </h2>
     </div>
     
@@ -18,7 +18,7 @@ import siteData from '../data/site.json';
         const imgCaption = typeof item === 'string' ? 'Nail art design' : (item.caption || 'Nail art design');
         return (
           <div 
-            class="group relative overflow-hidden rounded-md cursor-pointer reveal border border-brand-gold/80 hover:border-brand-goldDark transition-colors duration-300 break-inside-avoid transform-gpu shadow-sm"
+            class="group relative overflow-hidden rounded-md cursor-pointer reveal border border-sky-400/40 hover:border-sky-300 transition-colors duration-300 break-inside-avoid transform-gpu shadow-md"
             style={`--reveal-delay: ${(index % 3) * 100}ms;`}
           >
             <img 
@@ -38,7 +38,7 @@ import siteData from '../data/site.json';
         href={siteData.social?.instagram && !siteData.social.instagram.startsWith('TODO') ? siteData.social.instagram : 'https://www.instagram.com'} 
         target="_blank" 
         rel="noopener noreferrer" 
-        class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-navy border-b border-brand-gold/60 pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors"
+        class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#9EC5EA] border-b border-sky-400/60 pb-1 hover:text-white hover:border-white transition-colors"
       >
         Follow On Instagram &rarr;
       </a>
