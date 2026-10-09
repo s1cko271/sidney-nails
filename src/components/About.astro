@@ -83,24 +83,21 @@ import siteData from '../data/site.json';
           Whether you are stopping by for regular nail upkeep or spending an afternoon relaxing with our signature spa pedicure, our team takes the time to listen, care, and deliver beautiful results tailored to you.
         </p>
 
-        <!-- Stats / Commitments - Alternating colored cards -->
+        <!-- Stats / Commitments - Unified synchronized styling -->
         <div class="grid grid-cols-2 gap-6 pt-8 border-t border-white/15">
-          {siteData.about.stats.map((stat, sIdx) => {
-            const isStatOdd = sIdx % 2 !== 0;
-            return (
-              <div 
-                class={`${isStatOdd ? 'bg-[#132338]/90 border-sky-400/40' : 'bg-slate-900/80 border-sky-400/25'} backdrop-blur-md p-5 rounded-2xl border shadow-[0_4px_20px_rgba(56,189,248,0.1)] card-hover reveal`}
-                style={`--reveal-delay: ${240 + sIdx * 100}ms;`}
-              >
-                <div class={`font-display text-2xl md:text-3xl font-medium ${isStatOdd ? 'text-sky-300' : 'text-white'} mb-1`}>
-                  {stat.value}
-                </div>
-                <div class="text-[0.7rem] uppercase tracking-wider text-[#9EC5EA] font-semibold">
-                  {stat.label}
-                </div>
+          {siteData.about.stats.map((stat, sIdx) => (
+            <div 
+              class="bg-slate-900/85 backdrop-blur-md p-5 rounded-2xl border border-sky-400/30 shadow-[0_4px_20px_rgba(56,189,248,0.12)] card-hover reveal hover:border-sky-300 transition-colors"
+              style={`--reveal-delay: ${240 + sIdx * 100}ms;`}
+            >
+              <div class="font-display text-2xl md:text-3xl font-medium text-white mb-1">
+                {stat.value}
               </div>
-            );
-          })}
+              <div class="text-[0.7rem] uppercase tracking-wider text-[#9EC5EA] font-semibold">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

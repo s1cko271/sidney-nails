@@ -88,15 +88,13 @@ const gridReviews = siteData.reviews.items.slice(1, 5);
         </div>
       </div>
 
-      <!-- Grid Right Cards (7 cols: 2x2) - Alternating card colors -->
+      <!-- Grid Right Cards (7 cols: 2x2) - Unified synchronized card colors -->
       <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-5">
-        {gridReviews.map((review, idx) => {
-          const isAltCard = idx % 2 !== 0;
-          return (
-            <div 
-              class={`${isAltCard ? 'bg-[#142336]/90 border-sky-400/35' : 'bg-slate-900/85 border-sky-400/20'} backdrop-blur-md rounded-2xl p-6 shadow-md hover:border-sky-300 transition-all duration-300 flex flex-col justify-between card-hover reveal border`}
-              style={`--reveal-delay: ${(idx + 1) * 100}ms;`}
-            >
+        {gridReviews.map((review, idx) => (
+          <div 
+            class="bg-slate-900/85 border-sky-400/25 backdrop-blur-md rounded-2xl p-6 shadow-md hover:border-sky-300 transition-all duration-300 flex flex-col justify-between card-hover reveal border"
+            style={`--reveal-delay: ${(idx + 1) * 100}ms;`}
+          >
               <div>
                 <div class="flex items-center justify-between mb-4">
                   <div class="flex items-center gap-0.5 text-amber-400">
