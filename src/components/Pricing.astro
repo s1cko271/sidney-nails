@@ -51,26 +51,20 @@ import siteData from '../data/site.json';
               // If category has only 2 items (like Manicure), don't force span-2 on popular item so they balance side-by-side
               const isOnlyTwo = cat.items.length === 2;
               const shouldSpanTwo = item.popular && !isOnlyTwo;
-              // Evenly alternate between Light Card and Dark Navy Card
-              const isDarkCard = item.popular || (itemIdx % 2 !== 0);
 
               return (
                 <div 
-                  class={`rounded-2xl p-6 md:p-8 border transition-all duration-300 flex flex-col justify-between card-hover reveal ${
-                    isDarkCard 
-                      ? `bg-[#1B3A5C] text-white border-[#2D5A8B] shadow-xl ${shouldSpanTwo ? 'md:col-span-2 lg:col-span-2' : 'col-span-1'} hover:-translate-y-1` 
-                      : `bg-white/95 backdrop-blur-lg text-brand-charcoal border-slate-200/90 shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-sky-400/60 ${shouldSpanTwo ? 'md:col-span-2 lg:col-span-2' : 'col-span-1'}`
-                  }`}
+                  class={`rounded-2xl p-6 md:p-8 bg-white/95 backdrop-blur-md text-brand-charcoal border border-slate-200/90 shadow-md hover:shadow-xl hover:-translate-y-1 hover:border-sky-400/70 transition-all duration-300 flex flex-col justify-between card-hover reveal ${shouldSpanTwo ? 'md:col-span-2 lg:col-span-2' : 'col-span-1'}`}
                   style={`--reveal-delay: ${(itemIdx % 4) * 80}ms;`}
                 >
                   <div>
                     <div class="flex justify-between items-start gap-4 mb-2">
                       <div class="flex items-center gap-3">
-                        <h3 class={`font-display text-xl md:text-2xl font-medium ${isDarkCard ? 'text-white' : 'text-brand-charcoal'}`}>
+                        <h3 class="font-display text-xl md:text-2xl font-medium text-brand-charcoal">
                           {item.name}
                         </h3>
                         {item.popular && (
-                          <span class="inline-block px-3 py-1 bg-sky-400 text-[#0B1422] text-[0.65rem] font-bold uppercase tracking-widest rounded-full shadow-sm">
+                          <span class="inline-block px-3 py-1 bg-sky-50 text-sky-800 border border-sky-300/80 text-[0.65rem] font-bold uppercase tracking-widest rounded-full shadow-sm">
                             Most Popular
                           </span>
                         )}
@@ -79,31 +73,27 @@ import siteData from '../data/site.json';
                       <!-- Price Tag -->
                       <div class="shrink-0 text-right">
                         {item.price === 'TODO' || item.price === 'TODO_PRICE' ? (
-                          <span class={`text-xs font-mono font-medium px-2.5 py-1 rounded-md border ${
-                            isDarkCard ? 'bg-white/10 text-white/90 border-white/20' : 'bg-slate-200/70 text-slate-600 border-slate-300'
-                          }`}>
+                          <span class="text-xs font-mono font-medium px-2.5 py-1 rounded-md border bg-slate-200/70 text-slate-600 border-slate-300">
                             TODO (Price)
                           </span>
                         ) : (
-                          <span class={`font-display text-2xl font-semibold ${isDarkCard ? 'text-sky-300' : 'text-[#1B3A5C]'}`}>
+                          <span class="font-display text-2xl font-semibold text-[#1B3A5C]">
                             {item.price}
                           </span>
                         )}
                       </div>
                     </div>
 
-                    <p class={`text-sm leading-relaxed font-light mt-2 pr-6 ${isDarkCard ? 'text-white/80' : 'text-slate-600'}`}>
+                    <p class="text-sm leading-relaxed font-light mt-2 pr-6 text-slate-600">
                       {item.description}
                     </p>
                   </div>
 
-                  <div class="pt-6 mt-4 border-t border-current/10 flex justify-between items-center text-xs">
-                    <span class={isDarkCard ? 'text-white/60 font-light' : 'text-slate-400 font-light'}>
+                  <div class="pt-6 mt-4 border-t border-slate-100 flex justify-between items-center text-xs">
+                    <span class="text-slate-400 font-light">
                       Walk-ins &amp; Appointments
                     </span>
-                    <a href="/#booking" class={`font-semibold uppercase tracking-wider transition-colors ${
-                      isDarkCard ? 'text-sky-300 hover:text-white' : 'text-[#1B3A5C] hover:text-sky-600'
-                    }`}>
+                    <a href="/#booking" class="font-semibold uppercase tracking-wider transition-colors text-[#1B3A5C] hover:text-sky-600">
                       Book &rarr;
                     </a>
                   </div>
