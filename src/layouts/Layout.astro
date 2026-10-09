@@ -47,7 +47,19 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
   <script is:inline>document.documentElement.classList.add("js-enabled");</script>
   <SchemaMarkup />
 </head>
-<body class="text-brand-charcoal font-body antialiased overflow-x-hidden bg-brand-cream">
+<body class="text-brand-charcoal font-body antialiased overflow-x-hidden bg-transparent relative">
+
+  <!-- Fixed Global Ethereal Background (Full-site 3D Parallax Canvas) -->
+  <div class="fixed inset-0 -z-50 pointer-events-none overflow-hidden select-none" aria-hidden="true">
+    <img 
+      src="/images/background.webp" 
+      alt="" 
+      class="w-full h-full object-cover object-center" 
+      loading="eager"
+    />
+    <!-- Delicate ambient wash ensuring high contrast for all text content -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white/35 via-white/20 to-white/35"></div>
+  </div>
 
   <!-- Translucent Frosted Glass Pill Navbar -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-3 md:py-4 px-3 sm:px-6 md:px-8 transition-all duration-300">

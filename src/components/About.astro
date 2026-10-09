@@ -1,13 +1,13 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section class="py-24 bg-white relative overflow-hidden" id="about">
+<section class="py-24 relative bg-white/45 backdrop-blur-md overflow-hidden" id="about">
   <div class="max-w-[1200px] mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       
       <!-- Left: Visual Composition (5 cols on lg) -->
       <div class="lg:col-span-5 relative reveal">
-        <div class="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 aspect-[4/5] bg-brand-offwhite">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/80 aspect-[4/5] bg-white/50 backdrop-blur-sm">
           <img 
             src="/images/salon-2.webp" 
             alt="Sidney Nails storefront at 422 N Central Ave" 
@@ -18,7 +18,7 @@ import siteData from '../data/site.json';
         </div>
 
         <!-- Float Badge -->
-        <div class="absolute -bottom-5 -right-3 md:-right-5 bg-[#1B3A5C] text-white p-5 md:p-6 rounded-2xl shadow-xl border border-[#2D5A8B] max-w-[200px]">
+        <div class="absolute -bottom-5 -right-3 md:-right-5 bg-[#1B3A5C]/95 backdrop-blur-md text-white p-5 md:p-6 rounded-2xl shadow-xl border border-[#2D5A8B] max-w-[200px]">
           <div class="text-[0.65rem] font-bold uppercase tracking-widest text-brand-gold mb-1">Local &amp; Welcoming</div>
           <p class="font-display text-lg font-medium leading-snug">Sidney, Montana</p>
           <p class="text-xs text-white/70 font-light mt-0.5">422 N Central Ave</p>
@@ -45,9 +45,9 @@ import siteData from '../data/site.json';
         </p>
 
         <!-- Stats / Commitments -->
-        <div class="grid grid-cols-2 gap-6 pt-8 border-t border-slate-200">
+        <div class="grid grid-cols-2 gap-6 pt-8 border-t border-slate-200/60">
           {siteData.about.stats.map(stat => (
-            <div class="bg-brand-offwhite p-5 rounded-xl border border-slate-200/80">
+            <div class="bg-white/80 backdrop-blur-md p-5 rounded-2xl border border-white/80 shadow-[0_4px_20px_rgba(91,155,213,0.1)] hover:shadow-md transition-all">
               <div class="font-display text-2xl md:text-3xl font-medium text-[#1B3A5C] mb-1">
                 {stat.value}
               </div>

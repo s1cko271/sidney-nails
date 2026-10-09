@@ -1,7 +1,7 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section id="pricing" class="py-24 bg-white relative">
+<section id="pricing" class="py-24 relative bg-white/50 backdrop-blur-md">
   <div class="max-w-[1100px] mx-auto px-6">
     <div class="text-center max-w-2xl mx-auto mb-14 reveal">
       <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">
@@ -25,7 +25,7 @@ import siteData from '../data/site.json';
           aria-selected={idx === 0 ? "true" : "false"}
           aria-controls={`tab-panel-${idx}`}
           tabindex={idx === 0 ? "0" : "-1"}
-          class={`menu-tab shrink-0 snap-start px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 border focus:outline-none focus:ring-2 focus:ring-brand-gold ${idx === 0 ? 'bg-[#1B3A5C] text-white border-[#1B3A5C] shadow-sm' : 'bg-brand-offwhite text-slate-600 border-slate-200 hover:border-[#1B3A5C] hover:text-[#1B3A5C]'}`}
+          class={`menu-tab shrink-0 snap-start px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 border focus:outline-none focus:ring-2 focus:ring-brand-gold ${idx === 0 ? 'bg-[#1B3A5C] text-white border-[#1B3A5C] shadow-md' : 'bg-white/80 backdrop-blur-md text-slate-700 border-white/80 shadow-sm hover:border-[#1B3A5C] hover:text-[#1B3A5C]'}`}
           data-target={`tab-panel-${idx}`}
         >
           {cat.name}
@@ -50,8 +50,8 @@ import siteData from '../data/site.json';
             {cat.items.map(item => (
               <div class={`rounded-2xl p-6 md:p-8 border transition-all duration-300 flex flex-col justify-between ${
                 item.popular 
-                  ? 'bg-[#1B3A5C] text-white border-[#2D5A8B] shadow-xl md:col-span-2 lg:col-span-2' 
-                  : 'bg-brand-offwhite text-brand-charcoal border-slate-200/90 shadow-sm hover:border-slate-300'
+                  ? 'bg-[#1B3A5C]/95 backdrop-blur-md text-white border-[#2D5A8B] shadow-2xl md:col-span-2 lg:col-span-2' 
+                  : 'bg-white/85 backdrop-blur-lg text-brand-charcoal border-white/80 shadow-[0_8px_30px_rgba(91,155,213,0.12)] hover:shadow-[0_14px_40px_rgba(91,155,213,0.22)] hover:-translate-y-1 hover:border-brand-gold/40'
               }`}>
                 <div>
                   <div class="flex justify-between items-start gap-4 mb-2">
