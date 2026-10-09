@@ -9,9 +9,10 @@ import siteData from '../data/site.json';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <title>{`${siteData.salon.name} - ${siteData.salon.tagline} | ${siteData.salon.city}, ${siteData.salon.state}`}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script is:inline>document.documentElement.classList.add("js-enabled");</script>
 </head>
 <body class="text-brand-charcoal font-body antialiased overflow-x-hidden">
@@ -346,46 +347,9 @@ import siteData from '../data/site.json';
     });
   </script>
 
-  <!-- PROMO POPUP MODAL (Shopee Style) -->
-  <div id="promoPopup" class="fixed inset-0 z-[1000] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" aria-modal="true" role="dialog">
-    <!-- Nền đen tối lại, KHÔNG làm mờ (No blur) -->
-    <div class="absolute inset-0 bg-black/60 cursor-pointer" onclick="closePromoPopup()"></div>
-    
-    <!-- Khung chứa ảnh (Bỏ overflow-hidden để nút X có thể tràn ra ngoài) -->
-    <div class="relative w-[90%] max-w-[500px] scale-75 transition-transform duration-500 ease-out-back" id="promoContent">
-      
-      <!-- Nút X (Tròn trắng, văng ra ngoài góc trên bên phải giống Shopee) -->
-      <button onclick="closePromoPopup()" class="absolute -top-3 -right-3 z-20 w-8 h-8 bg-white hover:bg-gray-100 text-gray-500 rounded-full flex items-center justify-center shadow-lg transition-colors border border-gray-200" aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-      </button>
-      
-      <img src="/images/Banner_thankyou.jpg" alt="Thank You" class="w-full h-auto object-cover rounded-lg shadow-2xl relative z-10" />
-    </div>
-  </div>
-
-  <style is:inline>
-    /* Hiệu ứng nảy nhẹ (bounce) giống e-commerce */
-    .ease-out-back { transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15); }
-    #promoPopup.active { opacity: 1; pointer-events: auto; }
-    #promoPopup.active #promoContent { transform: scale(1); }
-  </style>
-
-  <script is:inline>
-    function closePromoPopup() {
-      const popup = document.getElementById('promoPopup');
-      popup.classList.remove('active');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      // Shopee style: Hiện lên nhanh hơn (sau 0.5s) thay vì chờ quá lâu
-      // Tạm thời tắt popup theo yêu cầu
-      /*
-      setTimeout(() => {
-        document.getElementById('promoPopup').classList.add('active');
-      }, 500);
-      */
-    });
-  </script>
-
-</body>
+  </body>
 </html>
+
+
+
+

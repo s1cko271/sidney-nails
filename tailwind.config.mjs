@@ -8,19 +8,19 @@ export default {
     extend: {
       colors: {
         brand: {
-          gold: '#9FB8D4',
-          goldLight: '#C9DDF5',
-          goldDark: '#6A89B0',
-          luxury: '#D4AF37',
-          charcoal: '#0D1521',
-          cream: '#FFFFFF',
-          creamDark: '#F4F7FA',
-          offwhite: '#F9FAFB',
+          gold: '#5B9BD5', // Sky Blue primary
+          goldLight: '#8CAAD3', // Lighter blue
+          goldDark: '#4A7CA6', // Darker blue
+          luxury: '#1B3A5C', // Navy secondary
+          charcoal: '#1E293B', // Soft charcoal blue (slate-800)
+          cream: '#FFFFFF', // White
+          creamDark: '#F8FAFC', // Off-white/slate-50
+          offwhite: '#F1F5F9', // Soft silver/slate-100
         }
       },
       fontFamily: {
-        display: ['"Playfair Display"', '"Cormorant Garamond"', 'serif'],
-        body: ['Montserrat', 'sans-serif'],
+        display: ['"Playfair Display"', 'serif'],
+        body: ['Outfit', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',

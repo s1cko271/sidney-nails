@@ -20,7 +20,7 @@ const canonicalURL = new URL(Astro.url.pathname, site.url || Astro.site || 'http
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     
@@ -29,7 +29,7 @@ const canonicalURL = new URL(Astro.url.pathname, site.url || Astro.site || 'http
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={new URL('/og-image.jpg', site.url || Astro.site || 'http://localhost:4321')} />
+    <meta property="og:image" content={new URL('/images/og-image.webp', site.url || Astro.site || 'http://localhost:4321')} />
 
     <!-- Google Analytics -->
     {site.googleAnalyticsId && (
@@ -72,3 +72,5 @@ const canonicalURL = new URL(Astro.url.pathname, site.url || Astro.site || 'http
     </script>
   </body>
 </html>
+
+

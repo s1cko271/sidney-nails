@@ -1,362 +1,84 @@
 ---
 import siteData from '../data/site.json';
-const menu = siteData.pricing.menu;
 ---
-<section class="py-24 md:py-32 relative overflow-hidden bg-brand-cream" id="pricing">
-  <div class="max-w-[1240px] mx-auto px-6 relative z-10">
-    <!-- Header -->
-    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <div class="inline-block text-brand-goldDark text-xs font-bold tracking-[0.2em] uppercase mb-4">
-        {siteData.pricing.sectionTag}
-      </div>
-      <h2 class="font-display lining-nums text-4xl md:text-5xl font-light text-brand-charcoal mb-4">
-        {siteData.pricing.title} <span class="font-semibold italic text-brand-gold">{siteData.pricing.titleAccent}</span>
+<section id="pricing" class="py-24 bg-brand-cream relative">
+  <div class="max-w-[1000px] mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <h2 class="font-display text-4xl md:text-5xl text-brand-charcoal mb-4">
+        Our <em class="italic font-medium text-brand-gold">Menu</em>
       </h2>
-      <p class="text-brand-charcoal/60 leading-relaxed font-light text-justify [text-align-last:center]">
-        {siteData.pricing.subtitle}
-      </p>
-      <div class="flex items-center justify-center gap-3 mt-8 opacity-70" aria-hidden="true">
-        <span class="w-12 h-px bg-brand-gold"></span>
-        <span class="text-brand-gold text-xs opacity-80 transition-transform duration-700 hover:scale-110"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg></span>
-        <span class="w-12 h-px bg-brand-gold"></span>
-      </div>
+      <p class="text-brand-charcoal/60 text-sm max-w-lg mx-auto">Explore our curated selection of treatments designed to relax and rejuvenate.</p>
     </div>
 
-    <div class="mb-24">
-      {/* Featured Package (Full Width) */}
-      {siteData.pricing.packages.filter(p => p.featured).map(pkg => (
-        <div class="relative rounded-[2.5rem] p-8 lg:p-12 mb-8 bg-gradient-to-br from-brand-charcoal to-[#0e1d2e] text-white shadow-[inset_0_0_20px_rgba(91,155,213,0.1)] border-2 border-brand-luxury transition-all duration-500 reveal flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
-          
-          <div class="w-full lg:w-5/12">
-            {pkg.featuredLabel && (
-              <div class="mb-5">
-                <span class="inline-block bg-brand-gold text-brand-charcoal text-[0.65rem] font-bold uppercase tracking-[0.2em] py-1.5 px-3 rounded-sm shadow-sm">
-                  {pkg.featuredLabel}
-                </span>
-              </div>
-            )}
-            
-            <div class="text-[0.75rem] font-bold tracking-[0.15em] uppercase mb-4 text-brand-goldLight">
-              {pkg.name}
-            </div>
-            
-            <div class="mb-2 flex items-baseline gap-2">
-              <span class="font-display lining-nums text-6xl md:text-7xl font-bold tracking-tight text-white">{pkg.price}</span>
-            </div>
-            <div class="text-sm mb-6 font-medium text-white/70">
-              {pkg.unit}
-            </div>
-            
-            <p class="text-base leading-relaxed mb-8 font-light text-white/80 max-w-sm">
-              {pkg.description}
-            </p>
-            
-            <button 
-              class="w-full sm:w-auto px-10 py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight hover:-translate-y-0.5 shadow-glow"
-              onclick="window.location.href='/#booking'">Book Now</button>
-          </div>
+    <!-- Tabs Header -->
+    <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12 reveal">
+      {siteData.pricing.categories.map((cat, idx) => (
+        <button 
+          class={`menu-tab px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 border ${idx === 0 ? 'bg-brand-luxury text-brand-cream border-brand-luxury' : 'bg-transparent text-brand-charcoal/60 border-brand-charcoal/10 hover:border-brand-luxury hover:text-brand-luxury'}`}
+          data-target={`tab-${idx}`}
+        >
+          {cat.name}
+        </button>
+      ))}
+    </div>
 
-          <div class="w-full lg:w-7/12">
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-              {pkg.features.map(feature => (
-                <li class="flex items-start gap-4 text-base font-light py-4 border-b border-white/10 text-white">
-                  <span class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-brand-gold/20 text-brand-goldLight">
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                  </span> 
-                  <span class="leading-relaxed">{feature}</span>
-                </li>
-              ))}
-            </ul>
+    <!-- Tabs Content -->
+    <div class="relative min-h-[400px] reveal">
+      {siteData.pricing.categories.map((cat, idx) => (
+        <div id={`tab-${idx}`} class={`menu-content transition-all duration-500 ${idx === 0 ? 'block opacity-100' : 'hidden opacity-0'}`}>
+          <div class="mb-10 text-center">
+            <p class="text-brand-charcoal/70 italic text-sm">{cat.description}</p>
           </div>
-          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+            {cat.items.map(item => (
+              <div class="relative group">
+                <div class="flex justify-between items-baseline mb-2">
+                  <h3 class="font-display text-xl text-brand-charcoal group-hover:text-brand-gold transition-colors">{item.name} {item.popular && <span class="ml-2 inline-block px-2 py-0.5 bg-brand-luxury text-brand-cream text-[0.6rem] uppercase tracking-widest rounded-sm align-middle">Popular</span>}</h3>
+                  <div class="flex-grow border-b border-dotted border-brand-charcoal/20 mx-4 relative top-[-4px]"></div>
+                  <span class="font-display text-xl font-medium text-brand-luxury">{item.price}</span>
+                </div>
+                <p class="text-brand-charcoal/50 text-xs leading-relaxed pr-8">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       ))}
-
-      {/* Non-Featured Packages (Side by side) */}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-        {siteData.pricing.packages.filter(p => !p.featured).map(pkg => (
-          <div class="relative rounded-[2.5rem] p-8 lg:p-10 bg-gradient-to-br from-white to-gray-50 text-brand-charcoal shadow-xl border-2 border-brand-luxury/50 hover:border-brand-luxury transition-all duration-500 hover:-translate-y-2 hover:shadow-glow reveal flex flex-col">
-            
-            <div class="flex-grow">
-              <div class="text-[0.75rem] font-bold tracking-[0.15em] uppercase mb-4 text-brand-charcoal/50">
-                {pkg.name}
-              </div>
-              
-              <div class="mb-1 flex items-baseline gap-2">
-                <span class="font-display lining-nums text-4xl md:text-5xl font-bold tracking-tight text-brand-charcoal">{pkg.price}</span>
-              </div>
-              <div class="text-xs mb-6 font-medium text-brand-charcoal/50">
-                {pkg.unit}
-              </div>
-              
-              <p class="text-sm leading-relaxed mb-8 font-light text-brand-charcoal/70">
-                {pkg.description}
-              </p>
-              
-              <ul class="space-y-3 mb-8">
-                {pkg.features.map(feature => (
-                  <li class="flex items-start gap-3 text-sm font-light pb-3 border-b border-gray-100 text-brand-charcoal/85">
-                    <span class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-brand-gold/15 text-brand-goldDark">
-                      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    </span> 
-                    <span class="leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <button 
-              class="mt-auto w-full py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 bg-transparent border-2 border-brand-charcoal/20 text-brand-charcoal hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5"
-              onclick="window.location.href='/#booking'">Book Now</button>
-          </div>
-        ))}
-      </div>
     </div>
-
-    <!-- FULL INTERACTIVE MENU SECTION -->
-    <div class="mt-20 pt-16 border-t border-brand-gold/20" id="full-menu">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <div class="inline-flex items-center gap-2 bg-brand-gold/10 text-brand-goldDark text-xs font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-3 border border-brand-gold/20">
-          Full Salon Menu & Treatment Details
-        </div>
-        <h3 class="font-display lining-nums text-3xl md:text-4xl text-brand-charcoal font-semibold mb-3">
-          Explore Our Complete <span class="italic text-brand-gold font-normal">Service Menu</span>
-        </h3>
-        <p class="text-brand-charcoal/65 text-sm md:text-base font-light max-w-xl mx-auto">
-          Every service includes professional care, premium sanitation, and warm towel finish. Select a category below:
-        </p>
-      </div>
-
-      <!-- Category Filter Tabs -->
-      <div class="flex overflow-x-auto lg:flex-wrap justify-start lg:justify-center gap-2 md:gap-3 mb-12 pb-4 lg:pb-0 w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] snap-x snap-mandatory" id="menu-tab-buttons">
-        {menu.categories.map((cat, idx) => (
-          <button 
-            type="button"
-            data-tab-target={`tab-${cat.id}`}
-            class={`menu-tab-btn shrink-0 snap-start px-5 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 flex items-center gap-2 border ${
-              idx === 0 
-                ? 'bg-brand-charcoal text-white border-brand-gold/50 shadow-md active-tab' 
-                : 'bg-white text-brand-charcoal border-gray-200 hover:border-brand-gold hover:text-brand-gold'
-            }`}
-          >
-            <span>{cat.name}</span>
-            {cat.badge && (
-              <span class={`text-[0.65rem] font-bold px-1.5 py-0.5 rounded-full ${idx === 0 ? 'bg-brand-gold text-brand-charcoal' : 'bg-brand-offwhite text-brand-charcoal'}`}>
-                {cat.badge}
-              </span>
-            )}
-          </button>
-        ))}
-      </div>
-
-      <!-- TAB PANELS CONTAINER -->
-      <div id="menu-tab-panels">
-        
-        <!-- 1. MANICURE PANEL -->
-        <div id="tab-manicure" class="menu-panel block transition-opacity duration-300">
-          <div class="mb-6 text-center max-w-2xl mx-auto">
-            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Manicure Treatments</h4>
-            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[0].description}</p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-            {menu.categories[0].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-brand-luxury/70 shadow-sm hover:border-brand-luxury hover:shadow-glow hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                <div class="flex-grow">
-                  <div class="flex justify-between items-start gap-4 mb-5 pb-5 border-b border-gray-100">
-                    <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal leading-snug">{item.name}</h5>
-                    <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark whitespace-nowrap">{item.price}</span>
-                  </div>
-                  <div class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-brand-goldDark mb-4">Included Treatments</div>
-                  <ul class="space-y-3 mb-6">
-                    {item.steps.map(st => (
-                      <li class="flex items-start gap-3 text-sm text-brand-charcoal/80 font-light">
-                        <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-goldDark flex items-center justify-center shrink-0 mt-0.5">
-                          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        </span>
-                        <span class="leading-relaxed">{st}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <a href="/#booking" class="mt-auto w-full text-center py-3 rounded-lg border border-gray-200 text-brand-charcoal font-semibold text-xs uppercase tracking-wider hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 transition-colors">
-                  Book This Service
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- 2. PEDICURE PANEL -->
-        <div id="tab-pedicure" class="menu-panel hidden transition-opacity duration-300">
-          <div class="mb-6 text-center max-w-2xl mx-auto">
-            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Pedicure Spa Treatments</h4>
-            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[1].description}</p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-            {menu.categories[1].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-brand-luxury/70 shadow-sm hover:border-brand-luxury hover:shadow-glow hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                <div class="flex-grow">
-                  <div class="flex justify-between items-start gap-4 mb-5 pb-5 border-b border-gray-100">
-                    <div>
-                      {item.badge && (
-                        <span class="inline-block bg-brand-charcoal text-white text-[0.6rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm mb-2">
-                          {item.badge}
-                        </span>
-                      )}
-                      <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal leading-snug">{item.name}</h5>
-                    </div>
-                    <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark whitespace-nowrap">{item.price}</span>
-                  </div>
-                  <div class="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-brand-goldDark mb-4">Service Treatment Steps</div>
-                  <ul class="space-y-3 mb-6">
-                    {item.steps.map(st => (
-                      <li class="flex items-start gap-3 text-sm text-brand-charcoal/80 font-light">
-                        <span class="w-5 h-5 rounded-full bg-brand-gold/15 text-brand-goldDark flex items-center justify-center shrink-0 mt-0.5">
-                          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                        </span>
-                        <span class="leading-relaxed">{st}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {item.note && (
-                    <div class="text-xs text-brand-charcoal/60 font-light italic bg-brand-offwhite rounded-lg px-4 py-2.5 mb-6 border border-gray-100">
-                      📌 {item.note}
-                    </div>
-                  )}
-                </div>
-                <a href="/#booking" class="mt-auto w-full text-center py-3 rounded-lg border border-gray-200 text-brand-charcoal font-semibold text-xs uppercase tracking-wider hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 transition-colors">
-                  Book This Pedicure
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- 3. ACRYLIC & DIPPING PANEL -->
-        <div id="tab-acrylic" class="menu-panel hidden transition-opacity duration-300">
-          <div class="mb-6 text-center max-w-2xl mx-auto">
-            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Acrylic & Dipping</h4>
-            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[2].description}</p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg mx-auto items-stretch">
-            {menu.categories[2].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 md:p-8 border border-brand-luxury/70 shadow-sm hover:border-brand-luxury hover:shadow-glow hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-                <h5 class="font-display lining-nums text-xl font-bold text-brand-charcoal mb-4 leading-snug">{item.name}</h5>
-                <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
-                  <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
-                  <span class="font-display lining-nums text-3xl font-bold text-brand-goldDark">{item.price}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- 4. WAXING PANEL -->
-        <div id="tab-waxing" class="menu-panel hidden transition-opacity duration-300">
-          <div class="mb-6 text-center max-w-2xl mx-auto">
-            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Waxing & Beauty</h4>
-            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[3].description}</p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
-            {menu.categories[3].items.map(item => (
-              <div class="h-full bg-white rounded-xl p-6 border border-brand-luxury/70 shadow-sm hover:border-brand-luxury hover:shadow-glow hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-                <h5 class="font-body font-semibold text-sm text-brand-charcoal mb-4 leading-snug">{item.name}</h5>
-                <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
-                  <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
-                  <span class="font-display lining-nums text-2xl font-bold text-brand-goldDark">{item.price}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- 5. ADD-ON PANEL -->
-        <div id="tab-addons" class="menu-panel hidden transition-opacity duration-300">
-          <div class="mb-6 text-center max-w-2xl mx-auto">
-            <h4 class="font-display lining-nums text-2xl font-bold text-brand-charcoal">Additional Services</h4>
-            <p class="text-brand-charcoal/60 text-sm font-light mt-2">{menu.categories[4].description}</p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
-            {menu.categories[4].addOns.map(ao => (
-              <div class="h-full bg-white rounded-xl p-6 border border-brand-luxury/70 shadow-sm hover:border-brand-luxury hover:shadow-glow hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-                <h5 class="font-body font-semibold text-sm text-brand-charcoal mb-4 leading-snug">{ao.name}</h5>
-                <div class="flex items-baseline justify-between pt-4 border-t border-gray-100">
-                  <span class="text-[0.65rem] text-brand-charcoal/50 uppercase tracking-[0.1em]">Price</span>
-                  <span class="font-display lining-nums text-2xl font-bold text-brand-goldDark">{ao.price}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Kids Note -->
-      {menu.kidsNote && (
-        <div class="text-center mt-10 mb-4">
-          <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/20 rounded-full px-6 py-2.5 text-sm font-medium text-brand-charcoal">
-            <span class="text-brand-goldDark font-bold">*</span> {menu.kidsNote}
-          </div>
-        </div>
-      )}
-
-      <!-- Footer Actions -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-10 border-t border-brand-gold/20">
-        <a 
-          href="/#booking"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-brand-gold text-brand-charcoal hover:bg-brand-goldLight hover:-translate-y-0.5 shadow-lg shadow-brand-gold/30 font-bold text-sm uppercase tracking-wider transition-all duration-300"
-        >
-          Book Appointment
-        </a>
-      </div>
-
-    </div>
-
   </div>
-
 </section>
 
-<!-- Client Script for Category Tabs -->
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
-    const tabButtons = document.querySelectorAll('.menu-tab-btn');
-    const panels = document.querySelectorAll('.menu-panel');
+    const tabs = document.querySelectorAll('.menu-tab');
+    const contents = document.querySelectorAll('.menu-content');
 
-    tabButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-tab-target');
-        
-        // Update button styles
-        tabButtons.forEach(b => {
-          b.classList.remove('bg-brand-charcoal', 'text-white', 'border-brand-gold/50', 'shadow-md', 'active-tab');
-          b.classList.add('bg-white', 'text-brand-charcoal', 'border-gray-200');
-          // Fix badge color if it exists
-          const badge = b.querySelector('.rounded-full.text-\\[0\\.65rem\\]');
-          if (badge) {
-            badge.classList.remove('bg-brand-gold');
-            badge.classList.add('bg-brand-offwhite');
-          }
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Reset tabs
+        tabs.forEach(t => {
+          t.classList.remove('bg-brand-luxury', 'text-brand-cream', 'border-brand-luxury');
+          t.classList.add('bg-transparent', 'text-brand-charcoal/60', 'border-brand-charcoal/10');
         });
-        
-        btn.classList.add('bg-brand-charcoal', 'text-white', 'border-brand-gold/50', 'shadow-md', 'active-tab');
-        btn.classList.remove('bg-white', 'text-brand-charcoal', 'border-gray-200');
-        
-        const activeBadge = btn.querySelector('.rounded-full.text-\\[0\\.65rem\\]');
-        if (activeBadge) {
-          activeBadge.classList.add('bg-brand-gold');
-          activeBadge.classList.remove('bg-brand-offwhite');
+        // Activate current tab
+        tab.classList.remove('bg-transparent', 'text-brand-charcoal/60', 'border-brand-charcoal/10');
+        tab.classList.add('bg-brand-luxury', 'text-brand-cream', 'border-brand-luxury');
+
+        // Hide all content
+        contents.forEach(c => {
+          c.classList.add('hidden', 'opacity-0');
+          c.classList.remove('block', 'opacity-100');
+        });
+
+        // Show target content
+        const target = document.getElementById(tab.getAttribute('data-target'));
+        if (target) {
+          target.classList.remove('hidden');
+          // small delay for transition
+          setTimeout(() => {
+            target.classList.remove('opacity-0');
+            target.classList.add('block', 'opacity-100');
+          }, 50);
         }
-
-        // Hide all panels, show target
-        panels.forEach(p => {
-          if (p.id === targetId) {
-            p.classList.remove('hidden');
-            p.classList.add('block');
-          } else {
-            p.classList.add('hidden');
-            p.classList.remove('block');
-          }
-        });
       });
     });
   });

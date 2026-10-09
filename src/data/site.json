@@ -2,86 +2,62 @@
   "_comment": "=== J&J NAIL SPA – SITE CONFIGURATION ===  Edit this file to update ALL text, images, and info shown on the website.  You do NOT need to touch any code files — just change values here and the site updates automatically.",
   "salon": {
     "_comment": "Basic info — shown in the browser tab title, header, footer, and hero section",
-    "name": "Opal Nails & Spa",
-    "namePart1": "Opal",
-    "namePart2": "Nails & Spa",
-    "tagline": "NAILS • LASHES • FACIAL • WAXING • PMU",
-    "city": "Dickinson",
-    "state": "ND",
-    "fullAddress": "373 15th St W, Dickinson, ND 58601",
-    "phone": "+1 (701) 483-7070",
-    "phoneRaw": "+17014837070",
+    "name": "Sidney Nails",
+    "namePart1": "Sidney",
+    "namePart2": "Nails",
+    "tagline": "NAILS • LASHES • FACIAL • WAXING",
+    "city": "Sidney",
+    "state": "MT",
+    "fullAddress": "422 N Central Ave, Sidney, MT 59270",
+    "phone": "(406) 433-5555",
+    "phoneRaw": "+14064335555",
     "email": "",
-    "logoImage": "/images/logo.png",
-    "interiorImage": "/images/background.jpg",
-    "exteriorImage": "/images/gallery/14084dd7074aea93a3f1d37339d367ca.jpg",
-    "bookingPhone": "+1 (701) 483-7070",
-    "bookingPhoneRaw": "+17014837070",
-    "logoSquare": "/images/opal-logo-monogram.png",
-    "logoFull": "/images/logo.png",
-    "ogImage": "/images/og-image.jpg",
-    "favicon": "/images/opal-logo-monogram.png",
-    "bookingPhoneFormatted": "+1 (701) 483-7070"
+    "logoImage": "/images/logo-full.webp",
+    "interiorImage": "/images/salon-1.webp",
+    "exteriorImage": "/images/salon-2.webp",
+    "bookingPhone": "(406) 433-5555",
+    "bookingPhoneRaw": "+14064335555",
+    "logoSquare": "/images/logo.png",
+    "logoFull": "/images/logo-full.webp",
+    "ogImage": "/images/og-image.webp",
+    "favicon": "/favicon.png",
+    "bookingPhoneFormatted": "(406) 433-5555"
   },
   "hours": {
-    "_comment": "Business hours — shown in the booking/contact section and footer",
-    "line1": "Mon – Sat: 9:30 AM – 7:00 PM",
-    "line2": "Sunday: 11:00 AM – 5:00 PM"
+    "_comment": "Business hours to show in the footer and contact sections",
+    "Mon-Sat": "9:00 AM - 7:00 PM",
+    "Sunday": "Closed"
   },
   "hero": {
-    "_comment": "The big intro section at the very top of the page",
-    "headlineLine1": "Unearth Your",
-    "headlineLine2": "Radiance",
-    "description": "A multi-faceted sanctuary for nails, lashes, and esthetics. Experience precision artistry and refined tranquility in every detail.",
-    "ctaPrimary": "Reserve Your Time",
-    "ctaSecondary": "Inquire & Book",
-    "stats": [
-      {
-        "value": "500+",
-        "label": "Happy Clients"
-      },
-      {
-        "value": "5.0 ★",
-        "label": "Google Rating"
-      }
-    ]
+    "headlineLine1": "Elegance in",
+    "headlineLine2": "Every Detail",
+    "description": "Experience artistic nail care and soothing spa services in the heart of Sidney, MT. Where watercolor elegance meets modern beauty.",
+    "ctaPrimary": "Book Now",
+    "ctaSecondary": "Call Us"
   },
   "marquee": {
-    "_comment": "The scrolling text strip below the hero — lists your service keywords",
     "items": [
-      "Gel Manicure",
-      "Spa Pedicure",
-      "Royal Spa Pedicure",
-      "Dipping Powder",
-      "Acrylic & Gel Extensions",
-      "Organic Spa Treatments",
-      "Ombre & Chrome Art",
-      "Relaxing Hot Stone Massage"
+      "Luxury Manicure",
+      "Pedicure Spa",
+      "Acrylic & Dipping",
+      "Waxing & Beauty",
+      "Eyelash Extensions",
+      "Facial Treatment"
     ]
   },
   "about": {
-    "_comment": "The 'About Us' section — tells visitors what makes your salon special",
-    "sectionTag": "About Us",
-    "title": "The Art of",
-    "titleAccent": "Polished Perfection",
-    "paragraphs": [
-      "Opal Nails & Spa is designed as a sanctuary of refined beauty, where every treatment is a meticulous craft. From flawless acrylics and serene pedicures to delicate esthetics like lashes and waxing, our multi-faceted menu caters to your complete radiance.",
-      "Our environment is intentionally crafted to emulate the calming, luminous qualities of our namesake gemstone. With impeccable hygiene standards, premium products, and a team of passionate artisans, we ensure your time with us is both restorative and beautifully transformative."
-    ],
-    "highlights": [
-      "Premium Products",
-      "Hygienic & Safe",
-      "Expert Technicians",
-      "Relaxing Vibe"
-    ],
-    "badgeLabel": "PURE",
-    "badgeValue": "ARTISTRY",
-    "image": "/images/gallery/ba5f93e6fcbc0368531391460c206ada.jpg",
-    "features": [
-      "Precision Artistry",
-      "Luminous Environment",
-      "Impeccable Hygiene",
-      "Comprehensive Care"
+    "title": "Our Story",
+    "titleAccent": "Sidney Nails",
+    "description": "Welcome to Sidney Nails, a serene space dedicated to your beauty and relaxation. We believe in providing a warm, personal experience tailored to our close-knit community.",
+    "stats": [
+      {
+        "value": "TODO",
+        "label": "Years Experience"
+      },
+      {
+        "value": "TODO+",
+        "label": "Happy Clients"
+      }
     ]
   },
   "services": {
@@ -92,34 +68,34 @@
     "subtitle": "From classic manicures to creative nail art — we offer a full range of services using premium products for lasting results.",
     "items": [
       {
-        "name": "Manicure",
-        "description": "Regular manicure, Deluxe Manicure, Deluxe Royal Manicure.",
-        "price": "From ",
-        "image": "/images/services/manicure.jpg"
+        "title": "Manicure",
+        "description": "TODO_MANICURE_DESC",
+        "price": "TODO_PRICE",
+        "icon": "sparkle"
       },
       {
-        "name": "Pedicure Spa",
-        "description": "Basic pedicure, Deluxe pedicure, Deluxe super royal pedicure. Ten dollars any flavor your choice for bubble spa scents.",
-        "price": "From ",
-        "image": "/images/services/pedicure.jpg"
+        "title": "Pedicure Spa",
+        "description": "Basic, Deluxe, Deluxe Super Royal",
+        "price": "TODO_PRICE",
+        "icon": "sparkle"
       },
       {
-        "name": "Acrylic & Dipping",
-        "description": "Fullset pink & white, Regular, White Tip, Ombre, Builder gel, Fills, Dipping color Powder, Dipping Ombre.",
-        "price": "From ",
-        "image": "/images/services/dipping.webp"
+        "title": "Acrylic & Dipping",
+        "description": "TODO_ACRYLIC_DESC",
+        "price": "TODO_PRICE",
+        "icon": "sparkle"
       },
       {
-        "name": "Waxing & Beauty",
-        "description": "Facial Treatment, Eyelash Extensions, and full face/body waxing services.",
-        "price": "From ",
-        "image": "/images/services/enhancement.jpg"
+        "title": "Waxing & Beauty",
+        "description": "Facial treatment and eyelash extensions",
+        "price": "TODO_PRICE",
+        "icon": "sparkle"
       },
       {
-        "name": "Additional Services",
-        "description": "Polish changes, nail designs, fixes, removals, and custom shapes.",
-        "price": "From ",
-        "image": "/images/services/addons.jpg"
+        "title": "Additional Services",
+        "description": "Polish change, nail design, nail fix, removal",
+        "price": "TODO_PRICE",
+        "icon": "sparkle"
       }
     ]
   },
@@ -392,7 +368,90 @@
           ]
         }
       ]
-    }
+    },
+    "categories": [
+      {
+        "name": "Manicure",
+        "description": "TODO_MANICURE_DESC",
+        "items": [
+          {
+            "name": "TODO_MANICURE_ITEM",
+            "price": "TODO_PRICE",
+            "description": "TODO_DESC"
+          }
+        ]
+      },
+      {
+        "name": "Pedicure Spa",
+        "description": "Basic, Deluxe, Deluxe Super Royal",
+        "items": [
+          {
+            "name": "Basic Pedicure",
+            "price": "TODO_PRICE",
+            "description": "TODO_DESC"
+          },
+          {
+            "name": "Deluxe Pedicure",
+            "price": "TODO_PRICE",
+            "description": "TODO_DESC"
+          },
+          {
+            "name": "Deluxe Super Royal Pedicure",
+            "price": "TODO_PRICE",
+            "description": "TODO_DESC",
+            "popular": true
+          }
+        ]
+      },
+      {
+        "name": "Acrylic & Dipping",
+        "description": "TODO_DESC",
+        "items": [
+          {
+            "name": "TODO_ITEM",
+            "price": "TODO_PRICE",
+            "description": "TODO_DESC"
+          }
+        ]
+      },
+      {
+        "name": "Waxing & Beauty",
+        "description": "Facial treatment & eyelash extensions",
+        "items": [
+          {
+            "name": "TODO_ITEM",
+            "price": "TODO_PRICE",
+            "description": "TODO_DESC"
+          }
+        ]
+      },
+      {
+        "name": "Additional Services",
+        "description": "Polish change, nail design, nail fix, removal",
+        "items": [
+          {
+            "name": "Polish Change",
+            "price": "TODO_PRICE",
+            "description": "TODO_DESC"
+          },
+          {
+            "name": "Nail Design",
+            "price": "TODO_PRICE",
+            "description": "TODO_DESC"
+          },
+          {
+            "name": "Nail Fix",
+            "price": "TODO_PRICE",
+            "description": "TODO_DESC"
+          },
+          {
+            "name": "Removal",
+            "price": "TODO_PRICE",
+            "description": "TODO_DESC"
+          }
+        ]
+      }
+    ]
   },
   "gallery": {
     "_comment": "The photo gallery — first image spans 2 rows and is taller. Add/remove items as needed.",
@@ -400,54 +459,13 @@
     "title": "Our Signature",
     "titleAccent": "Luster",
     "items": [
-      {
-        "image": "/images/gallery/03ce2e612ebfcd96dbc5c98e962d5409.jpg",
-        "caption": "Nail Design"
-      },
-      {
-        "image": "/images/gallery/0c77ba98ae54a296a4d583e75679c220.jpg",
-        "caption": "Nail Art"
-      },
-      {
-        "image": "/images/gallery/14084dd7074aea93a3f1d37339d367ca.jpg",
-        "caption": "Manicure"
-      },
-      {
-        "image": "/images/gallery/17ad438841d8a0f7ff51c6e10700d3fb.jpg",
-        "caption": "Acrylic Set"
-      },
-      {
-        "image": "/images/gallery/1d8841d420ba1eb7c999fef34f1c1589.jpg",
-        "caption": "Nail Design"
-      },
-      {
-        "image": "/images/gallery/50c29a9f7cd01b67d74d8864e49e8751.jpg",
-        "caption": "Gel Polish"
-      },
-      {
-        "image": "/images/gallery/6e0065f44255ccddb3be96f9ca07d343.jpg",
-        "caption": "Nail Art"
-      },
-      {
-        "image": "/images/gallery/d0706410bf2875100fdc2277bf36d3da.jpg",
-        "caption": "Nail Enhancements"
-      },
-      {
-        "image": "/images/gallery/new2.jpg",
-        "caption": "Nail Design"
-      },
-      {
-        "image": "/images/gallery/new1.jpg",
-        "caption": "Nail Art"
-      },
-      {
-        "image": "/images/gallery/df18e4879b894ac4f2d893fe29863a33.jpg",
-        "caption": "Nail Design"
-      },
-      {
-        "image": "/images/gallery/f67b1855e4a64114d54b855845ef49f6.jpg",
-        "caption": "Acrylic Set"
-      }
+      "/images/salon-1.webp",
+      "/images/salon-2.webp",
+      "/images/salon-3.webp",
+      "/images/salon-4.webp",
+      "/images/popup.webp",
+      "/images/salon-1.webp",
+      "/images/salon-2.webp"
     ],
     "subtitle": "A glimpse into our meticulous craftsmanship and bespoke designs."
   },
@@ -461,53 +479,25 @@
   },
   "reviews": {
     "sectionTag": "Customer Reviews",
-    "title": "Customer",
+    "title": "Client Love",
     "titleAccent": "Reviews",
-    "subtitle": "Hear from those who have experienced the Opal standard of care.",
+    "subtitle": "TODO_REVIEWS_SUBTITLE",
     "items": [
       {
-        "name": "Mary Scherf",
-        "date": "4 months ago",
+        "name": "TODO_NAME",
+        "date": "TODO_DATE",
         "stars": 5,
-        "text": "I have Gel X Nails - they did an excellent job, I look forward to my next appointment.\n\nAlso had Pedicure and eyebrows waxed.",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%231976d2'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>M</text></svg>"
-      },
-      {
-        "name": "Jaida Wicklund",
-        "date": "2 years ago",
-        "stars": 5,
-        "text": "Cindy is my regular and she always does an amazing job! She never double books, and her nail art is PHENOMENAL!! 🤍 Truly my best nail tech in 8 years of having acrylics!",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23d81b60'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>J</text></svg>"
-      },
-      {
-        "name": "Amber Lee Fawson",
-        "date": "2 years ago",
-        "stars": 5,
-        "text": "My 11-year-old and I were walk-ins for pedicures, and everyone was so kind and professional. We had a great experience, and our pedicures were beautifully done. My daughter was delighted by the youth chair/station too. Thank you for taking great care of us! You put sunshine in our day.",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23f57c00'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>A</text></svg>"
-      },
-      {
-        "name": "Samantha Schostek",
-        "date": "2 years ago",
-        "stars": 5,
-        "text": "All of the nail artists here are SO thoughtful and kind and do amazing work! It’s by far the best ran nail salon in Dickinson and I wouldn’t go anywhere else!",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%237e57c2'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>S</text></svg>"
-      },
-      {
-        "name": "Melissa Sitton",
-        "date": "2 years ago",
-        "stars": 5,
-        "text": "We were going to the nails studio previously and we were having some issues with over there. We happened to spot TCL Nails and went to go try it out and we were very pleased! Very friendly staff and reasonable pricing. We will definitely be coming here regularly.",
-        "avatar": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23388e3c'/><text x='50' y='55' dominant-baseline='middle' text-anchor='middle' font-size='45' fill='white' font-family='sans-serif'>M</text></svg>"
+        "text": "TODO_REVIEW_TEXT",
+        "avatar": ""
       }
     ]
   },
   "booking": {
     "_comment": "The contact & appointment section at the bottom of the page",
     "sectionTag": "Contact & Book",
-    "title": "Step Into",
-    "titleAccent": "The Light",
-    "subtitle": "Your moment of tranquility awaits. Secure your appointment for a personalized beauty experience.",
+    "title": "Visit",
+    "titleAccent": "Us",
+    "subtitle": "TODO_BOOKING_SUBTITLE",
     "formTitle": "Book Your Visit",
     "formSubtitle": "Choose your preferred way to contact us",
     "formButtonText": "Connect via Messenger",
@@ -519,17 +509,17 @@
   },
   "map": {
     "_comment": "Google Maps embed — the 'embedUrl' is the iframe embed link, 'directionsUrl' opens Google Maps directly",
-    "embedUrl": "https://maps.google.com/maps?q=TLC%20Nails%20%26%20Spa,%20373%2015th%20St%20W,%20Dickinson,%20ND%2058601&t=&z=16&ie=UTF8&iwloc=&output=embed",
-    "directionsUrl": "https://maps.app.goo.gl/uasGCZ6ckmcHzu4y5"
+    "embedUrl": "TODO_EMBED_URL",
+    "directionsUrl": "https://maps.app.goo.gl/th34qAzZDDTthUoLA"
   },
   "social": {
     "_comment": "Social media links — shown in the footer. Leave blank or remove any you don't use.",
-    "facebook": "https://www.facebook.com/opalnailsdickinson",
-    "instagram": "https://www.instagram.com/opalnailsdickinson",
-    "tiktok": "https://www.tiktok.com/@opalnailsdickinson",
-    "googleMaps": "https://maps.app.goo.gl/msv2gSVzw9h1nhDV6",
-    "yelp": "",
-    "googleReviews": "https://g.page/r/.../review"
+    "facebook": "TODO_FACEBOOK",
+    "instagram": "TODO_INSTAGRAM",
+    "tiktok": "TODO_TIKTOK",
+    "googleMaps": "https://maps.app.goo.gl/th34qAzZDDTthUoLA",
+    "yelp": "TODO_YELP",
+    "googleReviews": "TODO_REVIEWS"
   },
   "nav": {
     "_comment": "Navigation menu items — controls both desktop nav and mobile hamburger menu",
@@ -639,6 +629,14 @@
   },
   "messengerUrl": "#",
   "connect": {
-    "greeting": "Welcome to Opal Nails & Spa! We hope you leave with a little extra shimmer today."
-  }
+    "greeting": "Welcome to Sidney Nails! We hope you leave with a little extra shimmer today."
+  },
+  "name": "Sidney Nails",
+  "phone": "(406) 433-5555",
+  "phoneClean": "4064335555",
+  "address": "422 N Central Ave, Sidney, MT 59270",
+  "email": "TODO@TODO.com",
+  "city": "Sidney",
+  "state": "MT",
+  "zip": "59270"
 }

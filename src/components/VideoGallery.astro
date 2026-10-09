@@ -1,116 +1,27 @@
 ---
 import siteData from '../data/site.json';
-
-const videos = [
-  { 
-    id: 'v1', 
-    src: '/videos/video1.mp4',
-    title: 'Meticulous Preparation & Care',
-    description: 'Every stunning set begins with a healthy foundation. We take our time with gentle, thorough cuticle care and precision shaping, ensuring your natural nails are treated with the utmost respect before any product is applied.'
-  },
-  { 
-    id: 'v2', 
-    src: '/videos/video2.mp4',
-    title: 'Premium Products & Artistry',
-    description: 'Watch our expert technicians bring your vision to life. We exclusively use industry-leading, non-toxic products to sculpt, strengthen, and design your nails. No rushed steps—just pure, detailed artistry.'
-  },
-  { 
-    id: 'v3', 
-    src: '/videos/video3.mp4',
-    title: 'The Perfect, Lasting Finish',
-    description: 'A breathtaking shine that lasts for weeks. Every service concludes with our signature high-gloss top coat and a deeply relaxing hand massage, leaving you feeling completely pampered and polished.'
-  },
-];
 ---
-<section class="py-24 md:py-32 bg-brand-charcoal relative overflow-hidden" id="videos">
-  <!-- Subtle background accent -->
-  <div class="absolute inset-0 opacity-10" style="background-image: url('/images/marble-bg.jpg'); background-size: cover; background-position: center; mix-blend-mode: overlay;"></div>
-  
-  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
-    <div class="text-center max-w-2xl mx-auto mb-24 reveal">
-      <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-4">
-        Salon in Action
+<section class="py-24 bg-brand-charcoal text-brand-cream relative">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+      <div>
+        <h2 class="font-display text-4xl md:text-5xl mb-4">
+          Salon in <em class="italic font-medium text-brand-gold">Action</em>
+        </h2>
+        <p class="text-white/60 text-sm max-w-sm">Experience the relaxing atmosphere and precision craftsmanship at Sidney Nails.</p>
       </div>
-      <h2 class="font-display lining-nums text-4xl md:text-5xl font-light text-white mb-6">
-        Experience Our <span class="font-semibold italic text-brand-gold">Quality</span>
-      </h2>
-      <p class="text-white/70 leading-relaxed font-light text-justify [text-align-last:center]">
-        Step behind the scenes and see exactly why our clients keep coming back. From preparation to the final polish, our process is designed to deliver a premium, long-lasting result every single time.
-      </p>
     </div>
 
-    <!-- Horizontal scrolling layout with storytelling captions -->
-    <div class="flex overflow-x-auto gap-8 md:gap-16 pb-12 snap-x snap-mandatory custom-scrollbar items-stretch">
-      {videos.map((vid, index) => (
-        <div class="flex flex-col items-center min-w-[85vw] sm:min-w-[400px] max-w-md shrink-0 snap-center justify-between">
-          
-          <!-- Storytelling Text BEFORE the video -->
-          <div class="text-center mb-10 reveal flex flex-col justify-end flex-grow">
-            <h3 class="font-display lining-nums text-2xl md:text-3xl font-light text-brand-goldLight mb-4">{vid.title}</h3>
-            <p class="text-brand-cream/80 font-light leading-relaxed text-sm md:text-base px-4">
-              {vid.description}
-            </p>
-          </div>
-
-          <!-- The Video Player -->
-          <div 
-            class="relative w-full max-w-[320px] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-[3px] border-brand-luxury aspect-[9/16] bg-black reveal transform-gpu transition-all duration-700 hover:shadow-glow mx-auto" 
-            data-video-wrapper
-          >
-            <video 
-              class="w-full h-full object-cover opacity-90 transition-opacity duration-700" 
-              src={vid.src} 
-              muted 
-              loop 
-              playsinline 
-              preload="metadata"
-              data-auto-play-video
-            ></video>
-          </div>
+    <!-- 3-Video Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+      {['/videos/video1.mp4', '/videos/video2.mp4', '/videos/video3.mp4'].map(vid => (
+        <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl group">
+          <video class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" autoplay loop muted playsinline>
+            <source src={vid} type="video/mp4" />
+          </video>
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
         </div>
       ))}
     </div>
   </div>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const videos = document.querySelectorAll('[data-auto-play-video]');
-    
-    // Play video when 50% of it is in the viewport, pause when it leaves
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const video = entry.target as HTMLVideoElement;
-        if (entry.isIntersecting) {
-          // Play automatically and brighten up
-          video.style.opacity = '1';
-          video.play().catch(e => console.log('Autoplay prevented:', e));
-        } else {
-          // Pause to save resources and dim
-          video.style.opacity = '0.9';
-          video.pause();
-        }
-      });
-    }, { 
-      threshold: 0.5 
-    });
-
-    videos.forEach(v => observer.observe(v));
-  });
-</script>
-<style>
-  .custom-scrollbar::-webkit-scrollbar {
-    height: 8px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(159, 184, 212, 0.3);
-    border-radius: 10px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(159, 184, 212, 0.6);
-  }
-</style>
