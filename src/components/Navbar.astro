@@ -9,8 +9,8 @@ import site from '../data/site.json';
       <!-- Logo & Name -->
       <div class="flex-shrink-0 flex items-center">
         <a href="/" class="flex items-center gap-2.5 sm:gap-3 group">
-          <div class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-white p-1 flex items-center justify-center border border-sky-300/40 shadow-sm flex-shrink-0 group-hover:scale-105 transition-transform">
-            <img src={site.salon?.logoSquare || '/images/logo.png'} alt={site.salon?.name} class="w-full h-full object-contain" />
+          <div class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-white p-0.5 sm:p-1 flex items-center justify-center border border-sky-300/60 shadow-sm flex-shrink-0 overflow-hidden group-hover:scale-105 transition-transform">
+            <img src={site.salon?.logoSquare || '/images/logo.png'} alt={site.salon?.name} class="w-full h-full object-contain rounded-full" />
           </div>
           <span class="font-display font-bold text-base sm:text-lg md:text-xl text-white tracking-wide">
             {site.salon?.namePart1 || 'Sidney'} <span class="text-[#9EC5EA] font-normal not-italic">{site.salon?.namePart2 || 'Nails'}</span>
