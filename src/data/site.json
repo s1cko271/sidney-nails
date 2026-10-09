@@ -74,36 +74,36 @@
       {
         "name": "Manicure",
         "title": "Manicure",
-        "description": "Basic Mani ($45) and Deluxe Mani ($60) with regular, gel, shiny buff, cuticle care, hot lotion, hand massage & warm paraffin wax.",
-        "price": "From $45",
+        "description": "Regular Manicure (), Deluxe Manicure (), and Deluxe Royal () with cuticle care, hot paraffin wax, 8-10 min massage & gel polish.",
+        "price": "From ",
         "image": "/images/services/manicure.jpg"
       },
       {
         "name": "Pedicure Spa",
         "title": "Pedicure Spa",
-        "description": "Basic Spa ($55), Deluxe ($65), Royal ($80), and Super Royal ($90) with sea salt soak, callus removal, sugar scrub, marine mask, paraffin wax, hot stone & 10 organic spa scents.",
-        "price": "From $55",
+        "description": "Regular (), Deluxe Spa (), Deluxe Royal (), and Super Royal () with sea salt, callus remover, paraffin wax, hot stone massage & 10 organic scents.",
+        "price": "From ",
         "image": "/images/services/pedicure.jpg"
       },
       {
-        "name": "Dipping Powder",
-        "title": "Dipping Powder",
-        "description": "Basic ($60), Deluxe ($70), and Super Deluxe Dip ($80) with vitamin-rich formula, cuticle care, dip powder overlay, paraffin wax, and hand massage.",
-        "price": "From $60",
+        "name": "SNS Dipping Powder",
+        "title": "SNS Dipping Powder",
+        "description": "Odorless, liquid-free dipping system: Color (), French (), Pink & White (), and Ombre () enriched with 5 vitamins & calcium.",
+        "price": "From ",
         "image": "/images/services/dipping.webp"
       },
       {
-        "name": "Nail Enhancement",
-        "title": "Nail Enhancement",
-        "description": "Full set acrylic gel ($60), custom ombre ($70), pink & white ($70), color acrylic ($70), builder/tap gel ($70), and maintenance fills from $50.",
-        "price": "From $50",
+        "name": "Nail Enhancement & Full Set",
+        "title": "Nail Enhancement & Full Set",
+        "description": "Full sets from  & up (Regular, White Tip, Pink & White, Ombre, SNS Powder). Maintenance refills from  & up with custom shapes & nail design.",
+        "price": "From +",
         "image": "/images/services/enhancement.jpg"
       },
       {
-        "name": "Polish Change & Add-ons",
-        "title": "Polish Change & Add-ons",
-        "description": "Regular & gel polish changes for hands & toes ($15 - $30), French tips ($10), cat eye ($10), chrome ($10), paraffin wax ($10), and extra massage ($15).",
-        "price": "From $10",
+        "name": "Waxing & Beauty Care",
+        "title": "Waxing & Beauty Care",
+        "description": "Face, Eyebrow (), Upper Lip (), Leg (), Bikini (+) Waxing, plus Eyelash Extensions (), Facial (), and Eyebrow Tattoo ().",
+        "price": "From ",
         "image": "/images/services/addons.jpg"
       }
     ]
@@ -111,186 +111,179 @@
   "pricing": {
     "categories": [
       {
-        "name": "Manicure",
-        "description": "Essential and deluxe hand care including shaping, buffering, cuticle care, hot lotion, and warm paraffin wax.",
+        "name": "Manicure & Full Set",
+        "description": "Hand care, acrylic extensions, SNS dipping powders, refills, and precision nail design.",
         "items": [
           {
-            "name": "Basic Mani Polish (Regular / Gel / Shinybuff)",
-            "price": "$45",
-            "description": "Includes nail shaping & buffering, cuticle care, hot lotion, relaxing hand massage, and hot towel."
+            "name": "Regular Manicure",
+            "price": "",
+            "description": "Nail shaping, cuticle grooming, soothing hot lotion massage, and hot towel wrap."
           },
           {
-            "name": "Deluxe Mani with Paraffin (Regular / Gel / Shinybuff)",
-            "price": "$60",
-            "description": "Includes nail shaping & buffering, cuticle care, deep-hydrating warm paraffin wax, hot lotion, 4-minute hand massage, and hot towel.",
+            "name": "Deluxe Manicure",
+            "price": "",
+            "description": "Cuticle grooming, deep-hydrating hot paraffin wax wrap, hot oil lotion, 8-minute hand massage, and hot towel."
+          },
+          {
+            "name": "Deluxe Royal Manicure",
+            "price": "",
+            "description": "Cuticle grooming, high-shine gel color, hot paraffin wax, hot lotion, 10-minute massage, and hot towel.",
             "popular": true
+          },
+          {
+            "name": "Manicure (with Gel Polish)",
+            "price": "",
+            "description": "Complete classic manicure finished with durable, chip-resistant LED cured gel polish."
+          },
+          {
+            "name": "Manicure (French Gel)",
+            "price": "",
+            "description": "Classic manicure with timeless, clean French smile line design in durable gel polish."
+          },
+          {
+            "name": "Full Set (Regular / White Tip)",
+            "price": " & up",
+            "description": "Full set extension with regular acrylic or clean white tips tailored to your desired length and silhouette."
+          },
+          {
+            "name": "Full Set Pink & White / Ombre",
+            "price": " & up",
+            "description": "Two-tone French pink & white full set or seamless gradient ombre powder blend."
+          },
+          {
+            "name": "SNS Dipping Powder (Color)",
+            "price": "",
+            "description": "Odor-free, liquid-free dipping powder system enriched with 5 vitamins and calcium for stronger natural nails."
+          },
+          {
+            "name": "SNS Dipping (French / Pink & White)",
+            "price": "",
+            "description": "Lightweight, long-lasting SNS dipping powder in French tip or classic pink & white design."
+          },
+          {
+            "name": "SNS Dipping Ombre",
+            "price": "",
+            "description": "Artistic gradient ombre dipping blend with vitamin-rich healthy powder overlay."
+          },
+          {
+            "name": "Regular Fill",
+            "price": " & up",
+            "description": "Maintenance fill-in, rebalancing, and cuticle refresh for existing acrylic extensions."
+          },
+          {
+            "name": "Back Fill (Pink & White / Ombre / Dip)",
+            "price": "",
+            "description": "Precision back-fill rebalancing smile lines and new growth for pink & white, ombre, or dip sets."
+          },
+          {
+            "name": "Specialty Shapes (Coffin / Almond / Stiletto)",
+            "price": "",
+            "description": "Custom shaping add-on for coffin, ballerina, almond, or stiletto nail silhouettes."
+          },
+          {
+            "name": "Hand Design / Nail Art",
+            "price": " & up",
+            "description": "Intricate hand-painted nail art, chrome powder, cat eye, or custom gemstone embellishments."
           }
         ]
       },
       {
-        "name": "Pedicure Spa",
-        "description": "Soothing foot therapies with sea salt soak, callus removal, pumice sugar scrub, marine mask, paraffin wax, and hot stones.",
+        "name": "Pedicure",
+        "description": "Soothing foot therapies from essential grooming to royal hot stone spa experiences.",
         "items": [
           {
-            "name": "Basic Spa (Regular / Gel / Shinybuff)",
-            "price": "$55",
-            "description": "Sea salt treatment, nail trimming & cuticle care, foot sugar scrub with pumice bar (2 min), hot lotion, and hot towel."
+            "name": "Regular Pedicure",
+            "price": "",
+            "description": "Refreshing foot soak, nail trimming & shaping, cuticle care, hot lotion, and 5-minute massage."
           },
           {
-            "name": "Deluxe Spa (Regular / Gel / Shinybuff)",
-            "price": "$65",
-            "description": "Sea salt treatment, nail trimming & cuticle care, intensive callus removal, sugar scrub (2 min), hot lotion, 6-minute massage, and hot towel."
+            "name": "Deluxe Spa Pedicure",
+            "price": "",
+            "description": "Exfoliating sea salt treatment, cuticle grooming, hot lotion, hot towel wrap, and 8-minute relaxing massage."
           },
           {
-            "name": "Royal Spa (Regular / Gel / Shinybuff)",
-            "price": "$80",
-            "description": "Sea salt treatment, nail trimming & cuticle care, callus removal, sugar scrub (2 min), marine mask with hot towels, warm paraffin wax, hot lotion, 12-minute massage, and hot towel."
+            "name": "Deluxe Royal Pedicure",
+            "price": "",
+            "description": "Intensive callus remover, warm paraffin wax treatment, sea salt exfoliation, hot lotion, hot towels, and 10-minute massage."
           },
           {
-            "name": "Super Royal Deluxe Spa",
-            "price": "$90",
-            "description": "Our signature premier luxury retreat: sea salt soak, nail trimming & cuticle care, callus removal, sugar scrub (2 min), marine mask with hot towels, warm paraffin wax, hot lotion, 14-minute massage, soothing hot stone therapy, and hot towel.",
+            "name": "Deluxe Super Royal Pedicure",
+            "price": "",
+            "description": "Premier luxury retreat: callus remover, warm paraffin wax wrap, sea salt scrub, hot stone massage, 13-minute massage, hot towels, and includes gel color.",
             "popular": true
           },
           {
-            "name": "Organic Spa Scents Add-on (+10 Flavors)",
-            "price": "+$10",
-            "description": "All organic spa scents include Milk & Honey: choice of Lavender, Jasmine, Rose, Pomegranate, Cucumber, Olive, Pearl, Mango, Orange, or Peppermint."
+            "name": "Pedicure (with Gel Polish)",
+            "price": "",
+            "description": "Classic pedicure completed with long-lasting, instantly dry LED gel polish."
+          },
+          {
+            "name": "Organic Bubble Spa Scents (+10 Scents)",
+            "price": "+",
+            "description": "All organic spa scents include Milk & Honey: Lavender, Jasmine, Rose, Pomegranate, Cucumber, Olive, Pearl, Mango, Orange, or Peppermint."
           }
         ]
       },
       {
-        "name": "Dipping Powder",
-        "description": "Odorless, vitamin-rich dipping powder overlays for long-lasting natural strength and beauty.",
+        "name": "Waxing",
+        "description": "Gentle, professional facial and body hair removal using premium soothing wax.",
         "items": [
           {
-            "name": "Basic Dip",
-            "price": "$60",
-            "description": "Includes nail shaping & buffering, gentle hot lotion, relaxing hand massage, and hot towel."
+            "name": "Upper Lip Wax",
+            "price": "",
+            "description": "Quick and gentle upper lip hair removal followed by soothing calming lotion."
           },
           {
-            "name": "Deluxe Dip",
-            "price": "$70",
-            "description": "Includes nail shaping & buffering, cuticle care, dip powder overlay, hot lotion, relaxing hand massage, and hot towel.",
-            "popular": true
+            "name": "Eyebrow Wax & Shaping",
+            "price": "",
+            "description": "Precision eyebrow shaping and waxing to enhance your natural facial contours."
           },
           {
-            "name": "Super Deluxe Dip",
-            "price": "$80",
-            "description": "Includes nail shaping & buffering, cuticle care, dip powder overlay, warm paraffin wax wrap, hot lotion, 4-minute hand massage, and hot towel."
+            "name": "Face Wax",
+            "price": " & up",
+            "description": "Targeted facial waxing for chin, cheeks, sideburns, or full face areas."
+          },
+          {
+            "name": "Under Arm Wax",
+            "price": "",
+            "description": "Clean and smooth underarm waxing leaving skin soft and bump-free for weeks."
+          },
+          {
+            "name": "Leg Wax",
+            "price": "",
+            "description": "Silky-smooth leg waxing treatment for extended hair-free softness."
+          },
+          {
+            "name": "Bikini Wax",
+            "price": " & up",
+            "description": "Discreet, hygienic bikini line waxing with soothing post-wax treatment."
           }
         ]
       },
       {
-        "name": "Nail Enhancement",
-        "description": "Full sets, custom ombre, pink & white, color acrylic, and builder gel enhancements.",
+        "name": "Additional Beauty Services",
+        "description": "Elevated aesthetics: permanent makeup, eyelash extensions, and rejuvenating skincare.",
         "items": [
           {
-            "name": "Full Set Acrylic Gel",
-            "price": "$60",
-            "description": "Full set acrylic gel tailored to your preferred length, shape, and style."
-          },
-          {
-            "name": "Full Set Ombre",
-            "price": "$70",
-            "description": "Two-tone gradient ombre powder blend full set for a seamless transition."
-          },
-          {
-            "name": "Full Set Pink & White",
-            "price": "$70",
-            "description": "Classic two-tone French pink & white full set with crisp smile lines."
-          },
-          {
-            "name": "Full Set Color Acrylic",
-            "price": "$70",
-            "description": "Full set extension featuring your choice of vibrant colored acrylic powder."
-          },
-          {
-            "name": "Builder / Tap Gel Full Set",
-            "price": "$70",
-            "description": "Hard builder gel overlay and extension for lightweight, flexible strength.",
+            "name": "Eyebrow Tattoo (Permanent Makeup)",
+            "price": "",
+            "description": "Semi-permanent cosmetic eyebrow tattooing for perfectly defined, waterproof arches that last years.",
             "popular": true
           },
           {
-            "name": "Fill Acrylic Gel",
-            "price": "$50",
-            "description": "Maintenance fill-in and rebalancing for existing acrylic gel sets."
+            "name": "Eyelash Extensions (Full Set)",
+            "price": "",
+            "description": "Individual lash extension full set creating natural fullness, glamorous volume, and weightless curl."
           },
           {
-            "name": "Fill Ombre / Color Acrylic",
-            "price": "$60",
-            "description": "Refill and rebalance for ombre or custom color acrylic sets."
+            "name": "Eyelash Fill",
+            "price": " & up",
+            "description": "Routine maintenance fill-in (2-3 weeks) to replenish shed lashes and restore full volume."
           },
           {
-            "name": "Fill Builder / Tap Gel",
-            "price": "$60",
-            "description": "Maintenance refill and rebalance for builder gel enhancements."
-          }
-        ]
-      },
-      {
-        "name": "Polish Change & Add-ons",
-        "description": "A la carte polish changes, custom nail art effects, and restorative treatment add-ons.",
-        "items": [
-          {
-            "name": "Hands Polish (Regular)",
-            "price": "$15",
-            "description": "Nail reshaping, surface buffing, and a fresh coat of classic regular polish on hands."
-          },
-          {
-            "name": "Hands Polish (Gel)",
-            "price": "$25",
-            "description": "Nail reshaping, surface buffing, and high-shine LED cured gel polish on hands."
-          },
-          {
-            "name": "Toes Polish (Regular)",
-            "price": "$20",
-            "description": "Nail trimming, buffing, and fresh classic regular polish on toes."
-          },
-          {
-            "name": "Toes Polish (Gel)",
-            "price": "$30",
-            "description": "Nail trimming, buffing, and high-shine LED cured gel polish on toes."
-          },
-          {
-            "name": "French Tip Design",
-            "price": "$10",
-            "description": "Classic white or colored smile line tips."
-          },
-          {
-            "name": "Cat Eye Effect",
-            "price": "$10",
-            "description": "Magnetic velvet cat-eye shimmer effect with multi-dimensional depth."
-          },
-          {
-            "name": "Chrome Powder Finish",
-            "price": "$10",
-            "description": "Mirror-shine metallic or glazed donut chrome powder application."
-          },
-          {
-            "name": "Paraffin Wax Treatment",
-            "price": "$10",
-            "description": "Soothing warm paraffin wax wrap for deeply hydrated, soft hands or feet."
-          },
-          {
-            "name": "Sugar Scrub Treatment",
-            "price": "$10",
-            "description": "Gentle exfoliating sugar scrub to slough away dead skin."
-          },
-          {
-            "name": "Callus Removal Treatment",
-            "price": "$10",
-            "description": "Intensive heel buffing and smoothing therapy to eliminate rough calluses."
-          },
-          {
-            "name": "Hot Stone Therapy",
-            "price": "$10",
-            "description": "Warm basalt stones to melt away tension and improve circulation."
-          },
-          {
-            "name": "Extra Massage (10 min)",
-            "price": "$15",
-            "description": "10 additional minutes of dedicated tension-relief massage for hands or feet."
+            "name": "Facial Treatment",
+            "price": "",
+            "description": "Deep-cleansing, exfoliating, and hydrating facial massage designed to refresh and glow dull or tired skin."
           }
         ]
       }
