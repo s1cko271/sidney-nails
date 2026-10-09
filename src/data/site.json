@@ -409,8 +409,16 @@
     "_comment": "Navigation menu items — controls both desktop nav and mobile hamburger menu",
     "items": [
       {
-        "label": "About",
-        "href": "/#about"
+        "label": "Videos",
+        "href": "/#videos"
+      },
+      {
+        "label": "Gallery",
+        "href": "/#gallery"
+      },
+      {
+        "label": "Lashes & Waxing",
+        "href": "/#beauty"
       },
       {
         "label": "Services",
@@ -421,8 +429,8 @@
         "href": "/#pricing"
       },
       {
-        "label": "Gallery",
-        "href": "/#gallery"
+        "label": "About",
+        "href": "/#about"
       },
       {
         "label": "Reviews",

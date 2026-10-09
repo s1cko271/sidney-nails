@@ -1,0 +1,537 @@
+---
+import siteData from '../data/site.json';
+
+interface BeautyItem {
+  id: string;
+  category: 'waxing' | 'lashes' | 'brows';
+  categoryLabel: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  price: string;
+  featured?: boolean;
+  aspectClass: string;
+}
+
+const beautyItems: BeautyItem[] = [
+  // 1. Featured Brow Artistry
+  {
+    id: 'brow-microblading',
+    category: 'brows',
+    categoryLabel: 'Brow Artistry & PMU',
+    title: 'Microblading Hair-Stroke Brows',
+    subtitle: 'Bespoke semi-permanent feathering mimicking real hair texture for natural, waterproof arches.',
+    image: '/images/beauty/microblading-brow.jpg',
+    price: '$400',
+    featured: true,
+    aspectClass: 'aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]'
+  },
+  // 2. Featured Lash Extensions
+  {
+    id: 'lash-signature',
+    category: 'lashes',
+    categoryLabel: 'Lash Extensions',
+    title: 'Signature Eyelash Extensions',
+    subtitle: 'Precision isolation and weightless silk fiber bonding customized to your natural lash health.',
+    image: '/images/beauty/eyelash-extensions.jpg',
+    price: '$150',
+    featured: true,
+    aspectClass: 'aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5]'
+  },
+  // 3. Eyebrow Waxing
+  {
+    id: 'brow-wax',
+    category: 'waxing',
+    categoryLabel: 'Waxing & Facials',
+    title: 'Precision Eyebrow Waxing',
+    subtitle: 'Calibrated gentle hot wax shaping with clean surgical contour lines and post-wax soothing lotion.',
+    image: '/images/beauty/brow-waxing.jpg',
+    price: '$15',
+    aspectClass: 'aspect-[4/5]'
+  },
+  // 4. Volume Lashes
+  {
+    id: 'lash-volume',
+    category: 'lashes',
+    categoryLabel: 'Lash Extensions',
+    title: 'Russian Glamour Volume Lashes',
+    subtitle: 'Handmade multi-dimensional fans offering dramatic fullness, soft fluffiness, and featherlight curl.',
+    image: '/images/beauty/volume-lashes.jpg',
+    price: '$180',
+    aspectClass: 'aspect-[4/5]'
+  },
+  // 5. Eyebrow PMU
+  {
+    id: 'brow-tattoo',
+    category: 'brows',
+    categoryLabel: 'Brow Artistry & PMU',
+    title: 'Ombre Powder Brows (PMU)',
+    subtitle: 'Soft makeup-finish gradient misting with lasting definition that stays flawless up to 2-3 years.',
+    image: '/images/beauty/eyebrow-tattoo.jpg',
+    price: '$400',
+    aspectClass: 'aspect-[4/5]'
+  },
+  // 6. Body Waxing
+  {
+    id: 'body-wax',
+    category: 'waxing',
+    categoryLabel: 'Waxing & Facials',
+    title: 'Organic Sugar Body & Leg Wax',
+    subtitle: 'Therapeutic organic sugar wax leaving legs velvety smooth, soft, and completely hair-free.',
+    image: '/images/beauty/body-waxing.jpg',
+    price: '$80',
+    aspectClass: 'aspect-[4/5]'
+  },
+  // 7. Brow Lamination
+  {
+    id: 'brow-laminate',
+    category: 'brows',
+    categoryLabel: 'Brow Artistry & PMU',
+    title: 'Keratin Brow Lamination & Tint',
+    subtitle: 'Re-aligns hair direction for a fuller, feathery brushed-up aesthetic sealed with deep hydration.',
+    image: '/images/beauty/brow-lamination.jpg',
+    price: '$75',
+    aspectClass: 'aspect-[4/5]'
+  },
+  // 8. Lash Artistry
+  {
+    id: 'lash-silhouette',
+    category: 'lashes',
+    categoryLabel: 'Lash Extensions',
+    title: 'Couture Lash Contour',
+    subtitle: 'Artisan curl mapping blending various lengths to highlight your unique eye shape.',
+    image: '/images/beauty/lash-artistry.jpg',
+    price: 'Custom Styling',
+    aspectClass: 'aspect-[4/5]'
+  },
+  // 9. Brow Sculpting & Tweezing
+  {
+    id: 'brow-sculpt',
+    category: 'brows',
+    categoryLabel: 'Brow Artistry & PMU',
+    title: 'Brow Mapping & Architecture',
+    subtitle: 'Golden ratio facial mapping and ultra-precise tweezer trimming for immaculate symmetry.',
+    image: '/images/beauty/brow-sculpting.jpg',
+    price: '$25',
+    aspectClass: 'aspect-[4/5]'
+  },
+  // 10. Facial Rejuvenation
+  {
+    id: 'facial-care',
+    category: 'waxing',
+    categoryLabel: 'Waxing & Facials',
+    title: 'Deep Hydrating Facial Care',
+    subtitle: 'Pore purification, gentle steam exfoliation, and botanical moisture restoration for glowing skin.',
+    image: '/images/beauty/facial-rejuvenation.jpg',
+    price: '$120',
+    aspectClass: 'aspect-[4/5]'
+  },
+  // 11. Lash Lift & Tint
+  {
+    id: 'lash-lift',
+    category: 'lashes',
+    categoryLabel: 'Lash Extensions',
+    title: 'Keratin Lash Lift & Dark Tint',
+    subtitle: 'Elevates your natural eyelashes from root to tip with a nourishing keratin glaze lasting 6-8 weeks.',
+    image: '/images/beauty/lash-lift.jpg',
+    price: '$85',
+    aspectClass: 'aspect-[4/5]'
+  },
+  // 12. Skincare Serum
+  {
+    id: 'skincare-elixir',
+    category: 'waxing',
+    categoryLabel: 'Waxing & Facials',
+    title: 'Aesthetic Botanical Infusion',
+    subtitle: 'Rose quartz essence application formulated to calm skin post-waxing and restore natural radiance.',
+    image: '/images/beauty/skincare-serum.jpg',
+    price: 'Included In Facials',
+    aspectClass: 'aspect-[4/5]'
+  }
+];
+
+const messengerUrl = siteData.booking?.messengerUrl || 'https://m.me/sidneynailsmontana';
+---
+
+<section class="py-24 md:py-32 bg-[#0B1422] text-white relative overflow-hidden border-t border-sky-400/25" id="beauty">
+  <!-- Ambient Luminous Backlights -->
+  <div class="absolute top-1/4 -left-36 w-96 h-96 bg-sky-500/15 rounded-full blur-[110px] pointer-events-none"></div>
+  <div class="absolute bottom-1/4 -right-36 w-96 h-96 bg-blue-600/15 rounded-full blur-[110px] pointer-events-none"></div>
+  <div class="absolute top-2/3 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-sky-400/10 rounded-full blur-[130px] pointer-events-none"></div>
+
+  <div class="max-w-[1240px] mx-auto px-6 sm:px-8 relative z-10">
+    
+    <!-- Section Header (Editorial Luxury) -->
+    <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20 reveal">
+      <!-- Eyebrow Pill Badge (Micro-aesthetic) -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sky-400/35 bg-sky-950/60 text-[#9EC5EA] text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-5 shadow-[0_0_20px_rgba(56,189,248,0.12)]">
+        <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+        <span>Aesthetic Studio &amp; Spa</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-normal text-white mb-5 leading-[1.16] tracking-tight">
+        Lash Extensions, Sculpted Brows &amp; <br class="hidden sm:inline" />
+        <em class="italic font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#9EC5EA] via-sky-300 to-white">Silky Waxing</em>
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="text-white/75 text-sm sm:text-base font-light leading-relaxed max-w-2xl mx-auto mb-8">
+        Elevate your everyday gaze and indulge in head-to-toe smoothness. Our licensed estheticians deliver semi-permanent eyebrow microblading, customized weightless lash sets, and soothing botanical waxing in Sidney, MT.
+      </p>
+
+      <!-- Decorative Divider -->
+      <div class="flex items-center justify-center gap-3 opacity-60" aria-hidden="true">
+        <span class="w-12 h-px bg-gradient-to-r from-transparent to-sky-400"></span>
+        <span class="w-2 h-2 rotate-45 border border-sky-400 bg-sky-300/40"></span>
+        <span class="w-12 h-px bg-gradient-to-l from-transparent to-sky-400"></span>
+      </div>
+    </div>
+
+    <!-- Filter Pills (Tactile Island Architecture) -->
+    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14 md:mb-16 reveal" role="tablist" aria-label="Beauty Categories">
+      <button 
+        type="button" 
+        class="beauty-filter-btn active px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 border bg-sky-400 text-[#0B1422] border-sky-300 shadow-[0_0_20px_rgba(56,189,248,0.35)]" 
+        data-filter="all"
+        role="tab"
+        aria-selected="true"
+      >
+        All Works (12)
+      </button>
+      <button 
+        type="button" 
+        class="beauty-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 border bg-white/5 text-white/80 border-white/15 hover:bg-white/10 hover:text-white hover:border-sky-400/40" 
+        data-filter="waxing"
+        role="tab"
+        aria-selected="false"
+      >
+        Waxing &amp; Facials
+      </button>
+      <button 
+        type="button" 
+        class="beauty-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 border bg-white/5 text-white/80 border-white/15 hover:bg-white/10 hover:text-white hover:border-sky-400/40" 
+        data-filter="lashes"
+        role="tab"
+        aria-selected="false"
+      >
+        Lash Extensions
+      </button>
+      <button 
+        type="button" 
+        class="beauty-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 border bg-white/5 text-white/80 border-white/15 hover:bg-white/10 hover:text-white hover:border-sky-400/40" 
+        data-filter="brows"
+        role="tab"
+        aria-selected="false"
+      >
+        Brow Artistry &amp; PMU
+      </button>
+    </div>
+
+    <!-- Gallery Grid (Double-Bezel Architecture / Doppelrand) -->
+    <div id="beauty-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
+      {beautyItems.map((item, idx) => (
+        <div 
+          class={`beauty-card group relative transition-all duration-500 reveal ${item.featured ? 'sm:col-span-2 lg:col-span-2' : ''}`}
+          data-category={item.category}
+          style={`--reveal-delay: ${(idx % 4) * 90}ms;`}
+        >
+          <!-- Outer Shell (Double-Bezel outer tray) -->
+          <div class="relative p-2 sm:p-2.5 rounded-[2rem] bg-white/[0.04] border border-white/10 shadow-[0_10px_35px_rgba(0,0,0,0.4)] transition-all duration-500 group-hover:border-sky-400/60 group-hover:shadow-[0_12px_45px_rgba(56,189,248,0.22)] group-hover:-translate-y-1">
+            
+            <!-- Ambient Glow for Featured Cards -->
+            {item.featured && (
+              <div class="absolute -inset-1 rounded-[2.25rem] bg-gradient-to-tr from-sky-400/25 via-blue-500/20 to-sky-300/25 blur-lg opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+            )}
+
+            <!-- Inner Core (Image + Interactive Overlay) -->
+            <div class={`relative rounded-[calc(2rem-0.625rem)] overflow-hidden ${item.aspectClass} bg-slate-900 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]`}>
+              
+              <!-- Real Photo -->
+              <img 
+                src={item.image} 
+                alt={`${item.title} at Sidney Nails`}
+                class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105"
+                loading="lazy"
+              />
+
+              <!-- Base Gradient Shade for legibility -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0B1422]/90 via-[#0B1422]/25 to-transparent opacity-75 group-hover:opacity-95 transition-opacity duration-300"></div>
+
+              <!-- Top Badges Row -->
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 z-10 pointer-events-none">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#0B1422]/80 backdrop-blur-md text-[#9EC5EA] border border-sky-400/30 shadow-sm">
+                  {item.categoryLabel}
+                </span>
+
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-brand-gold text-brand-navy shadow-md">
+                  {item.price}
+                </span>
+              </div>
+
+              <!-- Sparkle Star Accent for Featured items -->
+              {item.featured && (
+                <div class="absolute top-3.5 right-3.5 text-sky-300 pointer-events-none z-20" aria-hidden="true">
+                  <svg class="w-6 h-6 text-sky-300 drop-shadow-[0_0_8px_rgba(56,189,248,0.95)]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0L14.2 9.8L24 12L14.2 14.2L12 24L9.8 14.2L0 12L9.8 9.8L12 0Z" />
+                  </svg>
+                </div>
+              )}
+
+              <!-- Bottom Content Block -->
+              <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-6 z-10 flex flex-col justify-end transition-transform duration-300">
+                <h3 class={`font-display font-medium text-white tracking-tight mb-1.5 group-hover:text-sky-200 transition-colors ${item.featured ? 'text-xl sm:text-2xl' : 'text-lg sm:text-xl'}`}>
+                  {item.title}
+                </h3>
+                
+                <p class="text-white/70 text-xs sm:text-sm font-light leading-relaxed line-clamp-2 mb-4">
+                  {item.subtitle}
+                </p>
+
+                <!-- Action Bar (View detail & Book via Messenger) -->
+                <div class="flex items-center justify-between gap-3 pt-3 border-t border-white/15">
+                  <button 
+                    type="button" 
+                    class="beauty-zoom-btn text-xs font-semibold tracking-wider uppercase text-[#9EC5EA] hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer"
+                    data-image={item.image}
+                    data-title={item.title}
+                    data-subtitle={item.subtitle}
+                    data-price={item.price}
+                    data-category={item.categoryLabel}
+                    aria-label={`View full photo of ${item.title}`}
+                  >
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                    </svg>
+                    <span>Zoom</span>
+                  </button>
+
+                  <a 
+                    href={messengerUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-brand-gold hover:text-white transition-colors group/btn"
+                  >
+                    <span>Book Now</span>
+                    <svg class="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Signature CTA Bar (Nested Island Button Architecture) -->
+    <div class="mt-20 md:mt-24 p-8 md:p-10 rounded-3xl bg-[#132338]/90 border border-sky-400/30 backdrop-blur-xl shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left reveal">
+      <div class="max-w-xl">
+        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-sky-400 mb-2">
+          <span>Private Treatment Rooms</span>
+          <span class="w-1 h-1 rounded-full bg-sky-400"></span>
+          <span>Certified Montana Specialists</span>
+        </div>
+        <h3 class="font-display text-2xl sm:text-3xl font-medium text-white mb-2 tracking-tight">
+          Ready for Bespoke Lashes, Brows or Silky Skin?
+        </h3>
+        <p class="text-white/75 text-sm font-light leading-relaxed">
+          Book online via Messenger for fast confirmation, or contact our front desk to consult on eyebrow microblading shapes and customized lash density.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full sm:w-auto">
+        <!-- Primary Nested CTA Button (Button-in-Button Pattern) -->
+        <a 
+          href={messengerUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto inline-flex items-center justify-between sm:justify-start gap-4 bg-sky-400 hover:bg-white text-[#0B1422] font-bold text-xs uppercase tracking-widest px-7 py-3.5 rounded-full transition-all duration-300 shadow-[0_8px_25px_rgba(56,189,248,0.3)] hover:shadow-[0_12px_32px_rgba(255,255,255,0.4)] group active:scale-[0.98]"
+        >
+          <span>Book via Messenger</span>
+          <!-- Nested Icon Wrapper -->
+          <span class="w-8 h-8 rounded-full bg-[#0B1422]/15 flex items-center justify-center transition-transform group-hover:scale-105 group-hover:translate-x-0.5">
+            <svg class="w-4 h-4 text-[#0B1422]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.91 1.455 5.518 3.735 7.208V22l3.373-1.851c.917.254 1.888.391 2.892.391 5.523 0 10-4.145 10-9.258C22 6.145 17.523 2 12 2zm1.066 12.443l-2.6-2.774-5.074 2.774 5.58-5.922 2.664 2.774 5.01-2.774-5.58 5.922z"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Secondary Call Button -->
+        <a 
+          href={`tel:${siteData.salon.phoneRaw}`}
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/25 hover:border-white bg-white/5 hover:bg-white/15 text-white font-semibold text-xs uppercase tracking-widest px-7 py-4 rounded-full transition-all duration-300 text-center active:scale-[0.98]"
+        >
+          <svg class="w-4 h-4 text-[#9EC5EA]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.439-4.14-7.035-7.035l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+          </svg>
+          <span>Call (406) 433-5555</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Interactive Lightbox Modal for Detail Inspection -->
+  <div 
+    id="beauty-lightbox" 
+    class="fixed inset-0 z-[120] bg-black/90 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Detail photo preview"
+  >
+    <div class="absolute inset-0 cursor-pointer" id="lightbox-backdrop"></div>
+    
+    <div class="relative z-10 max-w-3xl w-full bg-[#0B1422] rounded-3xl border border-sky-400/40 shadow-2xl overflow-hidden flex flex-col md:flex-row transform scale-95 transition-transform duration-300" id="lightbox-content">
+      <!-- Close Button -->
+      <button 
+        type="button" 
+        id="lightbox-close" 
+        class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-sky-400 hover:text-[#0B1422] flex items-center justify-center transition-colors shadow-md"
+        aria-label="Close photo preview"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Large Image Area -->
+      <div class="md:w-3/5 bg-black flex items-center justify-center min-h-[320px] md:min-h-[460px]">
+        <img id="lightbox-img" src="" alt="Beauty service preview" class="w-full h-full object-cover max-h-[500px]" />
+      </div>
+
+      <!-- Detail Info Column -->
+      <div class="md:w-2/5 p-6 sm:p-8 flex flex-col justify-between bg-[#132338]">
+        <div>
+          <span id="lightbox-cat" class="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-sky-950 text-[#9EC5EA] border border-sky-400/30 mb-3"></span>
+          <h3 id="lightbox-title" class="font-display text-2xl font-medium text-white mb-2 leading-tight"></h3>
+          <p id="lightbox-price" class="text-brand-gold font-bold text-lg mb-4"></p>
+          <p id="lightbox-sub" class="text-white/75 text-xs sm:text-sm font-light leading-relaxed mb-6"></p>
+        </div>
+
+        <div class="pt-6 border-t border-white/15 flex flex-col gap-3">
+          <a 
+            id="lightbox-book-btn"
+            href={messengerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full text-center bg-sky-400 hover:bg-white text-[#0B1422] font-bold text-xs uppercase tracking-widest py-3.5 rounded-full transition-all duration-300 shadow-md"
+          >
+            Book via Messenger
+          </a>
+          <button 
+            type="button" 
+            id="lightbox-close-alt" 
+            class="w-full text-center text-white/60 hover:text-white text-xs font-medium py-2 transition-colors"
+          >
+            Close Preview
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  function initBeautyGallery() {
+    const filterButtons = document.querySelectorAll('.beauty-filter-btn');
+    const cards = document.querySelectorAll('.beauty-card');
+    
+    // Filter click handler
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        
+        // Update active button state
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-sky-400', 'text-[#0B1422]', 'border-sky-300', 'shadow-[0_0_20px_rgba(56,189,248,0.35)]');
+          b.classList.add('bg-white/5', 'text-white/80', 'border-white/15');
+          b.setAttribute('aria-selected', 'false');
+        });
+        
+        btn.classList.add('active', 'bg-sky-400', 'text-[#0B1422]', 'border-sky-300', 'shadow-[0_0_20px_rgba(56,189,248,0.35)]');
+        btn.classList.remove('bg-white/5', 'text-white/80', 'border-white/15');
+        btn.setAttribute('aria-selected', 'true');
+
+        // Filter cards smoothly
+        cards.forEach((card, idx) => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, (idx % 4) * 40);
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Lightbox modal logic
+    const lightbox = document.getElementById('beauty-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxSub = document.getElementById('lightbox-sub');
+    const lightboxPrice = document.getElementById('lightbox-price');
+    const lightboxCat = document.getElementById('lightbox-cat');
+    const lightboxContent = document.getElementById('lightbox-content');
+    const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxCloseAlt = document.getElementById('lightbox-close-alt');
+    const zoomButtons = document.querySelectorAll('.beauty-zoom-btn');
+
+    const openLightbox = (btn) => {
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = btn.getAttribute('data-image') || '';
+      if (lightboxTitle) lightboxTitle.textContent = btn.getAttribute('data-title') || '';
+      if (lightboxSub) lightboxSub.textContent = btn.getAttribute('data-subtitle') || '';
+      if (lightboxPrice) lightboxPrice.textContent = btn.getAttribute('data-price') || '';
+      if (lightboxCat) lightboxCat.textContent = btn.getAttribute('data-category') || '';
+
+      lightbox.classList.remove('hidden');
+      setTimeout(() => {
+        lightbox.classList.remove('opacity-0');
+        lightboxContent?.classList.remove('scale-95');
+        lightboxContent?.classList.add('scale-100');
+      }, 10);
+      document.body.classList.add('overflow-hidden');
+    };
+
+    const closeLightbox = () => {
+      if (!lightbox) return;
+      lightbox.classList.add('opacity-0');
+      lightboxContent?.classList.remove('scale-100');
+      lightboxContent?.classList.add('scale-95');
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }, 300);
+    };
+
+    zoomButtons.forEach(btn => btn.addEventListener('click', () => openLightbox(btn)));
+    lightboxBackdrop?.addEventListener('click', closeLightbox);
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightboxCloseAlt?.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBeautyGallery);
+  } else {
+    initBeautyGallery();
+  }
+  document.addEventListener('astro:page-load', initBeautyGallery);
+</script>
