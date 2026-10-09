@@ -10,7 +10,7 @@ interface Props {
 
 const { 
   title = `${siteData.salon.name} - ${siteData.salon.tagline} | ${siteData.salon.city}, ${siteData.salon.state}`,
-  description = siteData.hero?.description || `Welcome to ${siteData.salon.name} in ${siteData.salon.city}, ${siteData.salon.state}. Professional manicures, spa pedicures, acrylics, dipping powder, and waxing.`
+  description = siteData.hero?.description || `Welcome to ${siteData.salon.name} in ${siteData.salon.city}, ${siteData.salon.state}. Professional manicures, spa pedicures, acrylics, dipping powder, and nail enhancements.`
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidneynails.com');

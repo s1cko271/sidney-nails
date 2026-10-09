@@ -1,29 +1,7 @@
 ---
 import siteData from '../data/site.json';
 
-// Service imagery matching the exact visual design specification
-const serviceImages = [
-  '/images/services/manicure.jpg',
-  '/images/services/pedicure.jpg',
-  '/images/services/dipping.webp',
-  '/images/services/enhancement.jpg',
-  '/images/services/addons.jpg'
-];
-
-// Clean concise descriptions matching the service treatment cards
-const serviceDescriptions = [
-  'Regular manicure, Deluxe Manicure, Deluxe Royal Manicure.',
-  'Basic pedicure, Deluxe pedicure, Deluxe super royal pedicure. Ten dollars any flavor your choice for bubble spa scents.',
-  'Fullset pink & white, Regular, White Tip, Ombre, Builder gel, Fill, Dipping color Powder, Dipping Ombre.',
-  'Facial Treatment, Eyelash Extensions, and full face/body waxing services.',
-  'Polish changes, nail designs, fixes, removals, and custom shapes.'
-];
-
-const services = siteData.services.items.slice(0, 5).map((item, idx) => ({
-  ...item,
-  image: serviceImages[idx] || item.image,
-  description: serviceDescriptions[idx] || item.description
-}));
+const services = siteData.services.items;
 ---
 
 <section class="py-24 md:py-32 bg-[#0B1422] text-white relative overflow-hidden" id="services">
