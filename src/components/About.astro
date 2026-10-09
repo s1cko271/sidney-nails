@@ -7,21 +7,56 @@ import siteData from '../data/site.json';
       
       <!-- Left: Visual Composition (5 cols on lg) -->
       <div class="lg:col-span-5 relative reveal-left">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/80 aspect-[4/5] bg-white/50 backdrop-blur-sm group">
-          <img 
-            src="/images/salon-2.webp" 
-            alt="Sidney Nails storefront at 422 N Central Ave" 
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#1B3A5C]/40 via-transparent to-transparent"></div>
-        </div>
+        <!-- Relative card wrapper for sparkles and glow -->
+        <div class="relative group mx-auto max-w-[460px] lg:max-w-none">
+          
+          <!-- Ambient Luminous Backlight Glow -->
+          <div class="absolute -inset-1 sm:-inset-1.5 rounded-[2rem] sm:rounded-[2.25rem] bg-gradient-to-tr from-sky-400/35 via-sky-200/45 to-blue-600/35 blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-        <!-- Float Badge -->
-        <div class="absolute -bottom-5 -right-3 md:-right-5 bg-[#1B3A5C]/95 backdrop-blur-md text-white p-5 md:p-6 rounded-2xl shadow-xl border border-[#2D5A8B] max-w-[200px]">
-          <div class="text-[0.65rem] font-bold uppercase tracking-widest text-brand-gold mb-1">Local &amp; Welcoming</div>
-          <p class="font-display text-lg font-medium leading-snug">Sidney, Montana</p>
-          <p class="text-xs text-white/70 font-light mt-0.5">422 N Central Ave</p>
+          <!-- Sparkling Gradient Border Frame -->
+          <div class="relative p-[2.5px] sm:p-[3px] rounded-[1.85rem] sm:rounded-[2.1rem] about-shimmer-border shadow-[0_0_30px_rgba(56,189,248,0.32),0_20px_45px_rgba(27,58,92,0.16)] ring-2 ring-white/90 transition-all duration-500 group-hover:shadow-[0_0_42px_rgba(56,189,248,0.48)]">
+            
+            <!-- Inner Image Container with Overflow Hidden -->
+            <div class="relative rounded-[calc(1.85rem-2.5px)] sm:rounded-[calc(2.1rem-3px)] overflow-hidden aspect-[4/5] bg-slate-900">
+              <img 
+                src="/images/salon-2.webp" 
+                alt="Sidney Nails storefront at 422 N Central Ave" 
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#1B3A5C]/40 via-transparent to-transparent pointer-events-none"></div>
+            </div>
+          </div>
+
+          <!-- Decorative Sparkle Star Accents (Viền lấp lánh) -->
+          <!-- Sparkle 1: Top Right primary twinkle -->
+          <div class="absolute -top-3.5 -right-3.5 text-sky-400 pointer-events-none z-20 about-sparkle-1" aria-hidden="true">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-sky-400 drop-shadow-[0_0_12px_rgba(56,189,248,0.95)]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0L14.2 9.8L24 12L14.2 14.2L12 24L9.8 14.2L0 12L9.8 9.8L12 0Z" />
+            </svg>
+          </div>
+
+          <!-- Sparkle 2: Top Right companion tiny twinkle -->
+          <div class="absolute -top-1 -right-7 sm:-right-8 text-sky-300 pointer-events-none z-20 about-sparkle-2" aria-hidden="true">
+            <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-sky-300 drop-shadow-[0_0_8px_rgba(56,189,248,0.85)]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0L14.2 9.8L24 12L14.2 14.2L12 24L9.8 14.2L0 12L9.8 9.8L12 0Z" />
+            </svg>
+          </div>
+
+          <!-- Sparkle 3: Bottom Left accent twinkle -->
+          <div class="absolute -bottom-2.5 -left-2.5 text-sky-400 pointer-events-none z-20 about-sparkle-3" aria-hidden="true">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sky-400 drop-shadow-[0_0_10px_rgba(56,189,248,0.9)]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0L14.2 9.8L24 12L14.2 14.2L12 24L9.8 14.2L0 12L9.8 9.8L12 0Z" />
+            </svg>
+          </div>
+
+          <!-- Float Badge -->
+          <div class="absolute -bottom-5 -right-3 md:-right-5 bg-[#1B3A5C]/95 backdrop-blur-md text-white p-5 md:p-6 rounded-2xl shadow-xl border border-sky-400/40 max-w-[200px] z-30">
+            <div class="text-[0.65rem] font-bold uppercase tracking-widest text-sky-300 mb-1">Local &amp; Welcoming</div>
+            <p class="font-display text-lg font-medium leading-snug">Sidney, Montana</p>
+            <p class="text-xs text-white/70 font-light mt-0.5">422 N Central Ave</p>
+          </div>
+
         </div>
       </div>
 
@@ -65,3 +100,60 @@ import siteData from '../data/site.json';
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes aboutSparkleTwinkle {
+    0%, 100% {
+      transform: scale(0.9) rotate(0deg);
+      opacity: 0.85;
+      filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.7));
+    }
+    50% {
+      transform: scale(1.22) rotate(15deg);
+      opacity: 1;
+      filter: drop-shadow(0 0 16px rgba(56, 189, 248, 1)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.95));
+    }
+  }
+
+  @keyframes aboutSparklePulse {
+    0%, 100% {
+      transform: scale(0.75) rotate(0deg);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.15) rotate(-15deg);
+      opacity: 1;
+      filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.9));
+    }
+  }
+
+  @keyframes aboutBorderShimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .about-sparkle-1 {
+    animation: aboutSparkleTwinkle 3s ease-in-out infinite;
+  }
+
+  .about-sparkle-2 {
+    animation: aboutSparklePulse 2.4s ease-in-out infinite 0.5s;
+  }
+
+  .about-sparkle-3 {
+    animation: aboutSparkleTwinkle 3.5s ease-in-out infinite 1.2s;
+  }
+
+  .about-shimmer-border {
+    background: linear-gradient(135deg, #38bdf8 0%, #ffffff 25%, #7dd3fc 50%, #bae6fd 75%, #38bdf8 100%);
+    background-size: 250% 250%;
+    animation: aboutBorderShimmer 6s ease infinite;
+  }
+</style>
