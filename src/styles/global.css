@@ -124,21 +124,89 @@ body {
   0%   { transform: scale(0.85); opacity: 0.8; }
   100% { transform: scale(1.35); opacity: 0; }
 }
-
-/* ── SCROLL REVEAL ── */
-
-
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 0 4%;
-  transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+@keyframes leafFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-8px) rotate(4deg); }
 }
-nav.scrolled {
-  padding: 0.2rem 4%;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(24px) saturate(180%);
-  box-shadow: 0 1px 40px rgba(0, 0, 0, 0.06);
+
+/* ── SCROLL REVEAL (Static & Production Safe) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay helpers for siblings */
+.stagger-1 { --reveal-delay: 80ms; }
+.stagger-2 { --reveal-delay: 160ms; }
+.stagger-3 { --reveal-delay: 240ms; }
+.stagger-4 { --reveal-delay: 320ms; }
+.stagger-5 { --reveal-delay: 400ms; }
+
+/* Pure CSS Marquee Track */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scrollX 32s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Organic leaf float signature motion */
+.leaf-float {
+  animation: leafFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Cohesive card hover elevation */
+.card-hover {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(27, 58, 92, 0.12);
+}
+
+/* Scrollbar hiding utility */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Strict prefers-reduced-motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .reveal.is-revealed {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .marquee-track {
+    animation: none !important;
+    flex-wrap: wrap !important;
+  }
+  .leaf-float {
+    animation: none !important;
+  }
 }
 .nav-inner {
   max-width: 1200px; margin: 0 auto;
@@ -196,14 +264,14 @@ nav.scrolled .nav-links a { color: var(--grey4); }
 }
 .hero-logo {
   width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
-  margin: 0 auto 2rem; border: 3px solid rgba(197, 165, 90, 0.4);
-  box-shadow: 0 0 60px rgba(197, 165, 90, 0.2);
+  margin: 0 auto 2rem; border: 3px solid rgba(91, 155, 213, 0.4);
+  box-shadow: 0 0 60px rgba(91, 155, 213, 0.2);
 }
 .hero-tag {
   display: inline-block; color: var(--gold-light); font-size: 0.75rem;
   font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
   margin-bottom: 1.2rem; padding: 0.5rem 1.5rem;
-  border: 1px solid rgba(197, 165, 90, 0.3); border-radius: 40px;
+  border: 1px solid rgba(91, 155, 213, 0.3); border-radius: 40px;
 }
 .hero h1 {
   font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem);
@@ -221,11 +289,11 @@ nav.scrolled .nav-links a { color: var(--grey4); }
   background: var(--gold); color: var(--black); padding: 0.9rem 2.5rem;
   border-radius: 40px; font-weight: 600; font-size: 0.9rem;
   text-decoration: none; letter-spacing: 0.5px; transition: all 0.35s;
-  box-shadow: 0 10px 35px rgba(197, 165, 90, 0.3);
+  box-shadow: 0 10px 35px rgba(91, 155, 213, 0.3);
 }
 .btn-gold:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 45px rgba(197, 165, 90, 0.4);
+  box-shadow: 0 16px 45px rgba(91, 155, 213, 0.4);
   background: var(--gold-light);
 }
 .btn-white-outline {
@@ -282,7 +350,7 @@ nav.scrolled .nav-links a { color: var(--grey4); }
 .about-badge {
   position: absolute; bottom: 20px; left: 20px;
   background: rgba(28, 28, 26, 0.85); backdrop-filter: blur(12px);
-  border: 1px solid rgba(197, 165, 90, 0.3); border-radius: var(--radius-sm);
+  border: 1px solid rgba(91, 155, 213, 0.3); border-radius: var(--radius-sm);
   padding: 1rem 1.4rem; display: flex; align-items: center; gap: 0.8rem;
 }
 .ab-label { color: var(--gold-light); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px; }
@@ -312,7 +380,7 @@ nav.scrolled .nav-links a { color: var(--grey4); }
 /* ── PRICING ── */
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .pc { border: 1.5px solid var(--grey1); border-radius: var(--radius); padding: 2.5rem 2rem; text-align: center; transition: all 0.4s; position: relative; background: var(--white); }
-.pc:hover { border-color: var(--gold); box-shadow: 0 20px 60px rgba(197, 165, 90, 0.1); }
+.pc:hover { border-color: var(--gold); box-shadow: 0 20px 60px rgba(91, 155, 213, 0.1); }
 .pc.featured { background: var(--charcoal); color: var(--white); border-color: var(--charcoal); }
 .pc-pop { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--black); font-size: 0.68rem; font-weight: 700; padding: 0.3rem 1.2rem; border-radius: 20px; letter-spacing: 0.8px; text-transform: uppercase; }
 .pc-name { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; color: var(--grey3); text-transform: uppercase; margin-bottom: 1rem; }
@@ -344,11 +412,11 @@ nav.scrolled .nav-links a { color: var(--grey4); }
 /* ── TESTIMONIALS ── */
 .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .tc { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius); padding: 2rem; transition: all 0.4s; }
-.tc:hover { background: rgba(255, 255, 255, 0.07); border-color: rgba(197, 165, 90, 0.25); }
+.tc:hover { background: rgba(255, 255, 255, 0.07); border-color: rgba(91, 155, 213, 0.25); }
 .tc-stars { color: var(--gold-light); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1rem; }
 .tc-text { color: rgba(255, 255, 255, 0.7); font-size: 0.92rem; line-height: 1.85; font-style: italic; font-weight: 300; margin-bottom: 1.5rem; }
 .tc-user { display: flex; align-items: center; gap: 0.7rem; }
-.tc-av { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(197, 165, 90, 0.3); }
+.tc-av { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(91, 155, 213, 0.3); }
 .tc-name { color: var(--white); font-weight: 600; font-size: 0.88rem; }
 .tc-date { color: var(--grey3); font-size: 0.75rem; }
 
@@ -357,7 +425,7 @@ nav.scrolled .nav-links a { color: var(--grey4); }
 .bk-info .s-title { color: var(--charcoal); }
 .info-card { margin-top: 2rem; }
 .ic { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
-.ic-icon { width: 42px; height: 42px; border-radius: var(--radius-sm); flex-shrink: 0; background: var(--gold-glow); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; border: 1px solid rgba(197, 165, 90, 0.2); }
+.ic-icon { width: 42px; height: 42px; border-radius: var(--radius-sm); flex-shrink: 0; background: var(--gold-glow); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; border: 1px solid rgba(91, 155, 213, 0.2); }
 .ic-label { color: var(--grey3); font-size: 0.72rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
 .ic-val { color: var(--charcoal); font-size: 0.92rem; margin-top: 0.15rem; font-weight: 500; }
 .bk-form { background: var(--offwhite); border: 1px solid var(--grey1); border-radius: var(--radius); padding: 2.5rem; }
@@ -370,7 +438,7 @@ nav.scrolled .nav-links a { color: var(--grey4); }
 .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--gold); }
 .fg textarea { resize: none; height: 85px; }
 .f-btn { width: 100%; background: var(--charcoal); color: var(--white); border: none; padding: 1rem; border-radius: 40px; font-weight: 600; font-size: 0.92rem; cursor: pointer; transition: all 0.35s; font-family: inherit; letter-spacing: 0.3px; margin-top: 0.5rem; }
-.f-btn:hover { background: var(--gold); color: var(--black); box-shadow: 0 12px 35px rgba(197, 165, 90, 0.3); }
+.f-btn:hover { background: var(--gold); color: var(--black); box-shadow: 0 12px 35px rgba(91, 155, 213, 0.3); }
 
 /* ── PROMO BANNER ── */
 .promo { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold-bright) 100%); padding: 4rem; text-align: center; position: relative; overflow: hidden; }
@@ -394,8 +462,8 @@ nav.scrolled .nav-links a { color: var(--grey4); }
 .footer-line { border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--grey4); }
 
 /* ── CTA FLOAT ── */
-.cta-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: var(--gold); color: var(--black); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; text-decoration: none; box-shadow: 0 8px 30px rgba(197, 165, 90, 0.4); transition: all 0.3s; }
-.cta-float:hover { transform: scale(1.08) translateY(-3px); box-shadow: 0 14px 40px rgba(197, 165, 90, 0.5); }
+.cta-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: var(--gold); color: var(--black); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; text-decoration: none; box-shadow: 0 8px 30px rgba(91, 155, 213, 0.4); transition: all 0.3s; }
+.cta-float:hover { transform: scale(1.08) translateY(-3px); box-shadow: 0 14px 40px rgba(91, 155, 213, 0.5); }
 .cta-pulse { position: absolute; inset: -7px; border-radius: 50%; border: 2px solid var(--gold); opacity: 0; animation: pulse-ring 2s ease-out infinite; }
 
 /* ── HAMBURGER / MOBILE MENU ── */
