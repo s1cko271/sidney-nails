@@ -61,9 +61,9 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
     <div class="absolute inset-0 bg-gradient-to-b from-white/35 via-white/20 to-white/35"></div>
   </div>
 
-  <!-- Solid Rich Navy Capsule Navbar (WCAG AAA Contrast & Pristine Legibility) -->
+  <!-- Translucent Glassmorphism Capsule Navbar -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-3.5 md:py-4 px-3 sm:px-6 md:px-8 transition-all duration-300">
-    <div id="navbar-pill" class="max-w-[1180px] mx-auto flex justify-between items-center bg-[#1B3A5C] text-white border border-[#2D5A8B]/70 rounded-full px-4 sm:px-6 md:px-7 py-2 md:py-2.5 shadow-[0_8px_30px_rgba(27,58,92,0.35)] transition-all duration-300">
+    <div id="navbar-pill" class="navbar-glass max-w-[1180px] mx-auto flex justify-between items-center text-white rounded-full px-4 sm:px-6 md:px-7 py-2 md:py-2.5">
       <a class="flex items-center gap-2.5 sm:gap-3 decoration-none group flex-shrink-0" href="/#">
         <div class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-white p-0.5 sm:p-1 flex items-center justify-center border border-sky-300/60 shadow-sm flex-shrink-0 overflow-hidden group-hover:scale-105 transition-transform">
           <img class="w-full h-full object-contain rounded-full" src={siteData.salon.logoSquare || '/images/logo.png'} alt={siteData.salon.name} />
@@ -244,7 +244,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
   </footer>
 
   <!-- Mobile Bottom Action Dock (Clean, non-intrusive 1-tap mobile booking) -->
-  <div class="md:hidden fixed bottom-3 left-3 right-3 z-40 bg-[#1B3A5C]/95 backdrop-blur-md border border-white/20 rounded-full shadow-[0_12px_32px_rgba(0,0,0,0.4)] px-4 py-2 flex items-center justify-between" role="navigation" aria-label="Quick Actions">
+  <div class="md:hidden fixed bottom-3 left-3 right-3 z-40 navbar-glass rounded-full px-4 py-2 flex items-center justify-between" role="navigation" aria-label="Quick Actions">
     <a href={`tel:${siteData.salon.phoneRaw}`} class="flex items-center gap-2 text-white/90 hover:text-white text-xs font-semibold">
       <span class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
@@ -315,11 +315,11 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
           if (window.scrollY > 40) {
             navbar.classList.remove('py-3.5', 'md:py-4');
             navbar.classList.add('py-2', 'md:py-2.5');
-            navPill.classList.add('shadow-[0_12px_40px_rgba(10,24,40,0.5)]');
+            navPill.classList.add('is-scrolled');
           } else {
             navbar.classList.remove('py-2', 'md:py-2.5');
             navbar.classList.add('py-3.5', 'md:py-4');
-            navPill.classList.remove('shadow-[0_12px_40px_rgba(10,24,40,0.5)]');
+            navPill.classList.remove('is-scrolled');
           }
         };
         window.addEventListener('scroll', onScroll, { passive: true });
