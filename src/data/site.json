@@ -338,17 +338,50 @@
     "image": "/images/Banner_thankyou.jpg"
   },
   "reviews": {
-    "sectionTag": "Testimonials",
-    "title": "Client Love &",
-    "titleAccent": "Community Feedback",
-    "subtitle": "We value the trust of our Sidney community. Share your experience with us.",
+    "sectionTag": "Google Reviews",
+    "title": "Community Love &",
+    "titleAccent": "Client Feedback",
+    "subtitle": "Real 5-star experiences from our loyal Sidney community and valued visitors.",
     "items": [
       {
-        "name": "TODO (Client Name)",
-        "date": "TODO (Date)",
+        "name": "Melinda Stentoft",
+        "date": "2 years ago",
         "stars": 5,
-        "text": "TODO: Real customer review quote to be added upon salon launch in Sidney, MT.",
-        "avatar": ""
+        "badge": "1 review · 2 photos",
+        "text": "I love this nail salon! I drive 2 hrs to come here, they are all so friendly and my nails last so well and always look amazing!! Thank you Sidney nails!! The purple set is after 2.5 weeks and ready for a fill and still looked great. The pink sets been my favorite so far!!",
+        "avatar": "/images/reviews/melinda.svg"
+      },
+      {
+        "name": "Ronikka Kendall",
+        "date": "1 year ago",
+        "stars": 5,
+        "badge": "Local Guide · 30 reviews",
+        "text": "Surprised of the excellent service. Was able to get me in and redo my nails. When I informed them of my sensitive second toe they were able to cut and file around my sensitive nail. It’s pricey but worth it cuz you get a nice foot soak and sit in their massage chair! 🤪",
+        "avatar": "/images/reviews/ronikka.png"
+      },
+      {
+        "name": "Jen Williams",
+        "date": "5 years ago",
+        "stars": 5,
+        "badge": "4 reviews",
+        "text": "I had a great experience here. They fixed my acrylics after a poor job at a different salon, informed me about how to care for my nails, and educated me on when to do a fill vs. replacement set. (Noobie here!) The cost was a bit more than other places, but I think it was well worth it! I will be going back.",
+        "avatar": "/images/reviews/jen.png"
+      },
+      {
+        "name": "Elizabeth Rayn-Velez",
+        "date": "2 years ago",
+        "stars": 5,
+        "badge": "1 review · 10 photos",
+        "text": "Amazing people. Super friendly. Great nails. Jenny and John made me feel like royalty. Thanks for the beautiful nails. I told Jenny to suprise me, and they are the best nails I have ever had.",
+        "avatar": "/images/reviews/elizabeth.svg"
+      },
+      {
+        "name": "Crystina Dunehew",
+        "date": "7 years ago",
+        "stars": 5,
+        "badge": "Local Guide · 14 reviews",
+        "text": "I have found my new nail salon!!!!! Fast, efficient and friendly. Great atmosphere and welcoming! Will most definitely be back!! Keep doing what you do!!! Thanks guys!!",
+        "avatar": "/images/reviews/crystina.svg"
       }
     ]
   },
