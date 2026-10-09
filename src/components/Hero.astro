@@ -10,16 +10,19 @@ import siteData from '../data/site.json';
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
       <!-- Left Side: Content (7/12 on lg) -->
       <div class="lg:col-span-7 flex flex-col items-start text-left">
-        <!-- Brand Logo -->
-        <div class="hero-animate-logo mb-6 sm:mb-7">
-          <a href="/" class="inline-block transition-transform duration-300 hover:scale-[1.02]" aria-label={siteData.salon.name}>
+        <!-- Brand Logo (Horizontal Brand Lockup) -->
+        <div class="hero-animate-logo mb-6 sm:mb-8">
+          <a href="/" class="inline-block transition-transform duration-300 hover:scale-[1.02] focus:outline-none" aria-label={siteData.salon.name}>
             <picture>
-              <source srcset={siteData.salon.logoFull || "/images/logo-transparent.webp"} type="image/webp" />
+              <source srcset="/images/logo-horizontal.webp" type="image/webp" />
               <img 
-                src="/images/logo-transparent.png" 
+                src="/images/logo-horizontal.png" 
                 alt={siteData.salon.name} 
-                class="h-20 sm:h-24 md:h-28 w-auto object-contain select-none filter drop-shadow-[0_2px_10px_rgba(27,58,92,0.06)]" 
+                class="h-14 sm:h-18 md:h-20 lg:h-24 w-auto max-w-[280px] sm:max-w-[340px] md:max-w-[380px] object-contain select-none filter drop-shadow-[0_2px_12px_rgba(27,58,92,0.08)]" 
                 loading="eager"
+                fetchpriority="high"
+                width="1136"
+                height="480"
               />
             </picture>
           </a>
