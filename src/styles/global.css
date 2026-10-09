@@ -162,6 +162,53 @@ body {
   }
 }
 
+/* ── HERO ENTRANCE KEYFRAME ANIMATIONS (Fires instantly on page render) ── */
+@keyframes heroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.hero-animate-logo {
+  animation: heroFadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 120ms both;
+}
+
+.hero-animate-tagline {
+  animation: heroFadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 260ms both;
+}
+
+.hero-animate-heading {
+  animation: heroFadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 420ms both;
+}
+
+.hero-animate-subtext {
+  animation: heroFadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 580ms both;
+}
+
+.hero-animate-cta {
+  animation: heroFadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 740ms both;
+}
+
+.hero-animate-image {
+  animation: heroScaleIn 1s cubic-bezier(0.16, 1, 0.3, 1) 320ms both;
+}
+
 /* ── SCROLL & LOAD REVEAL (Ultra-smooth, highly visible transitions) ── */
 .reveal {
   opacity: 0;
@@ -293,29 +340,6 @@ html:not(.js-enabled) #navbar {
   box-shadow: 0 12px 42px rgba(0, 0, 0, 0.40);
 }
 
-/* Accessible prefers-reduced-motion: graceful fallback without motion */
-@media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal.is-revealed,
-  .reveal-scale,
-  .reveal-scale.is-revealed,
-  .reveal-left,
-  .reveal-left.is-revealed,
-  .reveal-right,
-  .reveal-right.is-revealed,
-  #navbar {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-  }
-  .marquee-track {
-    animation: none !important;
-  }
-  .leaf-float {
-    animation: none !important;
-  }
-}
 .nav-inner {
   max-width: 1200px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;

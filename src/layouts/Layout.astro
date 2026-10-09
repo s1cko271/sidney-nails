@@ -260,55 +260,28 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
   <script is:inline>
     // Bulletproof Staggered Entrance & Scroll Reveal + 3D Parallax
     function initAnimations() {
-      // 1. Accessibility check: if user prefers reduced motion, reveal everything immediately
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(el => {
-          el.classList.add('is-revealed');
-        });
-        return;
-      }
+      // 1. Target all scroll reveals across all sections below hero and footer
+      const scrollReveals = document.querySelectorAll(
+        'section:not(#hero) .reveal, section:not(#hero) .reveal-scale, section:not(#hero) .reveal-left, section:not(#hero) .reveal-right, footer .reveal'
+      );
 
-      // 2. Partition reveals into Hero load sequence vs Scroll reveals
-      const allReveals = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
-      const heroReveals = [];
-      const scrollReveals = [];
-
-      allReveals.forEach(el => {
-        if (el.closest('#hero')) {
-          heroReveals.push(el);
-        } else {
-          scrollReveals.push(el);
-        }
-      });
-
-      // 3. Hero Elements: Load-in Sequence
-      let heroDelay = 80;
-      heroReveals.forEach((el) => {
-        const customDelay = el.style.getPropertyValue('--reveal-delay');
-        if (!customDelay) {
-          el.style.setProperty('--reveal-delay', `${heroDelay}ms`);
-          heroDelay += 130;
-        }
-        setTimeout(() => {
-          el.classList.add('is-revealed');
-        }, 50);
-      });
-
-      // 4. Scroll Reveals via IntersectionObserver
+      // 2. Scroll Reveals via IntersectionObserver
       if ('IntersectionObserver' in window) {
         const observerOptions = {
-          rootMargin: '0px 0px -60px 0px',
-          threshold: 0.12
+          rootMargin: '0px 0px -40px 0px',
+          threshold: 0.05
         };
 
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               const el = entry.target;
-              // If element has sibling cards inside the same parent grid, stagger them smoothly
+              // If element has sibling cards inside the same parent grid or flex, stagger them smoothly
               const parent = el.parentElement;
               if (parent && (parent.classList.contains('grid') || parent.classList.contains('flex'))) {
-                const siblings = Array.from(parent.children).filter(c => c.matches('.reveal, .reveal-scale, .reveal-left, .reveal-right'));
+                const siblings = Array.from(parent.children).filter(c => 
+                  c.matches('.reveal, .reveal-scale, .reveal-left, .reveal-right')
+                );
                 if (siblings.length > 1) {
                   const sIdx = siblings.indexOf(el);
                   const existingDelay = el.style.getPropertyValue('--reveal-delay');
@@ -324,14 +297,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
         }, observerOptions);
 
         scrollReveals.forEach((el) => {
-          // If already in initial viewport on page load (e.g. short viewport or scrolled restore)
-          const rect = el.getBoundingClientRect();
-          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-          if (rect.top < windowHeight * 0.88 && rect.bottom > 0) {
-            setTimeout(() => el.classList.add('is-revealed'), 120);
-          } else {
-            observer.observe(el);
-          }
+          observer.observe(el);
         });
       } else {
         scrollReveals.forEach(el => el.classList.add('is-revealed'));
