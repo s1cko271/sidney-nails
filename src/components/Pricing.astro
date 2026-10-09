@@ -1,16 +1,20 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section id="pricing" class="py-24 relative bg-white/50 backdrop-blur-md">
-  <div class="max-w-[1180px] mx-auto px-6 sm:px-8">
+<section id="pricing" class="py-24 relative bg-[#0B1422] text-white overflow-hidden border-t border-[#2D5A8B]/40">
+  <!-- Subtle ambient glow background -->
+  <div class="absolute top-1/4 -left-32 w-96 h-96 bg-[#1B3A5C]/25 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-sky-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-[1180px] mx-auto px-6 sm:px-8 relative z-10">
     <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-      <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">
+      <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-sky-400/30 bg-sky-950/60 text-[#9EC5EA] text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-4 shadow-[0_0_15px_rgba(56,189,248,0.15)]">
         Full Treatment Menu
       </div>
-      <h2 class="font-display text-4xl md:text-5xl font-normal text-brand-charcoal mb-4">
-        Services &amp; <em class="italic font-medium text-brand-gold">Menu</em>
+      <h2 class="font-display text-4xl md:text-5xl font-normal text-white mb-4">
+        Services &amp; <em class="italic font-medium text-[#9EC5EA]">Menu</em>
       </h2>
-      <p class="text-slate-600 text-sm md:text-base leading-relaxed font-light">
+      <p class="text-white/70 text-sm md:text-base leading-relaxed font-light">
         Explore our comprehensive service menu. Whether you are stopping in for a quick polish change or unwinding with a royal pedicure, we tailor every detail to your comfort.
       </p>
     </div>
@@ -25,7 +29,7 @@ import siteData from '../data/site.json';
           aria-selected={idx === 0 ? "true" : "false"}
           aria-controls={`tab-panel-${idx}`}
           tabindex={idx === 0 ? "0" : "-1"}
-          class={`menu-tab shrink-0 snap-start px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 border focus:outline-none focus:ring-2 focus:ring-brand-gold ${idx === 0 ? 'bg-[#1B3A5C] text-white border-[#1B3A5C] shadow-md' : 'bg-white/80 backdrop-blur-md text-slate-700 border-white/80 shadow-sm hover:border-[#1B3A5C] hover:text-[#1B3A5C]'}`}
+          class={`menu-tab shrink-0 snap-start px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 border focus:outline-none focus:ring-2 focus:ring-sky-400 ${idx === 0 ? 'bg-[#9EC5EA] text-[#0B1422] border-[#9EC5EA] shadow-md' : 'bg-[#132338]/80 backdrop-blur-md text-white/80 border-sky-400/30 shadow-sm hover:border-sky-300 hover:text-white'}`}
           data-target={`tab-panel-${idx}`}
         >
           {cat.name}
@@ -43,7 +47,7 @@ import siteData from '../data/site.json';
           class={`menu-content transition-all duration-300 ${idx === 0 ? 'block opacity-100' : 'hidden opacity-0'}`}
         >
           <div class="mb-10 text-center max-w-xl mx-auto">
-            <p class="text-slate-500 italic text-sm font-light">{cat.description}</p>
+            <p class="text-[#9EC5EA]/80 italic text-sm font-light">{cat.description}</p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
@@ -128,15 +132,15 @@ import siteData from '../data/site.json';
       tab.addEventListener('click', () => {
         // Reset all tabs
         tabs.forEach(t => {
-          t.classList.remove('bg-[#1B3A5C]', 'text-white', 'border-[#1B3A5C]', 'shadow-md');
-          t.classList.add('bg-white/80', 'backdrop-blur-md', 'text-slate-700', 'border-white/80', 'shadow-sm');
+          t.classList.remove('bg-[#9EC5EA]', 'text-[#0B1422]', 'border-[#9EC5EA]', 'shadow-md');
+          t.classList.add('bg-[#132338]/80', 'backdrop-blur-md', 'text-white/80', 'border-sky-400/30', 'shadow-sm');
           t.setAttribute('aria-selected', 'false');
           t.setAttribute('tabindex', '-1');
         });
 
         // Activate clicked tab
-        tab.classList.remove('bg-white/80', 'backdrop-blur-md', 'text-slate-700', 'border-white/80', 'shadow-sm');
-        tab.classList.add('bg-[#1B3A5C]', 'text-white', 'border-[#1B3A5C]', 'shadow-md');
+        tab.classList.remove('bg-[#132338]/80', 'backdrop-blur-md', 'text-white/80', 'border-sky-400/30', 'shadow-sm');
+        tab.classList.add('bg-[#9EC5EA]', 'text-[#0B1422]', 'border-[#9EC5EA]', 'shadow-md');
         tab.setAttribute('aria-selected', 'true');
         tab.setAttribute('tabindex', '0');
 

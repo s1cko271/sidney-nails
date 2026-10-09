@@ -31,23 +31,27 @@ const items = [
 const messengerUrl = siteData.booking?.messengerUrl || 'https://m.me/sidneynailsmontana';
 ---
 
-<section class="py-24 relative bg-white/45 backdrop-blur-md border-t border-sky-400/20" id="beauty">
+<section class="py-24 relative bg-[#0B1422] text-white overflow-hidden border-t border-[#2D5A8B]/40" id="beauty">
+  <!-- Subtle ambient glow background -->
+  <div class="absolute top-1/3 -left-32 w-96 h-96 bg-[#1B3A5C]/25 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/3 -right-32 w-96 h-96 bg-sky-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
   <div class="max-w-[1200px] mx-auto px-6 relative z-10">
     <!-- Header: Pill + Title + Dot Divider -->
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <div class="inline-block text-sky-800 text-xs font-bold tracking-[0.2em] uppercase mb-4 px-4 py-1 rounded-full border border-sky-300 bg-sky-50 shadow-sm">
+      <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-sky-400/30 bg-sky-950/60 text-[#9EC5EA] text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-4 shadow-[0_0_15px_rgba(56,189,248,0.15)]">
         Waxing & Lashes
       </div>
-      <h2 class="font-display lining-nums text-4xl md:text-5xl font-light text-brand-charcoal mb-3">
-        Silk Lashes & <span class="font-semibold italic text-sky-600">Gentle Waxing</span>
+      <h2 class="font-display text-4xl md:text-5xl font-normal text-white mb-3 tracking-tight">
+        Silk Lashes & <em class="italic font-normal text-[#9EC5EA]">Gentle Waxing</em>
       </h2>
-      <div class="w-1.5 h-1.5 rounded-full bg-sky-500 mx-auto mt-4"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-sky-400 mx-auto mt-4 shadow-[0_0_8px_rgba(56,189,248,0.8)]"></div>
     </div>
     
     <!-- Clean Photo Masonry Display -->
     <div class="columns-2 md:columns-3 gap-3 md:gap-4">
       {items.map((item) => (
-        <div class="group relative overflow-hidden rounded-xl cursor-pointer reveal border border-sky-400/60 hover:border-sky-500 transition-all duration-500 break-inside-avoid mb-3 md:mb-4 transform-gpu shadow-sm hover:shadow-glow">
+        <div class="group relative overflow-hidden rounded-xl cursor-pointer reveal border border-sky-400/30 hover:border-sky-300 transition-all duration-500 break-inside-avoid mb-3 md:mb-4 transform-gpu shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(56,189,248,0.25)]">
           <img 
             class="w-full h-auto block object-cover transition-transform duration-700 group-hover:scale-105" 
             src={item.image} 
@@ -64,7 +68,7 @@ const messengerUrl = siteData.booking?.messengerUrl || 'https://m.me/sidneynails
         href={messengerUrl} 
         target="_blank" 
         rel="noopener noreferrer" 
-        class="inline-flex items-center gap-2 text-[0.7rem] font-bold tracking-[0.2em] uppercase text-sky-700 hover:text-brand-charcoal border-b border-sky-400 pb-1 transition-colors"
+        class="inline-flex items-center gap-2 text-[0.7rem] font-bold tracking-[0.2em] uppercase text-[#9EC5EA] hover:text-white border-b border-sky-400/50 hover:border-white pb-1 transition-colors"
       >
         Book Appointment &rarr;
       </a>
