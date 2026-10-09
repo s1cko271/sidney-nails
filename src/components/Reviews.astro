@@ -16,7 +16,7 @@ import siteData from '../data/site.json';
     </div>
 
     <!-- Featured Review Layout -->
-    <div class="max-w-3xl mx-auto bg-white/85 backdrop-blur-xl rounded-3xl p-8 md:p-14 mb-10 shadow-[0_12px_40px_rgba(91,155,213,0.15)] border border-white/90 text-center relative reveal card-hover">
+    <div class="max-w-3xl mx-auto bg-white/85 backdrop-blur-xl rounded-3xl p-8 md:p-14 mb-10 shadow-[0_12px_40px_rgba(91,155,213,0.15)] border border-white/90 text-center relative reveal-scale card-hover">
       <svg class="w-10 h-10 text-brand-gold/30 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
       </svg>
@@ -41,7 +41,7 @@ import siteData from '../data/site.json';
     </div>
 
     <!-- Review Invitation Callout -->
-    <div class="text-center reveal">
+    <div class="text-center reveal" style="--reveal-delay: 150ms;">
       <a 
         href={siteData.social.googleReviews.startsWith('TODO') ? 'https://maps.app.goo.gl/th34qAzZDDTthUoLA' : siteData.social.googleReviews} 
         target="_blank" 

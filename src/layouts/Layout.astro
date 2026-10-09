@@ -50,15 +50,16 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
 <body class="text-brand-charcoal font-body antialiased overflow-x-hidden bg-transparent relative">
 
   <!-- Fixed Global Ethereal Background (Full-site 3D Parallax Canvas) -->
-  <div class="fixed inset-0 -z-50 pointer-events-none overflow-hidden select-none" aria-hidden="true">
+  <div id="parallax-bg" class="fixed inset-0 -z-50 pointer-events-none overflow-hidden select-none" aria-hidden="true">
     <img 
+      id="parallax-bg-img"
       src="/images/background.webp" 
       alt="" 
-      class="w-full h-full object-cover object-center" 
+      class="w-full h-[125%] -top-[12%] relative object-cover object-center will-change-transform" 
       loading="eager"
     />
     <!-- Delicate ambient wash ensuring high contrast for all text content -->
-    <div class="absolute inset-0 bg-gradient-to-b from-white/35 via-white/20 to-white/35"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-white/30 via-white/15 to-white/30"></div>
   </div>
 
   <!-- Translucent Glassmorphism Capsule Navbar -->
@@ -257,57 +258,107 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
   </div>
 
   <script is:inline>
-    // Bulletproof Staggered Entrance & Scroll Reveal
+    // Bulletproof Staggered Entrance & Scroll Reveal + 3D Parallax
     function initAnimations() {
-      const reveals = document.querySelectorAll('.reveal, .reveal-scale');
-      if (!reveals.length) return;
+      // 1. Accessibility check: if user prefers reduced motion, reveal everything immediately
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(el => {
+          el.classList.add('is-revealed');
+        });
+        return;
+      }
 
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-      let heroStagger = 100;
+      // 2. Partition reveals into Hero load sequence vs Scroll reveals
+      const allReveals = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
+      const heroReveals = [];
+      const scrollReveals = [];
 
-      // 1. Above-the-fold elements: trigger cascading entrance after initial paint
-      reveals.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        const inView = rect.top < windowHeight * 0.95 && rect.bottom > 0;
-        
-        if (inView) {
-          if (!el.classList.contains('is-revealed')) {
-            const hasCustomDelay = el.style.getPropertyValue('--reveal-delay');
-            if (!hasCustomDelay) {
-              el.style.setProperty('--reveal-delay', `${heroStagger}ms`);
-              heroStagger += 120;
-            }
-            // Small tick so browser initializes paint, then starts entrance keyframe sequence
-            setTimeout(() => {
-              el.classList.add('is-revealed');
-            }, 60);
-          }
+      allReveals.forEach(el => {
+        if (el.closest('#hero')) {
+          heroReveals.push(el);
+        } else {
+          scrollReveals.push(el);
         }
       });
 
-      // 2. Below-the-fold elements: IntersectionObserver as they scroll into view
+      // 3. Hero Elements: Load-in Sequence
+      let heroDelay = 80;
+      heroReveals.forEach((el) => {
+        const customDelay = el.style.getPropertyValue('--reveal-delay');
+        if (!customDelay) {
+          el.style.setProperty('--reveal-delay', `${heroDelay}ms`);
+          heroDelay += 130;
+        }
+        setTimeout(() => {
+          el.classList.add('is-revealed');
+        }, 50);
+      });
+
+      // 4. Scroll Reveals via IntersectionObserver
       if ('IntersectionObserver' in window) {
+        const observerOptions = {
+          rootMargin: '0px 0px -60px 0px',
+          threshold: 0.12
+        };
+
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('is-revealed');
-              observer.unobserve(entry.target);
+              const el = entry.target;
+              // If element has sibling cards inside the same parent grid, stagger them smoothly
+              const parent = el.parentElement;
+              if (parent && (parent.classList.contains('grid') || parent.classList.contains('flex'))) {
+                const siblings = Array.from(parent.children).filter(c => c.matches('.reveal, .reveal-scale, .reveal-left, .reveal-right'));
+                if (siblings.length > 1) {
+                  const sIdx = siblings.indexOf(el);
+                  const existingDelay = el.style.getPropertyValue('--reveal-delay');
+                  if (!existingDelay && sIdx >= 0) {
+                    el.style.setProperty('--reveal-delay', `${(sIdx % 4) * 90}ms`);
+                  }
+                }
+              }
+              el.classList.add('is-revealed');
+              observer.unobserve(el);
             }
           });
-        }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+        }, observerOptions);
 
-        reveals.forEach((el) => {
+        scrollReveals.forEach((el) => {
+          // If already in initial viewport on page load (e.g. short viewport or scrolled restore)
           const rect = el.getBoundingClientRect();
-          const inView = rect.top < windowHeight * 0.95 && rect.bottom > 0;
-          if (!inView) {
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          if (rect.top < windowHeight * 0.88 && rect.bottom > 0) {
+            setTimeout(() => el.classList.add('is-revealed'), 120);
+          } else {
             observer.observe(el);
           }
         });
       } else {
-        reveals.forEach(el => el.classList.add('is-revealed'));
+        scrollReveals.forEach(el => el.classList.add('is-revealed'));
       }
 
-      // 2. Navbar condense on scroll
+      // 4. Silky 3D Parallax Scroll on Background Canvas
+      const bgImg = document.getElementById('parallax-bg-img');
+      if (bgImg) {
+        let isTicking = false;
+        const updateParallax = () => {
+          const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+          // Smooth 12% vertical shift creates undeniable 3D depth relative to foreground cards
+          const offset = scrollY * 0.12;
+          bgImg.style.transform = `translate3d(0, ${offset}px, 0)`;
+          isTicking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+          if (!isTicking) {
+            window.requestAnimationFrame(updateParallax);
+            isTicking = true;
+          }
+        }, { passive: true });
+        updateParallax();
+      }
+
+      // 5. Navbar condense on scroll
       const navPill = document.getElementById('navbar-pill');
       const navbar = document.getElementById('navbar');
       if (navPill && navbar) {
@@ -326,7 +377,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
         onScroll();
       }
 
-      // 3. Social sidebar toggle on mobile
+      // 6. Social sidebar toggle on mobile
       const sidebar = document.getElementById('social-sidebar');
       const toggleBtn = document.getElementById('social-toggle');
       const icon = document.getElementById('social-icon');

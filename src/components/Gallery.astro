@@ -13,7 +13,7 @@ const bentoClasses = [
   "col-span-1 row-span-1 min-h-[140px] md:min-h-[210px]", // Acrylic detail
 ];
 ---
-<section id="gallery" class="py-24 bg-white relative">
+<section id="gallery" class="py-24 bg-white/70 backdrop-blur-md relative">
   <div class="max-w-[1180px] mx-auto px-6 sm:px-8">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 reveal gap-6">
       <div>
@@ -42,8 +42,8 @@ const bentoClasses = [
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 auto-rows-fr">
       {siteData.gallery.items.slice(0, 8).map((img, i) => (
         <div 
-          class={`relative group overflow-hidden rounded-2xl bg-white shadow-sm border border-slate-200/80 reveal ${bentoClasses[i] || "col-span-1 row-span-1"}`}
-          style={`--reveal-delay: ${(i % 4) * 90}ms;`}
+          class={`relative group overflow-hidden rounded-2xl bg-white/90 backdrop-blur-sm shadow-sm border border-white/80 card-hover reveal ${bentoClasses[i] || "col-span-1 row-span-1"}`}
+          style={`--reveal-delay: ${(i % 4) * 100}ms;`}
         >
           <img 
             src={img} 

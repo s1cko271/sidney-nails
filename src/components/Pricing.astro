@@ -153,6 +153,12 @@ import siteData from '../data/site.json';
         const targetEl = document.getElementById(targetId);
         if (targetEl) {
           targetEl.classList.remove('hidden');
+          const tabCards = targetEl.querySelectorAll('.reveal, .reveal-scale');
+          tabCards.forEach((c, cIdx) => {
+            c.classList.remove('is-revealed');
+            c.style.setProperty('--reveal-delay', `${(cIdx % 4) * 80}ms`);
+            setTimeout(() => c.classList.add('is-revealed'), 40);
+          });
           setTimeout(() => {
             targetEl.classList.remove('opacity-0');
             targetEl.classList.add('block', 'opacity-100');
