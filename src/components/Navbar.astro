@@ -18,12 +18,13 @@ import site from '../data/site.json';
         </a>
       </div>
       
-      <!-- Desktop Menu -->
-      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <a href="/#about" class="text-[11px] xl:text-xs font-bold uppercase tracking-[0.16em] text-white/85 hover:text-white transition-colors">About</a>
+      <!-- Desktop Menu: Ordered chronologically to match page flow (Videos -> Gallery -> Services -> Pricing -> About -> Reviews -> Contact) -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7">
+        <a href="/#videos" class="text-[11px] xl:text-xs font-bold uppercase tracking-[0.16em] text-white/85 hover:text-white transition-colors">Videos</a>
+        <a href="/#gallery" class="text-[11px] xl:text-xs font-bold uppercase tracking-[0.16em] text-white/85 hover:text-white transition-colors">Gallery</a>
         <a href="/#services" class="text-[11px] xl:text-xs font-bold uppercase tracking-[0.16em] text-white/85 hover:text-white transition-colors">Services</a>
         <a href="/#pricing" class="text-[11px] xl:text-xs font-bold uppercase tracking-[0.16em] text-white/85 hover:text-white transition-colors">Pricing</a>
-        <a href="/#gallery" class="text-[11px] xl:text-xs font-bold uppercase tracking-[0.16em] text-white/85 hover:text-white transition-colors">Gallery</a>
+        <a href="/#about" class="text-[11px] xl:text-xs font-bold uppercase tracking-[0.16em] text-white/85 hover:text-white transition-colors">About</a>
         <a href="/#reviews" class="text-[11px] xl:text-xs font-bold uppercase tracking-[0.16em] text-white/85 hover:text-white transition-colors">Reviews</a>
         <a href="/#booking" class="text-[11px] xl:text-xs font-bold uppercase tracking-[0.16em] text-white/85 hover:text-white transition-colors">Contact</a>
       </nav>
@@ -56,12 +57,13 @@ import site from '../data/site.json';
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    <nav class="flex flex-col space-y-8 text-center">
+    <nav class="flex flex-col space-y-7 text-center">
+      <a href="#videos" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Videos</a>
+      <a href="#gallery" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Gallery</a>
       <a href="#services" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Services</a>
       <a href="#pricing" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Pricing</a>
-      <a href="#gallery" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Gallery</a>
-      <a href="#reviews" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Reviews</a>
       <a href="#about" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">About</a>
+      <a href="#reviews" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Reviews</a>
       
       <a href="/#booking" class="mobile-link mt-8 bg-brand-gold text-brand-charcoal px-8 py-3 rounded-full text-lg font-bold uppercase tracking-widest hover:bg-brand-goldLight transition-colors">
         Book Appointment

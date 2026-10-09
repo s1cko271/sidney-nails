@@ -7,23 +7,27 @@ const videos = [
   { src: '/videos/video3.mp4', label: 'Artistic Nail Design' },
 ];
 ---
-<section class="py-24 bg-[#1B3A5C] text-white relative overflow-hidden" id="videos">
-  <div class="max-w-[1180px] mx-auto px-6 sm:px-8">
+<section class="py-24 bg-[#0B1422] text-white relative overflow-hidden border-t border-[#2D5A8B]/40" id="videos">
+  <!-- Subtle ambient glow background -->
+  <div class="absolute top-1/3 -left-32 w-96 h-96 bg-[#1B3A5C]/25 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/3 -right-32 w-96 h-96 bg-sky-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-[1180px] mx-auto px-6 sm:px-8 relative z-10">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 reveal gap-6">
       <div>
-        <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">
+        <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-sky-400/30 bg-sky-950/60 text-[#9EC5EA] text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-4 shadow-[0_0_15px_rgba(56,189,248,0.15)]">
           Behind the Scenes
         </div>
-        <h2 class="font-display text-4xl md:text-5xl font-normal text-white mb-3">
-          Salon in <em class="italic font-medium text-brand-gold">Action</em>
+        <h2 class="font-display text-4xl md:text-5xl font-normal text-white mb-3 tracking-tight">
+          Salon in <em class="italic font-normal text-[#9EC5EA]">Action</em>
         </h2>
         <p class="text-white/75 text-sm md:text-base max-w-md font-light leading-relaxed">
           Watch our technicians craft meticulous nail sets and create a relaxing, soothing environment for every client.
         </p>
       </div>
 
-      <div class="hidden md:flex items-center gap-2 text-xs text-white/60 tracking-wider uppercase font-semibold">
-        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+      <div class="hidden md:flex items-center gap-2 text-xs text-[#9EC5EA] tracking-wider uppercase font-semibold">
+        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
         Live in Salon
       </div>
     </div>
@@ -32,7 +36,7 @@ const videos = [
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {videos.map((vid, idx) => (
         <div 
-          class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black/40 shadow-xl border border-white/10 group reveal"
+          class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black/40 shadow-xl border border-sky-400/30 hover:border-sky-300 transition-colors duration-300 group reveal"
           style={`--reveal-delay: ${idx * 100}ms;`}
         >
           <video 
@@ -40,7 +44,7 @@ const videos = [
             autoplay 
             loop 
             muted 
-            playsinline
+            playsinline 
             preload="metadata"
             aria-label={vid.label}
           >

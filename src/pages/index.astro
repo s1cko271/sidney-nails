@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import Services from '../components/Services.astro';
-import About from '../components/About.astro';
-import Pricing from '../components/Pricing.astro';
-import Gallery from '../components/Gallery.astro';
 import VideoGallery from '../components/VideoGallery.astro';
+import Gallery from '../components/Gallery.astro';
+import Services from '../components/Services.astro';
+import Pricing from '../components/Pricing.astro';
+import About from '../components/About.astro';
 import GiftCardsPromo from '../components/GiftCardsPromo.astro';
 import Reviews from '../components/Reviews.astro';
 import Booking from '../components/Booking.astro';
@@ -15,10 +15,10 @@ import Popup from '../components/Popup.astro';
 
 <Layout>
   <Hero />
+  <VideoGallery />
+  <Gallery />
   <Services />
   <Pricing />
-  <Gallery />
-  <VideoGallery />
   <About />
   <GiftCardsPromo />
   <Reviews />
@@ -26,5 +26,3 @@ import Popup from '../components/Popup.astro';
   <ThankYouBanner />
   <Popup />
 </Layout>
-
-
