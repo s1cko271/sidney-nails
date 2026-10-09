@@ -1,15 +1,24 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section class="py-24 relative bg-[#0D1E32]/92 text-white backdrop-blur-md border-t border-sky-400/20" id="gallery">
+<section class="py-24 relative bg-[#0B1422] text-white overflow-hidden border-t border-[#2D5A8B]/40" id="gallery">
+  <!-- Ambient subtle glow -->
+  <div class="absolute top-1/3 -left-32 w-96 h-96 bg-[#1B3A5C]/25 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/3 -right-32 w-96 h-96 bg-sky-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
   <div class="max-w-[1200px] mx-auto px-6 relative z-10">
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <div class="inline-block text-[#9EC5EA] text-xs font-bold tracking-[0.2em] uppercase mb-4">
-        {siteData.gallery.sectionTag}
+      <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-sky-400/30 bg-sky-950/60 text-[#9EC5EA] text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-4 shadow-[0_0_15px_rgba(56,189,248,0.15)]">
+        {siteData.gallery.sectionTag || 'OUR WORK'}
       </div>
-      <h2 class="font-display lining-nums text-4xl md:text-5xl font-light text-white mb-4">
-        {siteData.gallery.title} <span class="font-semibold italic text-[#9EC5EA]">{siteData.gallery.titleAccent}</span>
+      <h2 class="font-display lining-nums text-4xl md:text-5xl font-normal text-white mb-4 tracking-tight drop-shadow-md">
+        {siteData.gallery.title} <span class="font-normal italic text-[#9EC5EA]">{siteData.gallery.titleAccent}</span>
       </h2>
+      <div class="flex items-center justify-center gap-3 opacity-60 mt-4" aria-hidden="true">
+        <span class="w-12 h-px bg-gradient-to-r from-transparent to-sky-300/50"></span>
+        <span class="w-1.5 h-1.5 rotate-45 border border-sky-300/80 bg-sky-400/30"></span>
+        <span class="w-12 h-px bg-gradient-to-l from-transparent to-sky-300/50"></span>
+      </div>
     </div>
     
     <div class="columns-2 md:columns-3 gap-2 md:gap-3 space-y-2 md:space-y-3">
