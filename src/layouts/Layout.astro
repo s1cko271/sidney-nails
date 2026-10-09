@@ -61,9 +61,9 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
     <div class="absolute inset-0 bg-gradient-to-b from-white/35 via-white/20 to-white/35"></div>
   </div>
 
-  <!-- Translucent Frosted Glass Pill Navbar -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-3 md:py-4 px-3 sm:px-6 md:px-8 transition-all duration-300">
-    <div class="max-w-[1140px] mx-auto flex justify-between items-center bg-[#475569]/65 md:bg-slate-800/55 backdrop-blur-xl border border-white/25 rounded-full px-4 sm:px-6 md:px-7 py-2 md:py-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.28)]">
+  <!-- Solid Rich Navy Capsule Navbar (WCAG AAA Contrast & Pristine Legibility) -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-3.5 md:py-4 px-3 sm:px-6 md:px-8 transition-all duration-300">
+    <div id="navbar-pill" class="max-w-[1180px] mx-auto flex justify-between items-center bg-[#1B3A5C] text-white border border-[#2D5A8B]/70 rounded-full px-4 sm:px-6 md:px-7 py-2 md:py-2.5 shadow-[0_8px_30px_rgba(27,58,92,0.35)] transition-all duration-300">
       <a class="flex items-center gap-2.5 sm:gap-3 decoration-none group flex-shrink-0" href="/#">
         <div class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-white p-0.5 sm:p-1 flex items-center justify-center border border-sky-300/60 shadow-sm flex-shrink-0 overflow-hidden group-hover:scale-105 transition-transform">
           <img class="w-full h-full object-contain rounded-full" src={siteData.salon.logoSquare || '/images/logo.png'} alt={siteData.salon.name} />
@@ -77,7 +77,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
       <ul class="hidden lg:flex items-center gap-6 xl:gap-8">
         {siteData.nav.items.map(item => (
           <li>
-            <a class="nav-link text-white/85 hover:text-white transition-colors font-body text-[11px] xl:text-xs font-bold tracking-[0.16em] uppercase" data-target={item.href.replace('/#', '')} href={item.href}>
+            <a class="nav-link text-white/90 hover:text-brand-gold transition-colors font-body text-[11px] xl:text-xs font-bold tracking-[0.16em] uppercase" data-target={item.href.replace('/#', '')} href={item.href}>
               {item.label}
             </a>
           </li>
@@ -86,19 +86,19 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
 
       <!-- Desktop CTA Button -->
       <div class="hidden md:flex items-center">
-        <a class="bg-[#9CBFE4] hover:bg-white text-[#13253B] px-5 sm:px-6 py-2 md:py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5" href="/#booking">
+        <a class="bg-brand-gold hover:bg-white text-[#1B3A5C] px-5 sm:px-6 py-2 md:py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5" href="/#booking">
           {siteData.nav.ctaText || 'Book Now'}
         </a>
       </div>
 
       <!-- Mobile Nav Actions -->
       <div class="flex items-center gap-2 lg:hidden">
-        <a class="md:hidden bg-[#9CBFE4] hover:bg-white text-[#13253B] px-3.5 py-1.5 rounded-full font-bold text-[11px] uppercase tracking-wider transition-colors shadow-sm" href="/#booking">
+        <a class="md:hidden bg-brand-gold hover:bg-white text-[#1B3A5C] px-3.5 py-1.5 rounded-full font-bold text-[11px] uppercase tracking-wider transition-colors shadow-sm" href="/#booking">
           Book
         </a>
         <button 
           type="button" 
-          class="flex flex-col justify-center gap-1.5 cursor-pointer p-2 rounded-lg text-white hover:text-[#9CBFE4] focus:outline-none" 
+          class="flex flex-col justify-center gap-1.5 cursor-pointer p-2 rounded-lg text-white hover:text-brand-gold focus:outline-none" 
           aria-label="Open Navigation Menu"
           onclick="document.getElementById('mobileMenu').classList.remove('translate-x-full'); document.getElementById('mobileMenu').classList.add('translate-x-0');"
         >
@@ -243,57 +243,72 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
     </div>
   </footer>
 
-  <!-- Floating Call / Book Buttons -->
-  <div class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[99] flex flex-col gap-3 items-center">
-    <a class="w-12 h-12 md:w-13 md:h-13 rounded-full bg-brand-gold text-brand-luxury flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-transform" href={`tel:${siteData.salon.phoneRaw}`} title="Call Sidney Nails" aria-label="Call Sidney Nails">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+  <!-- Mobile Bottom Action Dock (Clean, non-intrusive 1-tap mobile booking) -->
+  <div class="md:hidden fixed bottom-3 left-3 right-3 z-40 bg-[#1B3A5C]/95 backdrop-blur-md border border-white/20 rounded-full shadow-[0_12px_32px_rgba(0,0,0,0.4)] px-4 py-2 flex items-center justify-between" role="navigation" aria-label="Quick Actions">
+    <a href={`tel:${siteData.salon.phoneRaw}`} class="flex items-center gap-2 text-white/90 hover:text-white text-xs font-semibold">
+      <span class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+      </span>
+      <span>Call {siteData.salon.phone}</span>
     </a>
-    <a class="w-12 h-12 md:w-13 md:h-13 rounded-full bg-[#1B3A5C] border border-[#2D5A8B] text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-transform" href="/#booking" title="Book Appointment" aria-label="Book Appointment">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>
+    <a href="/#booking" class="bg-brand-gold text-[#1B3A5C] px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider shadow-sm active:scale-95 transition-transform">
+      Book Now
     </a>
   </div>
 
-  <style is:global>
-    /* Smooth reveal transitions */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
-
   <script is:inline>
-    // Reveal on scroll
-    document.addEventListener('DOMContentLoaded', () => {
+    // Bulletproof Scroll Reveal & UI Interactions
+    function initAnimations() {
+      // 1. Scroll-reveal with stagger
       const reveals = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
         const io = new IntersectionObserver((entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add('visible');
-              io.unobserve(e.target);
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              entry.target.classList.add('visible'); // backward compat
+              io.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.1 });
-        reveals.forEach(el => io.observe(el));
+        }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+
+        reveals.forEach((el, index) => {
+          // If already in viewport on page load, reveal immediately
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add('is-revealed');
+            el.classList.add('visible');
+          } else {
+            io.observe(el);
+          }
+        });
       } else {
-        reveals.forEach(el => el.classList.add('visible'));
+        reveals.forEach(el => {
+          el.classList.add('is-revealed');
+          el.classList.add('visible');
+        });
       }
 
-      // Social sidebar toggle on mobile
+      // 2. Navbar condense on scroll
+      const navPill = document.getElementById('navbar-pill');
+      const navbar = document.getElementById('navbar');
+      if (navPill && navbar) {
+        const onScroll = () => {
+          if (window.scrollY > 40) {
+            navbar.classList.remove('py-3.5', 'md:py-4');
+            navbar.classList.add('py-2', 'md:py-2.5');
+            navPill.classList.add('shadow-[0_12px_40px_rgba(10,24,40,0.5)]');
+          } else {
+            navbar.classList.remove('py-2', 'md:py-2.5');
+            navbar.classList.add('py-3.5', 'md:py-4');
+            navPill.classList.remove('shadow-[0_12px_40px_rgba(10,24,40,0.5)]');
+          }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+
+      // 3. Social sidebar toggle on mobile
       const sidebar = document.getElementById('social-sidebar');
       const toggleBtn = document.getElementById('social-toggle');
       const icon = document.getElementById('social-icon');
@@ -312,7 +327,14 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
           }
         });
       }
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAnimations);
+    } else {
+      initAnimations();
+    }
+    document.addEventListener('astro:page-load', initAnimations);
   </script>
 </body>
 </html>
