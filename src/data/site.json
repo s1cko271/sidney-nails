@@ -56,11 +56,11 @@
     "image": "/images/salon-2.webp",
     "stats": [
       {
-        "value": "TODO",
+        "value": "8+",
         "label": "Years Serving Community"
       },
       {
-        "value": "TODO+",
+        "value": "1000+",
         "label": "Delighted Clients"
       }
     ]
@@ -390,7 +390,7 @@
     "sectionTag": "Contact & Book",
     "title": "Visit",
     "titleAccent": "Us",
-    "subtitle": "TODO_BOOKING_SUBTITLE",
+    "subtitle": "Appointments & walk-ins welcome. We look forward to welcoming you.",
     "formTitle": "Book Your Visit",
     "formSubtitle": "Choose your preferred way to contact us",
     "formButtonText": "Connect via Messenger",
@@ -518,7 +518,7 @@
       "/videos/8.7 JJ.mp4"
     ]
   },
-  "messengerUrl": "TODO_MESSENGER",
+  "messengerUrl": "https://m.me/sidneynailsmontana",
   "connect": {
     "greeting": "Welcome to Sidney Nails. A calm, intimate space dedicated to your beauty and relaxation."
   },
