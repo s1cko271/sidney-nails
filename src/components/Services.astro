@@ -1,52 +1,129 @@
 ---
 import siteData from '../data/site.json';
+
+// Service imagery matching the exact visual design specification
+const serviceImages = [
+  '/images/services/manicure.jpg',
+  '/images/services/pedicure.jpg',
+  '/images/services/dipping.webp',
+  '/images/services/enhancement.jpg',
+  '/images/services/addons.jpg'
+];
+
+// Clean concise descriptions matching the service treatment cards
+const serviceDescriptions = [
+  'Regular manicure, Deluxe Manicure, Deluxe Royal Manicure.',
+  'Basic pedicure, Deluxe pedicure, Deluxe super royal pedicure. Ten dollars any flavor your choice for bubble spa scents.',
+  'Fullset pink & white, Regular, White Tip, Ombre, Builder gel, Fill, Dipping color Powder, Dipping Ombre.',
+  'Facial Treatment, Eyelash Extensions, and full face/body waxing services.',
+  'Polish changes, nail designs, fixes, removals, and custom shapes.'
+];
+
+const services = siteData.services.items.slice(0, 5).map((item, idx) => ({
+  ...item,
+  image: serviceImages[idx] || item.image,
+  description: serviceDescriptions[idx] || item.description
+}));
 ---
-<section class="py-24 md:py-32 relative bg-brand-charcoal" id="services">
-  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
-    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <div class="inline-block text-brand-gold text-[0.65rem] font-bold tracking-[0.2em] uppercase mb-4 border border-brand-gold/30 px-3 py-1 rounded-full">
-        {siteData.services.sectionTag}
+
+<section class="py-24 md:py-32 bg-[#0B1422] text-white relative overflow-hidden" id="services">
+  <!-- Subtle ambient glow background -->
+  <div class="absolute top-1/4 -left-32 w-96 h-96 bg-[#1B3A5C]/25 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-sky-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-[1080px] mx-auto px-6 sm:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-20 md:mb-24 reveal">
+      <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-sky-400/30 bg-sky-950/50 text-[#9EC5EA] text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-4 shadow-[0_0_15px_rgba(56,189,248,0.1)]">
+        OUR SERVICES
       </div>
-      <h2 class="font-display lining-nums text-4xl md:text-5xl font-light text-white mb-4">
-        {siteData.services.title} <span class="font-semibold italic text-brand-gold">{siteData.services.titleAccent}</span>
+
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-normal text-white mb-4 leading-[1.18] tracking-tight">
+        Complete Nail Care <em class="italic font-normal text-[#9EC5EA]">&amp; Beauty</em><br />
+        <em class="italic font-normal text-[#9EC5EA]">Services</em>
       </h2>
-      <p class="text-white/60 leading-relaxed font-light text-justify [text-align-last:center]">
-        {siteData.services.subtitle}
+
+      <p class="text-white/70 max-w-xl mx-auto text-xs sm:text-sm font-light leading-relaxed mb-6">
+        From classic manicures to creative nail art &mdash; we offer a full range of services using premium products for lasting results.
       </p>
-      <div class="flex items-center justify-center gap-3 mt-8 opacity-70" aria-hidden="true">
-        <span class="w-12 h-px bg-brand-gold"></span>
-        <span class="text-brand-gold opacity-80 transition-transform duration-700 hover:scale-110 flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg>
-        </span>
-        <span class="w-12 h-px bg-brand-gold"></span>
+
+      <!-- Ornamental Divider (── ◇ ──) -->
+      <div class="flex items-center justify-center gap-3 opacity-60" aria-hidden="true">
+        <span class="w-12 h-px bg-gradient-to-r from-transparent to-sky-300/50"></span>
+        <span class="w-1.5 h-1.5 rotate-45 border border-sky-300/80 bg-sky-400/30"></span>
+        <span class="w-12 h-px bg-gradient-to-l from-transparent to-sky-300/50"></span>
       </div>
     </div>
 
-    <div class="space-y-24 lg:space-y-32 mt-10">
-      {siteData.services.items.map((svc, index) => (
-        <div class={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-10 lg:gap-20 reveal`}>
-          <div class="w-full lg:w-1/2 relative">
-            <div class="relative overflow-hidden rounded-[3rem] aspect-[4/3] md:aspect-[3/2] shadow-glow border-2 border-brand-luxury/50 group">
-              <img class="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110" src={svc.image} alt={svc.name} loading="lazy" />
-              <div class="absolute inset-0 bg-brand-charcoal/10 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-700"></div>
-              <div class="absolute top-6 left-6 w-12 h-12 rounded-full bg-white/95 flex items-center justify-center text-brand-charcoal text-sm font-bold font-body shadow-lg">
-                {String(index + 1).padStart(2, '0')}
+    <!-- Alternating Z-Pattern Services Grid -->
+    <div class="space-y-20 md:space-y-28">
+      {services.map((svc, index) => {
+        const isEven = index % 2 === 0;
+        const numberBadge = String(index + 1).padStart(2, '0');
+
+        return (
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            
+            {/* Image Column (6 cols) */}
+            <div class={`lg:col-span-6 ${isEven ? 'lg:order-1 reveal-left' : 'lg:order-2 reveal-right'}`}>
+              <div class="relative group">
+                {/* Glowing Image Card Frame */}
+                <div class="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2rem] aspect-[4/3] sm:aspect-[1.38] bg-slate-900 border border-sky-400/35 shadow-[0_0_25px_rgba(56,189,248,0.14)] transition-all duration-500 group-hover:border-sky-300/60 group-hover:shadow-[0_0_35px_rgba(56,189,248,0.25)]">
+                  <img 
+                    src={svc.image} 
+                    alt={svc.name} 
+                    class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" 
+                    loading="lazy" 
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+
+                  {/* Circular Number Badge (01, 02, etc.) */}
+                  <div class="absolute top-4 left-4 sm:top-5 sm:left-5 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#0B1422] font-body font-bold text-xs flex items-center justify-center shadow-md pointer-events-none z-10">
+                    {numberBadge}
+                  </div>
+                </div>
+
+                {/* Decorative Star Sparkle Accent on top-right corner */}
+                <div class="absolute -top-1.5 -right-1.5 text-sky-300/90 pointer-events-none z-10" aria-hidden="true">
+                  <svg class="w-4 h-4 text-sky-300 drop-shadow-[0_0_6px_rgba(56,189,248,0.8)]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0L14.2 9.8L24 12L14.2 14.2L12 24L9.8 14.2L0 12L9.8 9.8L12 0Z" />
+                  </svg>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="w-full lg:w-1/2 flex flex-col justify-center">
-            <h3 class="font-display lining-nums text-3xl md:text-4xl text-white font-semibold mb-6 tracking-wide">{svc.name}</h3>
-            <p class="text-white/70 text-base md:text-lg leading-relaxed mb-8 font-light max-w-lg">{svc.description}</p>
-            <div class="flex items-center gap-8">
-              <div class="font-display lining-nums font-semibold text-brand-gold text-2xl tracking-wide -translate-y-0.5">{svc.price}</div>
-              <div class="w-px h-8 bg-white/20"></div>
-              <a href="/#booking" class="text-xs font-bold uppercase tracking-widest text-brand-gold hover:text-white transition-colors flex items-center gap-2 group">
-                Book Session
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 group-hover:translate-x-1 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
-              </a>
+
+            {/* Text Column (6 cols) */}
+            <div class={`lg:col-span-6 flex flex-col justify-center ${isEven ? 'lg:order-2 reveal-right' : 'lg:order-1 reveal-left'}`}>
+              <h3 class="font-display text-2xl sm:text-3xl font-medium text-white mb-3 tracking-tight">
+                {svc.name}
+              </h3>
+              <p class="text-white/70 text-xs sm:text-sm font-light leading-relaxed mb-6 max-w-md">
+                {svc.description}
+              </p>
+
+              {/* Meta Line: Price | BOOK SESSION */}
+              <div class="flex items-center gap-4 text-xs sm:text-sm">
+                <span class="font-semibold text-white/90 tracking-wide">
+                  {svc.price}
+                </span>
+                <span class="w-px h-3.5 bg-white/25"></span>
+                <a 
+                  href="/#booking" 
+                  class="font-bold text-[11px] sm:text-xs uppercase tracking-[0.18em] text-[#9EC5EA] hover:text-white transition-colors flex items-center gap-1.5 group/link"
+                >
+                  <span>BOOK SESSION</span>
+                  <svg class="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              </div>
             </div>
+
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
 
+  </div>
+</section>
