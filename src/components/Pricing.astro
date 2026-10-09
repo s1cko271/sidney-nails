@@ -2,7 +2,7 @@
 import siteData from '../data/site.json';
 ---
 <section id="pricing" class="py-24 relative bg-white/50 backdrop-blur-md">
-  <div class="max-w-[1100px] mx-auto px-6">
+  <div class="max-w-[1180px] mx-auto px-6 sm:px-8">
     <div class="text-center max-w-2xl mx-auto mb-14 reveal">
       <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">
         Full Treatment Menu
@@ -16,7 +16,7 @@ import siteData from '../data/site.json';
     </div>
 
     <!-- Accessible Tabs Header -->
-    <div class="flex overflow-x-auto justify-start md:justify-center gap-2.5 pb-3 md:pb-0 mb-12 scrollbar-none snap-x" role="tablist" aria-label="Service Menu Categories">
+    <div class="flex overflow-x-auto justify-start md:justify-center gap-2.5 pb-3 md:pb-0 mb-12 scrollbar-none snap-x reveal" role="tablist" aria-label="Service Menu Categories">
       {siteData.pricing.categories.map((cat, idx) => (
         <button 
           type="button"
@@ -47,12 +47,15 @@ import siteData from '../data/site.json';
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-            {cat.items.map(item => (
-              <div class={`rounded-2xl p-6 md:p-8 border transition-all duration-300 flex flex-col justify-between ${
-                item.popular 
-                  ? 'bg-[#1B3A5C]/95 backdrop-blur-md text-white border-[#2D5A8B] shadow-2xl md:col-span-2 lg:col-span-2' 
-                  : 'bg-white/85 backdrop-blur-lg text-brand-charcoal border-white/80 shadow-[0_8px_30px_rgba(91,155,213,0.12)] hover:shadow-[0_14px_40px_rgba(91,155,213,0.22)] hover:-translate-y-1 hover:border-brand-gold/40'
-              }`}>
+            {cat.items.map((item, itemIdx) => (
+              <div 
+                class={`rounded-2xl p-6 md:p-8 border transition-all duration-300 flex flex-col justify-between card-hover reveal ${
+                  item.popular 
+                    ? 'bg-[#1B3A5C]/95 backdrop-blur-md text-white border-[#2D5A8B] shadow-2xl md:col-span-2 lg:col-span-2 hover:-translate-y-1' 
+                    : 'bg-white/90 backdrop-blur-lg text-brand-charcoal border-slate-100 shadow-[0_8px_30px_rgba(91,155,213,0.1)] hover:shadow-[0_16px_36px_rgba(27,58,92,0.14)] hover:-translate-y-1 hover:border-brand-gold/40'
+                }`}
+                style={`--reveal-delay: ${(itemIdx % 4) * 80}ms;`}
+              >
                 <div>
                   <div class="flex justify-between items-start gap-4 mb-2">
                     <div class="flex items-center gap-3">
@@ -110,7 +113,7 @@ import siteData from '../data/site.json';
         <h4 class="font-display text-xl font-medium text-brand-charcoal">Have a specific design or bridal party?</h4>
         <p class="text-xs text-slate-500 font-light mt-0.5">Call our salon concierge to discuss custom nail art, lash treatments, or group bookings.</p>
       </div>
-      <a href={`tel:${siteData.salon.phoneRaw}`} class="shrink-0 bg-[#1B3A5C] text-white px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-brand-gold hover:text-[#1B3A5C] transition-colors shadow-sm">
+      <a href={`tel:${siteData.salon.phoneRaw}`} class="shrink-0 bg-[#1B3A5C] text-white px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-brand-gold hover:text-[#1B3A5C] transition-all duration-300 shadow-sm hover:-translate-y-0.5 active:translate-y-0">
         Call {siteData.salon.phone}
       </a>
     </div>
@@ -118,23 +121,24 @@ import siteData from '../data/site.json';
 </section>
 
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
+  function initMenuTabs() {
     const tabs = document.querySelectorAll('.menu-tab');
     const contents = document.querySelectorAll('.menu-content');
+    if (!tabs.length) return;
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         // Reset all tabs
         tabs.forEach(t => {
-          t.classList.remove('bg-[#1B3A5C]', 'text-white', 'border-[#1B3A5C]', 'shadow-sm');
-          t.classList.add('bg-brand-offwhite', 'text-slate-600', 'border-slate-200');
+          t.classList.remove('bg-[#1B3A5C]', 'text-white', 'border-[#1B3A5C]', 'shadow-md');
+          t.classList.add('bg-white/80', 'backdrop-blur-md', 'text-slate-700', 'border-white/80', 'shadow-sm');
           t.setAttribute('aria-selected', 'false');
           t.setAttribute('tabindex', '-1');
         });
 
         // Activate clicked tab
-        tab.classList.remove('bg-brand-offwhite', 'text-slate-600', 'border-slate-200');
-        tab.classList.add('bg-[#1B3A5C]', 'text-white', 'border-[#1B3A5C]', 'shadow-sm');
+        tab.classList.remove('bg-white/80', 'backdrop-blur-md', 'text-slate-700', 'border-white/80', 'shadow-sm');
+        tab.classList.add('bg-[#1B3A5C]', 'text-white', 'border-[#1B3A5C]', 'shadow-md');
         tab.setAttribute('aria-selected', 'true');
         tab.setAttribute('tabindex', '0');
 
@@ -156,5 +160,12 @@ import siteData from '../data/site.json';
         }
       });
     });
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMenuTabs);
+  } else {
+    initMenuTabs();
+  }
+  document.addEventListener('astro:page-load', initMenuTabs);
 </script>
