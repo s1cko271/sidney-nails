@@ -2,6 +2,41 @@
 import siteData from '../data/site.json';
 
 const services = siteData.services.items;
+
+// Tailored sizing and aspect ratios per service so the image fills the frame completely with ZERO empty gaps,
+// while preserving the full view of the nail artistry.
+const serviceCardStyles = [
+  {
+    // 01: Manicure (736 x 894 - ratio ~0.82)
+    ratio: '736 / 894',
+    maxWidth: 'max-w-[420px]',
+    objectPosition: 'object-center'
+  },
+  {
+    // 02: Pedicure Spa (612 x 408 - ratio 1.50)
+    ratio: '612 / 408',
+    maxWidth: 'max-w-[480px]',
+    objectPosition: 'object-center'
+  },
+  {
+    // 03: Dipping Powder (800 x 800 - ratio 1.00)
+    ratio: '1 / 1',
+    maxWidth: 'max-w-[420px]',
+    objectPosition: 'object-center'
+  },
+  {
+    // 04: Nail Enhancement (736 x 1104 - ratio ~0.67)
+    ratio: '736 / 1104',
+    maxWidth: 'max-w-[360px]',
+    objectPosition: 'object-center'
+  },
+  {
+    // 05: Polish Change & Add-ons (496 x 618 - ratio ~0.80)
+    ratio: '496 / 618',
+    maxWidth: 'max-w-[410px]',
+    objectPosition: 'object-center'
+  }
+];
 ---
 
 <section class="py-24 md:py-32 bg-[#0B1422] text-white relative overflow-hidden" id="services">
@@ -39,32 +74,30 @@ const services = siteData.services.items;
       {services.map((svc, index) => {
         const isEven = index % 2 === 0;
         const numberBadge = String(index + 1).padStart(2, '0');
+        const style = serviceCardStyles[index] || {
+          ratio: '4 / 3',
+          maxWidth: 'max-w-[440px]',
+          objectPosition: 'object-center'
+        };
 
         return (
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             
             {/* Image Column (6 cols) */}
-            <div class={`lg:col-span-6 ${isEven ? 'lg:order-1 reveal-left' : 'lg:order-2 reveal-right'}`}>
-              <div class="relative group">
-                {/* Glowing Image Card Frame */}
-                <div class="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2rem] aspect-[4/3] sm:aspect-[1.18] bg-[#0c1829] border border-sky-400/35 shadow-[0_0_25px_rgba(56,189,248,0.14)] transition-all duration-500 group-hover:border-sky-300/60 group-hover:shadow-[0_0_35px_rgba(56,189,248,0.25)] flex items-center justify-center">
-                  {/* Ambient blurred backdrop so the full composition blends luxuriously */}
-                  <img 
-                    src={svc.image} 
-                    alt="" 
-                    aria-hidden="true" 
-                    class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-125 pointer-events-none"
-                  />
-                  <div class="absolute inset-0 bg-[#0B1422]/35 backdrop-blur-[1px] pointer-events-none"></div>
-
-                  {/* Main photo scaled to show 100% of composition */}
+            <div class={`lg:col-span-6 flex ${isEven ? 'lg:order-1 lg:justify-end reveal-left' : 'lg:order-2 lg:justify-start reveal-right'} justify-center`}>
+              <div class={`relative group w-full ${style.maxWidth}`}>
+                {/* Glowing Image Card Frame - Perfectly matched aspect ratio so zero empty space exists */}
+                <div 
+                  class="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2rem] w-full bg-slate-900 border border-sky-400/35 shadow-[0_0_25px_rgba(56,189,248,0.14)] transition-all duration-500 group-hover:border-sky-300/60 group-hover:shadow-[0_0_35px_rgba(56,189,248,0.25)]"
+                  style={`aspect-ratio: ${style.ratio};`}
+                >
                   <img 
                     src={svc.image} 
                     alt={svc.name} 
-                    class="relative z-[1] w-full h-full object-contain p-3 sm:p-4 rounded-2xl transition-transform duration-700 ease-out group-hover:scale-105 drop-shadow-[0_12px_24px_rgba(0,0,0,0.55)]" 
+                    class={`w-full h-full object-cover ${style.objectPosition} transition-transform duration-700 ease-out group-hover:scale-105`} 
                     loading="lazy" 
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none z-[2]"></div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
 
                   {/* Circular Number Badge (01, 02, etc.) */}
                   <div class="absolute top-4 left-4 sm:top-5 sm:left-5 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#0B1422] font-body font-bold text-xs flex items-center justify-center shadow-md pointer-events-none z-10">
