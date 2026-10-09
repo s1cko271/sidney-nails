@@ -1,17 +1,33 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section class="relative py-24 bg-brand-charcoal overflow-hidden">
-  <div class="absolute inset-0">
-    <img src="/images/popup.webp" alt="Thank You" class="w-full h-full object-cover opacity-30" />
-    <div class="absolute inset-0 bg-brand-luxury/80 mix-blend-multiply"></div>
+<section class="relative py-20 md:py-28 bg-[#1B3A5C] text-white overflow-hidden" id="thank-you">
+  <!-- Subtle Ambient Salon Background -->
+  <div class="absolute inset-0 pointer-events-none">
+    <img src="/images/salon-1.webp" alt="Sidney Nails Interior" class="w-full h-full object-cover opacity-15" />
+    <div class="absolute inset-0 bg-gradient-to-r from-[#1B3A5C] via-[#1B3A5C]/90 to-[#1B3A5C]"></div>
   </div>
-  <div class="relative z-10 max-w-[800px] mx-auto px-6 text-center reveal">
-    <h2 class="font-display text-4xl md:text-6xl text-brand-cream mb-6">
-      Thank <em class="italic font-medium text-brand-gold">You</em>
+
+  <div class="relative z-10 max-w-[900px] mx-auto px-6 text-center reveal">
+    <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-4 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/10">
+      Community &amp; Care
+    </div>
+
+    <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight">
+      Thank You from <em class="italic font-medium text-brand-gold">Sidney Nails</em>
     </h2>
-    <p class="text-brand-cream/80 text-lg max-w-2xl mx-auto font-body font-light">
-      We appreciate your support and look forward to welcoming you to Sidney Nails.
+
+    <p class="text-white/80 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-10">
+      To our wonderful clients and close-knit community in Sidney, MT — thank you for supporting local beauty and trusting our technicians with your care. We look forward to welcoming you every week.
     </p>
+
+    <div class="flex flex-wrap justify-center items-center gap-4">
+      <a href="/#booking" class="bg-brand-gold text-brand-luxury px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-brand-luxury transition-all shadow-md">
+        Book Your Next Visit
+      </a>
+      <a href={`tel:${siteData.salon.phoneRaw}`} class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3.5 rounded-full font-medium text-xs uppercase tracking-widest transition-all">
+        Call (406) 433-5555
+      </a>
+    </div>
   </div>
 </section>

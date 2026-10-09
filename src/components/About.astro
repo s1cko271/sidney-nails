@@ -1,32 +1,64 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section class="py-24 md:py-32 bg-brand-cream relative" id="about">
-  <div class="max-w-[1400px] mx-auto px-4 sm:px-8">
-    <div class="relative w-full aspect-[4/3] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl reveal">
-      <img src={siteData.salon.exteriorImage} alt="Sidney Nails Exterior" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-brand-luxury/20 mix-blend-multiply"></div>
+<section class="py-24 bg-white relative overflow-hidden" id="about">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       
-      <!-- Overlapping Card -->
-      <div class="absolute -bottom-px sm:bottom-8 sm:right-8 bg-brand-cream w-full sm:w-[90%] md:w-[450px] p-8 md:p-12 rounded-t-2xl sm:rounded-2xl shadow-floating reveal" style="transition-delay: 200ms;">
-        <h2 class="font-display text-3xl md:text-4xl leading-tight mb-6 text-brand-charcoal">
-          {siteData.about.title} <br/>
-          <em class="font-medium italic text-brand-gold">{siteData.about.titleAccent}</em>
-        </h2>
+      <!-- Left: Visual Composition (5 cols on lg) -->
+      <div class="lg:col-span-5 relative reveal">
+        <div class="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 aspect-[4/5] bg-brand-offwhite">
+          <img 
+            src="/images/salon-2.webp" 
+            alt="Sidney Nails storefront at 422 N Central Ave" 
+            class="w-full h-full object-cover" 
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#1B3A5C]/40 via-transparent to-transparent"></div>
+        </div>
+
+        <!-- Float Badge -->
+        <div class="absolute -bottom-5 -right-3 md:-right-5 bg-[#1B3A5C] text-white p-5 md:p-6 rounded-2xl shadow-xl border border-[#2D5A8B] max-w-[200px]">
+          <div class="text-[0.65rem] font-bold uppercase tracking-widest text-brand-gold mb-1">Local &amp; Welcoming</div>
+          <p class="font-display text-lg font-medium leading-snug">Sidney, Montana</p>
+          <p class="text-xs text-white/70 font-light mt-0.5">422 N Central Ave</p>
+        </div>
+      </div>
+
+      <!-- Right: Narrative & Details (7 cols on lg) -->
+      <div class="lg:col-span-7 lg:pl-6 reveal">
+        <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">
+          Our Story
+        </div>
         
-        <p class="text-brand-charcoal/70 text-sm leading-relaxed mb-8 font-body">
+        <h2 class="font-display text-4xl md:text-5xl font-normal text-brand-charcoal mb-6 leading-tight">
+          Warm &amp; Personal Care <br/>
+          <em class="italic font-medium text-brand-gold">In the Heart of Sidney</em>
+        </h2>
+
+        <p class="text-slate-600 text-base md:text-lg leading-relaxed font-light mb-6">
           {siteData.about.description}
         </p>
 
-        <div class="grid grid-cols-2 gap-6 pt-6 border-t border-brand-offwhite">
-          {siteData.about.stats && siteData.about.stats.map(stat => (
-            <div>
-              <div class="font-display text-2xl md:text-3xl font-medium text-brand-luxury mb-1">{stat.value}</div>
-              <div class="text-[0.65rem] uppercase tracking-widest text-brand-charcoal/50 font-semibold">{stat.label}</div>
+        <p class="text-slate-500 text-sm leading-relaxed font-light mb-10">
+          Whether you are stopping by for regular nail upkeep or spending an afternoon relaxing with our signature spa pedicure, our team takes the time to listen, care, and deliver beautiful results tailored to you.
+        </p>
+
+        <!-- Stats / Commitments -->
+        <div class="grid grid-cols-2 gap-6 pt-8 border-t border-slate-200">
+          {siteData.about.stats.map(stat => (
+            <div class="bg-brand-offwhite p-5 rounded-xl border border-slate-200/80">
+              <div class="font-display text-2xl md:text-3xl font-medium text-[#1B3A5C] mb-1">
+                {stat.value}
+              </div>
+              <div class="text-[0.7rem] uppercase tracking-wider text-slate-500 font-medium">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>
       </div>
+
     </div>
   </div>
 </section>

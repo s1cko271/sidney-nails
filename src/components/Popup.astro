@@ -1,21 +1,45 @@
 ---
 import siteData from '../data/site.json';
+
+const popupLink = siteData.booking?.messengerUrl && !siteData.booking.messengerUrl.startsWith('TODO') && siteData.booking.messengerUrl !== '#'
+  ? siteData.booking.messengerUrl
+  : '/#booking';
 ---
-<div id="promo-popup" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-500 pointer-events-none" role="dialog" aria-modal="true" aria-label="Special Offer">
+<div 
+  id="promo-popup" 
+  class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300 pointer-events-none p-4" 
+  role="dialog" 
+  aria-modal="true" 
+  aria-label="Sidney Nails Special Offer"
+>
   <!-- Backdrop -->
-  <div class="absolute inset-0 bg-brand-charcoal/40 backdrop-blur-sm" id="popup-backdrop" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer" id="popup-backdrop" aria-hidden="true"></div>
   
-  <!-- Modal Content -->
-  <div class="relative w-[90%] max-w-[500px] bg-white rounded-2xl shadow-floating overflow-hidden flex flex-col transform scale-95 transition-transform duration-500 pointer-events-auto" id="popup-content">
-    
+  <!-- Modal Content Card -->
+  <div 
+    class="relative w-full max-w-[440px] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col transform scale-95 transition-transform duration-300 pointer-events-auto border border-slate-200" 
+    id="popup-content"
+  >
     <!-- Close Button (44px min touch target) -->
-    <button id="popup-close" class="absolute top-3 right-3 w-11 h-11 flex items-center justify-center bg-white/80 backdrop-blur-md rounded-full text-brand-charcoal hover:bg-brand-gold hover:text-white transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-brand-gold shadow-sm" aria-label="Close dialog">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    <button 
+      id="popup-close" 
+      type="button"
+      class="absolute top-3 right-3 w-10 h-10 md:w-11 md:h-11 flex items-center justify-center bg-white/90 hover:bg-[#1B3A5C] hover:text-white rounded-full text-brand-charcoal transition-colors z-20 focus:outline-none focus:ring-2 focus:ring-brand-gold shadow-md" 
+      aria-label="Close Special Offer dialog"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
     </button>
     
-    <!-- Popup Image as a link to messenger -->
-    <a href={siteData.booking.messengerUrl} class="block focus:outline-none focus:ring-4 focus:ring-inset focus:ring-brand-gold">
-      <img src="/images/popup.webp" alt="Special Offer at Sidney Nails" class="w-full h-auto object-cover" loading="lazy" />
+    <!-- Real Sidney Promo Poster Image linking to booking / contact -->
+    <a href={popupLink} class="block focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-gold group">
+      <img 
+        src="/images/popup.webp" 
+        alt="Sidney Nails - Follow Us & Save Up to 15% Special Offer" 
+        class="w-full h-auto object-contain block group-hover:opacity-95 transition-opacity" 
+        loading="eager" 
+      />
     </a>
   </div>
 </div>
@@ -45,6 +69,7 @@ import siteData from '../data/site.json';
     void popup.offsetWidth;
     popup.classList.remove('opacity-0', 'pointer-events-none');
     popup.classList.add('opacity-100');
+    
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       content.classList.remove('scale-95');
       content.classList.add('scale-100');
@@ -53,6 +78,7 @@ import siteData from '../data/site.json';
       content.style.transition = 'none';
       popup.style.transition = 'none';
     }
+    
     previousActiveElement = document.activeElement;
     setTimeout(() => { if(closeBtn) closeBtn.focus(); }, 100);
     try { sessionStorage.setItem(STORAGE_KEY, 'true'); } catch(e) {}
@@ -61,28 +87,39 @@ import siteData from '../data/site.json';
   function closePopup() {
     popup.classList.remove('opacity-100');
     popup.classList.add('opacity-0', 'pointer-events-none');
+    
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       content.classList.remove('scale-100');
       content.classList.add('scale-95');
     }
+    
     setTimeout(() => {
       popup.classList.add('hidden');
       if (previousActiveElement) previousActiveElement.focus();
-    }, 500);
+    }, 300);
   }
   
-  setTimeout(openPopup, 4000);
+  // Open after 2.5 second delay
+  setTimeout(openPopup, 2500);
   
   closeBtn.addEventListener('click', closePopup);
   backdrop.addEventListener('click', closePopup);
   
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !popup.classList.contains('hidden')) closePopup();
+    if (e.key === 'Escape' && !popup.classList.contains('hidden')) {
+      closePopup();
+    }
     if (e.key === 'Tab' && !popup.classList.contains('hidden')) {
       if (e.shiftKey) {
-        if (document.activeElement === firstFocusable) { e.preventDefault(); lastFocusable.focus(); }
+        if (document.activeElement === firstFocusable) { 
+          e.preventDefault(); 
+          lastFocusable.focus(); 
+        }
       } else {
-        if (document.activeElement === lastFocusable) { e.preventDefault(); firstFocusable.focus(); }
+        if (document.activeElement === lastFocusable) { 
+          e.preventDefault(); 
+          firstFocusable.focus(); 
+        }
       }
     }
   });

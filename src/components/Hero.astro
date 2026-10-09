@@ -1,55 +1,78 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section id="hero" class="relative min-h-[100dvh] flex flex-col lg:flex-row bg-brand-cream overflow-hidden">
-  <!-- Left Side: Content -->
-  <div class="w-full lg:w-1/2 flex items-center justify-center p-8 pt-32 pb-16 lg:p-16 z-10">
-    <div class="w-full max-w-xl relative text-left">
-      <img class="w-48 h-auto mb-10 object-contain animate-fade-in-up" src={siteData.salon.logoFull} alt={siteData.salon.name} />
-      
-      <div class="inline-block text-brand-luxury text-xs font-semibold tracking-[0.2em] uppercase mb-6 px-4 py-1.5 border border-brand-gold/30 rounded-full bg-brand-goldLight/20 animate-fade-in-up" style="animation-delay: 150ms;">
+<section id="hero" class="relative min-h-[92dvh] lg:min-h-[96dvh] flex flex-col lg:flex-row bg-white overflow-hidden">
+  <!-- Left Side: Content (7/12 on lg) -->
+  <div class="w-full lg:w-7/12 flex items-center justify-center px-6 sm:px-12 pt-32 pb-16 lg:py-24 z-10">
+    <div class="w-full max-w-xl text-left">
+      <!-- Full Logo Mark -->
+      <div class="mb-8 reveal">
+        <img 
+          class="w-48 sm:w-56 h-auto object-contain" 
+          src={siteData.salon.logoFull || '/images/logo-full.webp'} 
+          alt={siteData.salon.name} 
+        />
+      </div>
+
+      <!-- Tagline Pill -->
+      <div class="inline-block text-[#1B3A5C] text-[0.7rem] font-semibold tracking-[0.2em] uppercase mb-6 px-4 py-1.5 border border-brand-gold/40 rounded-full bg-brand-offwhite reveal">
         {siteData.salon.tagline} &middot; {siteData.salon.city}, {siteData.salon.state}
       </div>
       
-      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-brand-charcoal leading-[1.1] font-medium tracking-tight mb-6 animate-fade-in-up" style="animation-delay: 300ms;">
-        {siteData.hero.headlineLine1}<br/>
+      <!-- Primary Heading -->
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl text-brand-charcoal leading-[1.12] font-normal tracking-tight mb-6 reveal">
+        {siteData.hero.headlineLine1} <br/>
         <em class="font-medium italic text-brand-gold">{siteData.hero.headlineLine2}</em>
       </h1>
       
-      <p class="text-brand-charcoal/80 text-lg md:text-xl max-w-lg leading-relaxed mb-10 font-light animate-fade-in-up" style="animation-delay: 450ms;">
+      <!-- Subtitle -->
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-10 font-light max-w-lg reveal">
         {siteData.hero.description}
       </p>
       
-      <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center opacity-0 animate-fade-in-up" style="animation-delay: 600ms;">
-        <a class="w-full sm:w-auto bg-brand-luxury text-brand-cream px-10 py-4 rounded-none font-medium text-sm uppercase tracking-widest hover:bg-brand-gold hover:-translate-y-1 transition-all duration-300 text-center" href="/#booking">
+      <!-- Call to Actions -->
+      <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center reveal">
+        <a 
+          class="bg-[#1B3A5C] text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-[#1B3A5C] transition-all duration-300 text-center shadow-md hover:-translate-y-0.5" 
+          href="/#booking"
+        >
           {siteData.hero.ctaPrimary}
         </a>
-        <a class="w-full sm:w-auto bg-transparent border border-brand-luxury/20 text-brand-luxury px-8 py-4 rounded-none font-medium text-sm uppercase tracking-widest hover:border-brand-luxury transition-colors duration-300 text-center" href={`tel:${siteData.salon.bookingPhoneRaw}`}>
+        <a 
+          class="bg-transparent border border-slate-300 text-[#1B3A5C] px-8 py-3.5 rounded-full font-semibold text-xs uppercase tracking-widest hover:border-[#1B3A5C] hover:bg-brand-offwhite transition-all duration-300 text-center" 
+          href={`tel:${siteData.salon.phoneRaw}`}
+        >
           {siteData.hero.ctaSecondary}
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Right Side: Image -->
-  <div class="w-full lg:w-1/2 min-h-[50vh] lg:min-h-screen relative lg:absolute lg:top-0 lg:right-0">
-    <div class="absolute inset-0 bg-cover bg-center lg:rounded-l-2xl overflow-hidden shadow-2xl" style={`background-image: url('${siteData.salon.interiorImage}')`}>
-      <div class="absolute inset-0 bg-brand-luxury/10 mix-blend-multiply"></div>
+  <!-- Right Side: Real Salon Photo (5/12 on lg) -->
+  <div class="w-full lg:w-5/12 min-h-[340px] sm:min-h-[420px] lg:min-h-full relative flex items-stretch">
+    <div class="w-full h-full relative overflow-hidden lg:rounded-l-3xl shadow-xl">
+      <img 
+        src={siteData.salon.interiorImage} 
+        alt="Sidney Nails Interior Salon Space" 
+        class="w-full h-full object-cover min-h-[340px]" 
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1B3A5C]/30 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#1B3A5C]/20 lg:to-transparent"></div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="py-5 bg-brand-offwhite overflow-hidden border-b border-brand-luxury/5">
-  <div class="flex gap-16 animate-[scrollX_30s_linear_infinite] w-max hover:[animation-play-state:paused] transition-all cursor-default">
+<!-- Scrolling Services Ticker (Marquee) -->
+<div class="py-4 bg-[#1B3A5C] overflow-hidden border-y border-[#2D5A8B]/60" aria-label="Services Ticker">
+  <div class="flex gap-14 animate-[scrollX_32s_linear_infinite] w-max hover:[animation-play-state:paused] transition-all cursor-default">
     {siteData.marquee.items.map(item => (
-      <span class="font-body text-sm text-brand-luxury/70 uppercase tracking-widest whitespace-nowrap flex items-center gap-16">
-        {item} <span class="w-1.5 h-1.5 rounded-full bg-brand-gold/50"></span>
+      <span class="font-body text-xs sm:text-sm text-white/90 uppercase tracking-widest whitespace-nowrap flex items-center gap-14 font-medium">
+        {item} <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
       </span>
     ))}
     {siteData.marquee.items.map(item => (
-      <span class="font-body text-sm text-brand-luxury/70 uppercase tracking-widest whitespace-nowrap flex items-center gap-16">
-        {item} <span class="w-1.5 h-1.5 rounded-full bg-brand-gold/50"></span>
+      <span class="font-body text-xs sm:text-sm text-white/90 uppercase tracking-widest whitespace-nowrap flex items-center gap-14 font-medium">
+        {item} <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
       </span>
     ))}
   </div>

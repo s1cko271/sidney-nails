@@ -4,32 +4,36 @@ import site from '../data/site.json';
 const schema = {
   "@context": "https://schema.org",
   "@type": "NailSalon",
-  "name": site.name,
-  "image": site.hero?.image || "",
-  "@id": site.url,
-  "url": site.url,
-  "telephone": site.contact?.phone || "",
+  "name": site.salon.name,
+  "image": new URL('/images/salon-1.webp', site.url || 'https://sidneynails.com').toString(),
+  "@id": site.url || 'https://sidneynails.com',
+  "url": site.url || 'https://sidneynails.com',
+  "telephone": site.salon.phoneRaw || "+14064335555",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": site.contact?.address?.street || "",
-    "addressLocality": site.contact?.address?.city || "",
-    "addressRegion": site.contact?.address?.state || "",
-    "postalCode": site.contact?.address?.zip || "",
+    "streetAddress": "422 N Central Ave",
+    "addressLocality": "Sidney",
+    "addressRegion": "MT",
+    "postalCode": "59270",
     "addressCountry": "US"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": site.contact?.geo?.lat || 0,
-    "longitude": site.contact?.geo?.lng || 0
+    "latitude": 47.7171,
+    "longitude": -104.1568
   },
-  "openingHoursSpecification": site.hours?.map((h: any) => ({
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": h.days,
-    "opens": h.open,
-    "closes": h.close
-  })) || [],
-  "sameAs": site.social?.map((s: any) => s.url) || [],
-  "priceRange": site.priceRange || "$$"
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    }
+  ],
+  "sameAs": [
+    site.social.googleMaps || "https://maps.app.goo.gl/th34qAzZDDTthUoLA"
+  ],
+  "priceRange": "$$"
 };
 ---
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />

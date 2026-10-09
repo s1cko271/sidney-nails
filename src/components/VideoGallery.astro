@@ -1,25 +1,52 @@
 ---
 import siteData from '../data/site.json';
+
+const videos = [
+  { src: '/videos/video1.mp4', label: 'Precision Manicure Artistry' },
+  { src: '/videos/video2.mp4', label: 'Relaxing Spa Pedicure' },
+  { src: '/videos/video3.mp4', label: 'Artistic Nail Design' },
+];
 ---
-<section class="py-24 bg-brand-charcoal text-brand-cream relative">
+<section class="py-24 bg-[#1B3A5C] text-white relative overflow-hidden" id="videos">
   <div class="max-w-[1200px] mx-auto px-6">
-    <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 reveal gap-6">
       <div>
-        <h2 class="font-display text-4xl md:text-5xl mb-4">
+        <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">
+          Behind the Scenes
+        </div>
+        <h2 class="font-display text-4xl md:text-5xl font-normal text-white mb-3">
           Salon in <em class="italic font-medium text-brand-gold">Action</em>
         </h2>
-        <p class="text-white/60 text-sm max-w-sm">Experience the relaxing atmosphere and precision craftsmanship at Sidney Nails.</p>
+        <p class="text-white/75 text-sm md:text-base max-w-md font-light leading-relaxed">
+          Watch our technicians craft meticulous nail sets and create a relaxing, soothing environment for every client.
+        </p>
+      </div>
+
+      <div class="hidden md:flex items-center gap-2 text-xs text-white/60 tracking-wider uppercase font-semibold">
+        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+        Live in Salon
       </div>
     </div>
 
-    <!-- 3-Video Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-      {['/videos/video1.mp4', '/videos/video2.mp4', '/videos/video3.mp4'].map(vid => (
-        <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl group">
-          <video class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" autoplay loop muted playsinline>
-            <source src={vid} type="video/mp4" />
+    <!-- 3-Video Grid (9/16 vertical reels) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 reveal">
+      {videos.map((vid, idx) => (
+        <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black/40 shadow-xl border border-white/10 group">
+          <video 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+            autoplay 
+            loop 
+            muted 
+            playsinline
+            preload="metadata"
+            aria-label={vid.label}
+          >
+            <source src={vid.src} type="video/mp4" />
           </video>
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
+            <span class="text-xs font-medium text-white/90 drop-shadow-sm">{vid.label}</span>
+          </div>
         </div>
       ))}
     </div>

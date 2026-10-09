@@ -50,31 +50,34 @@
    these — the goal is pixel-identical output.
    ============================================ */
 
-/* ── CSS VARIABLES ── */
+/* ── CSS VARIABLES (Sidney Nails Palette) ── */
 :root {
   --white: #ffffff;
-  --offwhite: #f7f6f3;
-  --cream: #faf9f6;
-  --grey1: #f0efec;
-  --grey2: #d4d3cf;
-  --grey3: #9a9a97;
-  --grey4: #6b6b68;
-  --grey5: #3d3d3a;
-  --charcoal: #1c1c1a;
-  --black: #111110;
-  --gold: #c5a55a;
-  --gold-light: #d4b76a;
-  --gold-bright: #e8d48b;
-  --gold-dark: #a68b3c;
-  --gold-glow: rgba(197, 165, 90, 0.15);
-  --gold-glow2: rgba(197, 165, 90, 0.25);
+  --offwhite: #f8fafc;
+  --cream: #ffffff;
+  --grey1: #f1f5f9;
+  --grey2: #e2e8f0;
+  --grey3: #94a3b8;
+  --grey4: #64748b;
+  --grey5: #334155;
+  --charcoal: #1e293b;
+  --black: #0f172a;
+  --gold: #5b9bd5;
+  --gold-light: #8caad3;
+  --gold-bright: #b8d8f8;
+  --gold-dark: #4a7ca6;
+  --gold-glow: rgba(91, 155, 213, 0.2);
+  --gold-glow2: rgba(91, 155, 213, 0.35);
+  --luxury: #1b3a5c;
+  --navy: #1b3a5c;
+  --silver: #cbd5e1;
   --radius: 16px;
   --radius-sm: 10px;
   --radius-xs: 6px;
-  --shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.1);
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Montserrat", "Segoe UI", sans-serif;
+  --shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 60px rgba(27, 58, 92, 0.08);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Outfit", "Segoe UI", sans-serif;
 }
 
 /* ── BASE ── */

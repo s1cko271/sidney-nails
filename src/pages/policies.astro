@@ -3,21 +3,28 @@ import Layout from '../layouts/Layout.astro';
 import siteData from '../data/site.json';
 ---
 
-<Layout>
-  <div class="section-alt" style="padding-top: 150px; min-height: 100vh;">
-    <div style="max-width:800px; margin:0 auto; padding: 0 4% 100px;">
-      <div class="s-header center reveal">
-        <h1 class="s-title">{siteData.policies.title}</h1>
-        <p class="s-sub">{siteData.policies.subtitle}</p>
+<Layout title={`Salon Policies - ${siteData.salon.name}`}>
+  <div class="pt-32 pb-24 bg-brand-cream min-h-screen">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">
+          Guidelines
+        </div>
+        <h1 class="font-display text-4xl md:text-5xl text-brand-charcoal mb-4">
+          Salon <em class="italic font-medium text-brand-gold">Policies</em>
+        </h1>
+        <p class="text-slate-600 text-sm md:text-base max-w-lg mx-auto font-light">
+          {siteData.policies?.subtitle || "Please review our guidelines to ensure a relaxing, comfortable experience for everyone."}
+        </p>
       </div>
 
-      <div class="reveal" style="background: var(--white); border: 1px solid var(--grey2); border-radius: var(--radius); padding: 3rem;">
-        {siteData.policies.items.map((policy, index) => (
-          <div style={index !== 0 ? "margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--grey1);" : ""}>
-            <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--charcoal); margin-bottom: 1rem; font-weight: 600;">
+      <div class="bg-white border border-slate-200/80 rounded-2xl p-8 md:p-12 shadow-sm reveal space-y-8">
+        {siteData.policies?.items?.map((policy, index) => (
+          <div class={index !== 0 ? "pt-8 border-t border-slate-100" : ""}>
+            <h2 class="font-display text-xl md:text-2xl font-medium text-brand-charcoal mb-3">
               {policy.title}
-            </h3>
-            <p style="color: var(--grey4); font-size: 1rem; line-height: 1.8; font-weight: 300;">
+            </h2>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed font-light">
               {policy.content}
             </p>
           </div>

@@ -1,7 +1,6 @@
 {
   "_comment": "=== J&J NAIL SPA – SITE CONFIGURATION ===  Edit this file to update ALL text, images, and info shown on the website.  You do NOT need to touch any code files — just change values here and the site updates automatically.",
   "salon": {
-    "_comment": "Basic info — shown in the browser tab title, header, footer, and hero section",
     "name": "Sidney Nails",
     "namePart1": "Sidney",
     "namePart2": "Nails",
@@ -11,443 +10,217 @@
     "fullAddress": "422 N Central Ave, Sidney, MT 59270",
     "phone": "(406) 433-5555",
     "phoneRaw": "+14064335555",
-    "email": "",
-    "logoImage": "/images/logo-full.webp",
+    "email": "TODO@TODO.com",
+    "logoSquare": "/images/logo.png",
+    "logoFull": "/images/logo-full.webp",
+    "favicon": "/favicon.png",
+    "ogImage": "/images/og-image.webp",
     "interiorImage": "/images/salon-1.webp",
     "exteriorImage": "/images/salon-2.webp",
     "bookingPhone": "(406) 433-5555",
-    "bookingPhoneRaw": "+14064335555",
-    "logoSquare": "/images/logo.png",
-    "logoFull": "/images/logo-full.webp",
-    "ogImage": "/images/og-image.webp",
-    "favicon": "/favicon.png",
-    "bookingPhoneFormatted": "(406) 433-5555"
+    "bookingPhoneFormatted": "(406) 433-5555",
+    "bookingPhoneRaw": "+14064335555"
   },
   "hours": {
-    "_comment": "Business hours to show in the footer and contact sections",
-    "Mon-Sat": "9:00 AM - 7:00 PM",
+    "line1": "Mon – Sat: 9:00 AM – 7:00 PM",
+    "line2": "Sunday: Closed",
+    "Mon-Sat": "9:00 AM – 7:00 PM",
     "Sunday": "Closed"
   },
   "hero": {
-    "headlineLine1": "Elegance in",
-    "headlineLine2": "Every Detail",
-    "description": "Experience artistic nail care and soothing spa services in the heart of Sidney, MT. Where watercolor elegance meets modern beauty.",
+    "headlineLine1": "Artistic Care,",
+    "headlineLine2": "Serene Comfort",
+    "description": "Welcome to Sidney Nails — an intimate, calm beauty salon in the heart of Sidney, MT. Personalized manicures, restorative spa pedicures, and beauty treatments crafted with gentle precision.",
     "ctaPrimary": "Book Now",
-    "ctaSecondary": "Call Us"
+    "ctaSecondary": "Call (406) 433-5555"
   },
   "marquee": {
     "items": [
-      "Luxury Manicure",
-      "Pedicure Spa",
+      "Manicures",
+      "Spa Pedicures",
       "Acrylic & Dipping",
       "Waxing & Beauty",
+      "Facial Treatments",
       "Eyelash Extensions",
-      "Facial Treatment"
+      "Custom Nail Art"
     ]
   },
   "about": {
-    "title": "Our Story",
-    "titleAccent": "Sidney Nails",
-    "description": "Welcome to Sidney Nails, a serene space dedicated to your beauty and relaxation. We believe in providing a warm, personal experience tailored to our close-knit community.",
+    "sectionTag": "Our Salon",
+    "title": "Warm & Personal Care",
+    "titleAccent": "In Sidney, MT",
+    "subtitle": "A close-knit salon dedicated to personal beauty and genuine relaxation.",
+    "description": "At Sidney Nails, we believe self-care should feel unhurried, comfortable, and truly restorative. Located on North Central Avenue, our salon was created to bring high standards of cleanliness, skilled artistry, and genuine Montana warmth to every guest who walks through our doors.",
+    "image": "/images/salon-2.webp",
     "stats": [
       {
         "value": "TODO",
-        "label": "Years Experience"
+        "label": "Years Serving Community"
       },
       {
         "value": "TODO+",
-        "label": "Happy Clients"
+        "label": "Delighted Clients"
       }
     ]
   },
   "services": {
-    "_comment": "The 6 service cards — each shows an image, name, short description, and starting price",
-    "sectionTag": "Our Services",
-    "title": "Complete Nail Care",
-    "titleAccent": "& Beauty Services",
-    "subtitle": "From classic manicures to creative nail art — we offer a full range of services using premium products for lasting results.",
+    "sectionTag": "What We Do",
+    "title": "Our Signature",
+    "titleAccent": "Treatments",
+    "subtitle": "From essential nail upkeep to royal spa retreats, explore our full spectrum of beauty care.",
     "items": [
       {
         "title": "Manicure",
-        "description": "TODO_MANICURE_DESC",
-        "price": "TODO_PRICE",
+        "description": "Classic and deluxe manicures with precision shaping, cuticle care, hand massage, and long-lasting polish.",
+        "price": "TODO",
         "icon": "sparkle"
       },
       {
         "title": "Pedicure Spa",
-        "description": "Basic, Deluxe, Deluxe Super Royal",
-        "price": "TODO_PRICE",
+        "description": "Restorative foot soaks, sea salt scrubs, callus smoothing, and hot towel wraps. Basic, Deluxe, and Deluxe Super Royal options.",
+        "price": "TODO",
         "icon": "sparkle"
       },
       {
         "title": "Acrylic & Dipping",
-        "description": "TODO_ACRYLIC_DESC",
-        "price": "TODO_PRICE",
+        "description": "Durable full sets, refills, and SNS dipping powder for strong, beautiful nails with natural feel and finish.",
+        "price": "TODO",
         "icon": "sparkle"
       },
       {
         "title": "Waxing & Beauty",
-        "description": "Facial treatment and eyelash extensions",
-        "price": "TODO_PRICE",
+        "description": "Gentle facial waxing, rejuvenating facial treatments, and volume or classic eyelash extensions by appointment.",
+        "price": "TODO",
         "icon": "sparkle"
       },
       {
         "title": "Additional Services",
-        "description": "Polish change, nail design, nail fix, removal",
-        "price": "TODO_PRICE",
+        "description": "Quick polish changes, custom nail art, nail fixes, and safe, gentle product removal.",
+        "price": "TODO",
         "icon": "sparkle"
       }
     ]
   },
   "pricing": {
-    "_comment": "The pricing cards section — set 'featured' to true on the most popular package (it gets a dark highlight)",
-    "sectionTag": "Pricing",
-    "title": "Curated",
-    "titleAccent": "Treatments",
-    "subtitle": "From flawless acrylics to revitalizing spa pedicures and delicate esthetics, discover our spectrum of services.",
-    "packages": [
-      {
-        "name": "Basic Pedicure",
-        "price": "",
-        "unit": "Spa Pedicure",
-        "description": "A refreshing spa pedicure to groom your nails and relax your feet.",
-        "featured": false,
-        "features": [
-          "Groom your cuticles",
-          "Sea salt treatment",
-          "Lotion + hot towel",
-          "5 minute massage",
-          "Gel polish"
-        ]
-      },
-      {
-        "name": "Deluxe Pedicure",
-        "price": "",
-        "unit": "Spa Pedicure",
-        "description": "Elevate your relaxation with an extended massage and exfoliating sea salt scrub.",
-        "featured": true,
-        "featuredLabel": "MOST POPULAR",
-        "features": [
-          "Groom your cuticles",
-          "Scrub sea salt & treatment",
-          "Lotion + hot towel",
-          "10 minute massage",
-          "Gel polish"
-        ]
-      },
-      {
-        "name": "Deluxe Super Royal",
-        "price": "",
-        "unit": "Ultimate Pedicure",
-        "description": "The ultimate pampering experience featuring hot wax paraffin and callus removal.",
-        "featured": false,
-        "features": [
-          "Callus remover & cuticles",
-          "Hot wax paraffin",
-          "Sea salt treatment",
-          "Lotion + hot towel",
-          "13 min massage & Gel polish"
-        ]
-      }
-    ],
-    "menu": {
-      "menuImages": [
-        {
-          "title": "Nail Services Menu",
-          "src": "/images/menu/services-menu.png"
-        },
-        {
-          "title": "Organic Spa Menu",
-          "src": "/images/menu/organic-spa-menu.png"
-        }
-      ],
-      "kidsNote": "Bubble Spa Scents:  for any flavor of your choice (Radiant Rose, Honey Flower, Calming Lavender, Soothing Peppermint, Zesty Lemon, Mango Delight, Juicy Orange, Dainty Jasmine).",
-      "categories": [
-        {
-          "id": "manicure",
-          "name": "Manicure",
-          "badge": "",
-          "description": "Luxurious hand and nail care.",
-          "items": [
-            {
-              "name": "Regular manicure",
-              "price": "$45",
-              "steps": [
-                "Groom your cuticles",
-                "Gel polish",
-                "Massage"
-              ]
-            },
-            {
-              "name": "Deluxe Manicure",
-              "price": "$55",
-              "steps": [
-                "Groom your Cuticles",
-                "Gel polish",
-                "Hot wax paraffin",
-                "Massage"
-              ]
-            },
-            {
-              "name": "Deluxe Royal Manicure",
-              "price": "$70",
-              "steps": [
-                "Groom your Cuticles",
-                "Gel polish",
-                "Hot wax paraffin",
-                "Ten minute massage"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "pedicure",
-          "name": "Pedicure",
-          "badge": "Popular",
-          "description": "Rejuvenating spa pedicure treatments.",
-          "items": [
-            {
-              "name": "Basic pedicure",
-              "price": "$60",
-              "steps": [
-                "Groom your cuticles",
-                "sea salt treatment",
-                "Lotion + hot towel",
-                "5 minute massage",
-                "Gel polish"
-              ]
-            },
-            {
-              "name": "Deluxe pedicure",
-              "price": "$70",
-              "steps": [
-                "Groom your cuticles",
-                "scrub sea salt",
-                "sea salt treatment",
-                "lotion + hot towel",
-                "10 minute massage",
-                "Gel polish"
-              ]
-            },
-            {
-              "name": "Deluxe super royal pedicure",
-              "price": "$80",
-              "steps": [
-                "Groom your cuticles",
-                "Callus remover",
-                "hot wax paraffin",
-                "sea salt treatment",
-                "lotion + hot towel",
-                "Gel polish",
-                "13 minute massage",
-                "any extra services would be an extra cost"
-              ]
-            }
-          ],
-          "note": "Bubble Spa Scents: $10 for any flavor of your choice (Radiant Rose, Honey Flower, Calming Lavender, Soothing Peppermint, Zesty Lemon, Mango Delight, Juicy Orange, Dainty Jasmine)."
-        },
-        {
-          "id": "acrylic",
-          "name": "Acrylic & Dipping",
-          "description": "Full sets, fills, and dipping powders.",
-          "items": [
-            {
-              "name": "Fullset pink & white",
-              "price": "$70"
-            },
-            {
-              "name": "Regular",
-              "price": "$65"
-            },
-            {
-              "name": "White Tip",
-              "price": "$65"
-            },
-            {
-              "name": "Ombre pink & white",
-              "price": "$70"
-            },
-            {
-              "name": "Dipping color Powder",
-              "price": "$60"
-            },
-            {
-              "name": "Dipping Ombre",
-              "price": "$70"
-            },
-            {
-              "name": "Builder gel",
-              "price": "$65"
-            },
-            {
-              "name": "Regular Fill",
-              "price": "$50 up"
-            },
-            {
-              "name": "Pink & white Fill",
-              "price": "$65"
-            },
-            {
-              "name": "Pink Fill",
-              "price": "$50"
-            },
-            {
-              "name": "Ombre Fill",
-              "price": "$65"
-            }
-          ]
-        },
-        {
-          "id": "waxing",
-          "name": "Waxing & Beauty",
-          "description": "Facials, Lashes, and Waxing services.",
-          "items": [
-            {
-              "name": "Facial Treatment",
-              "price": "$120"
-            },
-            {
-              "name": "Eyelash Extensions",
-              "price": "$150"
-            },
-            {
-              "name": "Face Wax",
-              "price": "$70"
-            },
-            {
-              "name": "Bikin wax",
-              "price": "$80"
-            },
-            {
-              "name": "Leg wax",
-              "price": "$80"
-            },
-            {
-              "name": "under Arm Wax",
-              "price": "$40"
-            },
-            {
-              "name": "Eyebrow Wax",
-              "price": "$15"
-            },
-            {
-              "name": "Upper Lip wax",
-              "price": "$10"
-            }
-          ]
-        },
-        {
-          "id": "addons",
-          "name": "Additional Services",
-          "description": "Extras and add-ons for your nails.",
-          "addOns": [
-            {
-              "name": "Regular polish change",
-              "price": "$20"
-            },
-            {
-              "name": "Gel polish change",
-              "price": "$30"
-            },
-            {
-              "name": "Nails design",
-              "price": "$10 up"
-            },
-            {
-              "name": "Nail fix",
-              "price": "$5 - 10"
-            },
-            {
-              "name": "Remov (Acrylic & Dip)",
-              "price": "$20"
-            },
-            {
-              "name": "Cofin / Almond / Stiletto",
-              "price": "$5"
-            }
-          ]
-        }
-      ]
-    },
     "categories": [
       {
         "name": "Manicure",
-        "description": "TODO_MANICURE_DESC",
+        "description": "Gentle hand care, shaping, cuticle treatment, massage, and professional polish.",
         "items": [
           {
-            "name": "TODO_MANICURE_ITEM",
-            "price": "TODO_PRICE",
-            "description": "TODO_DESC"
+            "name": "Classic Manicure",
+            "price": "TODO",
+            "description": "Essential nail shaping, gentle cuticle care, hand massage, and standard or gel polish."
+          },
+          {
+            "name": "Deluxe Spa Manicure",
+            "price": "TODO",
+            "description": "Deep exfoliating scrub, hydrating mask, warm towel wrap, and nourishing lotion massage."
           }
         ]
       },
       {
         "name": "Pedicure Spa",
-        "description": "Basic, Deluxe, Deluxe Super Royal",
+        "description": "Soothing foot therapy with whirlpool soak, exfoliation, massage, and warm towels.",
         "items": [
           {
             "name": "Basic Pedicure",
-            "price": "TODO_PRICE",
-            "description": "TODO_DESC"
+            "price": "TODO",
+            "description": "Relaxing foot soak, toenail shaping, cuticle trimming, light scrub, and polish."
           },
           {
             "name": "Deluxe Pedicure",
-            "price": "TODO_PRICE",
-            "description": "TODO_DESC"
+            "price": "TODO",
+            "description": "Enhanced spa pedicure with sea salt scrub, callus treatment, cooling mask, and extended massage."
           },
           {
             "name": "Deluxe Super Royal Pedicure",
-            "price": "TODO_PRICE",
-            "description": "TODO_DESC",
+            "price": "TODO",
+            "description": "Our ultimate luxury foot ritual: aromatic soak, intensive callus treatment, organic scrub, hot stone massage, and deep paraffin wax wrap.",
             "popular": true
           }
         ]
       },
       {
         "name": "Acrylic & Dipping",
-        "description": "TODO_DESC",
+        "description": "Strong, gorgeous extensions and lightweight dip powder systems for lasting beauty.",
         "items": [
           {
-            "name": "TODO_ITEM",
-            "price": "TODO_PRICE",
-            "description": "TODO_DESC"
+            "name": "Full Set Acrylic",
+            "price": "TODO",
+            "description": "Custom acrylic set tailored to your preferred shape, length, and color."
+          },
+          {
+            "name": "Acrylic Fill-In",
+            "price": "TODO",
+            "description": "Maintenance fill to rebalance and refresh your acrylic nails."
+          },
+          {
+            "name": "Dipping Powder (SNS)",
+            "price": "TODO",
+            "description": "Odorless, vitamin-fortified dip powder that supports natural nail health."
+          },
+          {
+            "name": "Pink & White Dipping",
+            "price": "TODO",
+            "description": "Crisp French design created with high-clarity dipping powders."
           }
         ]
       },
       {
         "name": "Waxing & Beauty",
-        "description": "Facial treatment & eyelash extensions",
+        "description": "Smooth skin and enhanced features with professional waxing and esthetics.",
         "items": [
           {
-            "name": "TODO_ITEM",
-            "price": "TODO_PRICE",
-            "description": "TODO_DESC"
+            "name": "Facial Treatment",
+            "price": "TODO",
+            "description": "Revitalizing skin treatment tailored to cleanse, hydrate, and refresh your complexion."
+          },
+          {
+            "name": "Eyelash Extensions",
+            "price": "TODO",
+            "description": "Natural to glamorous lash extensions applied lash-by-lash. By appointment only."
+          },
+          {
+            "name": "Eyebrow Waxing & Shaping",
+            "price": "TODO",
+            "description": "Precise brow shaping to complement your natural facial contour."
+          },
+          {
+            "name": "Lip & Chin Waxing",
+            "price": "TODO",
+            "description": "Gentle hair removal using sensitive-skin wax formula."
           }
         ]
       },
       {
         "name": "Additional Services",
-        "description": "Polish change, nail design, nail fix, removal",
+        "description": "A la carte services, quick fixes, and custom nail enhancements.",
         "items": [
           {
-            "name": "Polish Change",
-            "price": "TODO_PRICE",
-            "description": "TODO_DESC"
+            "name": "Polish Change (Hands)",
+            "price": "TODO",
+            "description": "Quick trim, reshape, and fresh coat of standard or gel polish."
           },
           {
-            "name": "Nail Design",
-            "price": "TODO_PRICE",
-            "description": "TODO_DESC"
+            "name": "Polish Change (Feet)",
+            "price": "TODO",
+            "description": "Fresh polish application for toenails between full pedicures."
           },
           {
-            "name": "Nail Fix",
-            "price": "TODO_PRICE",
-            "description": "TODO_DESC"
+            "name": "Custom Nail Design",
+            "price": "TODO",
+            "description": "Freehand art, French tip, chrome, foil, or ombre styling."
           },
           {
-            "name": "Removal",
-            "price": "TODO_PRICE",
-            "description": "TODO_DESC"
+            "name": "Single Nail Fix",
+            "price": "TODO",
+            "description": "Fast repair for broken, chipped, or lifted nails."
+          },
+          {
+            "name": "Nail Removal",
+            "price": "TODO",
+            "description": "Safe, damage-free removal of acrylic, gel-x, or dip powder."
           }
         ]
       }
@@ -460,12 +233,13 @@
     "titleAccent": "Luster",
     "items": [
       "/images/salon-1.webp",
-      "/images/salon-2.webp",
+      "/images/gallery_1.jpg",
       "/images/salon-3.webp",
+      "/images/gallery_2.jpg",
       "/images/salon-4.webp",
-      "/images/popup.webp",
-      "/images/salon-1.webp",
-      "/images/salon-2.webp"
+      "/images/gallery_3.jpg",
+      "/images/salon-2.webp",
+      "/images/service_acrylic.jpg"
     ],
     "subtitle": "A glimpse into our meticulous craftsmanship and bespoke designs."
   },
@@ -478,16 +252,16 @@
     "image": "/images/Banner_thankyou.jpg"
   },
   "reviews": {
-    "sectionTag": "Customer Reviews",
-    "title": "Client Love",
-    "titleAccent": "Reviews",
-    "subtitle": "TODO_REVIEWS_SUBTITLE",
+    "sectionTag": "Testimonials",
+    "title": "Client Love &",
+    "titleAccent": "Community Feedback",
+    "subtitle": "We value the trust of our Sidney community. Share your experience with us.",
     "items": [
       {
-        "name": "TODO_NAME",
-        "date": "TODO_DATE",
+        "name": "TODO (Client Name)",
+        "date": "TODO (Date)",
         "stars": 5,
-        "text": "TODO_REVIEW_TEXT",
+        "text": "TODO: Real customer review quote to be added upon salon launch in Sidney, MT.",
         "avatar": ""
       }
     ]
@@ -508,12 +282,10 @@
     "buttonText": "Connect via Messenger"
   },
   "map": {
-    "_comment": "Google Maps embed — the 'embedUrl' is the iframe embed link, 'directionsUrl' opens Google Maps directly",
-    "embedUrl": "TODO_EMBED_URL",
+    "embedUrl": "https://maps.google.com/maps?q=422+N+Central+Ave,+Sidney,+MT+59270&t=&z=16&ie=UTF8&iwloc=&output=embed",
     "directionsUrl": "https://maps.app.goo.gl/th34qAzZDDTthUoLA"
   },
   "social": {
-    "_comment": "Social media links — shown in the footer. Leave blank or remove any you don't use.",
     "facebook": "TODO_FACEBOOK",
     "instagram": "TODO_INSTAGRAM",
     "tiktok": "TODO_TIKTOK",
@@ -627,9 +399,9 @@
       "/videos/8.7 JJ.mp4"
     ]
   },
-  "messengerUrl": "#",
+  "messengerUrl": "TODO_MESSENGER",
   "connect": {
-    "greeting": "Welcome to Sidney Nails! We hope you leave with a little extra shimmer today."
+    "greeting": "Welcome to Sidney Nails. A calm, intimate space dedicated to your beauty and relaxation."
   },
   "name": "Sidney Nails",
   "phone": "(406) 433-5555",
@@ -638,5 +410,6 @@
   "email": "TODO@TODO.com",
   "city": "Sidney",
   "state": "MT",
-  "zip": "59270"
+  "zip": "59270",
+  "url": "https://sidneynails.com"
 }
