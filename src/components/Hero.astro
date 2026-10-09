@@ -1,70 +1,84 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section id="hero" class="relative min-h-[92dvh] lg:min-h-[96dvh] flex flex-col lg:flex-row bg-white overflow-hidden">
-  <!-- Left Side: Content (7/12 on lg) -->
-  <div class="w-full lg:w-7/12 flex items-center justify-center px-6 sm:px-12 pt-32 pb-16 lg:py-24 z-10">
-    <div class="w-full max-w-xl text-left">
-      <!-- Full Logo Mark -->
-      <div class="mb-8 reveal">
-        <img 
-          class="w-48 sm:w-56 h-auto object-contain" 
-          src={siteData.salon.logoFull || '/images/logo-full.webp'} 
-          alt={siteData.salon.name} 
-        />
+<section id="hero" class="relative min-h-[90dvh] lg:min-h-[92dvh] flex flex-col justify-center bg-white overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-20">
+  <!-- Subtle decorative organic leaf background float -->
+  <div class="absolute -top-12 -right-12 w-96 h-96 bg-brand-light-blue/20 rounded-full blur-3xl pointer-events-none leaf-float"></div>
+  <div class="absolute bottom-10 left-10 w-72 h-72 bg-brand-gold/10 rounded-full blur-2xl pointer-events-none"></div>
+
+  <div class="max-w-[1180px] mx-auto px-6 sm:px-8 w-full relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+      <!-- Left Side: Content (7/12 on lg) -->
+      <div class="lg:col-span-7 flex flex-col items-start text-left">
+        <!-- Tagline Pill with leaf dot -->
+        <div class="reveal inline-flex items-center gap-2 text-brand-navy text-[0.7rem] sm:text-xs font-semibold tracking-[0.2em] uppercase mb-6 px-4 py-1.5 border border-brand-gold/50 rounded-full bg-brand-offwhite shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+          <span>{siteData.salon.tagline} &middot; {siteData.salon.city}, {siteData.salon.state}</span>
+        </div>
+        
+        <!-- Primary Heading -->
+        <h1 class="reveal font-display text-4xl sm:text-5xl lg:text-[3.6rem] text-brand-navy leading-[1.12] font-normal tracking-tight mb-6" style="--reveal-delay: 100ms;">
+          {siteData.hero.headlineLine1} <br/>
+          <em class="font-medium italic text-brand-gold">{siteData.hero.headlineLine2}</em>
+        </h1>
+        
+        <!-- Subtitle -->
+        <p class="reveal text-slate-600 text-base sm:text-lg leading-relaxed mb-8 font-light max-w-xl" style="--reveal-delay: 180ms;">
+          {siteData.hero.description}
+        </p>
+        
+        <!-- Call to Actions -->
+        <div class="reveal flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full sm:w-auto" style="--reveal-delay: 260ms;">
+          <a 
+            class="bg-brand-navy text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 text-center shadow-md hover:-translate-y-0.5 active:translate-y-0" 
+            href="/#booking"
+          >
+            {siteData.hero.ctaPrimary}
+          </a>
+          <a 
+            class="bg-transparent border border-slate-300 text-brand-navy px-8 py-3.5 rounded-full font-semibold text-xs uppercase tracking-widest hover:border-brand-navy hover:bg-brand-offwhite transition-all duration-300 text-center hover:-translate-y-0.5 active:translate-y-0" 
+            href={`tel:${siteData.salon.phoneRaw}`}
+          >
+            {siteData.hero.ctaSecondary}
+          </a>
+        </div>
       </div>
 
-      <!-- Tagline Pill -->
-      <div class="inline-block text-[#1B3A5C] text-[0.7rem] font-semibold tracking-[0.2em] uppercase mb-6 px-4 py-1.5 border border-brand-gold/40 rounded-full bg-brand-offwhite reveal">
-        {siteData.salon.tagline} &middot; {siteData.salon.city}, {siteData.salon.state}
+      <!-- Right Side: Real Salon Photo (5/12 on lg) -->
+      <div class="lg:col-span-5 reveal" style="--reveal-delay: 200ms;">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-100 aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] max-h-[540px] group">
+          <img 
+            src={siteData.salon.interiorImage} 
+            alt="Sidney Nails Interior Salon Space" 
+            class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105" 
+            loading="eager"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/35 via-transparent to-transparent pointer-events-none"></div>
+          
+          <!-- Subtle Floating Badge: Certified & Licensed / Sidney, MT -->
+          <div class="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-white/60 flex items-center justify-between pointer-events-none">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-brand-light-blue/20 flex items-center justify-center text-brand-gold">
+                <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-brand-navy">Licensed Nail Salon</p>
+                <p class="text-[0.7rem] text-slate-500">{siteData.salon.address}, {siteData.salon.city}</p>
+              </div>
+            </div>
+            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-brand-gold bg-brand-light-blue/20 px-2.5 py-1 rounded-full">Open Mon-Sat</span>
+          </div>
+        </div>
       </div>
-      
-      <!-- Primary Heading -->
-      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl text-brand-charcoal leading-[1.12] font-normal tracking-tight mb-6 reveal">
-        {siteData.hero.headlineLine1} <br/>
-        <em class="font-medium italic text-brand-gold">{siteData.hero.headlineLine2}</em>
-      </h1>
-      
-      <!-- Subtitle -->
-      <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-10 font-light max-w-lg reveal">
-        {siteData.hero.description}
-      </p>
-      
-      <!-- Call to Actions -->
-      <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center reveal">
-        <a 
-          class="bg-[#1B3A5C] text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-[#1B3A5C] transition-all duration-300 text-center shadow-md hover:-translate-y-0.5" 
-          href="/#booking"
-        >
-          {siteData.hero.ctaPrimary}
-        </a>
-        <a 
-          class="bg-transparent border border-slate-300 text-[#1B3A5C] px-8 py-3.5 rounded-full font-semibold text-xs uppercase tracking-widest hover:border-[#1B3A5C] hover:bg-brand-offwhite transition-all duration-300 text-center" 
-          href={`tel:${siteData.salon.phoneRaw}`}
-        >
-          {siteData.hero.ctaSecondary}
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Right Side: Real Salon Photo (5/12 on lg) -->
-  <div class="w-full lg:w-5/12 min-h-[340px] sm:min-h-[420px] lg:min-h-full relative flex items-stretch">
-    <div class="w-full h-full relative overflow-hidden lg:rounded-l-3xl shadow-xl">
-      <img 
-        src={siteData.salon.interiorImage} 
-        alt="Sidney Nails Interior Salon Space" 
-        class="w-full h-full object-cover min-h-[340px]" 
-        loading="eager"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#1B3A5C]/30 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#1B3A5C]/20 lg:to-transparent"></div>
     </div>
   </div>
 </section>
 
 <!-- Scrolling Services Ticker (Marquee) -->
 <div class="py-4 bg-[#1B3A5C] overflow-hidden border-y border-[#2D5A8B]/60" aria-label="Services Ticker">
-  <div class="flex gap-14 animate-[scrollX_32s_linear_infinite] w-max hover:[animation-play-state:paused] transition-all cursor-default">
+  <div class="marquee-track flex gap-14 cursor-default">
     {siteData.marquee.items.map(item => (
       <span class="font-body text-xs sm:text-sm text-white/90 uppercase tracking-widest whitespace-nowrap flex items-center gap-14 font-medium">
         {item} <span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
