@@ -302,14 +302,30 @@
     "title": "Our Signature",
     "titleAccent": "Luster",
     "items": [
-      "/images/salon-1.webp",
-      "/images/gallery_1.jpg",
-      "/images/salon-3.webp",
-      "/images/gallery_2.jpg",
-      "/images/salon-4.webp",
-      "/images/gallery_3.jpg",
-      "/images/salon-2.webp",
-      "/images/service_acrylic.jpg"
+      {
+        "image": "/images/gallery/03ce2e612ebfcd96dbc5c98e962d5409.jpg",
+        "caption": "Nail Design"
+      },
+      {
+        "image": "/images/gallery/0c77ba98ae54a296a4d583e75679c220.jpg",
+        "caption": "Nail Art"
+      },
+      {
+        "image": "/images/gallery/1d8841d420ba1eb7c999fef34f1c1589.jpg",
+        "caption": "Nail Design"
+      },
+      {
+        "image": "/images/gallery/50c29a9f7cd01b67d74d8864e49e8751.jpg",
+        "caption": "Gel Polish"
+      },
+      {
+        "image": "/images/gallery/new2.jpg",
+        "caption": "Nail Design"
+      },
+      {
+        "image": "/images/gallery/new1.jpg",
+        "caption": "Nail Art"
+      }
     ],
     "subtitle": "A glimpse into our meticulous craftsmanship and bespoke designs."
   },

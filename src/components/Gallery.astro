@@ -1,59 +1,47 @@
 ---
 import siteData from '../data/site.json';
-
-// Varied Bento Grid configuration
-const bentoClasses = [
-  "col-span-2 row-span-2 min-h-[280px] md:min-h-[440px]", // Large primary feature (Interior)
-  "col-span-1 row-span-1 min-h-[140px] md:min-h-[210px]", // Nail art 1
-  "col-span-1 row-span-2 min-h-[280px] md:min-h-[440px]", // Tall vertical (Pedicure area)
-  "col-span-1 row-span-1 min-h-[140px] md:min-h-[210px]", // Nail art 2
-  "col-span-1 row-span-1 min-h-[140px] md:min-h-[210px]", // Manicure stations
-  "col-span-1 row-span-1 min-h-[140px] md:min-h-[210px]", // Nail art 3
-  "col-span-2 row-span-1 min-h-[160px] md:min-h-[210px]", // Wide storefront
-  "col-span-1 row-span-1 min-h-[140px] md:min-h-[210px]", // Acrylic detail
-];
 ---
-<section id="gallery" class="py-24 bg-white/70 backdrop-blur-md relative">
-  <div class="max-w-[1180px] mx-auto px-6 sm:px-8">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 reveal gap-6">
-      <div>
-        <div class="inline-block text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">
-          Our Portfolio
-        </div>
-        <h2 class="font-display text-4xl md:text-5xl font-normal text-brand-charcoal mb-3">
-          Salon &amp; <em class="italic font-medium text-brand-gold">Artistry</em>
-        </h2>
-        <p class="text-slate-600 text-sm md:text-base max-w-lg font-light leading-relaxed">
-          A glimpse into our serene salon space, spa stations, and the dedicated nail artistry crafted for our guests.
-        </p>
+<section class="py-24 relative bg-brand-cream/70 backdrop-blur-md" id="gallery">
+  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <div class="inline-block text-brand-goldDark text-xs font-bold tracking-[0.2em] uppercase mb-4">
+        {siteData.gallery.sectionTag}
       </div>
+      <h2 class="font-display lining-nums text-4xl md:text-5xl font-light text-brand-charcoal mb-4">
+        {siteData.gallery.title} <span class="font-semibold italic text-brand-gold">{siteData.gallery.titleAccent}</span>
+      </h2>
+    </div>
+    
+    <div class="columns-2 md:columns-3 gap-2 md:gap-3 space-y-2 md:space-y-3">
+      {siteData.gallery.items.map((item, index) => {
+        const imgSrc = typeof item === 'string' ? item : item.image;
+        const imgCaption = typeof item === 'string' ? 'Nail art design' : (item.caption || 'Nail art design');
+        return (
+          <div 
+            class="group relative overflow-hidden rounded-md cursor-pointer reveal border border-brand-gold/80 hover:border-brand-goldDark transition-colors duration-300 break-inside-avoid transform-gpu shadow-sm"
+            style={`--reveal-delay: ${(index % 3) * 100}ms;`}
+          >
+            <img 
+              class="w-full h-auto block transition-transform duration-700 group-hover:scale-105" 
+              src={imgSrc} 
+              alt={imgCaption} 
+              loading="lazy" 
+            />
+          </div>
+        );
+      })}
+    </div>
 
+    <!-- Social follow link -->
+    <div class="text-center mt-12 reveal">
       <a 
-        href={siteData.social.instagram.startsWith('TODO') ? 'https://www.instagram.com' : siteData.social.instagram} 
+        href={siteData.social?.instagram && !siteData.social.instagram.startsWith('TODO') ? siteData.social.instagram : 'https://www.instagram.com'} 
         target="_blank" 
         rel="noopener noreferrer" 
-        class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-gold transition-colors"
+        class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-navy border-b border-brand-gold/60 pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors"
       >
         Follow On Instagram &rarr;
       </a>
-    </div>
-
-    <!-- Varied Bento Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 auto-rows-fr">
-      {siteData.gallery.items.slice(0, 8).map((img, i) => (
-        <div 
-          class={`relative group overflow-hidden rounded-2xl bg-white/90 backdrop-blur-sm shadow-sm border border-white/80 card-hover reveal ${bentoClasses[i] || "col-span-1 row-span-1"}`}
-          style={`--reveal-delay: ${(i % 4) * 100}ms;`}
-        >
-          <img 
-            src={img} 
-            alt={`Sidney Nails salon photo ${i + 1}`} 
-            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
-            loading="lazy" 
-          />
-          <div class="absolute inset-0 bg-[#1B3A5C]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-        </div>
-      ))}
     </div>
   </div>
 </section>
