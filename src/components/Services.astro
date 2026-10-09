@@ -66,7 +66,7 @@ const isWideImage = (idx: number) => idx === 1 || idx === 4;
                       src={svc.image} 
                       alt="" 
                       aria-hidden="true"
-                      class="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-80 brightness-95 pointer-events-none" 
+                      class="absolute inset-0 w-full h-full object-cover blur-md scale-110 opacity-70 brightness-90 pointer-events-none" 
                       loading="lazy" 
                     />
                     
@@ -80,17 +80,17 @@ const isWideImage = (idx: number) => idx === 1 || idx === 4;
                         loading="lazy" 
                       />
                     ) : (
-                      /* Centered full-view portrait/square photo with soft dissolve mask (Manicure, Dipping, Enhancement) */
+                      /* Centered full-view portrait/square photo with soft shadow (Manicure, Dipping, Enhancement) */
                       <img 
                         src={svc.image} 
                         alt={svc.name} 
-                        class="relative z-10 block w-auto h-full max-w-full mx-auto object-contain object-center service-dissolve-img transition-transform duration-700 ease-out group-hover:scale-105" 
+                        class="relative z-10 w-auto h-full max-w-full mx-auto object-contain object-center transition-transform duration-700 ease-out group-hover:scale-105 drop-shadow-md" 
                         loading="lazy" 
                       />
                     )}
                     
                     <!-- Subtle vignette gradient -->
-                    <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
 
                     <!-- Circular Number Badge (01, 02, etc.) -->
                     <div class="absolute top-4 left-4 sm:top-5 sm:left-5 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#0B1422] font-body font-bold text-xs flex items-center justify-center shadow-md pointer-events-none z-20">
@@ -179,83 +179,5 @@ const isWideImage = (idx: number) => idx === 1 || idx === 4;
     background: linear-gradient(135deg, #fcd34d 0%, #38bdf8 25%, #ffffff 50%, #7dd3fc 75%, #f59e0b 100%);
     background-size: 250% 250%;
     animation: serviceBorderShimmer 6s ease infinite;
-  }
-
-  /* Seamless Feathered Dissolve Mask (Hiệu ứng hòa tan viền ảnh mượt mà vào nền mờ) */
-  .service-dissolve-img {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(0, 0, 0, 0.12) 4%,
-      rgba(0, 0, 0, 0.45) 10%,
-      rgba(0, 0, 0, 0.85) 16%,
-      #000 22%,
-      #000 78%,
-      rgba(0, 0, 0, 0.85) 84%,
-      rgba(0, 0, 0, 0.45) 90%,
-      rgba(0, 0, 0, 0.12) 96%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(0, 0, 0, 0.12) 4%,
-      rgba(0, 0, 0, 0.45) 10%,
-      rgba(0, 0, 0, 0.85) 16%,
-      #000 22%,
-      #000 78%,
-      rgba(0, 0, 0, 0.85) 84%,
-      rgba(0, 0, 0, 0.45) 90%,
-      rgba(0, 0, 0, 0.12) 96%,
-      transparent 100%
-    );
-    -webkit-mask-image: 
-      linear-gradient(
-        to right,
-        transparent 0%,
-        rgba(0, 0, 0, 0.12) 4%,
-        rgba(0, 0, 0, 0.45) 10%,
-        rgba(0, 0, 0, 0.85) 16%,
-        #000 22%,
-        #000 78%,
-        rgba(0, 0, 0, 0.85) 84%,
-        rgba(0, 0, 0, 0.45) 90%,
-        rgba(0, 0, 0, 0.12) 96%,
-        transparent 100%
-      ),
-      linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(0, 0, 0, 0.35) 3%,
-        #000 8%,
-        #000 92%,
-        rgba(0, 0, 0, 0.35) 97%,
-        transparent 100%
-      );
-    -webkit-mask-composite: source-in;
-    mask-image: 
-      linear-gradient(
-        to right,
-        transparent 0%,
-        rgba(0, 0, 0, 0.12) 4%,
-        rgba(0, 0, 0, 0.45) 10%,
-        rgba(0, 0, 0, 0.85) 16%,
-        #000 22%,
-        #000 78%,
-        rgba(0, 0, 0, 0.85) 84%,
-        rgba(0, 0, 0, 0.45) 90%,
-        rgba(0, 0, 0, 0.12) 96%,
-        transparent 100%
-      ),
-      linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(0, 0, 0, 0.35) 3%,
-        #000 8%,
-        #000 92%,
-        rgba(0, 0, 0, 0.35) 97%,
-        transparent 100%
-      );
-    mask-composite: intersect;
   }
 </style>
