@@ -93,7 +93,7 @@ import siteData from '../data/site.json';
                     <span class="text-slate-400 font-light">
                       Walk-ins &amp; Appointments
                     </span>
-                    <a href="/#booking" class="font-semibold uppercase tracking-wider transition-colors text-[#1B3A5C] hover:text-sky-600">
+                    <a href={siteData.booking?.messengerUrl || "https://m.me/sidneynailsmontana"} target="_blank" rel="noopener noreferrer" class="font-semibold uppercase tracking-wider transition-colors text-[#1B3A5C] hover:text-sky-600">
                       Book &rarr;
                     </a>
                   </div>

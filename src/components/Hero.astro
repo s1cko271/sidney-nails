@@ -49,7 +49,9 @@ import siteData from '../data/site.json';
         <div class="hero-animate-cta flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full sm:w-auto">
           <a 
             class="bg-brand-navy text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 text-center shadow-md hover:-translate-y-0.5 active:translate-y-0" 
-            href="/#booking"
+            href={siteData.booking?.messengerUrl || "https://m.me/sidneynailsmontana"}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {siteData.hero.ctaPrimary}
           </a>

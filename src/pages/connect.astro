@@ -54,6 +54,18 @@ const title = `${siteData.salon.name} - Connect With Us`;
 
     <!-- Quick Action Links -->
     <div class="w-full flex flex-col gap-3.5 mb-12 animate-fade-in-up" style="animation-delay: 250ms;">
+      <!-- Messenger Booking -->
+      <a href={siteData.booking?.messengerUrl || "https://m.me/sidneynailsmontana"} target="_blank" rel="noopener noreferrer" class="group relative w-full bg-[#0084FF] hover:bg-[#0070da] text-white rounded-2xl px-5 py-4 flex items-center gap-4 shadow-md hover:-translate-y-0.5 transition-all duration-300">
+        <div class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center shrink-0 text-white shadow-sm">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.91 1.455 5.518 3.735 7.208V22l3.373-1.851c.917.254 1.888.391 2.892.391 5.523 0 10-4.145 10-9.258C22 6.145 17.523 2 12 2zm1.066 12.443l-2.6-2.774-5.074 2.774 5.58-5.922 2.664 2.774 5.01-2.774-5.58 5.922z"/></svg>
+        </div>
+        <div class="flex flex-col text-left flex-grow">
+          <span class="font-bold text-white text-sm tracking-wide">Book via Messenger</span>
+          <span class="text-xs text-white/80">Direct booking &amp; inquiries</span>
+        </div>
+        <svg class="w-4 h-4 text-white/70 group-hover:text-white transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </a>
+
       <!-- Google Review -->
       <a href={siteData.social.googleReviews.startsWith('TODO') ? 'https://maps.app.goo.gl/th34qAzZDDTthUoLA' : siteData.social.googleReviews} target="_blank" rel="noopener noreferrer" class="group relative w-full bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-2xl px-5 py-4 flex items-center gap-4 shadow-md border border-white/20 hover:border-brand-gold hover:-translate-y-0.5 transition-all duration-300">
         <div class="w-11 h-11 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-sm">

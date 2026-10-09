@@ -87,14 +87,14 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
 
       <!-- Desktop CTA Button -->
       <div class="hidden md:flex items-center">
-        <a class="bg-[#9CBFE4] hover:bg-white text-[#13253B] px-5 sm:px-6 py-2 md:py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5" href="/#booking">
+        <a class="bg-[#9CBFE4] hover:bg-white text-[#13253B] px-5 sm:px-6 py-2 md:py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5" href={siteData.booking?.messengerUrl || "https://m.me/sidneynailsmontana"} target="_blank" rel="noopener noreferrer">
           {siteData.nav.ctaText || 'Book Now'}
         </a>
       </div>
 
       <!-- Mobile Nav Actions -->
       <div class="flex items-center gap-2 lg:hidden">
-        <a class="md:hidden bg-[#9CBFE4] hover:bg-white text-[#13253B] px-3.5 py-1.5 rounded-full font-bold text-[11px] uppercase tracking-wider transition-colors shadow-sm" href="/#booking">
+        <a class="md:hidden bg-[#9CBFE4] hover:bg-white text-[#13253B] px-3.5 py-1.5 rounded-full font-bold text-[11px] uppercase tracking-wider transition-colors shadow-sm" href={siteData.booking?.messengerUrl || "https://m.me/sidneynailsmontana"} target="_blank" rel="noopener noreferrer">
           Book
         </a>
         <button 
@@ -133,7 +133,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
     ))}
 
     <div class="pt-4 flex flex-col items-center gap-3 w-full max-w-xs">
-      <a class="w-full text-center bg-brand-gold text-[#1B3A5C] py-3 rounded-full font-bold uppercase tracking-wider text-sm hover:bg-white transition-colors" href="/#booking" onclick="document.getElementById('mobileMenu').classList.remove('translate-x-0'); document.getElementById('mobileMenu').classList.add('translate-x-full');">
+      <a class="w-full text-center bg-brand-gold text-[#1B3A5C] py-3 rounded-full font-bold uppercase tracking-wider text-sm hover:bg-white transition-colors" href={siteData.booking?.messengerUrl || "https://m.me/sidneynailsmontana"} target="_blank" rel="noopener noreferrer" onclick="document.getElementById('mobileMenu').classList.remove('translate-x-0'); document.getElementById('mobileMenu').classList.add('translate-x-full');">
         {siteData.nav.ctaText || 'Book Now'}
       </a>
       <a class="text-white/80 hover:text-brand-gold text-sm tracking-wide transition-colors py-2" href={`tel:${siteData.salon.phoneRaw}`}>
@@ -284,7 +284,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
       </span>
       <span>Call {siteData.salon.phone}</span>
     </a>
-    <a href="/#booking" class="bg-[#9CBFE4] text-[#13253B] px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider shadow-sm active:scale-95 transition-transform">
+    <a href={siteData.booking?.messengerUrl || "https://m.me/sidneynailsmontana"} target="_blank" rel="noopener noreferrer" class="bg-[#9CBFE4] text-[#13253B] px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider shadow-sm active:scale-95 transition-transform">
       Book Now
     </a>
   </div>

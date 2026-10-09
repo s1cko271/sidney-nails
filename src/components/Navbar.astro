@@ -31,14 +31,14 @@ import site from '../data/site.json';
 
       <!-- CTA Button Desktop -->
       <div class="hidden md:flex items-center">
-        <a href="/#booking" class="bg-[#9CBFE4] hover:bg-white text-[#13253B] px-5 sm:px-6 py-2 md:py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5">
+        <a href={site.booking?.messengerUrl || "https://m.me/sidneynailsmontana"} target="_blank" rel="noopener noreferrer" class="bg-[#9CBFE4] hover:bg-white text-[#13253B] px-5 sm:px-6 py-2 md:py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5">
           {site.nav?.ctaText || 'Book Now'}
         </a>
       </div>
 
       <!-- Mobile Nav Actions -->
       <div class="flex items-center gap-2 lg:hidden">
-        <a class="md:hidden bg-[#9CBFE4] hover:bg-white text-[#13253B] px-3.5 py-1.5 rounded-full font-bold text-[11px] uppercase tracking-wider transition-colors shadow-sm" href="/#booking">
+        <a class="md:hidden bg-[#9CBFE4] hover:bg-white text-[#13253B] px-3.5 py-1.5 rounded-full font-bold text-[11px] uppercase tracking-wider transition-colors shadow-sm" href={site.booking?.messengerUrl || "https://m.me/sidneynailsmontana"} target="_blank" rel="noopener noreferrer">
           Book
         </a>
         <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-lg text-white hover:text-[#9CBFE4] focus:outline-none" aria-expanded="false" aria-label="Open Navigation Menu">
@@ -65,7 +65,7 @@ import site from '../data/site.json';
       <a href="#about" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">About</a>
       <a href="#reviews" class="mobile-link text-white text-xl font-medium uppercase tracking-widest hover:text-brand-gold transition-colors">Reviews</a>
       
-      <a href="/#booking" class="mobile-link mt-8 bg-brand-gold text-brand-charcoal px-8 py-3 rounded-full text-lg font-bold uppercase tracking-widest hover:bg-brand-goldLight transition-colors">
+      <a href={site.booking?.messengerUrl || "https://m.me/sidneynailsmontana"} target="_blank" rel="noopener noreferrer" class="mobile-link mt-8 bg-brand-gold text-brand-charcoal px-8 py-3 rounded-full text-lg font-bold uppercase tracking-widest hover:bg-brand-goldLight transition-colors">
         Book Appointment
       </a>
       <p class="mt-8 text-brand-gold/50 font-medium tracking-widest text-sm">{site.salon?.bookingPhoneFormatted || '(406) 433-5555'}</p>

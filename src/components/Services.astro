@@ -124,7 +124,9 @@ const isWideImage = (idx: number) => idx === 1 || idx === 4;
                 </span>
                 <span class="w-px h-3.5 bg-white/25"></span>
                 <a 
-                  href="/#booking" 
+                  href={siteData.booking?.messengerUrl || "https://m.me/sidneynailsmontana"} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   class="font-bold text-[11px] sm:text-xs uppercase tracking-[0.18em] text-[#9EC5EA] hover:text-white transition-colors flex items-center gap-1.5 group/link"
                 >
                   <span>BOOK SESSION</span>
