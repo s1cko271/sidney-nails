@@ -1,5 +1,5 @@
 {
-  "_comment": "=== J&J NAIL SPA – SITE CONFIGURATION ===  Edit this file to update ALL text, images, and info shown on the website.  You do NOT need to touch any code files — just change values here and the site updates automatically.",
+  "_comment": "=== SIDNEY NAILS – SITE CONFIGURATION ===  Edit this file to update ALL text, images, and info shown on the website.  You do NOT need to touch any code files — just change values here and the site updates automatically.",
   "salon": {
     "name": "Sidney Nails",
     "namePart1": "Sidney",
@@ -389,7 +389,7 @@
     "sectionTag": "Watch Us Work",
     "title": "Our Salon",
     "titleAccent": "In Motion",
-    "subtitle": "Experience the relaxing atmosphere and precision craftsmanship at J&J Nail Spa.",
+    "subtitle": "Experience the relaxing atmosphere and precision craftsmanship at Sidney Nails.",
     "items": [
       "/videos/1 (1).mp4",
       "/videos/1.8 JJ.mp4",
