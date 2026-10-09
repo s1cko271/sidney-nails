@@ -6,18 +6,22 @@ const googleIcon = `<svg viewBox="0 0 24 24" class="w-5 h-5 shrink-0" xmlns="htt
 const featuredReview = siteData.reviews.items[0];
 const gridReviews = siteData.reviews.items.slice(1, 5);
 ---
-<section id="reviews" class="py-24 relative bg-white/50 backdrop-blur-md border-t border-white/60">
-  <div class="max-w-[1240px] mx-auto px-6 sm:px-8">
+<section id="reviews" class="py-24 relative bg-[#0B1422] text-white overflow-hidden border-t border-[#2D5A8B]/40">
+  <!-- Subtle ambient glow background -->
+  <div class="absolute top-1/3 -left-32 w-96 h-96 bg-[#1B3A5C]/25 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/3 -right-32 w-96 h-96 bg-sky-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-[1240px] mx-auto px-6 sm:px-8 relative z-10">
     <div class="mb-14 reveal flex flex-col md:flex-row md:items-end justify-between gap-6">
       <div>
-        <div class="inline-flex items-center gap-2 text-brand-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">
-          <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sky-400/30 bg-sky-950/60 text-[#9EC5EA] text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-3 shadow-[0_0_15px_rgba(56,189,248,0.15)]">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
           {siteData.reviews.sectionTag}
         </div>
-        <h2 class="font-display text-4xl md:text-5xl font-normal text-brand-charcoal">
-          {siteData.reviews.title} <em class="italic font-medium text-brand-gold">{siteData.reviews.titleAccent}</em>
+        <h2 class="font-display text-4xl md:text-5xl font-normal text-white">
+          {siteData.reviews.title} <em class="italic font-normal text-[#9EC5EA]">{siteData.reviews.titleAccent}</em>
         </h2>
-        <p class="text-slate-600 text-sm md:text-base max-w-xl font-light mt-2">
+        <p class="text-white/70 text-sm md:text-base max-w-xl font-light mt-2">
           {siteData.reviews.subtitle}
         </p>
       </div>
@@ -26,7 +30,7 @@ const gridReviews = siteData.reviews.items.slice(1, 5);
         href={siteData.social.googleReviews || "https://maps.app.goo.gl/th34qAzZDDTthUoLA"} 
         target="_blank" 
         rel="noopener noreferrer" 
-        class="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-widest text-[#1B3A5C] hover:text-brand-gold border-b-2 border-brand-gold pb-1 transition-colors shrink-0"
+        class="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-widest text-[#9EC5EA] hover:text-white border-b-2 border-sky-400/70 pb-1 transition-colors shrink-0"
       >
         <span>Read All Reviews On Google</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5">
@@ -39,9 +43,9 @@ const gridReviews = siteData.reviews.items.slice(1, 5);
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch mb-12">
       <!-- Spotlight Left Card (5 cols) -->
       <div class="lg:col-span-5 reveal flex">
-        <div class="w-full bg-gradient-to-br from-[#1B3A5C] via-[#162e4a] to-[#0f1f33] rounded-3xl p-8 md:p-10 text-white relative shadow-xl overflow-hidden flex flex-col justify-between border border-white/10 card-hover">
+        <div class="w-full bg-gradient-to-br from-[#132338] via-[#1A2E47] to-[#0E1B2B] rounded-3xl p-8 md:p-10 text-white relative shadow-2xl overflow-hidden flex flex-col justify-between border border-sky-400/35 card-hover">
           <!-- Background Decorative Quote -->
-          <div class="absolute -top-6 -right-6 text-brand-gold/10 pointer-events-none">
+          <div class="absolute -top-6 -right-6 text-sky-400/10 pointer-events-none">
             <svg class="w-44 h-44" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
             </svg>
@@ -71,12 +75,12 @@ const gridReviews = siteData.reviews.items.slice(1, 5);
             <img 
               src={featuredReview.avatar} 
               alt={featuredReview.name} 
-              class="w-12 h-12 rounded-full object-cover ring-2 ring-brand-gold/40 shadow-sm" 
+              class="w-12 h-12 rounded-full object-cover ring-2 ring-sky-400/50 shadow-sm" 
               loading="lazy" 
             />
             <div>
               <h4 class="font-bold text-white text-base tracking-wide">{featuredReview.name}</h4>
-              <p class="text-white/60 text-xs">
+              <p class="text-[#9EC5EA] text-xs">
                 {featuredReview.badge || 'Verified Google Review'} &middot; {featuredReview.date}
               </p>
             </div>
@@ -84,46 +88,49 @@ const gridReviews = siteData.reviews.items.slice(1, 5);
         </div>
       </div>
 
-      <!-- Grid Right Cards (7 cols: 2x2) -->
+      <!-- Grid Right Cards (7 cols: 2x2) - Alternating card colors -->
       <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-5">
-        {gridReviews.map((review, idx) => (
-          <div 
-            class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:border-brand-gold/60 hover:shadow-md transition-all duration-300 flex flex-col justify-between card-hover reveal"
-            style={`--reveal-delay: ${(idx + 1) * 100}ms;`}
-          >
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center gap-0.5 text-amber-400">
-                  {[...Array(review.stars || 5)].map(() => (
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                    </svg>
-                  ))}
+        {gridReviews.map((review, idx) => {
+          const isAltCard = idx % 2 !== 0;
+          return (
+            <div 
+              class={`${isAltCard ? 'bg-[#142336]/90 border-sky-400/35' : 'bg-slate-900/85 border-sky-400/20'} backdrop-blur-md rounded-2xl p-6 shadow-md hover:border-sky-300 transition-all duration-300 flex flex-col justify-between card-hover reveal border`}
+              style={`--reveal-delay: ${(idx + 1) * 100}ms;`}
+            >
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center gap-0.5 text-amber-400">
+                    {[...Array(review.stars || 5)].map(() => (
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <div class="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center p-0.5" set:html={googleIcon}></div>
                 </div>
-                <div class="w-6 h-6 bg-slate-50 rounded-full flex items-center justify-center p-0.5" set:html={googleIcon}></div>
-              </div>
 
-              <p class="text-slate-700 text-sm leading-relaxed font-light mb-6">
-                "{review.text}"
-              </p>
-            </div>
-
-            <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
-              <img 
-                src={review.avatar} 
-                alt={review.name} 
-                class="w-10 h-10 rounded-full object-cover ring-1 ring-slate-200 shadow-sm shrink-0" 
-                loading="lazy" 
-              />
-              <div class="min-w-0">
-                <h5 class="font-bold text-slate-800 text-sm truncate">{review.name}</h5>
-                <p class="text-slate-400 text-xs truncate">
-                  {review.badge || 'Google Review'} &middot; {review.date}
+                <p class="text-white/85 text-sm leading-relaxed font-light mb-6">
+                  "{review.text}"
                 </p>
               </div>
+
+              <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <img 
+                  src={review.avatar} 
+                  alt={review.name} 
+                  class="w-10 h-10 rounded-full object-cover ring-1 ring-sky-400/40 shadow-sm shrink-0" 
+                  loading="lazy" 
+                />
+                <div class="min-w-0">
+                  <h5 class="font-bold text-white text-sm truncate">{review.name}</h5>
+                  <p class="text-[#9EC5EA] text-xs truncate">
+                    {review.badge || 'Google Review'} &middot; {review.date}
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
 
@@ -133,7 +140,7 @@ const gridReviews = siteData.reviews.items.slice(1, 5);
         href={siteData.social.googleReviews || "https://maps.app.goo.gl/th34qAzZDDTthUoLA"} 
         target="_blank" 
         rel="noopener noreferrer" 
-        class="inline-flex items-center gap-2.5 bg-[#1B3A5C] text-white px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider hover:bg-brand-gold hover:text-[#1B3A5C] transition-all duration-300 shadow-sm hover:-translate-y-0.5 active:translate-y-0"
+        class="inline-flex items-center gap-2.5 bg-sky-400 text-[#0B1422] px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-brand-navy transition-all duration-300 shadow-lg hover:-translate-y-0.5 active:translate-y-0"
       >
         <span>Leave a Review on Google (Save 5%)</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5">

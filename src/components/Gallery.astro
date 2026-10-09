@@ -1,23 +1,23 @@
 ---
 import siteData from '../data/site.json';
 ---
-<section class="py-24 relative bg-[#101F33] text-white overflow-hidden border-t border-[#2D5A8B]/40" id="gallery">
-  <!-- Ambient subtle glow -->
-  <div class="absolute top-1/3 -left-32 w-96 h-96 bg-[#1B3A5C]/25 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute bottom-1/3 -right-32 w-96 h-96 bg-sky-900/20 rounded-full blur-3xl pointer-events-none"></div>
+<section class="py-24 relative bg-white/70 backdrop-blur-md overflow-hidden border-t border-slate-200/80" id="gallery">
+  <!-- Subtle ambient glow -->
+  <div class="absolute top-1/3 -left-32 w-96 h-96 bg-sky-200/30 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/3 -right-32 w-96 h-96 bg-brand-light-blue/20 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="max-w-[1200px] mx-auto px-6 relative z-10">
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-sky-400/30 bg-sky-950/60 text-[#9EC5EA] text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-4 shadow-[0_0_15px_rgba(56,189,248,0.15)]">
+      <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-sky-300 bg-sky-50 text-sky-800 text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-4 shadow-sm">
         {siteData.gallery.sectionTag || 'OUR WORK'}
       </div>
-      <h2 class="font-display lining-nums text-4xl md:text-5xl font-normal text-white mb-4 tracking-tight drop-shadow-md">
-        {siteData.gallery.title} <span class="font-normal italic text-[#9EC5EA]">{siteData.gallery.titleAccent}</span>
+      <h2 class="font-display lining-nums text-4xl md:text-5xl font-normal text-brand-charcoal mb-4 tracking-tight drop-shadow-sm">
+        {siteData.gallery.title} <span class="font-normal italic text-sky-600">{siteData.gallery.titleAccent}</span>
       </h2>
-      <div class="flex items-center justify-center gap-3 opacity-60 mt-4" aria-hidden="true">
-        <span class="w-12 h-px bg-gradient-to-r from-transparent to-sky-300/50"></span>
-        <span class="w-1.5 h-1.5 rotate-45 border border-sky-300/80 bg-sky-400/30"></span>
-        <span class="w-12 h-px bg-gradient-to-l from-transparent to-sky-300/50"></span>
+      <div class="flex items-center justify-center gap-3 opacity-70 mt-4" aria-hidden="true">
+        <span class="w-12 h-px bg-gradient-to-r from-transparent to-sky-400/60"></span>
+        <span class="w-1.5 h-1.5 rotate-45 border border-sky-400 bg-sky-100"></span>
+        <span class="w-12 h-px bg-gradient-to-l from-transparent to-sky-400/60"></span>
       </div>
     </div>
     
@@ -27,7 +27,7 @@ import siteData from '../data/site.json';
         const imgCaption = typeof item === 'string' ? 'Nail art design' : (item.caption || 'Nail art design');
         return (
           <div 
-            class="group relative overflow-hidden rounded-md cursor-pointer reveal border border-sky-400/40 hover:border-sky-300 transition-colors duration-300 break-inside-avoid transform-gpu shadow-md"
+            class="group relative overflow-hidden rounded-xl cursor-pointer reveal border border-slate-200/90 hover:border-sky-400 bg-white shadow-md hover:shadow-xl transition-all duration-500 break-inside-avoid transform-gpu"
             style={`--reveal-delay: ${(index % 3) * 100}ms;`}
           >
             <img 
@@ -47,7 +47,7 @@ import siteData from '../data/site.json';
         href={siteData.social?.instagram && !siteData.social.instagram.startsWith('TODO') ? siteData.social.instagram : 'https://www.instagram.com'} 
         target="_blank" 
         rel="noopener noreferrer" 
-        class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#9EC5EA] border-b border-sky-400/60 pb-1 hover:text-white hover:border-white transition-colors"
+        class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-sky-700 border-b border-sky-400 pb-1 hover:text-brand-navy hover:border-brand-navy transition-colors"
       >
         Follow On Instagram &rarr;
       </a>

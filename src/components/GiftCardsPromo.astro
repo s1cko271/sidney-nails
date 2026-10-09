@@ -4,16 +4,16 @@ import siteData from '../data/site.json';
 // Clean SVG icon helper for promotions
 function getPromoIcon(icon: string) {
   if (icon === 'heart' || icon === 'follow') {
-    return '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-brand-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-4.5C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>';
+    return '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-sky-500"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-4.5C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>';
   }
   if (icon === 'review' || icon === 'chat') {
-    return '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-brand-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a.75.75 0 0 1-.974-.94 4.52 4.52 0 0 0 .78-2.613A8.163 8.163 0 0 1 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>';
+    return '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-sky-300"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a.75.75 0 0 1-.974-.94 4.52 4.52 0 0 0 .78-2.613A8.163 8.163 0 0 1 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>';
   }
   if (icon === 'gift') {
-    return '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-brand-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" /></svg>';
+    return '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-amber-500"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" /></svg>';
   }
   // Default shield/guarantee
-  return '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-brand-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>';
+  return '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="w-6 h-6 text-sky-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>';
 }
 
 const promoCards = [
@@ -37,49 +37,94 @@ const promoCards = [
   }
 ];
 ---
-<section class="py-24 bg-[#1B3A5C] text-white relative" id="promotions">
-  <div class="max-w-[1180px] mx-auto px-6 sm:px-8">
+<section class="py-24 bg-white/65 backdrop-blur-md relative overflow-hidden border-t border-slate-200/80" id="promotions">
+  <!-- Subtle ambient glow -->
+  <div class="absolute top-1/3 -left-32 w-96 h-96 bg-sky-200/25 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/3 -right-32 w-96 h-96 bg-amber-100/25 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-[1180px] mx-auto px-6 sm:px-8 relative z-10">
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-      <div class="inline-block text-brand-gold text-[0.7rem] font-bold tracking-[0.2em] uppercase mb-4 border border-brand-gold/30 px-3.5 py-1 rounded-full bg-brand-gold/10">
+      <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-sky-300 bg-sky-50 text-sky-800 text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase mb-4 shadow-sm">
         Special Offers
       </div>
-      <h2 class="font-display text-4xl md:text-5xl font-normal text-white mb-4">
-        Client Specials &amp; <em class="italic font-medium text-brand-gold">Promotions</em>
+      <h2 class="font-display text-4xl md:text-5xl font-normal text-brand-charcoal mb-4">
+        Client Specials &amp; <em class="italic font-medium text-sky-600">Promotions</em>
       </h2>
-      <p class="text-white/70 leading-relaxed font-light text-sm md:text-base">
+      <p class="text-slate-600 leading-relaxed font-light text-sm md:text-base">
         Save on your favorite treatments and share the comfort of Sidney Nails with those you care about.
       </p>
-      <div class="w-16 h-px bg-white/20 mx-auto mt-6"></div>
+      <div class="flex items-center justify-center gap-3 opacity-60 mt-6" aria-hidden="true">
+        <span class="w-12 h-px bg-gradient-to-r from-transparent to-sky-400"></span>
+        <span class="w-1.5 h-1.5 rotate-45 border border-sky-400 bg-sky-200"></span>
+        <span class="w-12 h-px bg-gradient-to-l from-transparent to-sky-400"></span>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {promoCards.map((promo, idx) => (
-        <div 
-          class="bg-white rounded-2xl p-8 md:p-10 text-center flex flex-col items-center shadow-lg border border-slate-200/80 card-hover reveal"
-          style={`--reveal-delay: ${idx * 120}ms;`}
-        >
-          <div class="w-14 h-14 bg-brand-offwhite rounded-full flex items-center justify-center mb-6 shadow-sm border border-slate-100" set:html={getPromoIcon(promo.icon)}>
-          </div>
-          <h3 class="font-display text-2xl font-semibold text-brand-charcoal mb-3">{promo.title}</h3>
-          <p class="text-brand-charcoal/70 text-sm leading-relaxed font-light mb-6 flex-grow">{promo.description}</p>
-          {idx === 0 && (
-            <div class="flex items-center justify-center gap-3 mb-6">
-              <a href={siteData.social.facebook} target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#1877F2]/10 hover:bg-[#1877F2] text-[#1877F2] hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" aria-label="Follow Facebook" title="Follow on Facebook">
-                <svg class="w-4 h-4" viewBox="0 0 320 512" fill="currentColor"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
-              </a>
-              <a href={siteData.social.instagram} target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#E1306C]/10 hover:bg-[#E1306C] text-[#E1306C] hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" aria-label="Follow Instagram" title="Follow on Instagram">
-                <svg class="w-4 h-4" viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-              </a>
-              <a href={siteData.social.tiktok} target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/10 hover:bg-black text-black hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" aria-label="Follow TikTok" title="Follow on TikTok">
-                <svg class="w-4 h-4" viewBox="0 0 448 512" fill="currentColor"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
-              </a>
+    <!-- Alternating 3-Card Color Scheme (Light Ice | Featured Navy | Warm Pearl) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      {promoCards.map((promo, idx) => {
+        const isFeatured = idx === 1;
+        const isThird = idx === 2;
+
+        return (
+          <div 
+            class={`rounded-2xl p-8 md:p-10 text-center flex flex-col items-center card-hover reveal transition-all duration-300 ${
+              isFeatured
+                ? 'bg-gradient-to-br from-[#1B3A5C] via-[#162e4a] to-[#0f1f33] text-white shadow-2xl border border-[#2D5A8B] md:-translate-y-2'
+                : isThird
+                  ? 'bg-gradient-to-br from-amber-50/40 via-white to-white text-brand-charcoal shadow-lg border border-amber-200/70'
+                  : 'bg-gradient-to-br from-sky-50/40 via-white to-white text-brand-charcoal shadow-lg border border-sky-200/80'
+            }`}
+            style={`--reveal-delay: ${idx * 120}ms;`}
+          >
+            <div 
+              class={`w-14 h-14 rounded-full flex items-center justify-center mb-6 shadow-sm border ${
+                isFeatured 
+                  ? 'bg-white/10 border-white/20 text-sky-300' 
+                  : isThird
+                    ? 'bg-amber-50 border-amber-200/80'
+                    : 'bg-sky-50 border-sky-200'
+              }`} 
+              set:html={getPromoIcon(promo.icon)}
+            >
             </div>
-          )}
-          <div class="w-full text-brand-navy font-bold text-sm bg-brand-offwhite py-2.5 px-5 rounded-full border border-slate-200 tracking-wider uppercase">
-            {promo.offer}
+            
+            <h3 class={`font-display text-2xl font-semibold mb-3 ${isFeatured ? 'text-white' : 'text-brand-charcoal'}`}>
+              {promo.title}
+            </h3>
+            
+            <p class={`text-sm leading-relaxed font-light mb-6 flex-grow ${isFeatured ? 'text-white/80' : 'text-slate-600'}`}>
+              {promo.description}
+            </p>
+            
+            {idx === 0 && (
+              <div class="flex items-center justify-center gap-3 mb-6">
+                <a href={siteData.social.facebook} target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#1877F2]/10 hover:bg-[#1877F2] text-[#1877F2] hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" aria-label="Follow Facebook" title="Follow on Facebook">
+                  <svg class="w-4 h-4" viewBox="0 0 320 512" fill="currentColor"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+                </a>
+                <a href={siteData.social.instagram} target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#E1306C]/10 hover:bg-[#E1306C] text-[#E1306C] hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" aria-label="Follow Instagram" title="Follow on Instagram">
+                  <svg class="w-4 h-4" viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </a>
+                <a href={siteData.social.tiktok} target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-black/10 hover:bg-black text-black hover:text-white flex items-center justify-center transition-all shadow-sm hover:scale-105" aria-label="Follow TikTok" title="Follow on TikTok">
+                  <svg class="w-4 h-4" viewBox="0 0 448 512" fill="currentColor"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+                </a>
+              </div>
+            )}
+            
+            <div 
+              class={`w-full font-bold text-sm py-2.5 px-5 rounded-full border tracking-wider uppercase ${
+                isFeatured
+                  ? 'bg-sky-400 text-[#0B1422] border-sky-300 shadow-md'
+                  : isThird
+                    ? 'bg-amber-100/70 text-amber-900 border-amber-200'
+                    : 'bg-sky-50 text-sky-800 border-sky-200'
+              }`}
+            >
+              {promo.offer}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>
