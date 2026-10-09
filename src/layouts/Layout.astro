@@ -257,36 +257,54 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
   </div>
 
   <script is:inline>
-    // Bulletproof Scroll Reveal & UI Interactions
+    // Bulletproof Staggered Entrance & Scroll Reveal
     function initAnimations() {
-      // 1. Scroll-reveal with stagger
-      const reveals = document.querySelectorAll('.reveal');
+      const reveals = document.querySelectorAll('.reveal, .reveal-scale');
+      if (!reveals.length) return;
+
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      let heroStagger = 100;
+
+      // 1. Above-the-fold elements: trigger cascading entrance after initial paint
+      reveals.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const inView = rect.top < windowHeight * 0.95 && rect.bottom > 0;
+        
+        if (inView) {
+          if (!el.classList.contains('is-revealed')) {
+            const hasCustomDelay = el.style.getPropertyValue('--reveal-delay');
+            if (!hasCustomDelay) {
+              el.style.setProperty('--reveal-delay', `${heroStagger}ms`);
+              heroStagger += 120;
+            }
+            // Small tick so browser initializes paint, then starts entrance keyframe sequence
+            setTimeout(() => {
+              el.classList.add('is-revealed');
+            }, 60);
+          }
+        }
+      });
+
+      // 2. Below-the-fold elements: IntersectionObserver as they scroll into view
       if ('IntersectionObserver' in window) {
-        const io = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('is-revealed');
-              entry.target.classList.add('visible'); // backward compat
-              io.unobserve(entry.target);
+              observer.unobserve(entry.target);
             }
           });
         }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
 
-        reveals.forEach((el, index) => {
-          // If already in viewport on page load, reveal immediately
+        reveals.forEach((el) => {
           const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight && rect.bottom > 0) {
-            el.classList.add('is-revealed');
-            el.classList.add('visible');
-          } else {
-            io.observe(el);
+          const inView = rect.top < windowHeight * 0.95 && rect.bottom > 0;
+          if (!inView) {
+            observer.observe(el);
           }
         });
       } else {
-        reveals.forEach(el => {
-          el.classList.add('is-revealed');
-          el.classList.add('visible');
-        });
+        reveals.forEach(el => el.classList.add('is-revealed'));
       }
 
       // 2. Navbar condense on scroll

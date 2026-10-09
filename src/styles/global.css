@@ -129,17 +129,75 @@ body {
   50%      { transform: translateY(-8px) rotate(4deg); }
 }
 
-/* ── SCROLL REVEAL (Static & Production Safe) ── */
+@keyframes revealFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes navDropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── SCROLL & LOAD REVEAL (Keyframe-driven, 100% reliable in every browser) ── */
 .reveal {
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: var(--reveal-delay, 0ms);
+  transform: translateY(28px);
   will-change: opacity, transform;
 }
+
 .reveal.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
+  animation: revealFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94) translateY(18px);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.is-revealed {
+  animation: revealScale 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* Navbar drop-in on load */
+#navbar {
+  animation: navDropIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 60ms;
+}
+
+/* Fallback: if JavaScript is disabled or fails to load, make everything visible */
+html:not(.js-enabled) .reveal,
+html:not(.js-enabled) .reveal-scale,
+html:not(.js-enabled) #navbar {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
 }
 
 /* Stagger delay helpers for siblings */
@@ -184,25 +242,20 @@ body {
   display: none;
 }
 
-/* Strict prefers-reduced-motion support */
+/* Accessible prefers-reduced-motion: graceful fallback without motion */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
   .reveal,
-  .reveal.is-revealed {
+  .reveal.is-revealed,
+  .reveal-scale,
+  .reveal-scale.is-revealed,
+  #navbar {
     opacity: 1 !important;
     transform: none !important;
+    animation: none !important;
     transition: none !important;
   }
   .marquee-track {
     animation: none !important;
-    flex-wrap: wrap !important;
   }
   .leaf-float {
     animation: none !important;

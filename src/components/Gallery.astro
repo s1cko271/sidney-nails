@@ -39,9 +39,12 @@ const bentoClasses = [
     </div>
 
     <!-- Varied Bento Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 auto-rows-fr reveal">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 auto-rows-fr">
       {siteData.gallery.items.slice(0, 8).map((img, i) => (
-        <div class={`relative group overflow-hidden rounded-2xl bg-white shadow-sm border border-slate-200/80 ${bentoClasses[i] || "col-span-1 row-span-1"}`}>
+        <div 
+          class={`relative group overflow-hidden rounded-2xl bg-white shadow-sm border border-slate-200/80 reveal ${bentoClasses[i] || "col-span-1 row-span-1"}`}
+          style={`--reveal-delay: ${(i % 4) * 90}ms;`}
+        >
           <img 
             src={img} 
             alt={`Sidney Nails salon photo ${i + 1}`} 

@@ -11,24 +11,24 @@ import siteData from '../data/site.json';
       <!-- Left Side: Content (7/12 on lg) -->
       <div class="lg:col-span-7 flex flex-col items-start text-left">
         <!-- Tagline Pill with leaf dot -->
-        <div class="reveal inline-flex items-center gap-2 text-brand-navy text-[0.7rem] sm:text-xs font-semibold tracking-[0.2em] uppercase mb-6 px-4 py-1.5 border border-brand-gold/50 rounded-full bg-brand-offwhite shadow-sm">
+        <div class="reveal inline-flex items-center gap-2 text-brand-navy text-[0.7rem] sm:text-xs font-semibold tracking-[0.2em] uppercase mb-6 px-4 py-1.5 border border-brand-gold/50 rounded-full bg-brand-offwhite shadow-sm" style="--reveal-delay: 100ms;">
           <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
           <span>{siteData.salon.tagline} &middot; {siteData.salon.city}, {siteData.salon.state}</span>
         </div>
         
         <!-- Primary Heading -->
-        <h1 class="reveal font-display text-4xl sm:text-5xl lg:text-[3.6rem] text-brand-navy leading-[1.12] font-normal tracking-tight mb-6" style="--reveal-delay: 100ms;">
+        <h1 class="reveal font-display text-4xl sm:text-5xl lg:text-[3.6rem] text-brand-navy leading-[1.12] font-normal tracking-tight mb-6" style="--reveal-delay: 240ms;">
           {siteData.hero.headlineLine1} <br/>
           <em class="font-medium italic text-brand-gold">{siteData.hero.headlineLine2}</em>
         </h1>
         
         <!-- Subtitle -->
-        <p class="reveal text-slate-600 text-base sm:text-lg leading-relaxed mb-8 font-light max-w-xl" style="--reveal-delay: 180ms;">
+        <p class="reveal text-slate-600 text-base sm:text-lg leading-relaxed mb-8 font-light max-w-xl" style="--reveal-delay: 380ms;">
           {siteData.hero.description}
         </p>
         
         <!-- Call to Actions -->
-        <div class="reveal flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full sm:w-auto" style="--reveal-delay: 260ms;">
+        <div class="reveal flex flex-col sm:flex-row gap-4 items-stretch sm:items-center w-full sm:w-auto" style="--reveal-delay: 520ms;">
           <a 
             class="bg-brand-navy text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 text-center shadow-md hover:-translate-y-0.5 active:translate-y-0" 
             href="/#booking"
@@ -45,7 +45,7 @@ import siteData from '../data/site.json';
       </div>
 
       <!-- Right Side: Real Salon Photo (5/12 on lg) -->
-      <div class="lg:col-span-5 reveal" style="--reveal-delay: 200ms;">
+      <div class="lg:col-span-5 reveal-scale" style="--reveal-delay: 260ms;">
         <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-100 aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] max-h-[540px] group">
           <img 
             src={siteData.salon.interiorImage} 
@@ -56,7 +56,7 @@ import siteData from '../data/site.json';
           <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/35 via-transparent to-transparent pointer-events-none"></div>
           
           <!-- Subtle Floating Badge: Certified & Licensed / Sidney, MT -->
-          <div class="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-white/60 flex items-center justify-between pointer-events-none">
+          <div class="reveal absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-white/60 flex items-center justify-between pointer-events-none" style="--reveal-delay: 600ms;">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-xl bg-brand-light-blue/20 flex items-center justify-center text-brand-gold">
                 <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 24 24">
