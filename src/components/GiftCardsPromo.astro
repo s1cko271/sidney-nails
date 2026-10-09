@@ -38,7 +38,7 @@ const promoCards = [
 ];
 ---
 <section class="py-24 bg-[#1B3A5C] text-white relative" id="promotions">
-  <div class="max-w-[1200px] mx-auto px-6">
+  <div class="max-w-[1180px] mx-auto px-6 sm:px-8">
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
       <div class="inline-block text-brand-gold text-[0.7rem] font-bold tracking-[0.2em] uppercase mb-4 border border-brand-gold/30 px-3.5 py-1 rounded-full bg-brand-gold/10">
         Special Offers
@@ -53,13 +53,16 @@ const promoCards = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {promoCards.map(promo => (
-        <div class="bg-white rounded-2xl p-8 md:p-10 text-center flex flex-col items-center shadow-lg border border-slate-200/80 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 reveal">
-          <div class="w-14 h-14 bg-brand-cream rounded-full flex items-center justify-center mb-6 shadow-sm border border-slate-100" set:html={getPromoIcon(promo.icon)}>
+      {promoCards.map((promo, idx) => (
+        <div 
+          class="bg-white rounded-2xl p-8 md:p-10 text-center flex flex-col items-center shadow-lg border border-slate-200/80 card-hover reveal"
+          style={`--reveal-delay: ${idx * 100}ms;`}
+        >
+          <div class="w-14 h-14 bg-brand-offwhite rounded-full flex items-center justify-center mb-6 shadow-sm border border-slate-100" set:html={getPromoIcon(promo.icon)}>
           </div>
           <h3 class="font-display text-2xl font-semibold text-brand-charcoal mb-3">{promo.title}</h3>
           <p class="text-brand-charcoal/70 text-sm leading-relaxed font-light mb-8 flex-grow">{promo.description}</p>
-          <div class="w-full text-brand-luxury font-bold text-sm bg-brand-offwhite py-2.5 px-5 rounded-full border border-slate-200 tracking-wider uppercase">
+          <div class="w-full text-brand-navy font-bold text-sm bg-brand-offwhite py-2.5 px-5 rounded-full border border-slate-200 tracking-wider uppercase">
             {promo.offer}
           </div>
         </div>

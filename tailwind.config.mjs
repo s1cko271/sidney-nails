@@ -9,8 +9,10 @@ export default {
       colors: {
         brand: {
           gold: '#5B9BD5', // Sky Blue primary
+          sky: '#5B9BD5', // Saturated sky blue
           goldLight: '#8CAAD3', // Lighter blue
           goldDark: '#4A7CA6', // Darker blue
+          navy: '#1B3A5C', // Rich Navy secondary
           luxury: '#1B3A5C', // Navy secondary
           charcoal: '#1E293B', // Soft charcoal blue (slate-800)
           cream: '#FFFFFF', // White
