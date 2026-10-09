@@ -362,7 +362,7 @@
     "formSubtitle": "Choose your preferred way to contact us",
     "formButtonText": "Connect via Messenger",
     "formSuccessMessage": "Appointment requested! We will confirm via text within 15 minutes.",
-    "messengerUrl": "#",
+    "messengerUrl": "https://m.me/sidneynailsmontana",
     "formButtonSecondaryText": "Text / Call Us Direct",
     "text": "For the most attentive service and to reserve your preferred time slot, please reach out to our concierge directly via Messenger.",
     "buttonText": "Connect via Messenger"
@@ -372,12 +372,12 @@
     "directionsUrl": "https://maps.app.goo.gl/th34qAzZDDTthUoLA"
   },
   "social": {
-    "facebook": "TODO_FACEBOOK",
-    "instagram": "TODO_INSTAGRAM",
-    "tiktok": "TODO_TIKTOK",
+    "facebook": "https://www.facebook.com/sidneynailsmontana",
+    "instagram": "https://www.instagram.com/sidneynailsmontana/",
+    "tiktok": "https://www.tiktok.com/@sidneynailsmontana",
     "googleMaps": "https://maps.app.goo.gl/th34qAzZDDTthUoLA",
-    "yelp": "TODO_YELP",
-    "googleReviews": "TODO_REVIEWS"
+    "yelp": "",
+    "googleReviews": "https://maps.app.goo.gl/th34qAzZDDTthUoLA"
   },
   "nav": {
     "_comment": "Navigation menu items — controls both desktop nav and mobile hamburger menu",
