@@ -49,8 +49,8 @@ import siteData from '../data/site.json';
             <div>
               <div class="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-slate-400 mb-0.5">Hours</div>
               <div class="text-brand-charcoal font-medium text-sm leading-relaxed">
-                Mon – Sat: 9:00 AM – 7:00 PM<br/>
-                Sunday: Closed
+                {siteData.hours.line1}<br/>
+                {siteData.hours.line2}
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ import siteData from '../data/site.json';
         </div>
 
         <p class="text-xs text-white/50 mt-6 font-light">
-          Open Mon – Sat 9:00 AM – 7:00 PM &middot; Sunday Closed
+          Open {siteData.hours.line1} &middot; {siteData.hours.line2}
         </p>
       </div>
 

@@ -213,8 +213,8 @@ const canonicalURL = new URL(Astro.url.pathname, siteData.url || 'https://sidney
         <div>
           <h5 class="text-white text-xs font-bold tracking-[0.2em] uppercase mb-5">Hours & Visit</h5>
           <div class="space-y-2 text-sm font-light text-white/75 mb-6">
-            <p><strong class="font-medium text-white">Mon – Sat:</strong> 9:00 AM – 7:00 PM</p>
-            <p><strong class="font-medium text-white">Sunday:</strong> Closed</p>
+            <p><strong class="font-medium text-white">Mon – Sat:</strong> {siteData.hours['Mon-Sat'] || '10:00 AM – 7:00 PM'}</p>
+            <p><strong class="font-medium text-white">Sunday:</strong> {siteData.hours['Sunday'] || '11:00 AM – 5:00 PM'}</p>
             <p class="text-xs text-brand-gold pt-1">Walk-ins welcome & appointments available</p>
           </div>
           <a href={siteData.map.directionsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-gold hover:text-white transition-colors">

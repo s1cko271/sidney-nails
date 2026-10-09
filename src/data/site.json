@@ -22,10 +22,10 @@
     "bookingPhoneRaw": "+14064335555"
   },
   "hours": {
-    "line1": "Mon – Sat: 9:00 AM – 7:00 PM",
-    "line2": "Sunday: Closed",
-    "Mon-Sat": "9:00 AM – 7:00 PM",
-    "Sunday": "Closed"
+    "line1": "Mon – Sat: 10:00 AM – 7:00 PM",
+    "line2": "Sunday: 11:00 AM – 5:00 PM",
+    "Mon-Sat": "10:00 AM – 7:00 PM",
+    "Sunday": "11:00 AM – 5:00 PM"
   },
   "hero": {
     "headlineLine1": "Artistic Care,",
