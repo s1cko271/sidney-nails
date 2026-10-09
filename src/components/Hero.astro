@@ -64,7 +64,7 @@ import siteData from '../data/site.json';
 
       <!-- Right Side: Real Salon Photo (5/12 on lg) -->
       <div class="lg:col-span-5 hero-animate-image">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-100 aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] max-h-[540px] group">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-[3px] border-brand-gold/80 hover:border-brand-goldDark transition-colors duration-300 ring-4 ring-white/90 aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] max-h-[540px] group">
           <img 
             src={siteData.salon.interiorImage} 
             alt="Sidney Nails Interior Salon Space" 
@@ -74,7 +74,7 @@ import siteData from '../data/site.json';
           <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/35 via-transparent to-transparent pointer-events-none"></div>
           
           <!-- Subtle Floating Badge: Certified & Licensed / Sidney, MT -->
-          <div class="hero-animate-subtext absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-white/60 flex items-center justify-between pointer-events-none">
+          <div class="hero-animate-subtext absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-brand-gold/30 flex items-center justify-between pointer-events-none">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-xl bg-brand-light-blue/20 flex items-center justify-center text-brand-gold">
                 <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ import siteData from '../data/site.json';
                 <p class="text-[0.7rem] text-slate-500">{siteData.salon.fullAddress}</p>
               </div>
             </div>
-            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-brand-gold bg-brand-light-blue/20 px-2.5 py-1 rounded-full">Open Mon-Sat</span>
+            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-brand-gold bg-brand-light-blue/20 px-2.5 py-1 rounded-full border border-brand-gold/20">Open Mon-Sat</span>
           </div>
         </div>
       </div>

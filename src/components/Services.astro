@@ -47,14 +47,24 @@ const services = siteData.services.items;
             <div class={`lg:col-span-6 ${isEven ? 'lg:order-1 reveal-left' : 'lg:order-2 reveal-right'}`}>
               <div class="relative group">
                 {/* Glowing Image Card Frame */}
-                <div class="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2rem] aspect-[4/3] sm:aspect-[1.38] bg-slate-900 border border-sky-400/35 shadow-[0_0_25px_rgba(56,189,248,0.14)] transition-all duration-500 group-hover:border-sky-300/60 group-hover:shadow-[0_0_35px_rgba(56,189,248,0.25)]">
+                <div class="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2rem] aspect-[4/3] sm:aspect-[1.18] bg-[#0c1829] border border-sky-400/35 shadow-[0_0_25px_rgba(56,189,248,0.14)] transition-all duration-500 group-hover:border-sky-300/60 group-hover:shadow-[0_0_35px_rgba(56,189,248,0.25)] flex items-center justify-center">
+                  {/* Ambient blurred backdrop so the full composition blends luxuriously */}
+                  <img 
+                    src={svc.image} 
+                    alt="" 
+                    aria-hidden="true" 
+                    class="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-125 pointer-events-none"
+                  />
+                  <div class="absolute inset-0 bg-[#0B1422]/35 backdrop-blur-[1px] pointer-events-none"></div>
+
+                  {/* Main photo scaled to show 100% of composition */}
                   <img 
                     src={svc.image} 
                     alt={svc.name} 
-                    class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" 
+                    class="relative z-[1] w-full h-full object-contain p-3 sm:p-4 rounded-2xl transition-transform duration-700 ease-out group-hover:scale-105 drop-shadow-[0_12px_24px_rgba(0,0,0,0.55)]" 
                     loading="lazy" 
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none z-[2]"></div>
 
                   {/* Circular Number Badge (01, 02, etc.) */}
                   <div class="absolute top-4 left-4 sm:top-5 sm:left-5 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#0B1422] font-body font-bold text-xs flex items-center justify-center shadow-md pointer-events-none z-10">
